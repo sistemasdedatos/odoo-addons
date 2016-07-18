@@ -1,0 +1,249 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_print_project_work
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-27 15:40+0000\n"
+"PO-Revision-Date: 2015-10-27 15:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_print_project_work
+#: code:addons/sd_print_project_work/sd_project_report.py:18
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copia)"
+
+#. module: sd_print_project_work
+#: model:ir.actions.act_window,help:sd_print_project_work.sd_date_filter
+msgid "<p>\n"
+"					Odoo's project management allows you to manage the pipeline\n"
+"					of\n"
+"					tasks in order to get things done efficiently. You can\n"
+"					track\n"
+"					progress, discuss on tasks, attach documents, etc.\n"
+"				</p>\n"
+"			"
+msgstr "<p>\n"
+"					Odoo's project management allows you to manage the pipeline\n"
+"					of\n"
+"					tasks in order to get things done efficiently. You can\n"
+"					track\n"
+"					progress, discuss on tasks, attach documents, etc.\n"
+"				</p>\n"
+"			"
+
+#. module: sd_print_project_work
+#: view:sd.custom_report_filter:sd_print_project_work.view_sd_custom_report_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+msgid "Completed tasks"
+msgstr "Descripción del servicio"
+
+#. module: sd_print_project_work
+#: field:sd.custom_report_filter,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: sd_print_project_work
+#: field:sd.custom_report_filter,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Customer Signature"
+msgstr "Firma de cliente"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Customer:"
+msgstr "Cliente:"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Date"
+msgstr "Fecha"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Element/Component"
+msgstr "Elemento/Componente"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Employee:"
+msgstr "Técnico:"
+
+#. module: sd_print_project_work
+#: field:project.project,date_to:0
+#: field:sd.custom_report_filter,date_to:0
+msgid "End of period"
+msgstr "Fin del periodo"
+
+#. module: sd_print_project_work
+#: code:addons/sd_print_project_work/sd_project_report.py:52
+#, python-format
+msgid "Error period"
+msgstr "Error en el periodo"
+
+#. module: sd_print_project_work
+#: model:ir.actions.act_window,name:sd_print_project_work.sd_date_filter
+#: view:sd.custom_report_filter:sd_print_project_work.view_sd_custom_report_form
+msgid "Filter by date"
+msgstr "Filtrar por fecha"
+
+#. module: sd_print_project_work
+#: view:sd.custom_report_filter:sd_print_project_work.view_sd_custom_report_form
+msgid "Filter date"
+msgstr "Filtro fecha"
+
+#. module: sd_print_project_work
+#: field:report.sd_print_project_work.sd_project_report,id:0
+#: field:sd.custom_report_filter,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Label:"
+msgstr "Etiqueta:"
+
+#. module: sd_print_project_work
+#: field:sd.custom_report_filter,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: sd_print_project_work
+#: field:sd.custom_report_filter,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+msgid "Period from"
+msgstr "Periodo desde"
+
+#. module: sd_print_project_work
+#: view:sd.custom_report_filter:sd_print_project_work.view_sd_custom_report_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: sd_print_project_work
+#: model:ir.actions.report.xml,name:sd_print_project_work.project
+msgid "Print Prject Report"
+msgstr "Informe de proyecto"
+
+#. module: sd_print_project_work
+#: view:project.project:sd_print_project_work.sd_edit_project
+msgid "Print Report"
+msgstr "Imprimir informe"
+
+#. module: sd_print_project_work
+#: model:ir.actions.report.xml,name:sd_print_project_work.project_task
+msgid "Print Task Report"
+msgstr "Parte de trabajo"
+
+#. module: sd_print_project_work
+#: model:ir.model,name:sd_print_project_work.model_project_project
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+msgid "Report for"
+msgstr "Informe para"
+
+#. module: sd_print_project_work
+#: field:project.project,date_from:0
+#: field:sd.custom_report_filter,date_from:0
+msgid "Start of period"
+msgstr "Inicio del periodo"
+
+#. module: sd_print_project_work
+#: model:ir.model,name:sd_print_project_work.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Time in"
+msgstr "Hora de entrada"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Time spent"
+msgstr "Tiempo dedicado"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Title of task:"
+msgstr "Título de la tarea:"
+
+#. module: sd_print_project_work
+#: view:sd.custom_report_filter:sd_print_project_work.view_sd_custom_report_form
+msgid "To print a particular month we select, from 01 to 31/30 of that\n"
+"						month"
+msgstr "To print a particular month we select, from 01 to 31/30 of that\n"
+"						month"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+msgid "Total time:"
+msgstr "Tiempo total:"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+msgid "Total:"
+msgstr "Total:"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Work"
+msgstr "Trabajo"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_task_report_document
+msgid "Working part"
+msgstr "Parte de trabajo"
+
+#. module: sd_print_project_work
+#: view:project.task:sd_print_project_work.sd_view_task_kanban
+msgid "date_deadline DESC"
+msgstr "date_deadline DESC"
+
+#. module: sd_print_project_work
+#: view:sd.custom_report_filter:sd_print_project_work.view_sd_custom_report_form
+msgid "or"
+msgstr "o"
+
+#. module: sd_print_project_work
+#: view:website:sd_print_project_work.sd_project_report_document
+msgid "to"
+msgstr "hasta"
+

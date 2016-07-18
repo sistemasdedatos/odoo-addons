@@ -1,0 +1,15 @@
+<openerp>
+    <data>
+		<record id="inherit_hr_timesheet_line_tree2" model="ir.ui.view">
+            <field name="name">sd.hr.analytic.timesheet.tree2</field>
+            <field name="model">hr.analytic.timesheet</field>
+            <field name="inherit_id" ref="hr_timesheet_invoice.hr_timesheet_line_tree2"/>
+            <field name="arch" type="xml">
+                <field name="account_id" position="attributes">
+                    <attribute name="domain">[('type','in',['normal','contract']),('state', '&lt;&gt;', 'close'),('use_timesheets','=',1),('user_product_ids.user_id','=',uid)]</attribute>
+                </field>
+            </field>
+        </record>    
+    </data>
+</openerp>
+

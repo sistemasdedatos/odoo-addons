@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_report_purchasequotation"
+			inherit_id="purchase.report_purchasequotation_document">
+			<xpath expr="//div[@class='page']" position="attributes">
+				<attribute name="style">font-size: 10</attribute>
+			</xpath>
+			<xpath expr="//div[@class='col-xs-5 col-xs-offset-1']"
+				position="replace" />
+			<xpath expr="//h2" position="replace" />
+			<xpath expr="//div[@class='col-xs-6']" position="replace">
+				<div class="col-xs-5" style="font-size: 10px">
+					<strong>Datos del Proveedor:</strong>
+					<br />
+					<span t-field="o.partner_id.name" />
+					<br />
+					<t t-if="o.partner_id.vat">
+						NIF:
+						<span t-field="o.partner_id.vat" />
+						<br />
+					</t>
+					<t t-if="o.partner_id.street">
+						<span t-field="o.partner_id.street" />
+					</t>
+					<t t-if="o.partner_id.street2">
+						<span t-field="o.partner_id.street2" />
+					</t>
+					<br />
+					<t t-if="o.partner_id.state_id.name">
+						<span t-field="o.partner_id.state_id.name" />
+					</t>
+					<t t-if="o.partner_id.zip">
+						<span t-field="o.partner_id.zip" />
+					</t>
+					<t t-if="o.partner_id.country_id.name">
+						<span t-field="o.partner_id.country_id.name" />
+					</t>
+					<br />
+					<t t-if="o.partner_id.phone">
+						Tfno:
+						<span t-field="o.partner_id.phone" />
+					</t>
+					<t t-if="o.partner_id.fax">
+						- Fax:
+						<span t-field="o.partner_id.fax" />
+						<br />
+					</t>
+				</div>
+				<div class="col-xs-5 col-xs-offset-1" style="font-size: 14px">
+					<t t-if="o.state != 'draft'">Confirmación de pedido de compra N°:</t>
+					<t t-if="o.state == 'draft'">Solicitud de presupuesto N°:</t>
+					<strong t-field="o.name" />
+				</div>
+			</xpath>
+			<xpath expr="//table" position="attributes">
+				<attribute name="style">font-size: 10px</attribute>
+			</xpath>
+			<xpath expr="//p[@t-field='o.notes']" position="attributes">
+				<attribute name="style">font-size: 10px</attribute>
+			</xpath>
+		</template>
+		<template id="sd_inherit_report_purchaseorder" inherit_id="purchase.report_purchaseorder_document">
+			<xpath expr="//div[@class='page']" position="attributes">
+				<attribute name="style">font-size: 10</attribute>
+			</xpath>
+			<xpath expr="//h2" position="replace" />
+			<xpath expr="//div[@class='row mt32 mb32']" position="replace"/>
+			<xpath expr="//div[@class='col-xs-5 col-xs-offset-1']" position="replace" />
+			<xpath expr="//div[@class='col-xs-6']" position="replace">
+				<div class="col-xs-5" style="font-size: 10px">
+					<strong>Datos del Proveedor:</strong>
+					<br />
+					<span t-field="o.partner_id.name" />
+					<br />
+					<t t-if="o.partner_id.vat">
+						NIF:
+						<span t-field="o.partner_id.vat" />
+						<br />
+					</t>
+					<t t-if="o.partner_id.street">
+						<span t-field="o.partner_id.street" />
+					</t>
+					<t t-if="o.partner_id.street2">
+						<span t-field="o.partner_id.street2" />
+					</t>
+					<br />
+					<t t-if="o.partner_id.state_id.name">
+						<span t-field="o.partner_id.state_id.name" />
+					</t>
+					<t t-if="o.partner_id.zip">
+						<span t-field="o.partner_id.zip" />
+					</t>
+					<t t-if="o.partner_id.country_id.name">
+						<span t-field="o.partner_id.country_id.name" />
+					</t>
+					<br />
+					<t t-if="o.partner_id.phone">
+						Tfno:
+						<span t-field="o.partner_id.phone" />
+					</t>
+					<t t-if="o.partner_id.fax">
+						- Fax:
+						<span t-field="o.partner_id.fax" />
+						<br />
+					</t>
+				</div>
+				<div class="col-xs-6 col-xs-offset-1" style="font-size:10px" >
+					<t t-if="o.state != 'draft'" ><span style="font-size:14px">Confirmación de pedido de compra N°:</span></t>
+					<t t-if="o.state == 'draft'"><span style="font-size: 14px">Solicitud de presupuesto N°:</span></t>
+					<strong t-field="o.name" style="font-size: 14px"/> <br/>
+					<t t-if="o.partner_ref">
+						Su referencia de pedido: <span t-field="o.partner_ref"/><br/>
+					</t>
+					<t t-if="o.date_order">
+						Fecha de pedido: <span t-field="o.date_order"/><br/>
+					</t>
+					<t t-if="o.validator">
+						Validado por: <span t-field="o.validator"/><br/>
+					</t>
+				</div>
+			</xpath>
+			<xpath expr="//table" position="attributes">
+				<attribute name="style">font-size: 10px</attribute>
+			</xpath>
+		</template>
+	</data>
+</openerp>

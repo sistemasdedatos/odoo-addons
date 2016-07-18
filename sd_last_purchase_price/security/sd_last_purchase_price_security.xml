@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+    
+        <record  model="ir.rule" id="sd_last_purchase_price_rule">
+            <field name="name">Last purchase Price security</field>
+            <field name="model_id" ref="model_sd_last_purchase_price"/>
+            <field name="global" eval="True" />
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+        
+    </data>
+</openerp>

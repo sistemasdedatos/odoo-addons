@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_report_saleorder" inherit_id="sale.report_saleorder_document">
+			
+			<xpath expr="//div/div[@class='row']" position="replace"/>
+
+			<xpath expr="//div/h2" position="attributes">
+				<attribute name="style">font-size:16px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/h2" position="after">
+				<div style="font-size:11px">
+					<span t-if="o.partner_id.comercial"><strong>Fiscal name: </strong><span t-field="o.partner_id.comercial"/><br/></span>
+					<span t-if="o.partner_id.vat"><strong>NIF: </strong><span t-field="o.partner_id.vat"/><br/></span>
+					<span t-if="o.partner_id.name"><strong>Comercial name: </strong><span t-field="o.partner_id.name"/><br/></span>
+                    <span t-if="o.partner_id.street"><strong>Address: </strong> 
+                    	<span t-esc="'%s, ' % o.partner_id.street"/>
+                    	<span t-esc="'CP: %s, ' % o.partner_id.zip"/>
+                    	<span t-esc="'%s, ' % o.partner_id.city"/>
+                    	<span t-esc="'%s' % o.partner_id.country_id.name"/>
+                    </span>
+				</div>
+			</xpath>
+			
+			<xpath expr="//div/div[@class='row mt32 mb32']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/table[@class='table table-condensed']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/div[@class='row']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/p[@t-field='o.note']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/div/div[@t-if='o.payment_term']" position="replace"/>
+			
+		</template>
+	</data>
+</openerp>

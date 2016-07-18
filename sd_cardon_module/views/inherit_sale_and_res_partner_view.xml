@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	<record id="inherit_res_partner_tree_view" model="ir.ui.view">
+    		<field name="name">sd.view.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+    			<xpath expr="//field[@name='display_name']" position="before">
+    				<field name="ref"/>
+    			</xpath>
+    		</field>
+    	</record>
+    	<record id="inherit_view_order_form" model="ir.ui.view">
+            <field name="name">sd.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@string='Sales Order ']" position="attributes">
+                	<attribute name="string">Albarán </attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

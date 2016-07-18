@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="mailchimp_list_form_view" model="ir.ui.view">
+            <field name="name">mailchimp.list.form.view</field>
+            <field name="model">mailchimp.list</field>
+            <field name="arch" type="xml">
+                <form string="Mailchimp List">
+                     <header>
+                            <button name="get_list_id" type="object" class="oe_highlight" string="Get List ID" />
+                            <button string="Sync With Mail Chimp" type="object" name="add_member" class="oe_highlight" icon="gtk-go-forward"  />
+                            <button string="Get Subscribed" type="object" name="get_subscribed" class="oe_highlight" />
+                    </header>
+                    <group>
+                        <field name="name" required = "1" />
+                        <field name="list_id" readonly = "1"/>
+                   </group>
+                   <group>
+                        <field name="list_ids" nolabel = "1" domain = "[('email','!=', False), ('customer','=', True)]">
+                            <tree string="Mailchimp List" editable = "bottom">
+                                    <field name="name" required = "1" readonly = "1"/>
+                                    <field name="email" required = "1" readonly = "1"/>
+                                     <field name="subscribed" readonly = "1"/>
+                                    <field name="leid" readonly = "1"/>
+                                    <field name="euid" readonly = "1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+             </field>
+         </record>
+
+         <record id="mailchimp_configuration_form_view" model="ir.ui.view">
+             <field name="name">mailchimp.configuration.form.view</field>
+             <field name="model">mailchimp.configuration</field>
+             <field name="arch" type="xml">
+                 <form>
+                     <group>
+                        <field name="api_key" required = "1"/> 
+                        <field name="is_active"/> 
+                    </group>
+                 </form>
+             </field>
+         </record>             
+         
+         <record id="mailchimp_configuration_tree_view" model="ir.ui.view">
+             <field name="name">mailchimp.configuration.tree.view</field>
+             <field name="model">mailchimp.configuration</field>
+             <field name="arch" type="xml">
+                 <tree string = "Mailchimp Configuration">
+                     <field name="api_key"/> 
+                     <field name="is_active"/> 
+                 </tree>
+             </field>
+         </record>  
+         
+        <record id="action_mailchimp_configuration" model="ir.actions.act_window">
+            <field name="name">Mailchimp Configuration</field>
+            <field name="res_model">mailchimp.configuration</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <!--<menuitem id="menu_mailchimp_configuration" name="Mailchimp Configuration" parent ="base.menu_base_partner" sequence='19'/>-->
+         
+
+         <record id="mailchimp_list_tree_view" model="ir.ui.view">
+            <field name="name">mailchimp.list.tree.view</field>
+            <field name="model">mailchimp.list</field>
+            <field name="arch" type="xml">
+                <tree string="Mailchimp List" >
+                    <field name="name" required = "1" />
+                    <field name="list_id" required = "1" />
+                </tree>
+             </field>
+         </record>
+
+        <record id="action_mailchimp_list_admin" model="ir.actions.act_window">
+            <field name="name">Mailchimp Admin</field>
+            <field name="res_model">mailchimp.list</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_mailchimp_list_class" model="ir.actions.act_window">
+            <field name="name">Mailchimp</field>
+            <field name="res_model">mailchimp.list</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_config_mailchimp_list"  name='Mailchimp' parent="base.menu_sales" sequence='11'/>
+        <menuitem action="action_mailchimp_list_class" id="mailchimp_list_sub_main" name="List" parent="menu_config_mailchimp_list" />
+
+        <menuitem action="action_mailchimp_configuration" id="submenu_mailchimp_configuration" name="Mailchimp Configuration" parent ="base.menu_base_config" sequence='1'/>
+<!--        <menuitem id="menu_config_mailchimp_list_admin"  name='Mailchimp' parent="base.menu_base_config" sequence='10'/>
+        <menuitem action="action_mailchimp_list_admin" id="mailchimp_list_sub_main_admin" name="List" parent="menu_config_mailchimp_list_admin" />
+    -->
+    </data>
+</openerp>
+
+
+
+

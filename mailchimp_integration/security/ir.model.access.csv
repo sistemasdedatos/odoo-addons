@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mailchimp_list_access_u,mailchimp_list user,model_mailchimp_list,base.group_sale_salesman,1,1,1,0
+mailchimp_list_access_m,mailchimp_list manager,model_mailchimp_list,base.group_sale_manager,1,1,1,1
+mailchimp_list_access_settings_u,mailchimp_list user,model_mailchimp_list,base.group_sale_salesman,1,1,1,0
+mailchimp_list_access_settingsm,mailchimp_list manager,model_mailchimp_list,base.group_sale_manager,1,1,1,1
+mailchimp_configuration_access_u,mailchimp_configuration user,model_mailchimp_configuration,base.group_sale_salesman,1,1,1,0
+mailchimp_configuration_access_m,mailchimp_configuration manager,model_mailchimp_configuration,base.group_sale_manager,1,1,1,1
+mailchimp_configuration_access_settings_u,mailchimp_configuration user,model_mailchimp_configuration,base.group_sale_salesman,1,1,1,0
+mailchimp_configuration_access_settingsm,mailchimp_configuration manager,model_mailchimp_configuration,base.group_sale_manager,1,1,1,1
+import_mailchimp_list_access_u,import_mailchimp_list user,model_import_mailchimp_list,base.group_sale_salesman,1,1,1,0
+import_mailchimp_list_access_m,import_mailchimp_list manager,model_import_mailchimp_list,base.group_sale_manager,1,1,1,1
+import_mailchimp_list_access_settings_u,import_mailchimp_list user,model_import_mailchimp_list,base.group_sale_salesman,1,1,1,0
+import_mailchimp_list_access_settingsm,import_mailchimp_list manager,model_import_mailchimp_list,base.group_sale_manager,1,1,1,1

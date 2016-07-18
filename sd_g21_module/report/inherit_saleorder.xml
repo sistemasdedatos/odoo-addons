@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_report_saleorder" inherit_id="sale.report_saleorder_document">
+
+			<xpath expr="//div/div[@class='row']" position="replace" />
+	
+			<xpath expr="//div/h2" position="before">
+				<div class="row mt8" />
+			</xpath>
+
+			<xpath expr="//div/h2" position="after">
+				<div style="font-size:12px">
+					<span t-if="o.partner_id.ref">
+						<strong>Cliente: </strong>
+						<span t-field="o.partner_id.ref" />
+						<br />
+					</span>
+					<span t-if="o.partner_id.comercial">
+						<strong>Nombre comercial: </strong>
+						<span t-field="o.partner_id.comercial" />
+						<br />
+					</span>
+					<span t-if="o.partner_id.vat">
+						<strong>NIF: </strong>
+						<span t-field="o.partner_id.vat" />
+						<br />
+					</span>
+					<span t-if="o.partner_id.name">
+						<strong>Nombre fiscal: </strong>
+						<span t-field="o.partner_id.name" />
+						<br />
+					</span>
+					<span t-if="o.partner_id.street">
+						<strong>Dirección: </strong>
+						<span t-if="o.partner_id.street"><span t-esc="'%s, ' % o.partner_id.street" /></span>
+						<span t-if="o.partner_id.zip"><span t-esc="'CP: %s, ' % o.partner_id.zip" /></span>
+						<span t-if="o.partner_id.city"><span t-esc="'%s, ' % o.partner_id.city" /></span>
+						<span t-if="o.partner_id.country_id.name"><span t-esc="'%s' % o.partner_id.country_id.name" /></span>
+						<br/>
+					</span>
+					<span t-if="o.partner_id.phone">
+						<strong>Tfno: </strong>
+						<span t-field="o.partner_id.phone" />
+					</span>
+				</div>
+			</xpath>
+			
+			<xpath expr="//div/h2" position="replace">
+				<div class="text-center" style="font-size:16px">
+					<strong>
+                		Presupuesto N° <span t-field="o.name"/>
+                		<br><p/></br>
+					</strong>
+				</div>
+			</xpath>
+			
+			<xpath expr="//div[@t-if='o.date_order']" position="replace">
+				<div t-if="o.date_order" class="col-xs-3">
+	                <strong>Fecha de Presupuesto:</strong>
+	                <p t-field="o.date_order"/>
+	           	</div>
+			</xpath>
+			
+			<xpath expr="//div/div[@class='row mt32 mb32']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+
+			<xpath expr="//div/table[@class='table table-condensed']"
+				position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+
+			<xpath expr="//div/div[@class='row']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+
+			<xpath expr="//div/p[@t-field='o.note']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+
+			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/div/div[@t-if='o.payment_term']" position="replace" />
+
+		</template>
+	</data>
+</openerp>

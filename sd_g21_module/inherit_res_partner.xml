@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record id="inherit_view_partner_tree" model="ir.ui.view">
+			<field name="name">sd.view.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='display_name']" position="before">
+            		<field name="ref"/>
+            	</xpath>
+            </field>
+    	</record>
+ 	</data>
+</openerp>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_report_generalledger" inherit_id="account.report_generalledger">
+			<xpath expr="//t[@t-set='data_report_margin_top']" position="attributes">
+				<attribute name="t-value">20</attribute>
+			</xpath>
+			<xpath expr="//t[@t-set='data_report_header_spacing']" position="attributes">
+				<attribute name="t-value">18</attribute>
+			</xpath>
+			<xpath expr="//h2" position="replace">
+				<h3><span t-esc="res_company.name"/>: General ledger</h3>
+			</xpath>
+			<xpath expr="//table[@class='table table-condensed']" position="attributes">
+				<attribute name="style">font-size:10px</attribute>
+			</xpath>
+			<xpath expr="//tr[@class='text-center']" position="replace">
+				<tr class="text-center">
+                	<th>Date</th>
+                    <th>JRNL</th>
+                    <th>Partner</th>
+                    <th>Ref</th>
+                    <th>Move</th>
+                    <th class="text-right">Debit</th>
+                    <th class="text-right">Credit</th>
+                    <th class="text-right">Balance</th>
+                    <th t-if="data['form']['amount_currency']">Currency</th>
+                </tr>
+			</xpath>
+			<xpath expr="//td[@colspan='7']" position="attributes">
+				<attribute name="colspan">5</attribute>
+			</xpath>
+			<xpath expr="//tr[@t-foreach='lines(childrenaccount)']" position="replace">
+				<tr t-foreach="lines(childrenaccount)" t-as="line">
+                	<td><span t-esc="formatLang(line['ldate'], date=True)"/></td>
+                    <td><span t-esc="line['lcode']"/></td>
+                    <td><span t-esc="line['partner_name']"/></td>
+                    <td><span t-if="line['lref']" t-esc="line['lref']"/></td>
+                    <td><span t-esc="line['move']"/></td>
+                    <td class="text-right">
+                    	<span t-esc="formatLang(line['debit'], digits=get_digits(dp='Account'), currency_obj=res_company.currency_id)"/>
+                    </td>
+                    <td class="text-right">
+                    	<span t-esc="formatLang(line['credit'], digits=get_digits(dp='Account'), currency_obj=res_company.currency_id)"/>
+                    </td>
+                    <td class="text-right">
+                    	<span t-esc="formatLang(line['progress'], digits=get_digits(dp='Account'), currency_obj=res_company.currency_id)"/>
+                    </td>
+                    <td class="text-right" t-if="data['form']['amount_currency']">
+                    	<span t-esc="formatLang(line['amount_currency'], digits=get_digits(dp='Account')) if line['amount_currency'] > 0.00 else ''"/>
+                        <span t-esc="line['currency_code'] if line['amount_currency'] > 0.00 else ''"/>
+                    </td>
+                </tr>
+        	</xpath>
+		</template>
+	</data>
+</openerp>

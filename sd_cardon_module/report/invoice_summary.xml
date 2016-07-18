@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_invoice_summary_document">
+			<t t-name="report.external_layout_header">
+				<div class="header">
+					<div class="row">
+						<div style="font-size:11px">
+							<div class="col-xs-6 col-xs-offset-3">
+								<strong>
+									Datos del cliente
+									<br/>
+								</strong>
+								<span t-if="o.partner_id.comercial">
+									<strong>Nombre comercial: </strong>
+									<span t-field="o.partner_id.comercial" />
+									<br/>
+								</span>
+								<span t-if="o.partner_id.vat">
+									<strong>NIF: </strong>
+									<span t-field="o.partner_id.vat" />
+									<br />
+								</span>
+								<span t-if="o.partner_id.name">
+									<strong>Nombre fiscal: </strong>
+									<span t-field="o.partner_id.name" />
+									<br />
+								</span>
+								<span t-if="o.partner_id.street">
+									<strong>Dirección: </strong>
+									<span t-esc="'%s, ' % o.partner_id.street" />
+									<span t-esc="'CP: %s, ' % o.partner_id.zip" />
+									<span t-esc="'%s, ' % o.partner_id.city" />
+									<span t-esc="'%s' % o.partner_id.country_id.name" />
+									<br />
+								</span>
+								<span t-if="o.partner_id.phone">
+									<strong>Tfno: </strong>
+									<span t-esc="o.partner_id.phone" />
+								</span>
+							</div>
+							<div class="col-xs-pull-11">
+								<strong>
+									Tipo de documento
+									<br/>
+								</strong>
+								<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Factura</span>
+								<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+								<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Factura borrador</span>
+								<span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Factura cancelada</span>
+								<span t-if="o.type == 'out_refund'">Refund</span>
+								<span t-if="o.type == 'in_refund'">Supplier Refund</span>
+								<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+								<span t-field="o.number" />
+								<span t-if="o.date_invoice">
+									<br>
+										Fecha de factura:
+										<span t-field="o.date_invoice" />
+									</br>
+									<br>
+										Hora: <t t-esc="time.strftime('%H:%M-%Z')"/>
+									</br>
+								</span>
+								<span t-if="o.partner_id.ref">
+									<br>
+										Código de cliente:
+										<span t-field="o.partner_id.ref" />
+									</br>
+								</span>
+								<br>
+									<span t-if="o.name">
+										Descripción: Factura resumida
+									</span>
+								</br>
+								<br>
+									<p />
+								</br>
+								<br />
+							</div>
+						</div>
+					</div>
+				</div>
+			</t>	
+			<t t-name="report.external_layout">
+				<div class="page">
+					<div class="row mt8"/>
+					<div class="row">
+						<table class="table table-condensed" style="font-size:10px">
+							<thead>
+								<tr>
+									<th>Nº de albarán</th>
+									<th>Fecha</th>
+									<th class="text-right">Total</th>
+								</tr>
+							</thead>
+							<tbody class="invoice_tbody">
+								<tr t-foreach="o.sale_order_ids" t-as="l">
+									<td>
+										<span t-field="l.name" />
+									</td>
+									<td>
+										<span t-field="l.date_order" />
+									</td>
+									<td class="text-right">
+										<span t-field="l.amount_total"
+											t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="row">
+							<div class="col-xs-4 pull-right" style="font-size:11px">
+								<table class="table table-condensed">
+									<tr class="border-black">
+										<td>
+											<strong>Total</strong>
+										</td>
+										<td class="text-right">
+											<span t-field="o.amount_total"
+												t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+
+						<div class="row" t-if="o.tax_line">
+							<div class="col-xs-6" style="font-size:10px">
+								<table class="table table-condensed">
+									<thead>
+										<tr>
+											<th>Impuesto</th>
+											<th class="text-right">Base</th>
+											<th class="text-right">Importe</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr t-foreach="o.tax_line" t-as="t">
+											<td>
+												<span t-field="t.name" />
+											</td>
+											<td class="text-right">
+												<span t-field="t.base"
+													t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+											</td>
+											<td class="text-right">
+												<span t-field="t.amount"
+													t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}' />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<p t-if="o.comment" style="font-size:10px">
+							<strong>Nota:</strong>
+							<span t-field="o.comment" />
+						</p>
+						<p t-if="o.payment_term.note" style="font-size:10px">
+							<strong>Términos de pago:</strong>
+							<span t-field="o.payment_term.note" />
+						</p>
+						<p t-if="o.fiscal_position.note" style="font-size:10px">
+							<strong>Posición fiscal:</strong>
+							<span t-field="o.fiscal_position.note" />
+						</p>
+					</div>
+				</div>
+				<t t-if="o and 'company_id' in o">
+        			<t t-set="company" t-value="o.company_id"/>
+    			</t>
+    			<t t-if="not o or not 'company_id' in o">
+       				<t t-set="company" t-value="res_company"/>
+    			</t>
+    			<t t-raw="0"/>
+			    <t t-call="report.external_layout_footer"/>
+			</t>
+		</template>
+
+		<template id="sd_invoice_summary">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_cardon_module.sd_invoice_summary_document')" />
+				</t>
+			</t>
+		</template>
+		
+		<report id="invoice_summary" model="account.invoice"
+			name="sd_cardon_module.sd_invoice_summary" string="Factura resumida"
+			file="sd_cardon_module.sd_invoice_summary" report_type="qweb-pdf"
+			attachment_use="True"/>
+			
+		<record id="sd_cardon_module.invoice_summary" model="ir.actions.report.xml">
+    		<field name="paperformat_id" ref="sd_cardon_module.sd_cardon_module_paperA5" />
+		</record>
+		
+	</data>
+</openerp>

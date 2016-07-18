@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<report
+            id="invoice"
+            model="pos.order"        
+            name="sd_custom_pos_ticket.sd_ticket_invoice"
+            string="Invoice"
+            file="sd_custom_pos_ticket.sd_ticket_invoice"
+            report_type="qweb-pdf"
+            attachment_use="False"
+        />
+    </data>
+</openerp>
