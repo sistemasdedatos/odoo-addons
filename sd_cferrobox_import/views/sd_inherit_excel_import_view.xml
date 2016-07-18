@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_sd_excel_import_form" model="ir.ui.view">
+			<field name="name">inherit.view.excel.import.form</field>
+			<field name="model">sd.excel.toimport</field>
+			<field name="inherit_id" ref="sd_excel_import.view_sd_excel_import_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//group/field[@name='model_id']/ancestor::group" position="attributes">
+					<attribute name="attrs">{'invisible': 1}</attribute>
+				</xpath>
+				<xpath expr="//group/h2/ancestor::group" position="replace"/>
+			</field>
+		</record>
+	</data>
+</openerp>

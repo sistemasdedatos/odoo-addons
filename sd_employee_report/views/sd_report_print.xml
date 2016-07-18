@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<template id="sd_project_task_employee_report_document">
+			<t t-set="Total" t-value="0.0" />
+			<t t-call="report.external_layout">
+				<div class="page">
+					<h3 class="text-center">
+						Monthly report
+						<span t-field="o.partner_id" />
+					</h3>
+					<h5 class="text-center">
+						From
+						<span t-field="o.date_start" />
+						To
+						<span t-field="o.date_end" />
+					</h5>
+					<div t-foreach="o.tasks_id" t-as="l">
+						<t t-if="l.internal_material_ids">
+							<div class="col-xs-4 pull-right" style="font-size:8px">
+								<strong>Date: </strong>
+								<span t-field="l.date_deadline" />
+							</div>
+							<div style="font-size:8px">
+								<strong>Customer: </strong>
+								<span t-field="l.partner_id" />
+							</div>
+							<div class="col-xs-4 pull-right" style="font-size:8px">
+								<strong>Task/Work: </strong>
+								Nº <span t-field="l.id"/>
+								, <span t-field="l.name" />
+							</div>
+							<div style="font-size:8px">
+								<strong>Contract/Project: </strong>
+								<span t-field="l.project_id" />
+							</div>
+							<t t-if="l.office">
+								<div style="font-size:8px">
+									<strong>Office: </strong>
+									<span t-field="l.office" />
+								</div>
+							</t>
+							<table class="table table-condensed">
+								<thead>
+									<tr style="font-size:8px">
+										<th>Product/Element</th>
+										<th>Quantity</th>
+										<th>Cost</th>
+									</tr>
+								</thead>
+								<tbody class="invoice_tbody">
+									<tr t-foreach="l.internal_material_ids" t-as="w"
+										style="font-size:8px">
+										<td>
+											<span t-field="w.product_id.name" />
+										</td>
+										<td>
+											<span t-esc="'%.2f ' % w.quantity"/><span t-esc="'%s' % w.product_id.uom_id.name" />
+										</td>
+										<td>
+											<t t-set="costo"
+												t-value="w.quantity*w.product_id.product_tmpl_id.list_price" />
+											<span t-esc="'%.2f€' % costo" />
+											<t t-set="Total" t-value="Total+costo" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</t>
+					</div>
+					<div class="col-xs-4 pull-right" style="font-size:10px">
+						<strong>Total expenditure: </strong>
+						<span t-esc="'%.2f€' % Total"/>
+					</div>
+				</div>
+			</t>
+		</template>
+
+		<template id="sd_project_task_employee_report">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_employee_report.sd_project_task_employee_report_document')" />
+				</t>
+			</t>
+		</template>
+	</data>
+</openerp>

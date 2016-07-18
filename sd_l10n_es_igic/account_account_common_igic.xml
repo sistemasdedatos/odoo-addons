@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<!-- Cuentas comunes para el IGIC -->
+
+	<data noupdate="0">
+
+        <record id="pgc_4707" model="account.account.template">
+            <field name="code">4707</field>
+            <field name="reconcile" eval="True" />
+            <field name="parent_id" ref="l10n_es.pgc_470" />
+            <field name="type">view</field>
+            <field name="name">Hacienda Pública, deudor por IGIC</field>
+            <field name="user_type" ref="account.conf_account_type_tax" />
+        </record>
+        <record id="pgc_4707_child" model="account.account.template">
+            <field name="code">4707</field>
+            <field name="reconcile" eval="True" />
+            <field name="parent_id" ref="pgc_4707" />
+            <field name="type">receivable</field>
+            <field name="name">Hacienda Pública, deudor por IGIC</field>
+            <field name="user_type" ref="account.conf_account_type_tax" />
+        </record>        
+        
+        <record id="pgc_4757" model="account.account.template">
+            <field name="code">4757</field>
+            <field name="reconcile" eval="True" />
+            <field name="parent_id" ref="l10n_es.pgc_475" />
+            <field name="type">view</field>
+            <field name="name">Hacienda Pública, acreedor por IGIC</field>
+            <field name="user_type" ref="account.conf_account_type_tax" />
+        </record>
+        <record id="pgc_4757_child" model="account.account.template">
+            <field name="code">4757</field>
+            <field name="reconcile" eval="True" />
+            <field name="parent_id" ref="pgc_4757" />
+            <field name="type">payable</field>
+            <field name="name">Hacienda Pública, acreedor por IGIC</field>
+            <field name="user_type" ref="account.conf_account_type_tax" />
+        </record>                
+
+		<record id="pgc_4727_child" model="account.account.template">
+			<field name="code">4727</field>
+			<field name="reconcile" eval="True" />
+			<field name="parent_id" ref="l10n_es.pgc_472" />
+			<field name="type">other</field>
+			<field name="name">Hacienda Pública. IGIC Soportado</field>
+			<field name="user_type" ref="account.conf_account_type_tax" />
+		</record>
+
+		<record id="pgc_4777_child" model="account.account.template">
+			<field name="code">4777</field>
+			<field name="reconcile" eval="True" />
+			<field name="parent_id" ref="l10n_es.pgc_477" />
+			<field name="type">other</field>
+			<field name="name">Hacienda Pública. IGIC Repercutido</field>
+			<field name="user_type" ref="account.conf_account_type_tax" />
+		</record>
+
+	</data>
+</openerp>

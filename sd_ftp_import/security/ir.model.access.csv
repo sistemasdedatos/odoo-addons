@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sd_ftp_config_access_u,sd_ftp_config user,model_sd_ftp_config,purchase.group_purchase_user,1,0,0,0
+sd_ftp_config_access_m,sd_ftp_config manager,model_sd_ftp_config,base.group_system,1,1,1,1
+sd_ftp_config_access_settings_u,sd_ftp_config user,model_sd_ftp_config,base.group_erp_manager,1,1,1,0
+sd_ftp_config_access_settings_m,sd_ftp_config manager,model_sd_ftp_config,base.group_system,1,1,1,1
+sd_ftp_import_access_u,sd_ftp_import user,model_sd_ftp_import,purchase.group_purchase_user,1,1,1,0
+sd_ftp_import_access_m,sd_ftp_import manager,model_sd_ftp_import,purchase.group_purchase_user,1,1,1,1
+sd_ftp_import_access_settings_u,sd_ftp_import user,model_sd_ftp_import,purchase.group_purchase_user,1,1,1,0
+sd_ftp_import_access_settings_m,sd_ftp_import manager,model_sd_ftp_import,base.group_system,1,1,1,1
+sd_ftp_import_lines_access_u,sd_ftp_import_lines user,model_sd_ftp_import_lines,purchase.group_purchase_user,1,1,1,0
+sd_ftp_import_lines_access_m,sd_ftp_import_lines manager,model_sd_ftp_import_lines,base.group_system,1,1,1,1
+sd_ftp_import_lines_access_settings_u,sd_ftp_import_lines user,model_sd_ftp_import_lines,base.group_system,1,1,1,0
+sd_ftp_import_lines_access_settings_m,sd_ftp_import_lines manager,model_sd_ftp_import_lines,base.group_system,1,1,1,1

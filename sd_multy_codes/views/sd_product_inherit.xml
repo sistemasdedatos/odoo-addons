@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="product_template_only_form_view" model="ir.ui.view">
+            <field name="name">sd.product.template.product.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//page[@string='Sales']" position="after">
+            		<page name="int_code" string="Internal code">
+            			<field name="multicode" widget="one2many_tags"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

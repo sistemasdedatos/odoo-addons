@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sd_last_purchase_price_access_u,sd_last_purchase_price user,model_sd_last_purchase_price,purchase.group_purchase_user,1,1,1,0
+sd_last_purchase_price_access_m,sd_last_purchase_price manager,model_sd_last_purchase_price,purchase.group_purchase_manager,1,1,1,1
+sd_last_purchase_price_access_settings_u,sd_last_purchase_price user,model_sd_last_purchase_price,purchase.group_purchase_user,1,1,1,0
+sd_last_purchase_price_access_settings_m,sd_last_purchase_price manager,model_sd_last_purchase_price,purchase.group_purchase_manager,1,1,1,1

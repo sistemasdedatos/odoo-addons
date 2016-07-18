@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- ============== -->
+        <!-- IGIC DEVENGADO -->
+        <!-- ============== -->
+        <!--Se incluyen en el modelo 340-->
+        
+        <!--Modelo 420-->
+
+
+        <!--Base imponible-->
+        
+        <record id="sd_l10n_es_igic.igic_dev_base" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+
+        <!-- Exentas IGIC -->
+        <record id="sd_l10n_es_igic.igic_base_sop_ex" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_base_rep_ex" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Réimen general -->
+        <record id="sd_l10n_es_igic.igic_dev_01" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_02" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_03" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_04" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_05" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_06" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_dev_13" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_14" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_15" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_16" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_17" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Adquisiciones Intracomunitarias -->
+
+        <record id="sd_l10n_es_igic.igic_dev_19" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>   
+        
+        <!-- ==================== -->
+        <!-- IGIC DEVENGADO CUOTA -->
+        <!-- ==================== --> 
+        
+        <!-- Régimen General -->
+        
+        <record id="sd_l10n_es_igic.igic_dev_21" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>    
+        
+        <record id="sd_l10n_es_igic.igic_dev_07" model="account.tax.code.template">
+           <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_08" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_09" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_10" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_11" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_12" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_dev_50" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_51" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_52" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_53" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_dev_54" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Adquisiciones Intracomunitarias -->
+        
+        <record id="sd_l10n_es_igic.igic_dev_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- ============== -->
+        <!-- IGIC DEDUCIBLE -->
+        <!-- ============== -->
+        
+        <!-- IGIC Soportado (Deducilbe) Base Imponible -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_base_total" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_base_total_16" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_base_total_17" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        
+        <!-- Base en Operaciones Interiores Corrientes -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_22" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_22_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_22_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_22_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_22_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_22_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_22_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Base en Operaciones Interiores con Bienes de Inversión -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_24" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_24_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_24_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_24_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_24_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_24_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_24_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Base en Las Importaciones de Bienes Corrientes -->
+        <record id="sd_l10n_es_igic.igic_ded_26" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_26_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_26_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_26_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_26_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_26_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_26_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Base en Las Importaciones de Bienes de Inversión -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_28" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_28_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_28_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_28_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_28_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_28_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_28_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Adquisiciones Intracomunitarias de Bienes Corrientes -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_30" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_30_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_30_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_30_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_30_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_30_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_30_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Adquisiciones Intracomunitarias de Bienes de Inversión -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_32" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_32_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_32_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_32_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_32_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_32_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_32_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Base Recargo de Equivalencia -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_910" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_911" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_912" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_913" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_914" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- ===================== -->
+        <!-- IGIC DEDUCIBLE COUTAS -->
+        <!-- ===================== -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_cuota_total" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_cuota_total_16" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_cuota_total_17" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Cuotas en Operaciones Interiores Corrientes -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_23" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_23_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_23_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_23_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_23_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_23_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_23_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Cuotas en Operaciones Interiores con Bienes de Inversión -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_25" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_25_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_25_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_25_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_25_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_25_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_25_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Cuotas Devengadas en las Importaciones de Bienes Corrientes -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_27" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_27_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_27_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_27_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_27_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_27_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_27_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Cuotas Devengadas en las Importaciones de Bienes de Inversión -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_29" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_29_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_29_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_29_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_29_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_29_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_29_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Adquisiciiones Intracomunitarias de Bienes Corrientes -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_31" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_31_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_31_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_31_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_31_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_31_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_31_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Adquisiciones Intracomunitarias de Bienes de Inversión -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_33" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <record id="sd_l10n_es_igic.igic_ded_33_0" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_33_3" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_33_7" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_33_9_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_33_13_5" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_33_20" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        
+        <!-- Otros Códigos de Impuestos -->
+        
+        <record id="sd_l10n_es_igic.igic_base_intra_42" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_base_extra_43" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_base_extra_44" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+
+        <!-- Cuota Recargo de Equivalencia -->
+        
+        <record id="sd_l10n_es_igic.igic_ded_45" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_46" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_47" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_48" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+        <record id="sd_l10n_es_igic.igic_ded_49" model="account.tax.code.template">
+            <field name="mod340" eval="True"/>
+        </record>
+       
+    </data>
+</openerp>

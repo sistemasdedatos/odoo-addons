@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<template id="sd_report_invoice_document" >
+			<t t-name="report.external_layout_header">
+				<div class="header">
+					<div class="row">
+						<div style="font-size:11px">
+							<div class="col-xs-6 col-xs-offset-3">
+								<strong>
+									Datos del cliente
+									<br/>
+								</strong>
+								<span t-if="o.partner_id.comercial">
+									<strong>Nombre comercial: </strong>
+									<span t-field="o.partner_id.comercial" />
+									<br/>
+								</span>
+								<span t-if="o.partner_id.vat">
+									<strong>NIF: </strong>
+									<span t-field="o.partner_id.vat" />
+									<br />
+								</span>
+								<span t-if="o.partner_id.name">
+									<strong>Nombre fiscal: </strong>
+									<span t-field="o.partner_id.name" />
+									<br />
+								</span>
+								<span t-if="o.partner_id.street">
+									<strong>Dirección: </strong>
+									<span t-esc="'%s, ' % o.partner_id.street" />
+									<span t-esc="'CP: %s, ' % o.partner_id.zip" />
+									<span t-esc="'%s, ' % o.partner_id.city" />
+									<span t-esc="'%s' % o.partner_id.country_id.name" />
+									<br />
+								</span>
+								<span t-if="o.partner_id.phone">
+									<strong>Tfno: </strong>
+									<span t-esc="o.partner_id.phone" />
+								</span>
+							</div>
+							<div class="col-xs-pull-11">
+								<strong>
+									Tipo de documento
+									<br/>
+								</strong>
+								<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Factura</span>
+								<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+								<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Factura borrador</span>
+								<span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Factura cancelada</span>
+								<span t-if="o.type == 'out_refund'">Refund</span>
+								<span t-if="o.type == 'in_refund'">Supplier Refund</span>
+								<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+								<span t-field="o.number" />
+								<span t-if="o.date_invoice">
+									<br>
+										Fecha de factura:
+										<span t-field="o.date_invoice" />
+									</br>
+									<br>
+										Hora: <t t-esc="time.strftime('%H:%M-%Z')"/>
+									</br>
+								</span>
+								<span t-if="o.partner_id.ref">
+									<br>
+										Código de cliente:
+										<span t-field="o.partner_id.ref" />
+									</br>
+								</span>
+								<br>
+									<p />
+								</br>
+								<br />
+							</div>
+						</div>
+					</div>
+				</div>
+			</t>
+			<t t-name="report.external_layout">
+        		<div class="page">
+            		<div class="row">
+            			<t t-set="ART" t-value="0" />
+            			<table class="table table-condensed" style="font-size:10px">
+			                <thead>
+			                    <tr>
+			                        <th class="col-xs-7">Descripción</th>
+			                        <th class="col-xs-1 text-right">Cantidad</th>
+			                        <th class="col-xs-2 text-right">Precio unidad</th>
+			                        <th class="col-xs-1 text-right" groups="sale.group_discount_per_so_line">Dto (%)</th>
+			                        <th class="col-xs-1 text-right">Importe</th>
+			                    </tr>
+			                </thead>
+			                <tbody class="invoice_tbody">
+			                    <tr t-foreach="o.invoice_line" t-as="l">
+			                        <td class="col-xs-7"><span t-field="l.name"/></td>
+			                        <td class="col-xs-1 text-right">
+			                            <span t-field="l.quantity"/>
+			                            <span t-field="l.uos_id"  groups="product.group_uom"/>
+			                        </td>
+			                        <td class="col-xs-2 text-right">
+			                            <span t-field="l.price_unit"/>
+			                        </td>
+			                        <td class="col-xs-1 text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+			                        <td class="col-xs-1 text-right">
+			                            <span t-field="l.price_subtotal" 
+			                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+			                        </td>
+			                        <t t-set="ART" t-value="ART+1" />
+			                    </tr>
+			                </tbody>
+		            	</table>
+		            	<div class="row">
+	                		<div class="col-xs-4 pull-right" style="font-size:11px">
+			                    <table class="table table-condensed">
+			                        <tr class="border-black">
+			                            <td><strong>Total</strong></td>
+			                            <td class="text-right">
+			                                 <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+			                            </td>
+			                        </tr>
+			                    </table>
+			                </div>
+		                </div>
+		                <div class="col-xs-4 pull-left" style="font-size:10px">
+		                	Número de artículos: <t t-esc="ART"/>
+		                </div>
+		                <p t-if="o.comment" style="font-size:10px">
+			                <strong>Nota:</strong>
+			                <span t-field="o.comment"/>
+			            </p>
+			            <p t-if="o.payment_term.note" style="font-size:10px">
+			                <strong>Términos de pago:</strong>
+			                <span t-field="o.payment_term.note"/>
+			            </p>
+			            <p t-if="o.fiscal_position.note" style="font-size:10px">
+			                <strong>Fiscal Position Remark:</strong>
+			                <span t-field="o.fiscal_position.note"/>
+			            </p>
+			        </div>
+			    </div>
+			    <t t-if="o and 'company_id' in o">
+        			<t t-set="company" t-value="o.company_id"/>
+    			</t>
+    			<t t-if="not o or not 'company_id' in o">
+       				<t t-set="company" t-value="res_company"/>
+    			</t>
+    			<t t-raw="0"/>
+			    <t t-call="report.external_layout_footer"/>
+			 </t>
+		</template>
+		
+		<template id="sd_report_invoice">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_cardon_module.sd_report_invoice_document')" />
+				</t>
+			</t>
+		</template>
+		
+		<template id="sd_inherit_report_invoice" inherit_id="account.report_invoice_document">
+			<xpath expr="//div/div/div[@class='col-xs-5 col-xs-offset-7']" position="replace">
+                <div class="row mt16"/>
+				<div class="col-xs-4 col-xs-offset-4" style="font-size:16px">
+					<strong>
+						<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+						<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+						<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+						<span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+						<span t-if="o.type == 'out_refund'">Refund</span>
+						<span t-if="o.type == 'in_refund'">Supplier Refund</span>
+						<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+						<span t-field="o.number"/>
+					</strong>
+				</div>
+				<div style="font-size:12px">
+					<div class="col-xs-8">
+						<strong>
+							<span t-if="o.date_invoice">
+								<br>
+									Fecha de factura:
+									<span t-field="o.date_invoice"/>
+								</br>
+							</span>
+							<span t-if="o.origin">
+								<br>
+									Origen:
+									<span t-field="o.origin"/>
+								</br>
+							</span>
+							<span t-if="o.partner_id.ref">
+								<br>
+									Código de cliente:
+									<span t-field="o.partner_id.ref"/>
+								</br>
+							</span>
+							<span t-if="o.reference">
+								<br>
+									Referencia:
+									<span t-field="o.reference"/>
+								</br>
+							</span>
+							<br>
+								<span t-if="o.name">
+									Description:
+									<span t-field="o.name"/>
+								</span>
+							</br>
+							<br>
+								<p/>
+							</br>
+							<br/>
+						</strong>
+					</div>
+					<div class="col-xs-pull-11">
+						<strong>
+							Datos del cliente
+							<br/>
+						</strong>
+						<span t-if="o.partner_id.comercial">
+							<strong>Nombre comercial: </strong>
+							<span t-field="o.partner_id.comercial"/>
+							<br/>
+						</span>
+						<span t-if="o.partner_id.vat">
+							<strong>NIF: </strong>
+							<span t-field="o.partner_id.vat"/>
+							<br/>
+						</span>
+						<span t-if="o.partner_id.name">
+							<strong>Nombre fiscal: </strong>
+							<span t-field="o.partner_id.name"/>
+							<br/>
+						</span>
+						<span t-if="o.partner_id.street">
+							<strong>Dirección: </strong>
+							<span t-esc="'%s, ' % o.partner_id.street"/>
+							<span t-esc="'CP: %s, ' % o.partner_id.zip"/>
+							<span t-esc="'%s, ' % o.partner_id.city"/>
+							<span t-esc="'%s' % o.partner_id.country_id.name"/>
+							<br/>
+						</span>
+						<span t-if="o.partner_id.phone">
+							<strong>Tfno: </strong>
+							<span t-esc="o.partner_id.phone"/>
+						</span>
+					</div>
+				</div>
+			</xpath>
+			<xpath expr="//div/div[@class='row mt32 mb32']" position="replace"/>
+			<xpath expr="//div/h2" position="replace"/>
+			<xpath expr="//div/table[@class='table table-condensed']" position="replace">
+				<table class="table table-condensed" style="font-size:12px">
+	                <thead>
+	                    <tr>
+	                        <th class="col-xs-4">Descripción</th>
+	                        <th class="col-xs-2 text-right">Cantiddad</th>
+	                        <th class="col-xs-2 text-right">Precio unidad</th>
+	                        <th class="col-xs-2 text-right" groups="sale.group_discount_per_so_line">Dto (%)</th>
+	                        <th class="col-xs-2 text-right">Importe</th>
+	                    </tr>
+	                </thead>
+	                <tbody class="invoice_tbody">
+	                    <tr t-foreach="o.invoice_line" t-as="l">
+	                        <td class="col-xs-4"><span t-field="l.name"/></td>
+	                        <td class="col-xs-2 text-right">
+	                            <span t-field="l.quantity"/>
+	                            <span t-field="l.uos_id"  groups="product.group_uom"/>
+	                        </td>
+	                        <td class="col-xs-2 text-right">
+	                            <span t-field="l.price_unit"/>
+	                        </td>
+	                        <td class="col-xs-2 text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+	                        <td class="col-xs-2 text-right">
+	                            <span t-field="l.price_subtotal" 
+	                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+	                        </td>
+	                    </tr>
+	                </tbody>
+            	</table>
+			</xpath>
+			<xpath expr="//div/div[@class='col-xs-4 pull-right']" position="replace">
+				<div class="col-xs-4 pull-right" style="font-size:12px">
+                    <table class="table table-condensed">
+                        <tr class="border-black">
+                            <td><strong>Total</strong></td>
+                            <td class="text-right">
+                                 <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+			</xpath>
+			<xpath expr="//div/div[@class='col-xs-6']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+			<xpath expr="//div/p[@t-if='o.comment']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+			<xpath expr="//div/p[@t-if='o.fiscal_position.note']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+		</template>
+ 		
+ 		<report 
+            id="account.account_invoices"
+            model="account.invoice"
+            name="account.report_invoice"
+            file="account.report_invoice"
+            menu="False"
+            string="Invoices"
+            report_type="qweb-pdf"
+            attachment_use="False"
+            attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+        />
+        
+        <record id="account.account_invoices" model="ir.actions.report.xml">
+    		<field name="paperformat_id" ref="report.paperformat_euro" />
+		</record>
+		
+        <report id="sd_invoice" model="account.invoice"
+			name="sd_cardon_module.sd_report_invoice" string="Factura"
+			file="sd_cardon_module.sd_report_invoice" report_type="qweb-pdf"
+			attachment_use="True"/>
+			
+		<record id="sd_cardon_module.sd_invoice" model="ir.actions.report.xml">
+    		<field name="paperformat_id" ref="sd_cardon_module.sd_cardon_module_paperA5" />
+		</record>
+		
+	</data>
+</openerp>

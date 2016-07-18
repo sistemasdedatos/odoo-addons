@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record id="inherit_view_invoice_tree" model="ir.ui.view">
+			<field name="name">sd.view.invoice.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//tree[@string='Invoice']" position="replace">
+             		<tree colors="blue:state == 'draft';black:state in ('proforma','proforma2','open');gray:state == 'cancel'" string="Invoice" default_order="period_id desc, number desc">
+                    	<field name="number"/>
+                    	<field name="date_invoice"/>
+                   	 	<field name="ref_client" string="Partner code"/>
+                   	 	<field name="partner_id" groups="base.group_user"/>
+                   	 	<field name="vat_client" string="NIF"/>
+                    	<field name="commercial_partner_id" invisible="1"/>
+                    	<field name="reference" invisible="1"/>
+                    	<field name="name" invisible="1"/>
+                    	<field name="journal_id" invisible="1"/>
+                    	<field name="period_id" invisible="1" groups="account.group_account_user"/>
+                    	<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    	<field name="user_id" string="Responsible"/>
+                    	<field name="date_due" invisible="1"/>
+                    	<field name="origin"/>
+                    	<field name="currency_id" groups="base.group_multi_currency"/>
+                    	<field name="residual" sum="Residual Amount" invisible="1"/>
+                    	<field name="amount_untaxed" sum="Untaxed Amount"/>
+                    	<field name="amount_tax" sum="Tax Amount"/> 
+                    	<field name="amount_total" sum="Total Amount"/>
+                    	<field name="state"/>
+                    	<field name="type" invisible="context.get('type',True)"/>   
+                    	<field name="fiscal_name_client" string="Fiscal name"/>
+             		</tree>
+             	</xpath>
+            </field>
+		</record>    	
+    </data>
+</openerp>

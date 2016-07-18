@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="view_sd_excel_import_form" model="ir.ui.view">
+			<field name="name">view.excel.import.form</field>
+			<field name="model">sd.excel.toimport</field>
+			<field name="arch" type="xml">
+				<form string="Excel Import">
+					<header>
+						<field name="state" widget="statusbar" statusbar_visible="Draft, Done"/>
+					</header>
+					<sheet>
+						<div class="oe_title">
+							<group>
+	                        	<h1>
+	                        		<label string="Excel description:"/>
+									<field name="name" class="oe_inline" attrs="{'readonly': ['!',('state', '=', '0')]}"/>
+								</h1>
+							</group>
+						</div>
+						<div attrs="{'invisible': [('state', '=', '1')]}">
+							<group>
+								<h2 class="oe_text_center">
+									<label string="What you want to import?" attrs="{'invisible': [('state', '=', '2')]}"/>
+								</h2>
+							</group>
+							<group>
+								<field name="model_id" options="{'no_create': True}" attrs="{'readonly': [('state', '=', '2')]}"/>
+								<field name="fields_ids" widget="many2many_tags" options="{'no_create': True}" attrs="{'readonly': [('state', '=', '2')]}"/>
+								<field name="field_id" widget="selection" options="{'no_create': True}" attrs="{'readonly': [('state', '=', '2')]}"/>
+								<field name="fields_in_ids" widget="many2many_checkboxes" options="{'no_create': True}" attrs="{'readonly': [('state', '=', '2')]}"/>
+							</group>
+							<div attrs="{'invisible': ['!',('model_id','=',79)]}">
+								<group>
+									<group>
+										<field name="customer" attrs="{'readonly': [('state', '=', '2')]}"/>
+									</group>
+									<group>
+										<field name="supplier" attrs="{'readonly': [('state', '=', '2')]}"/> 
+									</group>
+								</group>
+							</div>
+							<group>
+								<field name="not_found" attrs="{'readonly': [('state', '=', '2')],'invisible': [('model_id','=',79)]}" />
+								<field name="auto_create" attrs="{'readonly': [('state', '=', '2')],'invisible': [('not_found','=',False)]}"/>
+								<field name="file" widget="binary" attrs="{'readonly': [('state', '=', '2')]}"/>
+							</group>
+							<group>
+								<button name="button_read" type="object" string="Read" class="oe_highlight"  groups="base.group_user" attrs="{'invisible': [('state', '=', '2')]}"/>
+							</group>
+						</div>
+						<div attrs="{'invisible': ['!',('state', '=', '1')]}">
+							<field name="sd_excel_line_id"/>
+							<group>
+								<group>
+									<button name="button_import" type="object" string="Import" class="oe_highlight"  groups="base.group_user"/>
+									or
+									<button name="button_back" type="object" string="Back" class="oe_link"  groups="base.group_user"/>
+								</group>
+							</group>
+						</div>
+	                 </sheet>
+	                 <div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>
+                </form>
+			</field>
+		</record>
+    	
+    	<record id="view_sd_excel_import_tree" model="ir.ui.view">
+			<field name="name">view.excel.import.tree</field>
+			<field name="model">sd.excel.toimport</field>
+			<field name="arch" type="xml">
+				<tree string="Excel Import">
+					<field name="id"/>
+					<field name="name"/>
+					<field name="model_id"/>
+					<field name="state"/>
+                </tree>
+			</field>
+		</record>
+    	
+    	<record id="sd_excel_import" model="ir.actions.act_window">
+            <field name="name">Excel Import</field>
+            <field name="view_type">form</field>
+            <field name="res_model">sd.excel.toimport</field>
+            <field name="view_mode">tree,form</field>
+            <field name='auto_refresh'>1</field>
+            <field name="view_id" ref="view_sd_excel_import_tree"/>
+        </record>
+        
+    	<menuitem action="sd_excel_import" id="sd_excel_import_menu" name="Excel Import" parent="base.menu_base_config" sequence="0"/>
+    </data>
+</openerp>
+
+

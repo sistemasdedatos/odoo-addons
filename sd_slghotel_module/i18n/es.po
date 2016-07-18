@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_slghotel_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-10 13:23+0000\n"
+"PO-Revision-Date: 2015-11-10 13:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+#: model:ir.model,name:sd_slghotel_module.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Partner code"
+msgstr "Código de cliente"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Residual Amount"
+msgstr "Importe residual"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Tax Amount"
+msgstr "Impuesto"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Total Amount"
+msgstr "Importe total"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Untaxed Amount"
+msgstr "Base imponible"
+
+#. module: sd_slghotel_module
+#: view:account.invoice:sd_slghotel_module.inherit_view_invoice_tree
+msgid "Fiscal name"
+msgstr "Nombre fiscal"
+

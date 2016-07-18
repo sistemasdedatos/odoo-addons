@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="report.external_layout_header">
+			<t t-name="report.external_layout_header">
+					<div class="header">
+						<div class="row">
+							<div class="col-xs-8">
+								<img src="/sd_ferretienda_module/static/src/img/logo.png"
+									style="max-height: 90px;" />
+							</div>
+							<div class="col-xs-4">
+								<br/>
+								<div style="font-size:13px; font-family:entypoRegular;">Ferretienda Canarias S.L.</div>
+								<div style="font-size:12px">
+									<span t-esc="'%s ' % company.partner_id.street"/>
+								</div>
+								<div style="font-size:12px">
+									<span t-field="company.partner_id.phone" /> /
+									<span t-field="company.partner_id.email" />
+								</div>
+								<div style="font-size:12px">Santa Cruz de Tenerife</div>
+							</div>
+						</div>
+					</div>
+				</t>
+		</template>
+	</data>
+</openerp>

@@ -1,0 +1,10 @@
+/__init__.pyc
+/account_statement.pyc
+/pos_details.pyc
+/pos_invoice.pyc
+/pos_lines.pyc
+/pos_order_report.pyc
+/pos_payment_report.pyc
+/pos_receipt.pyc
+/pos_report.pyc
+/pos_users_product.pyc

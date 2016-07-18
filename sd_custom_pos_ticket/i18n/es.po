@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_custom_pos_ticket
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-30 13:31+0000\n"
+"PO-Revision-Date: 2015-11-30 13:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "% descuento"
+msgstr "% descuento"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "(EUR)"
+msgstr "(EUR)"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "---------------------------------"
+msgstr "---------------------------------"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "---------------------------------------"
+msgstr "---------------------------------------"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "> Con un"
+msgstr "> Con un"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Address:"
+msgstr "Dirección:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Amount"
+msgstr "Importe"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Base"
+msgstr "Base imponible"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Base imponible"
+msgstr "Base imponible"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Cambio"
+msgstr "Cambio"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Comercial name:"
+msgstr "Nombre comercial:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Comment:"
+msgstr "Comentario:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Customer Code:"
+msgstr "Código de cliente"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Customer data"
+msgstr "Datos de cliente"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Date invoice:"
+msgstr "Fecha de factura:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Datos del cliente"
+msgstr "Datos del cliente"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Descuento"
+msgstr "Descuento"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Factura"
+msgstr "Factura"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Factura simplificada"
+msgstr "Factura simplificada"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Fiscal name:"
+msgstr "Nombre fiscal:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Importe"
+msgstr "Importe"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Impuesto"
+msgstr "Impuesto"
+
+#. module: sd_custom_pos_ticket
+#: model:ir.actions.report.xml,name:sd_custom_pos_ticket.invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "NIF:"
+msgstr "NIF:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Nif:"
+msgstr "Nif:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Nombre:"
+msgstr "Nombre:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Origin:"
+msgstr "Origen:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Precio:"
+msgstr "Precio:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Teléfono:"
+msgstr "Teléfono:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Tienda:"
+msgstr "Tienda:"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Total"
+msgstr "Total"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Total Without Taxes"
+msgstr "Base imponible"
+
+#. module: sd_custom_pos_ticket
+#: view:website:sd_custom_pos_ticket.sd_ticket_invoice_document
+msgid "Unit Price"
+msgstr "Precio unidad"
+
+#. module: sd_custom_pos_ticket
+#: view:website:point_of_sale.report_receipt
+msgid "Vendedor:"
+msgstr "Vendedor:"
+

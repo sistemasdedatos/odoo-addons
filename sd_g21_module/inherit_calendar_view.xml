@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>	
+		<record model="ir.ui.view" id="inherit_view_calendar_event_calendar">
+	        <field name="name">Meetings Calendar</field>
+	        <field name="model">calendar.event</field>
+   			<field name="inherit_id" ref="calendar.view_calendar_event_calendar" />
+	        <field name="arch" type="xml">
+	        	<xpath expr="//calendar" position="inside">
+	        		<field name="company"/>
+	        	</xpath>
+	        	<xpath expr="//calendar" position="attributes">
+		            <attribute name="display">[name] "[company]"</attribute>
+		        </xpath>
+	        </field>
+	    </record>
+	    <record model="ir.ui.view" id="inherit_view_calendar_event_form">
+        	<field name="name">Calendar - Event Form</field>
+        	<field name="model">calendar.event</field>
+        	<field name="inherit_id" ref="calendar.view_calendar_event_form" />
+        	<field name="arch" type="xml">
+	        	<xpath expr="//field[@name='location']" position="after">
+	        		<field name="company" string="Compañía"/>
+	        	</xpath>
+	        </field>
+	    </record>
+	</data>
+</openerp>

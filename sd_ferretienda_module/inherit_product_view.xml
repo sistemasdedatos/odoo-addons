@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="sd_product_template_form_view" model="ir.ui.view">
+            <field name="name">sd.product.template.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                	<field name='seller_code' string="Referencia proveedor"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="sd_product_template_search_view" model="ir.ui.view">
+        	<field name="name">sd.product.template.search.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+            	<field name="name" position="replace">
+            		<field name="name" string="Product" filter_domain="['|','|','|',('ean13','=',self),('default_code','ilike',self),('name','ilike',self),('seller_code','=',self)]"/>
+            	</field>
+        	</field>
+        </record>
+	</data>
+</openerp>
