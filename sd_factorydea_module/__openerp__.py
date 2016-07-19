@@ -18,3 +18,32 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+{
+    'name' : 'SDatos FactorYdea',
+    'version' : '0.1',
+    'author' : 'Sistemas de Datos',
+    'maintainer': 'Sistemas de Datos',
+    'category' : 'Interface',
+    'summary': 'Custom reports for clients',
+    'description' : """
+FactorYdea Module
+=================
+
+Module that modifies the program interface and the reports to G21 consulting
+----------------------------------------------------------------------------
+* EDIT Header
+* EDIT Footer
+* EDIT Report invoice 
+* EDIT Repor sale order
+    """,
+    'website': 'http://www.sdatos.com',
+    # End General Data
+    'depends' : ['report'],
+    'data': ['report/inherit_footer.xml',
+             'report/inherit_header.xml',
+             'report/inherit_invoice.xml',
+             'report/inherit_saleorder.xml'],                
+    'installable': True,
+    'auto_install': False,        
+    'application': False,
+}
