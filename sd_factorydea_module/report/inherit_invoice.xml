@@ -46,7 +46,7 @@
 							</span>
 							<span t-if="o.name">
 								<br>
-									Description:
+									Descripción:
 									<span t-field="o.name"/>
 								</br>
 							</span>
@@ -58,7 +58,7 @@
 					</div>
 					<div class="col-xs-pull-11">
 						<strong>
-							Datos del cliente
+							Datos de cliente
 							<br/>
 						</strong>
 						<span t-if="o.partner_id.comercial">
@@ -66,22 +66,22 @@
 							<span t-field="o.partner_id.comercial"/>
 							<br/>
 						</span>
-						<span t-if="o.partner_id.vat">
-							<strong>NIF: </strong>
-							<span t-field="o.partner_id.vat"/>
-							<br/>
-						</span>
 						<span t-if="o.partner_id.name">
 							<strong>Nombre fiscal: </strong>
 							<span t-field="o.partner_id.name"/>
 							<br/>
 						</span>
+						<span t-if="o.partner_id.vat">
+							<strong>NIF: </strong>
+							<span t-field="o.partner_id.vat"/>
+							<br/>
+						</span>
 						<span t-if="o.partner_id.street">
 							<strong>Dirección: </strong>
-							<span t-esc="'%s, ' % o.partner_id.street"/>
-							<span t-esc="'CP: %s, ' % o.partner_id.zip"/>
-							<span t-esc="'%s, ' % o.partner_id.city"/>
-							<span t-esc="'%s' % o.partner_id.country_id.name"/>
+							<span t-if="o.partner_id.street"><span t-esc="'%s, ' % o.partner_id.street"/></span>
+							<span t-if="o.partner_id.zip"><span t-esc="'CP: %s, ' % o.partner_id.zip"/></span>
+							<span t-if="o.partner_id.city"><span t-esc="'%s, ' % o.partner_id.city"/></span>
+							<span t-if="o.partner_id.country_id.name"><span t-esc="'%s' % o.partner_id.country_id.name"/></span>
 							<br/>
 						</span>
 						<span t-if="o.partner_id.phone">
@@ -91,53 +91,53 @@
 					</div>
 				</div>
 			</xpath>
-
-			<xpath expr="//div/div[@class='row mt32 mb32']" position="replace"/>
-
-			<xpath expr="//div/h2" position="replace"/>
-
-			<xpath expr="//div/table[@class='table table-condensed']" position="replace">
-				<table class="table table-condensed" style="font-size:12px">
+			
+			<xpath expr="//div[@class='page']/table[@class='table table-condensed']" position="replace">
+				<table class="table table-condensed">
 	                <thead>
 	                    <tr>
 	                        <th class="col-xs-4">Description</th>
-	                        <th class="col-xs-2 text-right">Quantity</th>
-	                        <th class="col-xs-2 text-right">Unit Price</th>
-	                        <th class="col-xs-2 text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
-	                        <th class="col-xs-2 text-right">Amount</th>
+	                        <th class="col-xs-1">Quantity</th>
+	                        <th class="text-right col-xs-2">Unit Price</th>
+	                        <th class="text-right col-xs-2" groups="sale.group_discount_per_so_line">Discount (%)</th>
+	                        <th class="text-right col-xs-1">Taxes</th>
+	                        <th class="text-right col-xs-2">Amount</th>
 	                    </tr>
 	                </thead>
-	                <tbody class="invoice_tbody">
-	                    <tr t-foreach="o.invoice_line" t-as="l">
+                	<tbody class="invoice_tbody">
+                    	<tr t-foreach="o.invoice_line" t-as="l">
 	                        <td class="col-xs-4"><span t-field="l.name"/></td>
-	                        <td class="col-xs-2 text-right">
+	                        <td class="col-xs-1">
 	                            <span t-field="l.quantity"/>
 	                            <span t-field="l.uos_id"  groups="product.group_uom"/>
 	                        </td>
-	                        <td class="col-xs-2 text-right">
+	                        <td class="text-right col-xs-2">
 	                            <span t-field="l.price_unit"/>
 	                        </td>
-	                        <td class="col-xs-2 text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
-	                        <td class="col-xs-2 text-right">
+	                        <td class="text-right col-xs-2" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+	                        <td class="text-right col-xs-1">
+	                            <span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/>
+	                        </td>
+	                        <td class="text-right col-xs-2">
 	                            <span t-field="l.price_subtotal" 
 	                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
 	                        </td>
 	                    </tr>
 	                </tbody>
-            	</table>
+	            </table>
+			
 			</xpath>
 
-			<xpath expr="//div/div[@class='col-xs-4 pull-right']" position="replace">
-				<div class="col-xs-4 pull-right" style="font-size:12px">
-                    <table class="table table-condensed">
-                        <tr class="border-black">
-                            <td><strong>Total</strong></td>
-                            <td class="text-right">
-                                 <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+			<xpath expr="//div/div[@class='row mt32 mb32']" position="replace"/>
+
+			<xpath expr="//div/h2" position="replace"/>
+
+			<xpath expr="//div/table[@class='table table-condensed']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
+			</xpath>
+
+			<xpath expr="//div/div[@class='col-xs-4 pull-right']" position="attributes">
+				<attribute name="style">font-size:12px</attribute>
 			</xpath>
 
 			<xpath expr="//div/div[@class='col-xs-6']" position="attributes">
@@ -155,6 +155,7 @@
 			<xpath expr="//div/p[@t-if='o.fiscal_position.note']" position="attributes">
 				<attribute name="style">font-size:12px</attribute>
 			</xpath>
+
 		</template>
 	</data>
 </openerp>

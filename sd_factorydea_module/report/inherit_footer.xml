@@ -7,7 +7,6 @@
         			<div class="text-center" style="border-top: 1px solid black;">
             			<ul class="list-inline" t-if="not company.custom_footer">
             				<li>
-	            				Numero de cuenta Banco Sabadell - ES60 0081 0625 4400 0140 4649
             				</li>
 			            </ul>
 
