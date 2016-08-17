@@ -35,9 +35,11 @@ Module that sincronize Office 365 calendar with Odoo calendar
     """,
     'website': 'http://www.sdatos.com',
     # End General Data
-    'depends' : ['base'],
+    'depends' : ['base',
+                 'mail'],
     'external_dependencies': {'python': ['O365']},
-    'data': [],
+    'data': ['security/ir.model.access.csv',
+             'views/sd_config_view.xml'],
     'installable': True,
     'auto_install': False,        
     'application': False,

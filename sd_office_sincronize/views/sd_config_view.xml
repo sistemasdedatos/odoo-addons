@@ -7,27 +7,48 @@
 			<field name="arch" type="xml">
 				<form string="Office configuration">
 					<sheet>
+						<div class="oe_title">
+                        	<h1>
+                        		<label string="Office Configuration Account"/>
+							</h1>
+						</div>
+						<field name="same_user" invisible="True"/>
 						<group>
 							<group>
-								<field name="name"/>
-								<field name="passwd"/>
+								<field name="name" attrs="{'readonly': [('same_user', '!=', True)]}"/> 
+								<field name="passwd" password="True" attrs="{'readonly': [('same_user', '!=', True)]}"/>
 							</group>
 							<group>
-			                    <field name="res_user_id" />
+			                    <field name="create_uid" string="User" readonly="True"/>
 			                    <field name="confirmed"/>
 		                    </group>
+	                    </group>
+	                    <group>
+	                    	<button name="test_confirm" type="object" attrs="{'invisible': [('confirmed', '=', True)]}" string="Confirm"/>
 	                    </group>
 					</sheet>
 				</form>
 			</field>
 		</record> 
+		
+<!-- 		<record id="view_sd_office_config_form_inherit" model="ir.ui.view">
+			<field name="name">view.office_config.form.inherit</field>
+			<field name="model">sd.office.config</field>
+			<field name="inherit_id" ref="sd_office_sincronize.view_sd_office_config_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                	<attribute name="edit" eval="0"></attribute> 
+                </xpath>
+           	</field>
+       	</record> -->
+			
 		<record id="view_sd_office_config_tree" model="ir.ui.view">
 			<field name="name">view.office_config.tree</field>
 			<field name="model">sd.office.config</field>
 			<field name="arch" type="xml">
-				<tree string="Ftp configuration">
+				<tree string="Office Configuration">
 					<field name="name"/>
-                    <field name="res_user_id"/>
+                    <field name="create_uid" string="User"/>
                     <field name="write_date"/>
                     <field name="confirmed"/>
                 </tree>
@@ -42,6 +63,8 @@
             <field name="view_id" ref="view_sd_office_config_tree"/>
         </record>
         
-    	<!-- <menuitem action="sd_office_config" id="sd_office_config_menu" name="Office Configuration" parent="base.menu_ir_property" sequence="40"/> -->   
+        <menuitem id="sd_office_menu" name="Office" parent="mail.mail_feeds_main" sequence="40"/>
+    	<menuitem action="sd_office_config" id="sd_office_config_menu" name="Office Configuration" parent="sd_office_sincronize.sd_office_menu" sequence="40"/>
+    	
     </data>
 </openerp>
