@@ -2,6 +2,8 @@ from O365 import *
 from openerp import models, fields, api
 from openerp.exceptions import Warning 
 from openerp.tools.translate import _
+import html2text
+from matplotlib.cbook import Null
 
 class sd_office_config (models.Model):
     '''Clase encargada de la configuracion de las cuentas de office'''
@@ -78,7 +80,7 @@ class sd_office_sync (models.TransientModel):
         partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
         office_events = self.get_office_events ()
         odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
-
+ 
         if context['DirSync'] == 'ToOdoo':
             for event in office_events:
                 if self.check_odoo_event (office_event = event):
@@ -113,6 +115,8 @@ class sd_office_sync (models.TransientModel):
             out = {}
             out = event.fullcalendarioJson()
             out['description'] = event.getBody()
+            h = html2text.HTML2Text ()
+            out['description'] = h.handle (out['description'])
             out['attendees'] = event.getAttendees()
             out['location'] = event.json['Location']['DisplayName']
             out['reminder'] = event.json['Reminder']
@@ -126,44 +130,76 @@ class sd_office_sync (models.TransientModel):
     
     def check_odoo_event (self, office_event):
         '''comprobar que el evento a crear no esta previamente creado en Odoo'''
-        partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
-        same_event = self.env['calendar.event'].search ([('start', '>=', office_event['start']), ('stop', '<=', office_event['end']), ('partner_ids', 'child_of', partner_id)])
-        if len(same_event) != 0:
-            return False
-        return True
+        try:
+            partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
+            same_event = self.env['calendar.event'].search ([('start', '>=', office_event['start']), ('stop', '<=', office_event['end']), ('partner_ids', 'child_of', partner_id)])
+            if len(same_event) != 0:
+                return False
+            return True
+        except:
+            raise Warning (_("Error to check repeat odoo event, contact with your administrator system"))
     
     def check_office_event (self, odoo_event, events_office):
         '''comprobar que el evento a crear no esta previamente creado en Office'''
-        for office_event in events_office:
-            if office_event['title'] == odoo_event.name and office_event['start'] == odoo_event.start and office_event['end'] == odoo_event.stop:
-                return False
-        return True
+        try:
+            for office_event in events_office:
+                if office_event['title'] == odoo_event.name and office_event['start'] == odoo_event.start and office_event['end'] == odoo_event.stop:
+                    return False
+            return True
+        except:
+            raise Warning (_("Error to check repeat office event, contact with your administrator system"))
     
     def create_event (self, office_event):
         '''crear cada evento en odoo'''
-        event_create = self.env['calendar.event'].create ({'name': office_event['title'],
-                                                           'start': office_event['start'],
-                                                           'stop': office_event['end'],
-                                                            })
-        if office_event['IsAllDay'] == True:
-            event_create.write ({'allday': 1,
-                                 'start_date': office_event['start'][0:10],
-                                 'stop_date': office_event['end'][0:10]})
-        else:
-            event_create.write ({'allday': 0,
-                                 'start_datetime': office_event['start'],
-                                 'stop_datetime': office_event['end']})
-        if len (office_event['location']) != 0:
-            event_create.write ({'location': office_event['location']})
-        if len (office_event['description']) != 0:
-            event_create.write ({'description': office_event['description']})
-        if office_event['reminder'] in [15, 30, 60, 120, 1440]:
-            event_create.write ({'alarm_ids': [(6, 0, [self.env['calendar.alarm'].search ([('duration_minutes', '=', office_event['reminder'])]).id])]})
-        return True
+        try:
+            event_create = self.env['calendar.event'].create ({'name': office_event['title'],
+                                                               'start': office_event['start'],
+                                                               'stop': office_event['end'],
+                                                               'categ_ids': [(6, 0, [self.env['calendar.event.type'].search ([('name', '=', 'Office Sync')]).id])]})
+            if office_event['IsAllDay'] == True:
+                event_create.write ({'allday': 1,
+                                     'start_date': office_event['start'][0:10],
+                                     'stop_date': office_event['end'][0:10]})
+            else:
+                event_create.write ({'allday': 0,
+                                     'start_datetime': office_event['start'],
+                                     'stop_datetime': office_event['end']})
+            if len (office_event['location']) != 0:
+                event_create.write ({'location': office_event['location']})
+            if len (office_event['description']) != 0:
+                event_create.write ({'description': office_event['description']})
+            if office_event['reminder'] in [15, 30, 60, 120, 1440]:
+                event_create.write ({'alarm_ids': [(6, 0, [self.env['calendar.alarm'].search ([('duration_minutes', '=', office_event['reminder'])]).id])]})
+            return True
+        except:
+            raise Warning (_("Error to create Odoo events, contact with your administrator system"))
     
     def send_to_office (self, odoo_event):
         '''Escribir eventos en office'''
-        print "send to office"
-        return True
+        schedule = Schedule((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
+        try:
+            result = schedule.getCalendars ()
+        except:
+            raise Warning (_('Login failed for', self.sd_office_config_id.name))
+    
+        try:
+            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
+        #    at = ev.setAttendee({"EmailAddress":{"Address":"mfernandez@sdatos.es","Name":"Cesar Toledo"}})    #asistentes
+            if len (odoo_event.description) != 0:
+                ev.json['Body'] = {"Content": odoo_event.description}            #Contenido
+            if odoo_event.location:
+                ev.json['Location'] = {"DisplayName": odoo_event.location}        #Lugar
+            if odoo_event.allday:
+                ev.json['IsAllDay'] = True
+            if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids.type == "notification":
+                ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                        #Recordatorio
+            ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                    #Inicio
+            ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')                    #Fin
+            ev.setSubject (odoo_event.name)                            #Asunto
+            ev = ev.create (schedule.calendars[0])
+            return True
+        except:
+            raise Warning (_("Error to send odoo event %s to office calendar" % odoo_event.name))
+            
     
     
