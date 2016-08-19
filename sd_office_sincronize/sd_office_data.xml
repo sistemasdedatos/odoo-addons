@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+    	<record model="calendar.event.type" id="categ_office1">
+            <field name="name">Office Sync</field>
+        </record>
+    </data>
+</openerp>
