@@ -3,3 +3,7 @@ sd_office_config_access_u,sd_office_config user,model_sd_office_config,base.grou
 sd_office_config_access_m,sd_office_config manager,model_sd_office_config,base.group_sale_manager,1,1,1,1
 sd_office_config_access_settings_u,sd_office_config user,model_sd_office_config,base.group_sale_salesman,1,1,1,0
 sd_office_config_access_settings_m,sd_office_config manager,model_sd_office_config,base.group_sale_manager,1,1,1,1
+sd_office_sync_access_u,sd_office_sync user,model_sd_office_sync,base.group_sale_salesman,1,0,0,0
+sd_office_sync_access_m,sd_office_sync manager,model_sd_office_sync,base.group_sale_manager,1,1,1,1
+sd_office_sync_access_settings_u,sd_office_sync user,model_sd_office_sync,base.group_sale_salesman,1,1,1,0
+sd_office_sync_access_settings_m,sd_office_sync manager,model_sd_office_sync,base.group_sale_manager,1,1,1,1
