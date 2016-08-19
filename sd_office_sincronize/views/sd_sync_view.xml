@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	<record id="view_sd_office_sync_form" model="ir.ui.view">
+			<field name="name">view.office.sync.form</field>
+			<field name="model">sd.office.sync</field>
+			<field name="arch" type="xml">
+				<form string="Office configuration">
+					<sheet>
+						<div class="oe_title">
+                        	<h1>
+                        		<label string="Office Sync"/>
+							</h1>
+						</div>
+						<group/>
+						<group>
+							<field name="sd_office_config_id"/>
+						</group>
+						<group>
+							<group>
+								<field name="date_init"/>
+							</group>
+							<group>
+								<field name="date_end"/>
+							</group>
+						</group>
+					</sheet>
+					<div>
+						<button name="sync_events" type="object" string="Office -> Odoo" context="{'DirSync': 'ToOdoo'}"/>
+						<button name="sync_events" type="object" string="Odoo -> Office" context="{'DirSync': 'ToOffice'}"/>
+					</div>
+				</form>
+        	</field>
+        </record>
+        
+        <record id="sd_office_sync" model="ir.actions.act_window">
+            <field name="name">Office Sync</field>
+            <field name="view_type">form</field>
+            <field name="res_model">sd.office.sync</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name='auto_refresh'>1</field>
+            <field name="view_id" ref="view_sd_office_sync_form"/>
+        </record>
+        
+    	<menuitem action="sd_office_sync" id="sd_office_sync_menu" name="Office Sync" parent="sd_office_sincronize.sd_office_menu" sequence="2"/>
+    	
+    </data>
+</openerp>
