@@ -3,6 +3,7 @@ from openerp.exceptions import Warning
 from openerp.tools.translate import _
 import time
 import datetime
+import openerp.addons.decimal_precision as dp
 
 class sd_cash_count (models.TransientModel):
     _name = "sd.cash.count"
@@ -76,18 +77,18 @@ class sd_cash_count (models.TransientModel):
 class sd_cash_count_lines (models.TransientModel):
     _name = "sd.cash.count.lines"
      
-    name = fields.Char (string = "Session")                                 #nombre sesion
-    date_start = fields.Datetime (string = "Opened")                        #fecha apertura
-    date_close = fields.Datetime (string = "Closed")                        #fecha cierre
-    open_amount = fields.Float (string = "Open amount")                     #Saldo de apertura
-    cash_sales = fields.Float (string = "Cash sales")                       #Ventas en efectivo
-    total_cash_sales = fields.Float (string = "Cash sales + open")          #Ventas en efectivo + apertura
-    card_sales = fields.Float (string = "Card sales")                       #Ventas con tarjeta
-    total_sales = fields.Float (string = "Total sales")                     #Ventas en efectivo + tarjeta
-    entry = fields.Float (string = "Entry")                                 #Ingresos
-    take_out = fields.Float (string = "Take Out")                           #Retirada
-    teorical_amount = fields.Float (string = "Teorical Amount")             #Saldo teorico de cierre
-    real_amount = fields.Float (string = "Real Amount")                     #Saldo real al cierre
+    name = fields.Char (string = "Session")                                                                     #nombre sesion
+    date_start = fields.Datetime (string = "Opened")                                                            #fecha apertura
+    date_close = fields.Datetime (string = "Closed")                                                            #fecha cierre
+    open_amount = fields.Float (string = "Open amount", digits=dp.get_precision('Account'))                     #Saldo de apertura
+    cash_sales = fields.Float (string = "Cash sales", digits=dp.get_precision('Account'))                       #Ventas en efectivo
+    total_cash_sales = fields.Float (string = "Cash sales + open", digits=dp.get_precision('Account'))          #Ventas en efectivo + apertura
+    card_sales = fields.Float (string = "Card sales", digits=dp.get_precision('Account'))                       #Ventas con tarjeta
+    total_sales = fields.Float (string = "Total sales", digits=dp.get_precision('Account'))                     #Ventas en efectivo + tarjeta
+    entry = fields.Float (string = "Entry", digits=dp.get_precision('Account'))                                 #Ingresos
+    take_out = fields.Float (string = "Take Out", digits=dp.get_precision('Account'))                           #Retirada
+    teorical_amount = fields.Float (string = "Teorical Amount", digits=dp.get_precision('Account'))             #Saldo teorico de cierre
+    real_amount = fields.Float (string = "Real Amount", digits=dp.get_precision('Account'))                     #Saldo real al cierre
     sd_cash_count_id = fields.Many2one ('sd.cash.count', string = 'Cash count', ondelete='cascade', readonly = True)
     
     

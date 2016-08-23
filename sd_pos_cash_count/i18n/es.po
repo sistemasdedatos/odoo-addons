@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-23 10:24+0000\n"
-"PO-Revision-Date: 2016-08-23 10:24+0000\n"
+"POT-Creation-Date: 2016-08-23 12:05+0000\n"
+"PO-Revision-Date: 2016-08-23 12:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "Efectivo + Saldo inicial:"
 #. module: sd_pos_cash_count
 #: view:website:sd_pos_cash_count.sd_cash_count_report_document
 msgid "Cash Sales:"
-msgstr "Ventas de efectivo:"
+msgstr "Ventas de Efectivo:"
 
 #. module: sd_pos_cash_count
 #: field:sd.cash.count.lines,sd_cash_count_id:0
@@ -248,7 +248,7 @@ msgstr "Para imprimir un mes en particular, seleccionar desde el día 01 hasta e
 #. module: sd_pos_cash_count
 #: view:website:sd_pos_cash_count.sd_cash_count_report_document
 msgid "Total Sales:"
-msgstr "Total Sales:"
+msgstr "Total vendido:"
 
 #. module: sd_pos_cash_count
 #: field:sd.cash.count.lines,total_sales:0
