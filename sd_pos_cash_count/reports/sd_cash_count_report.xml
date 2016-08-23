@@ -41,18 +41,18 @@
 								</tr>
 								<tr>
 									<td></td>
-									<td>Card Sales: <span t-field="l.card_sales"/></td>
-									<td>Total Sales: <span t-field="l.total_sales"/></td>
+									<td>Card Sales: <span t-field="l.card_sales"/>€</td>
+									<td>Total Sales: <span t-field="l.total_sales"/>€</td>
 								</tr>
 								<tr>
 									<td></td>
-									<td>Entry: <span t-field="l.entry"/></td>
-									<td>Take out: <span t-field="l.take_out"/></td>
+									<td>Entry: <t t-if="l.entry"><span t-field="l.entry"/>€</t></td>
+									<td>Take out: <t t-if="l.take_out"><span t-field="l.take_out"/>€</t></td>
 								</tr>
 								<tr>
 									<th></th>
-									<th>Teorical Amount: <span t-field="l.teorical_amount"/></th>
-									<th>Real Amount: <span t-field="l.real_amount"/></th>
+									<th>Teorical Amount: <span t-field="l.teorical_amount"/>€</th>
+									<th>Real Amount: <span t-field="l.real_amount"/>€</th>
 								</tr>
 							</tbody>
 						</table>
