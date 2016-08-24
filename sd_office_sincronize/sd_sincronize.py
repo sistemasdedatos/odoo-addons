@@ -4,6 +4,8 @@ from openerp.exceptions import Warning
 from openerp.tools.translate import _
 import html2text
 from matplotlib.cbook import Null
+import datetime
+import time
 
 class sd_office_config (models.Model):
     '''Clase encargada de la configuracion de las cuentas de office'''
@@ -15,16 +17,24 @@ class sd_office_config (models.Model):
     confirmed = fields.Boolean (string = "Confirmed", compute = 'set_confirmed', store = True)
     same_user = fields.Boolean (compute = 'uid_like_createuid')                         #comprobar que el usuario es el mismo que creo el elemento
     
-#     @api.model
-#     def create (self, values):
-#         res = super (sd_office_config, self).create (values)
-#         print self.create_uid
-#         print res.create_uid
-#         if (res.create_uid):
-#             uid_create = super (sd_office_config, self).search ([('create_uid', '=', res.create_uid.id)]).read(['name'])
-#             if len (uid_create) != 0:
-#                 raise Warning (_("This user has a Office account created: %s, please edit this account" % uid_create[0]['name']))
-#         return res
+    @api.model
+    def create (self, values):
+        uid_create = super (sd_office_config, self).search ([('create_uid', '=', self._uid)]).read(['name'])
+        if len (uid_create) != 0:
+            raise Warning (_("This user has a Office account created: %s, please edit this account" % uid_create[0]['name']))
+        return super (sd_office_config, self).create (values)
+    
+    @api.multi
+    def unlink (self):
+        groups = self.env.ref ('sd_office_sincronize.sd_office_manager_group').read (['users'])[0]['users']
+        res = []
+        for i in self:
+            same_user = i._uid == i.create_uid.id
+            if (not same_user) and (self._uid not in groups):
+                raise Warning (_("You can't delete an account that you have not created by you"))
+            else:
+                super (sd_office_config, i).unlink ()
+        return super (sd_office_config, self).unlink ()
     
     @api.depends ('name','passwd')
     def set_confirmed (self):           #si se cambia la cuenta o la contrasenia se quita la confirmacion
@@ -56,18 +66,28 @@ class sd_office_sync (models.TransientModel):
     '''Clase para sincronizar con outlook'''
     
     _name = 'sd.office.sync'
-    _transient_max_hours = 0.2
     
     @api.model
     def set_config_id (self):
         config_id = self.env['sd.office.config'].search ([('create_uid', '=', self._uid)])
         if config_id:
-                return config_id[0].id
+            return config_id[0].id
         return False
     
+    @api.multi
+    def set_date_init (self):
+        return time.strftime('%Y-%m-%d')
+    
+    @api.multi
+    def set_date_end (self):
+        def last_day_of_month (any_day):
+            next_month = any_day.replace (day=28) + datetime.timedelta (days=4)  # this will never fail
+            return next_month - datetime.timedelta (days = next_month.day)
+        return last_day_of_month (datetime.date (int (time.strftime ('%Y')), int (time.strftime ('%m')), 1))
+    
     sd_office_config_id = fields.Many2one ('sd.office.config', string = "Account", default = set_config_id, readonly = True)
-    date_init = fields.Date (string = "Initial Date", required = True)
-    date_end = fields.Date (string = "End Date", required = True)
+    date_init = fields.Date (string = "Initial Date", default = set_date_init, required = True)
+    date_end = fields.Date (string = "End Date", default = set_date_end, required = True)
     
     @api.multi
     def sync_events (self, context = False):
@@ -185,18 +205,21 @@ class sd_office_sync (models.TransientModel):
         try:
             ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
         #    at = ev.setAttendee({"EmailAddress":{"Address":"mfernandez@sdatos.es","Name":"Cesar Toledo"}})    #asistentes
-            if len (odoo_event.description) != 0:
-                ev.json['Body'] = {"Content": odoo_event.description}            #Contenido
+            if odoo_event.description:
+                ev.json['Body'] = {"Content": odoo_event.description}                                           #Contenido
             if odoo_event.location:
-                ev.json['Location'] = {"DisplayName": odoo_event.location}        #Lugar
+                ev.json['Location'] = {"DisplayName": odoo_event.location}                                      #Lugar
             if odoo_event.allday:
                 ev.json['IsAllDay'] = True
+                ev.setEnd (str (datetime.datetime.strptime (odoo_event.stop, '%Y-%m-%d %H:%M:%S') + datetime.timedelta (days = 1)).replace(' ', 'T')+'Z')  #Fin + un dia
+            else:
+                ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')
             if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids.type == "notification":
-                ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                        #Recordatorio
-            ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                    #Inicio
-            ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')                    #Fin
-            ev.setSubject (odoo_event.name)                            #Asunto
+                ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                                  #Recordatorio
+            ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
+            ev.setSubject (odoo_event.name) 
             ev = ev.create (schedule.calendars[0])
+#             print ev.json['End']
             return True
         except:
             raise Warning (_("Error to send odoo event %s to office calendar" % odoo_event.name))

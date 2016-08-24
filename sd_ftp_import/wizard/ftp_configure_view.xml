@@ -3,7 +3,7 @@
     <data>
     
     	<record id="view_sd_ftp_config_form" model="ir.ui.view">
-			<field name="name">view.ftp_config.tree</field>
+			<field name="name">view.ftp_config.form</field>
 			<field name="model">sd.ftp_config</field>
 			<field name="arch" type="xml">
 				<form string="Ftp configuration">

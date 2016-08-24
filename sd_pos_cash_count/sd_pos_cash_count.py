@@ -7,7 +7,7 @@ import openerp.addons.decimal_precision as dp
 
 class sd_cash_count (models.TransientModel):
     _name = "sd.cash.count"
-    
+     
     @api.multi
     def set_user_id (self):
         return self._uid
@@ -94,7 +94,7 @@ class sd_cash_count_lines (models.TransientModel):
     
 class sd_pos_report_cash_count (models.AbstractModel):
     _name = 'report.sd_pos_cash_count.sd_cash_count_report'
-    
+   
     @api.multi
     def render_html(self, data=None):
          

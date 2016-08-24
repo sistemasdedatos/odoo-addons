@@ -67,12 +67,15 @@ class sd_excel_toimport (models.Model):
         
     @api.multi
     def unlink (self):
-        if self.state == '2':
-            raise exceptions.Warning (_("You can't delete a import done"))
-        elif self.state == '1':
-            self.pool.get ('ir.ui.view').browse (self._cr, self._uid, [self.view_ref_id.id]).sudo ().unlink ()
-            self.sd_excel_line_id.sudo ().unlink ()
-        return super (sd_excel_toimport, self).unlink ()
+        res = []
+        for i in self:
+            if i.state == '2':
+                raise exceptions.Warning (_("You can't delete a import done"))
+            elif i.state == '1':
+                i.pool.get ('ir.ui.view').browse (i._cr, i._uid, [i.view_ref_id.id]).sudo ().unlink ()
+                i.sd_excel_line_id.sudo ().unlink ()
+            res.append (super (sd_excel_toimport, i).unlink ())
+        return res
             
     @api.multi
     def button_read (self):

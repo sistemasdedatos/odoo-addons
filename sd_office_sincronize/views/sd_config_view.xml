@@ -63,7 +63,7 @@
             <field name="view_id" ref="view_sd_office_config_tree"/>
         </record>
         
-        <menuitem id="sd_office_menu" name="Office" parent="mail.mail_feeds_main" sequence="40"/>
+        <menuitem id="sd_office_menu" name="Office" parent="mail.mail_feeds_main" sequence="40" groups="sd_office_sincronize.sd_office_manager_group,sd_office_sincronize.sd_office_user_group"/>
     	<menuitem action="sd_office_config" id="sd_office_config_menu" name="Office Configuration" parent="sd_office_sincronize.sd_office_menu" sequence="1"/>
     	
     </data>
