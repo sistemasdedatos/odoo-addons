@@ -1,8 +1,18 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
     	<record model="calendar.event.type" id="categ_office1">
             <field name="name">Office Sync</field>
+        </record>
+        <record id="sd_office_manager_group" model="res.groups">
+            <field name="name">Office Account Manager</field>
+            <field name="category_id" ref="base.module_category_usability"/>
+            <field name="comment">The user can configure office account and delete</field>
+        </record>
+        <record id="sd_office_user_group" model="res.groups">
+            <field name="name">Office Account User</field>
+            <field name="category_id" ref="base.module_category_usability"/>
+            <field name="comment">The user can configure office account only delete your account</field>
         </record>
     </data>
 </openerp>

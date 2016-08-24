@@ -70,9 +70,12 @@ class sd_ftp_import (models.Model):
     
     @api.multi
     def unlink (self):
-        if self.state == '2':
-            raise Warning (_("You can't delete a import done"))
-        return super (sd_ftp_import, self).unlink()
+        res = []
+        for i in self:
+            if i.state == '2':
+                raise Warning (_("You can't delete a import done"))
+            res.append (super (sd_ftp_import, i).unlink ())
+        return res
     
     @api.onchange('name')
     def number_exist (self):
