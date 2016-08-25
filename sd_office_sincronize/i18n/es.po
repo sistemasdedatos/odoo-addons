@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 09:26+0000\n"
-"PO-Revision-Date: 2016-08-24 09:26+0000\n"
+"POT-Creation-Date: 2016-08-25 09:42+0000\n"
+"PO-Revision-Date: 2016-08-25 09:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,34 +55,56 @@ msgid "End Date"
 msgstr "Fecha fin"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:155
+#: code:addons/sd_office_sincronize/sd_sincronize.py:226
+#, python-format
+msgid "Error to Update Odoo events, contact with your administrator system"
+msgstr "Error al actualizar el evento en Odoo, contacte con su administrador de sistemas"
+
+#. module: sd_office_sincronize
+#: code:addons/sd_office_sincronize/sd_sincronize.py:164
 #, python-format
 msgid "Error to check repeat odoo event, contact with your administrator system"
 msgstr "Error al comprobar eventos repetidos, contacte con su administrador de sistema"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:165
+#: code:addons/sd_office_sincronize/sd_sincronize.py:174
 #, python-format
 msgid "Error to check repeat office event, contact with your administrator system"
 msgstr "Error al comprobar eventos repetidos, contacte con su administrador de sistema"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:190
+#: code:addons/sd_office_sincronize/sd_sincronize.py:200
 #, python-format
 msgid "Error to create Odoo events, contact with your administrator system"
 msgstr "Error al crear eventos en Odoo, contacte con su administrador de sistema"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:220
+#: code:addons/sd_office_sincronize/sd_sincronize.py:257
 #, python-format
 msgid "Error to send odoo event %s to office calendar"
 msgstr "Error al enviar el evento %s al calendario de Office"
+
+#. module: sd_office_sincronize
+#: code:addons/sd_office_sincronize/sd_sincronize.py:288
+#, python-format
+msgid "Error to update odoo event %s to office calendar"
+msgstr "Error al actualizar el evento de Odoo %s al calendario de Office"
+
+#. module: sd_office_sincronize
+#: model:ir.model,name:sd_office_sincronize.model_calendar_event
+msgid "Event"
+msgstr "Evento"
 
 #. module: sd_office_sincronize
 #: field:sd.office.config,id:0
 #: field:sd.office.sync,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: sd_office_sincronize
+#: field:calendar.event,office_id:0
+msgid "Id Office"
+msgstr "Id Office"
 
 #. module: sd_office_sincronize
 #: field:sd.office.sync,date_init:0
@@ -108,14 +130,15 @@ msgid "Last Updated on"
 msgstr "Última modificación en"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:122
-#: code:addons/sd_office_sincronize/sd_sincronize.py:198
+#: code:addons/sd_office_sincronize/sd_sincronize.py:130
+#: code:addons/sd_office_sincronize/sd_sincronize.py:234
+#: code:addons/sd_office_sincronize/sd_sincronize.py:265
 #, python-format
 msgid "Login failed for"
 msgstr "Login failed for"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:46
+#: code:addons/sd_office_sincronize/sd_sincronize.py:51
 #, python-format
 msgid "Login failed for %s"
 msgstr "Error de autenticación para %s"
@@ -186,7 +209,7 @@ msgid "Same user"
 msgstr "Mismo usuario"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:92
+#: code:addons/sd_office_sincronize/sd_sincronize.py:97
 #, python-format
 msgid "The Office account is not verified"
 msgstr "La cuenta de Office no ha sido verificada"
@@ -214,15 +237,14 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:31
+#: code:addons/sd_office_sincronize/sd_sincronize.py:34
 #, python-format
 msgid "You can't delete an account that you have not created by you"
 msgstr "No puede eliminar una cuenta que no ha sido creada por usted"
 
 #. module: sd_office_sincronize
-#: code:addons/sd_office_sincronize/sd_sincronize.py:128
+#: code:addons/sd_office_sincronize/sd_sincronize.py:136
 #, python-format
 msgid "failed to fetch events"
 msgstr "Error al obtener los eventos de Office"
-
 

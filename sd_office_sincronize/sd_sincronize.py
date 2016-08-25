@@ -105,11 +105,14 @@ class sd_office_sync (models.TransientModel):
             for event in office_events:
                 if self.check_odoo_event (office_event = event):
                     self.create_event (event)
+                else:
+                    self.update_event(event)
         elif context['DirSync'] == 'ToOffice':
             for event in odoo_events:
                 if self.check_office_event(odoo_event = event, events_office = office_events):
                     self.send_to_office (event)
-        
+                else:
+                    self.update_office (event)
         return True
     
     def check_office_account (self):
@@ -144,6 +147,7 @@ class sd_office_sync (models.TransientModel):
             out['start'] = out['start'].replace ('Z', '')
             out['end'] = out['end'].replace ('T', ' ')
             out['end'] = out['end'].replace ('Z', '')
+            out['id'] = event.json['Id']
             bookings.append (out)
         
         return bookings
@@ -152,7 +156,7 @@ class sd_office_sync (models.TransientModel):
         '''comprobar que el evento a crear no esta previamente creado en Odoo'''
         try:
             partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
-            same_event = self.env['calendar.event'].search ([('start', '>=', office_event['start']), ('stop', '<=', office_event['end']), ('partner_ids', 'child_of', partner_id)])
+            same_event = self.env['calendar.event'].search ([('office_id', '=', office_event['id'])])
             if len(same_event) != 0:
                 return False
             return True
@@ -163,7 +167,7 @@ class sd_office_sync (models.TransientModel):
         '''comprobar que el evento a crear no esta previamente creado en Office'''
         try:
             for office_event in events_office:
-                if office_event['title'] == odoo_event.name and office_event['start'] == odoo_event.start and office_event['end'] == odoo_event.stop:
+                if office_event['id'] == odoo_event.office_id:
                     return False
             return True
         except:
@@ -175,7 +179,8 @@ class sd_office_sync (models.TransientModel):
             event_create = self.env['calendar.event'].create ({'name': office_event['title'],
                                                                'start': office_event['start'],
                                                                'stop': office_event['end'],
-                                                               'categ_ids': [(6, 0, [self.env['calendar.event.type'].search ([('name', '=', 'Office Sync')]).id])]})
+                                                               'categ_ids': [(6, 0, [self.env['calendar.event.type'].search ([('name', '=', 'Office Sync')]).id])],
+                                                               'office_id': office_event['id']})
             if office_event['IsAllDay'] == True:
                 event_create.write ({'allday': 1,
                                      'start_date': office_event['start'][0:10],
@@ -193,6 +198,32 @@ class sd_office_sync (models.TransientModel):
             return True
         except:
             raise Warning (_("Error to create Odoo events, contact with your administrator system"))
+        
+    def update_event (self, office_event):
+        '''Actualizar cada evento en odoo'''
+        try:
+            event_create = self.env['calendar.event'].search ([('office_id', '=', office_event['id'])])
+            event_create.write ({'name': office_event['title'],
+                                 'start': office_event['start'],
+                                 'stop': office_event['end'],
+                                 'categ_ids': [(6, 0, [self.env['calendar.event.type'].search ([('name', '=', 'Office Sync')]).id])]})
+            if office_event['IsAllDay'] == True:
+                event_create.write ({'allday': 1,
+                                     'start_date': office_event['start'][0:10],
+                                     'stop_date': office_event['end'][0:10]})
+            else:
+                event_create.write ({'allday': 0,
+                                     'start_datetime': office_event['start'],
+                                     'stop_datetime': office_event['end']})
+            if len (office_event['location']) != 0:
+                event_create.write ({'location': office_event['location']})
+            if len (office_event['description']) != 0:
+                event_create.write ({'description': office_event['description']})
+            if office_event['reminder'] in [15, 30, 60, 120, 1440]:
+                event_create.write ({'alarm_ids': [(6, 0, [self.env['calendar.alarm'].search ([('duration_minutes', '=', office_event['reminder'])]).id])]})
+            return True
+        except:
+            raise Warning (_("Error to Update Odoo events, contact with your administrator system"))
     
     def send_to_office (self, odoo_event):
         '''Escribir eventos en office'''
@@ -214,15 +245,50 @@ class sd_office_sync (models.TransientModel):
                 ev.setEnd (str (datetime.datetime.strptime (odoo_event.stop, '%Y-%m-%d %H:%M:%S') + datetime.timedelta (days = 1)).replace(' ', 'T')+'Z')  #Fin + un dia
             else:
                 ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')
-            if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids.type == "notification":
+            if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids[0].type == "notification":
+                odoo_event.alarm_ids[0].duration_minutes
                 ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                                  #Recordatorio
             ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
             ev.setSubject (odoo_event.name) 
             ev = ev.create (schedule.calendars[0])
-#             print ev.json['End']
+            odoo_event.office_id = ev.json['Id']
             return True
         except:
             raise Warning (_("Error to send odoo event %s to office calendar" % odoo_event.name))
             
+    def update_office (self, odoo_event):
+        '''Actualizar eventos  en office'''
+        schedule = Schedule((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
+        try:
+            result = schedule.getCalendars ()
+        except:
+            raise Warning (_('Login failed for', self.sd_office_config_id.name))
     
+        try:
+            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
+        #    at = ev.setAttendee({"EmailAddress":{"Address":"mfernandez@sdatos.es","Name":"Cesar Toledo"}})    #asistentes
+            if odoo_event.description:
+                ev.json['Body'] = {"Content": odoo_event.description}                                           #Contenido
+            if odoo_event.location:
+                ev.json['Location'] = {"DisplayName": odoo_event.location}                                      #Lugar
+            if odoo_event.allday:
+                ev.json['IsAllDay'] = True
+                ev.setEnd (str (datetime.datetime.strptime (odoo_event.stop, '%Y-%m-%d %H:%M:%S') + datetime.timedelta (days = 1)).replace(' ', 'T')+'Z')  #Fin + un dia
+            else:
+                ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')
+            if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids[0].type == "notification":
+                odoo_event.alarm_ids[0].duration_minutes
+                ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                                  #Recordatorio
+            ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
+            ev.setSubject (odoo_event.name) 
+            ev.json['Id'] = odoo_event.office_id
+            ev = ev.update ()
+            return True
+        except:
+            raise Warning (_("Error to update odoo event %s to office calendar" % odoo_event.name))
+        
+class calendar_event(models.Model):   
+    _inherit = "calendar.event" 
+    
+    office_id = fields.Char ('Id Office', readonly = True)
     
