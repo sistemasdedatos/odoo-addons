@@ -19,30 +19,25 @@
 #
 ##############################################################################
 {
-    'name' : 'SDatos Office Sincronize',
-    'version' : '0.2',
+    'name' : 'SDatos Office Auto Sync',
+    'version' : '0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
     'summary': 'Sincronize Office calendar',
     'description' : """
-Office Sincronize
-=================
+Office Auto Sincronize
+======================
 
-Module that sync Office 365 calendar with Odoo calendar
--------------------------------------------------------
+Module that automatical sync Office 365 calendar with Odoo calendar
+-------------------------------------------------------------------
 
     """,
     'website': 'http://www.sdatos.com',
     # End General Data
-    'depends' : ['base',
-                 'mail',
-                 'calendar'],
-    'external_dependencies': {'python': ['O365','html2text']},
-    'data': ['sd_office_data.xml',
-             'security/ir.model.access.csv',
-             'views/sd_config_view.xml',
-             'views/sd_sync_view.xml'],
+    'depends' : ['calendar',
+                 'sd_office_sincronize'],
+    'data': ['views/inherit_sync_view.xml'],
     'installable': True,
     'auto_install': False,        
     'application': False,

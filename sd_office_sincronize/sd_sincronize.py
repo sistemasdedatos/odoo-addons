@@ -90,17 +90,17 @@ class sd_office_sync (models.TransientModel):
     date_end = fields.Date (string = "End Date", default = set_date_end, required = True)
     
     @api.multi
-    def sync_events (self, context = False):
+    def sync_events (self, context = False, odoo_events = False):
         '''Conectarse con usuario y contrasaenia al calendario de office y traer los eventos en el json
         Funcion principal con las llamadas a las demas funciones'''
         if not self.check_office_account ():
             raise Warning (_("The Office account is not verified"))
             return False
         
-        partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
         office_events = self.get_office_events ()
-        odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
- 
+        if not odoo_events:
+            partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
+            odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
         if context['DirSync'] == 'ToOdoo':
             for event in office_events:
                 if self.check_odoo_event (office_event = event):
@@ -149,7 +149,6 @@ class sd_office_sync (models.TransientModel):
             out['end'] = out['end'].replace ('Z', '')
             out['id'] = event.json['Id']
             bookings.append (out)
-        
         return bookings
     
     def check_odoo_event (self, office_event):
@@ -244,14 +243,15 @@ class sd_office_sync (models.TransientModel):
                 ev.json['IsAllDay'] = True
                 ev.setEnd (str (datetime.datetime.strptime (odoo_event.stop, '%Y-%m-%d %H:%M:%S') + datetime.timedelta (days = 1)).replace(' ', 'T')+'Z')  #Fin + un dia
             else:
+                ev.json['IsAllDay'] = False
                 ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')
             if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids[0].type == "notification":
                 odoo_event.alarm_ids[0].duration_minutes
                 ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                                  #Recordatorio
             ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
-            ev.setSubject (odoo_event.name) 
+            ev.setSubject (odoo_event.name)
             ev = ev.create (schedule.calendars[0])
-            odoo_event.office_id = ev.json['Id']
+            odoo_event.sudo ().write ({'office_id': ev.json['Id']})
             return True
         except:
             raise Warning (_("Error to send odoo event %s to office calendar" % odoo_event.name))
@@ -266,7 +266,6 @@ class sd_office_sync (models.TransientModel):
     
         try:
             ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
-        #    at = ev.setAttendee({"EmailAddress":{"Address":"mfernandez@sdatos.es","Name":"Cesar Toledo"}})    #asistentes
             if odoo_event.description:
                 ev.json['Body'] = {"Content": odoo_event.description}                                           #Contenido
             if odoo_event.location:
@@ -275,6 +274,7 @@ class sd_office_sync (models.TransientModel):
                 ev.json['IsAllDay'] = True
                 ev.setEnd (str (datetime.datetime.strptime (odoo_event.stop, '%Y-%m-%d %H:%M:%S') + datetime.timedelta (days = 1)).replace(' ', 'T')+'Z')  #Fin + un dia
             else:
+                ev.json['IsAllDay'] = False
                 ev.setEnd (odoo_event.stop.replace(' ', 'T')+'Z')
             if len (odoo_event.alarm_ids) != 0 and odoo_event.alarm_ids[0].type == "notification":
                 odoo_event.alarm_ids[0].duration_minutes
@@ -286,6 +286,22 @@ class sd_office_sync (models.TransientModel):
             return True
         except:
             raise Warning (_("Error to update odoo event %s to office calendar" % odoo_event.name))
+    
+    def delete_office (self, odoo_event):   
+        '''Eliminar eventos  en office'''
+        schedule = Schedule((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
+        try:
+            result = schedule.getCalendars ()
+        except:
+            raise Warning (_('Login failed for', self.sd_office_config_id.name))
+    
+        try:
+            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
+            ev.json['Id'] = odoo_event.office_id
+            ev = ev.delete ()
+            return True
+        except:
+            raise Warning (_("Error to delete odoo event %s to office calendar" % odoo_event.name))
         
 class calendar_event(models.Model):   
     _inherit = "calendar.event" 
