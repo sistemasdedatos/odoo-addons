@@ -64,13 +64,13 @@ msgstr "Error al actualizar el evento en Odoo, contacte con su administrador de 
 #: code:addons/sd_office_sincronize/sd_sincronize.py:164
 #, python-format
 msgid "Error to check repeat odoo event, contact with your administrator system"
-msgstr "Error al comprobar eventos repetidos, contacte con su administrador de sistema"
+msgstr "Error al comprobar eventos odoo repetidos, contacte con su administrador de sistema"
 
 #. module: sd_office_sincronize
 #: code:addons/sd_office_sincronize/sd_sincronize.py:174
 #, python-format
 msgid "Error to check repeat office event, contact with your administrator system"
-msgstr "Error al comprobar eventos repetidos, contacte con su administrador de sistema"
+msgstr "Error al comprobar eventos office repetidos, contacte con su administrador de sistema"
 
 #. module: sd_office_sincronize
 #: code:addons/sd_office_sincronize/sd_sincronize.py:200
