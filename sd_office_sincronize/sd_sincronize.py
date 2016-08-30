@@ -93,26 +93,42 @@ class sd_office_sync (models.TransientModel):
     def sync_events (self, context = False, odoo_events = False):
         '''Conectarse con usuario y contrasaenia al calendario de office y traer los eventos en el json
         Funcion principal con las llamadas a las demas funciones'''
-        if not self.check_office_account ():
-            raise Warning (_("The Office account is not verified"))
-            return False
+        partner_ids = []
+        for i in self.env['res.users'].search ([('partner_id', '!=', False)]):
+            partner_ids.append (i.partner_id.id)
+            
+        if context['DirSync'] == 'ToOffice':
+            if not odoo_events:
+                partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
+                odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
+            print odoo_events
+            for event in odoo_events:
+                for attendee in self.env['calendar.attendee'].search ([('event_id', '=', event.id), ('state', '=', 'accepted'), ('partner_id', 'in', partner_ids)]):
+                    user_id = self.env['res.users'].search ([('partner_id', '=', attendee.partner_id.id)]).id
+                    config_id = self.env['sd.office.config'].search ([('create_uid', '=', user_id), ('confirmed', '=', True)])
+                    if config_id:
+                        self.sd_office_config_id = config_id[0].id
+                        if not self.check_office_account ():
+                            raise Warning (_("The Office account is not verified"))
+                        office_events = self.get_office_events ()
+                        print office_events
+                        if self.check_office_event(odoo_event = event, events_office = office_events, attendee = attendee):
+                            self.send_to_office (event, attendee)
+                            print "sincro att: ", attendee
+                        else:
+                            print config_id
+                            self.update_office (event, attendee)
         
-        office_events = self.get_office_events ()
-        if not odoo_events:
-            partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
-            odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
-        if context['DirSync'] == 'ToOdoo':
+        elif context['DirSync'] == 'ToOdoo':
+            if not self.check_office_account ():
+                raise Warning (_("The Office account is not verified"))
+            office_events = self.get_office_events ()
             for event in office_events:
                 if self.check_odoo_event (office_event = event):
                     self.create_event (event)
                 else:
                     self.update_event(event)
-        elif context['DirSync'] == 'ToOffice':
-            for event in odoo_events:
-                if self.check_office_event(odoo_event = event, events_office = office_events):
-                    self.send_to_office (event)
-                else:
-                    self.update_office (event)
+                            
         return True
     
     def check_office_account (self):
@@ -131,7 +147,10 @@ class sd_office_sync (models.TransientModel):
         bookings = []
         cal = schedule.calendars[0]     #solo se mira el primer calendario encontrado en la cuenta
         try:
-            result = cal.getEvents(start = self.date_init, end = self.date_end)
+            start = datetime.datetime.strptime (self.date_init, '%Y-%m-%d') - datetime.timedelta (days = 1)
+            stop = datetime.datetime.strptime (self.date_end, '%Y-%m-%d') + datetime.timedelta (days = 1)
+            print "inicial: ", self.date_init, " final: ", self.date_end
+            result = cal.getEvents(start = start, end = stop)
         except:
             raise Warning (_('failed to fetch events'))
         for event in cal.events:
@@ -155,19 +174,23 @@ class sd_office_sync (models.TransientModel):
         '''comprobar que el evento a crear no esta previamente creado en Odoo'''
         try:
             partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
-            same_event = self.env['calendar.event'].search ([('office_id', '=', office_event['id'])])
+            same_event = self.env['calendar.attendee'].search ([('partner_id', '=', partner_id), ('office_id', '=', office_event['id'])])
             if len(same_event) != 0:
+                print "repetido en odoo"
                 return False
+            print "no repetido en odoo"
             return True
         except:
             raise Warning (_("Error to check repeat odoo event, contact with your administrator system"))
     
-    def check_office_event (self, odoo_event, events_office):
+    def check_office_event (self, odoo_event, events_office, attendee):
         '''comprobar que el evento a crear no esta previamente creado en Office'''
         try:
             for office_event in events_office:
-                if office_event['id'] == odoo_event.office_id:
+                if office_event['id'] == attendee.office_id:
+                    print "repetido en office"
                     return False
+            print "no repetido en office"
             return True
         except:
             raise Warning (_("Error to check repeat office event, contact with your administrator system"))
@@ -178,8 +201,8 @@ class sd_office_sync (models.TransientModel):
             event_create = self.env['calendar.event'].create ({'name': office_event['title'],
                                                                'start': office_event['start'],
                                                                'stop': office_event['end'],
-                                                               'categ_ids': [(6, 0, [self.env['calendar.event.type'].search ([('name', '=', 'Office Sync')]).id])],
-                                                               'office_id': office_event['id']})
+                                                               'categ_ids': [(6, 0, [self.env['calendar.event.type'].search ([('name', '=', 'Office Sync')]).id])]})
+#                                                                'office_id': office_event['id']})
             if office_event['IsAllDay'] == True:
                 event_create.write ({'allday': 1,
                                      'start_date': office_event['start'][0:10],
@@ -194,6 +217,9 @@ class sd_office_sync (models.TransientModel):
                 event_create.write ({'description': office_event['description']})
             if office_event['reminder'] in [15, 30, 60, 120, 1440]:
                 event_create.write ({'alarm_ids': [(6, 0, [self.env['calendar.alarm'].search ([('duration_minutes', '=', office_event['reminder'])]).id])]})
+            partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
+            attendee = self.env['calendar.attendee'].search ([('event_id', '=', event_create.id), ('partner_id', '=', partner_id)])
+            attendee.write ({'office_id': office_event['id']})
             return True
         except:
             raise Warning (_("Error to create Odoo events, contact with your administrator system"))
@@ -201,7 +227,8 @@ class sd_office_sync (models.TransientModel):
     def update_event (self, office_event):
         '''Actualizar cada evento en odoo'''
         try:
-            event_create = self.env['calendar.event'].search ([('office_id', '=', office_event['id'])])
+            id_event = self.env['calendar.attendee'].search ([('office_id', '=', office_event['id'])]).event_id
+            event_create = self.env['calendar.event'].browse ([id_event])
             event_create.write ({'name': office_event['title'],
                                  'start': office_event['start'],
                                  'stop': office_event['end'],
@@ -224,7 +251,7 @@ class sd_office_sync (models.TransientModel):
         except:
             raise Warning (_("Error to Update Odoo events, contact with your administrator system"))
     
-    def send_to_office (self, odoo_event):
+    def send_to_office (self, odoo_event, attendee):
         '''Escribir eventos en office'''
         schedule = Schedule((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
         try:
@@ -251,12 +278,14 @@ class sd_office_sync (models.TransientModel):
             ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
             ev.setSubject (odoo_event.name)
             ev = ev.create (schedule.calendars[0])
-            odoo_event.sudo ().write ({'office_id': ev.json['Id']})
+            print ev.json['Id']
+            attendee.sudo ().write ({'office_id': ev.json['Id']})
+            print attendee.office_id
             return True
         except:
             raise Warning (_("Error to send odoo event %s to office calendar" % odoo_event.name))
             
-    def update_office (self, odoo_event):
+    def update_office (self, odoo_event, attendee):
         '''Actualizar eventos  en office'''
         schedule = Schedule((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
         try:
@@ -280,31 +309,45 @@ class sd_office_sync (models.TransientModel):
                 odoo_event.alarm_ids[0].duration_minutes
                 ev.json['Reminder'] = odoo_event.alarm_ids[0].duration_minutes                                  #Recordatorio
             ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
-            ev.setSubject (odoo_event.name) 
-            ev.json['Id'] = odoo_event.office_id
+            ev.setSubject (odoo_event.name)
+            ev.json['Id'] = attendee.office_id
             ev = ev.update ()
             return True
         except:
             raise Warning (_("Error to update odoo event %s to office calendar" % odoo_event.name))
     
-    def delete_office (self, odoo_event):   
+    def delete_office (self, odoo_event, attendees = False):   
         '''Eliminar eventos  en office'''
-        schedule = Schedule((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
-        try:
-            result = schedule.getCalendars ()
-        except:
-            raise Warning (_('Login failed for', self.sd_office_config_id.name))
-    
-        try:
-            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
-            ev.json['Id'] = odoo_event.office_id
-            ev = ev.delete ()
-            return True
-        except:
-            raise Warning (_("Error to delete odoo event %s to office calendar" % odoo_event.name))
+        partner_ids = []
+        for i in self.env['res.users'].search ([('partner_id', '!=', False)]):
+            partner_ids.append (i.partner_id.id)
+        if attendees:
+            print attendees
+            for attendee in attendees.search ([('state', '=', 'accepted'), ('partner_id', 'in', partner_ids)]):
+                print attendee
+                user_id = self.env['res.users'].search ([('partner_id', '=', attendee.partner_id.id)]).id
+                config_id = self.env['sd.office.config'].search ([('create_uid', '=', user_id), ('confirmed', '=', True)])
+                if config_id:
+                    self.sd_office_config_id = config_id[0].id
+                    schedule = Schedule ((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
+                    try:
+                        result = schedule.getCalendars ()
+                    except:
+                        raise Warning (_('Login failed for', self.sd_office_config_id.name))
+                
+                    try:
+                        if len (attendee) > 0:
+                            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
+                            print self.sd_office_config_id.name
+                            print "aqui ", attendee.office_id
+                            ev.json['Id'] = attendee.office_id
+                            ev = ev.delete ()
+                    except:
+                        raise Warning (_("Error to delete odoo event %s to office calendar" % odoo_event.name))
+        return True
         
-class calendar_event(models.Model):   
-    _inherit = "calendar.event" 
+class calendar_attendee (models.Model):   
+    _inherit = "calendar.attendee" 
     
     office_id = fields.Char ('Id Office', readonly = True)
     
