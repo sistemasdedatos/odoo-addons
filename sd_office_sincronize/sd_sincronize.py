@@ -101,7 +101,6 @@ class sd_office_sync (models.TransientModel):
             if not odoo_events:
                 partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
                 odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
-            print odoo_events
             for event in odoo_events:
                 for attendee in self.env['calendar.attendee'].search ([('event_id', '=', event.id), ('state', '=', 'accepted'), ('partner_id', 'in', partner_ids)]):
                     user_id = self.env['res.users'].search ([('partner_id', '=', attendee.partner_id.id)]).id
@@ -111,12 +110,9 @@ class sd_office_sync (models.TransientModel):
                         if not self.check_office_account ():
                             raise Warning (_("The Office account is not verified"))
                         office_events = self.get_office_events ()
-                        print office_events
                         if self.check_office_event(odoo_event = event, events_office = office_events, attendee = attendee):
                             self.send_to_office (event, attendee)
-                            print "sincro att: ", attendee
                         else:
-                            print config_id
                             self.update_office (event, attendee)
         
         elif context['DirSync'] == 'ToOdoo':
@@ -149,7 +145,6 @@ class sd_office_sync (models.TransientModel):
         try:
             start = datetime.datetime.strptime (self.date_init, '%Y-%m-%d') - datetime.timedelta (days = 1)
             stop = datetime.datetime.strptime (self.date_end, '%Y-%m-%d') + datetime.timedelta (days = 1)
-            print "inicial: ", self.date_init, " final: ", self.date_end
             result = cal.getEvents(start = start, end = stop)
         except:
             raise Warning (_('failed to fetch events'))
@@ -176,9 +171,7 @@ class sd_office_sync (models.TransientModel):
             partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
             same_event = self.env['calendar.attendee'].search ([('partner_id', '=', partner_id), ('office_id', '=', office_event['id'])])
             if len(same_event) != 0:
-                print "repetido en odoo"
                 return False
-            print "no repetido en odoo"
             return True
         except:
             raise Warning (_("Error to check repeat odoo event, contact with your administrator system"))
@@ -188,9 +181,7 @@ class sd_office_sync (models.TransientModel):
         try:
             for office_event in events_office:
                 if office_event['id'] == attendee.office_id:
-                    print "repetido en office"
                     return False
-            print "no repetido en office"
             return True
         except:
             raise Warning (_("Error to check repeat office event, contact with your administrator system"))
@@ -278,9 +269,7 @@ class sd_office_sync (models.TransientModel):
             ev.setStart (odoo_event.start.replace(' ', 'T')+'Z')                                                #Inicio
             ev.setSubject (odoo_event.name)
             ev = ev.create (schedule.calendars[0])
-            print ev.json['Id']
             attendee.sudo ().write ({'office_id': ev.json['Id']})
-            print attendee.office_id
             return True
         except:
             raise Warning (_("Error to send odoo event %s to office calendar" % odoo_event.name))
@@ -322,9 +311,7 @@ class sd_office_sync (models.TransientModel):
         for i in self.env['res.users'].search ([('partner_id', '!=', False)]):
             partner_ids.append (i.partner_id.id)
         if attendees:
-            print attendees
             for attendee in attendees.search ([('state', '=', 'accepted'), ('partner_id', 'in', partner_ids)]):
-                print attendee
                 user_id = self.env['res.users'].search ([('partner_id', '=', attendee.partner_id.id)]).id
                 config_id = self.env['sd.office.config'].search ([('create_uid', '=', user_id), ('confirmed', '=', True)])
                 if config_id:
@@ -336,12 +323,9 @@ class sd_office_sync (models.TransientModel):
                         raise Warning (_('Login failed for', self.sd_office_config_id.name))
                 
                     try:
-                        if len (attendee) > 0:
-                            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
-                            print self.sd_office_config_id.name
-                            print "aqui ", attendee.office_id
-                            ev.json['Id'] = attendee.office_id
-                            ev = ev.delete ()
+                        ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
+                        ev.json['Id'] = attendee.office_id
+                        ev = ev.delete ()
                     except:
                         raise Warning (_("Error to delete odoo event %s to office calendar" % odoo_event.name))
         return True
