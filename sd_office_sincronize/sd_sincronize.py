@@ -311,23 +311,24 @@ class sd_office_sync (models.TransientModel):
         for i in self.env['res.users'].search ([('partner_id', '!=', False)]):
             partner_ids.append (i.partner_id.id)
         if attendees:
-            for attendee in attendees.search ([('state', '=', 'accepted'), ('partner_id', 'in', partner_ids)]):
-                user_id = self.env['res.users'].search ([('partner_id', '=', attendee.partner_id.id)]).id
-                config_id = self.env['sd.office.config'].search ([('create_uid', '=', user_id), ('confirmed', '=', True)])
-                if config_id:
-                    self.sd_office_config_id = config_id[0].id
-                    schedule = Schedule ((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
-                    try:
-                        result = schedule.getCalendars ()
-                    except:
-                        raise Warning (_('Login failed for', self.sd_office_config_id.name))
-                
-                    try:
-                        ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
-                        ev.json['Id'] = attendee.office_id
-                        ev = ev.delete ()
-                    except:
-                        raise Warning (_("Error to delete odoo event %s to office calendar" % odoo_event.name))
+            for attendee in attendees:
+                if attendee.state == "accepted" and attendee.partner_id.id in partner_ids:
+                    user_id = self.env['res.users'].search ([('partner_id', '=', attendee.partner_id.id)]).id
+                    config_id = self.env['sd.office.config'].search ([('create_uid', '=', user_id), ('confirmed', '=', True)])
+                    if config_id:
+                        self.sd_office_config_id = config_id[0].id
+                        schedule = Schedule ((self.sd_office_config_id.name, self.sd_office_config_id.passwd))
+                        try:
+                            result = schedule.getCalendars ()
+                        except:
+                            raise Warning (_('Login failed for', self.sd_office_config_id.name))
+                    
+                        try:
+                            ev = Event (auth=(self.sd_office_config_id.name, self.sd_office_config_id.passwd), cal = schedule.calendars[0])
+                            ev.json['Id'] = attendee.office_id
+                            ev = ev.delete ()
+                        except:
+                            raise Warning (_("Error to delete odoo event %s to office calendar" % odoo_event.name))
         return True
         
 class calendar_attendee (models.Model):   

@@ -16,7 +16,6 @@ class calendar_event(models.Model):
     
     @api.multi
     def write (self, val):
-        print val
         if 'start_datetime' in val.keys ():
             self.last_start = self.start
         if 'stop_datetime' in val.keys ():
@@ -34,7 +33,6 @@ class calendar_event(models.Model):
      
     @api.multi
     def unlink (self):
-        print self.attendee_ids
         for i in self:
             office_sync = self.env['sd.office.sync'].create ({'sd_office_config_id': False,
                                                               'date_init': i.start,
