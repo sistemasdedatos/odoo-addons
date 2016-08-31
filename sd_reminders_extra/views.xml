@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="sd_inherit_view_note_note_form">
+		    <field name="model">note.note</field>
+		    <field name="inherit_id" ref="note.view_note_note_form"/>
+		    <field name="arch" type="xml">
+		        <xpath expr="//field[@name='tag_ids']" position="after">
+		        	<field name="date_reminder" class="oe_inline"/>
+		            <field name="reminder_alarm_ids" widget="many2many_tags" attrs="{'readonly':[('date_reminder','=',False)]}" string="Reminders" class="oe_inline"/>
+		        </xpath>
+		    </field>
+		</record>
+	</data>
+</openerp>
