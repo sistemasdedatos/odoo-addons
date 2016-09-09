@@ -62,6 +62,8 @@ class sd_office_config (models.Model):
         
 sd_office_config ()
 
+flag = False        #Bandera para que no vuelva a sincronizar en caso de que estemos trayendo datos desde office
+
 class sd_office_sync (models.TransientModel):
     '''Clase para sincronizar con outlook'''
     
@@ -94,10 +96,11 @@ class sd_office_sync (models.TransientModel):
         '''Conectarse con usuario y contrasaenia al calendario de office y traer los eventos en el json
         Funcion principal con las llamadas a las demas funciones'''
         partner_ids = []
+        global flag
         for i in self.env['res.users'].search ([('partner_id', '!=', False)]):
             partner_ids.append (i.partner_id.id)
             
-        if context['DirSync'] == 'ToOffice':
+        if not flag and context['DirSync'] == 'ToOffice':
             if not odoo_events:
                 partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id        #obtenemos el id de la tabla partner del usuario
                 odoo_events = self.env['calendar.event'].search ([('start', '>=', self.date_init), ('stop', '<=', self.date_end), ('partner_ids', 'child_of', partner_id)])
@@ -189,6 +192,8 @@ class sd_office_sync (models.TransientModel):
     def create_event (self, office_event):
         '''crear cada evento en odoo'''
         try:
+            global flag
+            flag = True
             event_create = self.env['calendar.event'].create ({'name': office_event['title'],
                                                                'start': office_event['start'],
                                                                'stop': office_event['end'],
@@ -197,7 +202,8 @@ class sd_office_sync (models.TransientModel):
             if office_event['IsAllDay'] == True:
                 event_create.write ({'allday': 1,
                                      'start_date': office_event['start'][0:10],
-                                     'stop_date': office_event['end'][0:10]})
+                                     'stop': str (datetime.datetime.strptime (office_event['end'][0:10], '%Y-%m-%d') - datetime.timedelta (days = 1))[0:10],
+                                     'stop_date': str (datetime.datetime.strptime (office_event['end'][0:10], '%Y-%m-%d') - datetime.timedelta (days = 1))[0:10]})
             else:
                 event_create.write ({'allday': 0,
                                      'start_datetime': office_event['start'],
@@ -211,6 +217,7 @@ class sd_office_sync (models.TransientModel):
             partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
             attendee = self.env['calendar.attendee'].search ([('event_id', '=', event_create.id), ('partner_id', '=', partner_id)])
             attendee.write ({'office_id': office_event['id']})
+            flag = False
             return True
         except:
             raise Warning (_("Error to create Odoo events, contact with your administrator system"))
@@ -218,6 +225,8 @@ class sd_office_sync (models.TransientModel):
     def update_event (self, office_event):
         '''Actualizar cada evento en odoo'''
         try:
+            global flag
+            flag = True
             id_event = self.env['calendar.attendee'].search ([('office_id', '=', office_event['id'])]).event_id
             event_create = self.env['calendar.event'].browse ([id_event])
             event_create.write ({'name': office_event['title'],
@@ -227,7 +236,8 @@ class sd_office_sync (models.TransientModel):
             if office_event['IsAllDay'] == True:
                 event_create.write ({'allday': 1,
                                      'start_date': office_event['start'][0:10],
-                                     'stop_date': office_event['end'][0:10]})
+                                     'stop': str (datetime.datetime.strptime (office_event['end'][0:10], '%Y-%m-%d') - datetime.timedelta (days = 1))[0:10],
+                                     'stop_date': str (datetime.datetime.strptime (office_event['end'][0:10], '%Y-%m-%d') - datetime.timedelta (days = 1))[0:10]})
             else:
                 event_create.write ({'allday': 0,
                                      'start_datetime': office_event['start'],
@@ -238,6 +248,7 @@ class sd_office_sync (models.TransientModel):
                 event_create.write ({'description': office_event['description']})
             if office_event['reminder'] in [15, 30, 60, 120, 1440]:
                 event_create.write ({'alarm_ids': [(6, 0, [self.env['calendar.alarm'].search ([('duration_minutes', '=', office_event['reminder'])]).id])]})
+            flag = False
             return True
         except:
             raise Warning (_("Error to Update Odoo events, contact with your administrator system"))
