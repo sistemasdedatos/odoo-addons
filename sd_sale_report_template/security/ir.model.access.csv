@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sd_sale_template_access_u,sd_sale_template user,model_sd_sale_template,base.group_sale_salesman,1,0,0,0
+sd_sale_template_access_m,sd_sale_template manager,model_sd_sale_template,base.group_sale_manager,1,1,1,1
+sd_sale_template_access_settings_u,sd_sale_template user,model_sd_sale_template,base.group_sale_salesman,1,1,1,0
+sd_sale_template_access_settings_m,sd_sale_template manager,model_sd_sale_template,base.group_sale_manager,1,1,1,1
