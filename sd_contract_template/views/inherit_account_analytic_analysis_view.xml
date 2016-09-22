@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="inherit_view_account_analytic_account_form" model="ir.ui.view">
+            <field name="name">inherit.analytic.analytic.account.form</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//notebook" position="inside">
+            		<page string="Terms and Conditions" name="contract_template">
+            			<field name="contract_template_description" placeholder="Description of template..."/>
+            			<field name="contract_template" widget="html" class="oe_memo" editor_height="700px" />
+            		</page>
+            	</xpath>
+                <xpath expr="//separator[@name='description']" position="attributes">
+                	<attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="attributes">
+                	<attribute name="invisible">1</attribute>
+                </xpath>
+    		</field>
+    	</record>
+    </data>
+</openerp>
