@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="inherit_sd_print_contract_document" inherit_id="sd_contract_template.sd_print_contract_document">
+    		<xpath expr="//div[@id='your_code_here']" position="inside">
+				<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+					<h3>ANEXO I del contrato <span t-field="o.code"/></h3>
+					<tbody>
+						<tr>
+							<td>
+								<strong>1.- Dirección e Instalaciones objeto del presente servicio:</strong>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/>	
+				<div style="font-size:11px">
+					<div class="col-xs-6" style="margin-left:-15px;">
+						<span t-if="o.partner_id.comercial">
+							Nombre comercial:
+							<b><span style="font-size:12px" t-field="o.partner_id.comercial" /></b>
+							<br/>
+						</span>
+						<t t-if="o.contact_id">
+							<span t-if="o.contact_id.street">
+								Dirección:
+								<b><span style="font-size:12px" t-esc="'%s, ' % o.contact_id.street" />
+								<span style="font-size:12px" t-esc="'CP: %s, ' % o.contact_id.zip" />
+								<span style="font-size:12px" t-esc="'%s, ' % o.contact_id.city" />
+								<span style="font-size:12px" t-esc="'%s' % o.contact_id.country_id.name" /></b>
+								<br/>
+							</span>
+							<span t-if="o.contact_id.name">
+								Instalación:
+								<b><span style="font-size:12px" t-field="o.contact_id.name" /></b>
+								<br/>
+							</span>
+						</t>
+						<t t-if="not o.contact_id">
+							<span t-if="o.partner_id.street">
+								Dirección:
+								<b><span style="font-size:12px" t-esc="'%s, ' % o.partner_id.street" />
+								<span style="font-size:12px" t-esc="'CP: %s, ' % o.partner_id.zip" />
+								<span style="font-size:12px" t-esc="'%s, ' % o.partner_id.city" />
+								<span style="font-size:12px" t-esc="'%s' % o.partner_id.country_id.name" /></b>
+								<br/>
+							</span>
+							<span t-if="o.partner_id.name">
+								Instalación:
+								<b><span style="font-size:12px" t-field="o.partner_id.name" /></b>
+								<br/>
+							</span>
+						</t>
+					</div>
+					<div class="pull-rigth col-xs-6">
+						<t t-if="o.contact_id">
+							<span t-if="o.contact_id.function">
+								Persona de contacto:
+								<b><span style="font-size:12px" t-field="o.contact_id.function" /></b>
+								<br/>
+							</span>
+							<span t-if="o.contact_id.phone">
+								Tfno:
+								<b><span style="font-size:12px" t-esc="o.contact_id.phone" /></b>
+								<br/>
+							</span>
+							<span t-if="o.contact_id.email">
+								Email:
+								<b><span style="font-size:12px" t-field="o.contact_id.email" /></b>
+								<br/>
+							</span>
+						</t>
+						<t t-if="not o.contact_id">
+							<span t-if="o.partner_id.function">
+								Persona de contacto:
+								<b><span style="font-size:12px" t-field="o.partner_id.function" /></b>
+								<br/>
+							</span>
+							<span t-if="o.partner_id.phone">
+								Tfno:
+								<b><span style="font-size:12px" t-esc="o.partner_id.phone" /></b>
+								<br/>
+							</span>
+							<span t-if="o.partner_id.email">
+								Email:
+								<b><span style="font-size:12px" t-field="o.partner_id.email" /></b>
+								<br/>
+							</span>
+						</t>
+					</div>
+				</div>
+				<div class="row"/>
+				<div style="margin-top:10px;">
+					<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+						<tbody>
+							<tr>
+								<td>
+									<strong>2.- Observaciones:</strong>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br/>
+					<ul style="margin-left:5px;font-size:11px">
+						<li>
+							La duración del contrato será por el periodo: desde el <t t-if="o.date_start"><b style="font-size:12px"><span t-field="o.date_start"/></b></t>
+							<t t-if="not o.date_start">____________</t> hasta el <b style="font-size:12px"><t t-if="o.date"><span t-field="o.date"/></t></b>
+							<t t-if="not o.date">____________</t>.
+						</li>
+						<li>
+							Los servicios contratados serán los de: <b style="font-size:12px"><span t-foreach="o.recurring_invoice_line_ids" t-as="l"><span t-esc="'%s, ' % l.name"/> </span></b>
+							así como la confección del Plan DD y  la planificación de los diferentes métodos de control.
+						</li>
+						<li>
+							El número de visitas anuales será de <b style="font-size:12px"><span t-foreach="o.recurring_invoice_line_ids" t-as="l"><span t-esc="'%s para %s, ' % (l.quantity, l.name)"/> </span></b>.
+						    Este número de visitas tiene carácter estimativo ya que, el desarrollo de las distintas plagas a controlar depende de muchos factores externos, 
+							como pueden ser los climatológicos  o defectos estructurales, así como el propio resultado de los controles realizados por nuestro personal. Por ello el 
+							número de visitas totales que están incluidas en el presente presupuesto, no podrán incrementarse más de un 50% del número de visitas anuales  
+							indicadas anteriormente.
+						</li>
+						<li>
+							<span t-field="company.name"/> será el responsable de aportar cualquier elemento o maquinaria necesarios para la correcta prestación de los servicios ofertados.
+						</li>
+					</ul>
+					<p><br/></p>
+				</div>
+				<div>
+					<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+						<tbody>
+							<tr>
+								<td>
+									<strong>3.- Precio y condiciones de pago:</strong>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br/>
+					<ul style="margin-left:5px;font-size:11px">
+						<li>
+							El importe total del presente servicio es de  <b style="font-size:13px"><span t-if="o.amount_max" t-field="o.amount_max" t-field-options='{"widget": "monetary", "display_currency": "company.currency_id"}'/></b>, 
+							el mismo no incluye los impuestos indirectos que según la legislación son aplicables. 
+						</li>
+						<li>
+							<stong>Condiciones de pago</stong>
+							<br/>
+							<table style="width:100%;">
+								<tbody style="border:black 1px solid;">
+									<tr>
+										<td>
+											Contado (a la firma del contrato)
+										</td>
+										<td style="border-left:black 1px solid;border-right:black 1px solid;width:10%"/>
+											
+										<td>
+											Transferencia bancaria a:
+											<b><span t-if="company.bank_ids" t-field="company.bank_ids[0].acc_number"/></b>
+											<br/>
+											<span t-if="company.bank_ids" t-field="company.bank_ids[0].bank_bic"/> 
+										</td>
+									</tr>
+									<tr style="border-top:black 1px solid;">
+										<td>
+											Recibo domiciliado:
+										</td>
+										<td style="border-left:black 1px solid;border-right:black 1px solid;width:10%"/>
+										<td>
+											Otros:
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<strong>Código IBAN:</strong><br/>
+							<t t-if="o.partner_id.bank_ids">
+								<table style="width:100%;">
+									<tbody style="border:black 1px solid;">
+										<tr>
+											<td style="width:10%;border-right:black 1px solid;">
+												Cuenta
+											</td>
+											<td>
+												<span t-if="o.partner_id.bank_ids[0].acc_number" t-field="o.partner_id.bank_ids[0].acc_number"/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div><strong>BIC/Swift:</strong><span t-if="o.partner_id.bank_ids[0].bank_bic" t-field="o.partner_id.bank_ids[0].bank_bic"/>
+								</div>
+								<table style="width:100%;margin-top:5px;border-top:black 1px solid;">
+									<tbody style="border:black 1px solid;">
+										<tr>
+											<td style="width:10%;border-right:black 1px solid;">
+												Entidad
+											</td>
+											<td style="width:30%;border-right:black 1px solid;">
+												<span t-if="o.partner_id.bank_ids[0].bank_name" t-field="o.partner_id.bank_ids[0].bank_name"/>
+											</td>
+											<td style="width:10%;border-right:black 1px solid;">
+												Localidad
+											</td>
+											<td style="width:50%;border-right:black 1px solid;">
+												<span t-if="o.partner_id.bank_ids[0].acc_country_id.name" t-field="o.partner_id.bank_ids[0].acc_country_id.name"/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</t>
+							<t t-if="not o.partner_id.bank_ids">
+								<table style="width:100%;border:black solid 1px;">
+									<tbody>
+										<tr style="height:10px;">
+											<td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="background:black;width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="background:black;width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="background:black;width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+											<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%"/>
+										</tr>
+									</tbody>
+								</table>
+								<div><strong>BIC/Swift:</strong>___________________________________</div>
+								<table style="width:100%;margin-top:5px;border-top:black 1px solid;">
+									<tbody>
+										<tr style="border-bottom:black 1px solid;">
+											<td style="width:10%;border-right:black 1px solid;border-left:black 1px solid;">
+												Entidad
+											</td>
+											<td style="width:40%;border-right:black 1px solid;">
+											</td>
+											<td style="width:10%;border-right:black 1px solid;">
+												Localidad
+											</td>
+											<td style="width:40%;border-right:black 1px solid;">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</t>
+							<table style="width:100%;">
+								<tbody>
+									<tr style="border-bottom:black 1px solid;">
+										<td style="width:10%;border-right:black 1px solid;border-left:black 1px solid;">
+											Nº de plazos
+										</td>
+										<td style="width:5%;border-right:black 1px solid;">
+											1
+										</td>
+										<td style="width:20%;border-right:black 1px solid;">
+											Días de Vencimientos
+										</td>
+										<td style="width:20%;border-right:black 1px solid;">
+											
+										</td>
+										<td style="width:45%;border-right:black 1px solid;">
+											<b>1.er vencimiento coincide con la firma del contrato</b> 
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+					</ul>
+				</div>
+    		</xpath>
+    	</template>
+    </data>
+</openerp>

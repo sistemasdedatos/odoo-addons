@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="sd_work_for_employee_report_document">
+			<t t-call="report.external_layout">
+				<div class="page">
+					<h3>Planificación <span t-field="o.date_type"/> para: <span t-field="o.partner_id.name"/></h3>
+   					<table class="table table-condensed" style="font-size:10px">
+						<thead>
+							<tr>
+								<th>Nombre comercial</th>
+								<th>Instalación</th>
+								<th>Nº contrato</th>
+								<th>Fecha contrato</th>
+								<th>Notas</th>
+								<th>Servicio</th>
+								<th>Observaciones</th>
+								<t t-if="o.date_type != 'day'">
+									<th>Fecha</th>
+								</t>
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+							<tr t-foreach="o.tasks_ids" t-as="l">
+								<td><span t-if="l.partner_id.comercial" t-field="l.partner_id.comercial"/></td>
+								<td><span t-if="l.location_id" t-field="l.location_id"/></td>
+								<td><span t-if="l.analytic_account_id.code" t-field="l.analytic_account_id.code"/></td>
+								<td><span t-if="l.analytic_account_id.date_start" t-field="l.analytic_account_id.date_start"/></td>
+								<td><span t-if="l.description" t-field="l.description"/></td>
+								<td><span t-if="l.name" t-field="l.name"/></td>
+								<td><span t-if="l.internal_description" t-field="l.internal_description"/></td>
+								<t t-if="o.date_type != 'day'">
+									<td><span t-if="l.date_start" t-field="l.date_start"/></td>
+								</t>
+							</tr>
+						</tbody>
+					</table>
+   				</div>
+    		</t>
+    	</template>
+    	
+    	<template id="sd_work_for_employee_report">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_mpestano_module.sd_work_for_employee_report_document')" />
+				</t>
+			</t>
+		</template>
+            <report
+            id="sd_work_for_employee"
+            model="work.for.employee"        
+            name="sd_mpestano_module.sd_work_for_employee_report"
+            string="Print work planing"
+            file="sd_mpestano_module.sd_work_for_employee_report"
+            report_type="qweb-pdf"
+            attachment_use="False"
+            menu="True"
+        />
+    </data>
+</openerp>

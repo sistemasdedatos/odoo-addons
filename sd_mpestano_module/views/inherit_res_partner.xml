@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_partner_form" model="ir.ui.view">
+            <field name="name">inherit.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='function']" position="attributes">
+            		<attribute name="help">En caso de instalación o empresa, nombre del contacto</attribute>
+            		<attribute name="string">Puesto de trabajo / Contacto</attribute>
+            		<attribute name="attrs">{'invisible':0}</attribute>
+            	</xpath>
+            	<xpath expr="//form[@string='Contact']/sheet/group/field[@name='function']" position="attributes">
+            		<attribute name="help">En caso de instalación o empresa, nombre del contacto</attribute>
+            		<attribute name="string">Puesto de trabajo / Contacto</attribute>
+            	</xpath>
+    		</field>
+    	</record>
+    </data>
+</openerp>

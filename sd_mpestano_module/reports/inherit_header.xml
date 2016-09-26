@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="report.external_layout_header">
+			<t t-name="report.external_layout_header" sequence="10">
+				<div class="header">
+					<div class="row">
+						<div>
+							<img class="img img-responsive" src="/sd_mpestano_module/static/src/img/ISO_9001_ICDQ.jpg"
+							style="display:inline;width:35px;height:55px;margin-left:15px" />
+							<img class="img img-responsive" src="/sd_mpestano_module/static/src/img/ISO_14001_ICDQ.jpg"
+							style="display:inline;width:35px;height:55px;margin-left:5px" />
+							<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+								style="max-height: 110px;display:inline;margin-left:23%" />
+						
+						<div class="pull-right">
+							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}' style="font-size:11px"/>
+							
+							<div style="font-size:11px">NIF:<span t-field="company.partner_id.vat"/></div>
+							<div style="font-size:11px" t-field="company.partner_id.street"/>
+							<div style="font-size:11px">
+								<span t-esc="'%s ' % company.partner_id.zip" />
+								<span t-esc="'%s ' % company.partner_id.city" />
+							</div>
+							<div style="font-size:11px" t-field="company.partner_id.country_id.name"/>
+							<div style="font-size:11px" t-field="company.partner_id.phone"/>
+							<div style="font-size:11px" t-field="company.partner_id.email"/>
+						</div>
+						</div>
+					</div>
+				</div>
+			</t>
+		</template>
+	</data>
+</openerp>

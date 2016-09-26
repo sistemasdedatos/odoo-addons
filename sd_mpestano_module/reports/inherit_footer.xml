@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_footer" inherit_id="report.external_layout_footer">
+			<xpath expr="//div[@class='footer']" position="replace">
+				<div class="footer" style="font-size:6px">
+        			<div class="text-center" style="border-top: 1px solid black;">
+            			<ul t-if="not company.custom_footer" style="list-style-type:none;">
+            				<li style="font-size:7px; font-family:entypoRegular;">
+            					<b><span style="font-size:8px;" t-field="company.partner_id"/></b>
+								<span t-esc="'%s Local 10, 38005, Santa Cruz de Tenerife' % company.partner_id.street"/>
+            				</li>
+            				<li style="font-size:7px">
+            					<span t-field="company.partner_id.phone" /> - 
+								<span t-field="company.partner_id.fax" /> / 
+								<u><span t-field="company.partner_id.email" /></u>
+            				</li>
+            				<li style="font-size:7px">
+            					Page: <span class="page"/> / <span class="topage"/>
+            				</li>
+			            </ul>
+
+			            <t t-if="company.custom_footer">
+			                <span t-raw="company.rml_footer"/>
+			                <ul class="list-inline">
+				                <li>Page:</li>
+				                <li><span class="page"/></li>
+				                <li>/</li>
+				                <li><span class="topage"/></li>
+			           		</ul>
+			            </t>
+			        </div>
+			    </div>      
+			</xpath>
+		</template>
+	</data>
+</openerp>

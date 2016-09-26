@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sale.report_saleorder_document">
+			<t t-name="report.external_layout_header">
+				<t t-if="o and 'company_id' in o">
+        			<t t-set="company" t-value="o.company_id"/>
+    			</t>
+			    <t t-if="not o or not 'company_id' in o">
+			        <t t-set="company" t-value="res_company"/>
+			    </t>
+				<div class="header">
+					<div class="row">
+						<div>
+							<img class="img img-responsive" src="/sd_mpestano_module/static/src/img/ISO_9001_ICDQ.jpg"
+							style="display:inline;width:35px;height:55px;margin-left:15px" />
+							<img class="img img-responsive" src="/sd_mpestano_module/static/src/img/ISO_14001_ICDQ.jpg"
+							style="display:inline;width:35px;height:55px;margin-left:5px" />
+							<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+								style="max-height: 110px;display:inline;margin-left:23%" />
+						</div>
+						<div style="margin-top:-10px;margin-left:15px;margin-right:15px;color:grey;">
+							<span class="pull-left" t-field="o.partner_id.name" />
+							<span class="pull-right" t-esc="'Presupuesto %s' % o.name"/>
+						</div>
+					</div>
+				</div>
+			</t>
+			<t t-name="report.external_layout">
+        		<div class="page">
+            		<div >
+            			<div><br/></div>
+            			<div><br/></div>
+            			<div class="row" style="border-bottom:grey solid 2px;padding-bottom:2px;">
+	            			<div class="pull-left" style="text-align:center;margin-left:75px;">
+	            				<br/>
+	            				<h1>
+	            				Oferta
+	            				</h1>
+	            				<h3>
+	            				Nº <span t-field="o.name"/>
+	            				</h3>
+	            				<h5>
+	            				a<br/>
+	            				<span t-field="o.date_order"/>
+	            				</h5>
+	            			</div>
+	            			<div class="pull-right" style="margin-right:15px;">
+	            				<img class="img img-responsive" src="/sd_mpestano_module/static/src/img/portada.png"
+							style="display:inline;width:400px;height:250px;border-left:grey solid 2px;padding-left:10px" />
+	            			</div>
+            			</div>
+            			<br/>
+            			<div class="row" style="margin-left:15px;margin-right:35px">
+            				<div class="pull-left col-xs-5">
+            					<h5>
+            						<t t-if="o.sale_template_id"><span t-field="o.sale_template_id.description"/></t>
+            						<t t-if="not o.sale_template_id and o.client_order_ref"><span t-field="o.client_order_ref"/></t>
+            					</h5>
+            				</div>
+            				<div class="pull-right">
+            					<h5><span t-field="o.partner_id.name"/></h5>
+            				</div>
+            			</div>
+            			<br/>
+            			<div class="row" style="text-align:center">
+            				<h1 style="margin-top:100px"><i>Cuidamos de su ambiente aplicando delicadeza y artesanía</i></h1>
+            			</div>
+            			<p style="page-break-after:always;"></p><!--Salto de pagina  -->
+            			<p><br/></p>
+            			<div style="font-size:11px">
+							<div class="col-xs-6" style="margin-left:-15px;">
+								<span t-if="o.partner_id.name">
+									Razón social: 
+									<b><span style="font-size:12px" t-field="o.partner_id.name" /></b>
+									<br />
+								</span>
+								<span t-if="o.partner_id.comercial">
+									Nombre comercial:
+									<b><span style="font-size:12px" t-field="o.partner_id.comercial" /></b>
+									<br/>
+								</span>
+								<span t-if="o.partner_id.street">
+									Dirección: 
+									<b><span style="font-size:12px" t-esc="'%s, ' % o.partner_id.street" />
+									<span style="font-size:12px" t-esc="'CP: %s, ' % o.partner_id.zip" />
+									<span style="font-size:12px" t-esc="'%s, ' % o.partner_id.city" />
+									<span style="font-size:12px" t-esc="'%s' % o.partner_id.country_id.name" /></b>
+								</span>
+							</div>
+							<div class="pull-rigth col-xs-6">
+								<span t-if="o.partner_id.vat">
+									NIF: 
+									<b><span style="font-size:12px" t-field="o.partner_id.vat" /></b>
+									<br />
+								</span>
+								<span t-if="o.partner_id.phone">
+									Tfno: 
+									<b><span style="font-size:12px" t-esc="o.partner_id.phone" /></b>
+									<br/>
+								</span>
+								<span t-if="o.partner_id.fax">
+									Fax:
+									<b><span style="font-size:12px" t-field="o.partner_id.fax" /></b>
+									<br/>
+								</span>
+								<span t-if="o.partner_id.email">
+									Email:
+									<b><span style="font-size:12px" t-field="o.partner_id.email" /></b>
+									<br/>
+								</span>
+							</div>
+							<p><br/></p>
+						</div>
+						<div class="row"/>
+						<div style='font-size:11px;margin-top:10px;'>
+							<p>De acuerdo a su solicitud, nos ponemos en contacto con Uds. con el fin de poner a su disposición  nuestros servicios, 
+							que serán desarrollados de forma personalizada por técnicos especializados y bajo los parámetros del  Sistema de Gestión de 
+							la Calidad <b>ISO 9001:2008 y 14001:2004</b></p>
+							<p>En la confianza de que la información <b>tanto técnica como económica</b>, sea de su interés, quedamos
+							 a su disposición para cualquier consulta adicional que precisen.</p>
+						</div>
+						<div>
+							<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+								<tbody>
+									<tr>
+										<td>
+											<strong>1.- Dirección e Instalaciones objeto del presente presupuesto:</strong>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<br/>
+							<div style="font-size:11px">
+								<div class="col-xs-6" style="margin-left:-15px;">
+									<span t-if="o.partner_shipping_id.function">
+										Persona de contacto:
+										<b><span style="font-size:12px" t-field="o.partner_shipping_id.function" /></b>
+										<br/>
+									</span>
+									<span t-if="o.partner_shipping_id.street">
+										Dirección:
+										<b><span style="font-size:12px" t-esc="'%s, ' % o.partner_shipping_id.street" />
+										<span style="font-size:12px" t-esc="'CP: %s, ' % o.partner_shipping_id.zip" />
+										<span style="font-size:12px" t-esc="'%s, ' % o.partner_shipping_id.city" />
+										<span style="font-size:12px" t-esc="'%s' % o.partner_shipping_id.country_id.name" /></b>
+										<br/>
+									</span>
+									<span t-if="o.partner_shipping_id.name">
+										Instalación:
+										<b><span style="font-size:12px" t-field="o.partner_shipping_id.name" /></b>
+										<br/>
+									</span>
+								</div>
+								<div class="pull-rigth col-xs-6">
+									<span t-if="o.partner_shipping_id.phone">
+										Tfno:
+										<b><span style="font-size:12px" t-esc="o.partner_shipping_id.phone" /></b>
+										<br/>
+									</span>
+									<span t-if="o.partner_shipping_id.email">
+										Email
+										<b><span style="font-size:12px" t-field="o.partner_shipping_id.email" /></b>
+										<br/>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="row"/>
+						<t t-if="not o.sale_template_id">
+							<div style="margin-top:10px;">
+								<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+									<tbody>
+										<tr>
+											<td>
+												<strong>2.- Observaciones:</strong>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<ul style="margin-left:5px;font-size:11px">
+									<li>
+										Los servicios contratados serán los de: <b style="font-size:12px"><span t-foreach="o.order_line" t-as="l"><span t-esc="'%s, ' % l.name"/> </span></b>
+										así como la confección del Plan DD y  la planificación de los diferentes métodos de control.
+									</li>
+									<li>
+										El número de visitas anuales será de <b style="font-size:12px"><span t-foreach="o.order_line" t-as="l"><span t-esc="'%s para %s, ' % (l.product_uom_qty, l.name)"/> </span></b>.
+									    Este número de visitas tiene carácter estimativo ya que, el desarrollo de las distintas plagas a controlar depende de muchos factores externos, 
+										como pueden ser los climatológicos  o defectos estructurales, así como el propio resultado de los controles realizados por nuestro personal. Por ello el 
+										número de visitas totales que están incluidas en el presente presupuesto, no podrán incrementarse más de un 50% del número de visitas anuales  
+										indicadas anteriormente.
+									</li>
+									<li>
+										MAXIMO PESTANO SANIDAD AMBIENTAL S.L. será el responsable de aportar cualquier elemento o maquinaria necesarios para la correcta prestación de los servicios ofertados.
+									</li>
+									<li>
+										La validez de la  presente oferta es de 30 días.
+									</li>
+								</ul>
+								<p><br/></p>
+							</div>
+						</t>
+						<t t-if="o.sale_template_id"><span t-field="o.sale_template_id.template"/></t><!-- Plantilla -->
+						<div>
+							<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+								<tbody>
+									<tr>
+										<td>
+											<strong>3.- Precio y condiciones de pago:</strong>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<br/>
+							<ul style="margin-left:5px;font-size:11px">
+								<li>
+									El importe anual del presente servicio es de  <b style="font-size:13px"><span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/></b>, 
+									el mismo no incluye los impuestos indirectos que según la legislación son aplicables. 
+								</li>
+								<li>
+									<stong>Condiciones de pago</stong><br/>
+									<table style="width:100%;">
+										<tbody style="border:black 1px solid;">
+											<tr>
+												<td>
+													Contado (a la firma del contrato)
+												</td>
+												<td style="border-left:black 1px solid;border-right:black 1px solid;width:10%"/>
+													
+												<td>
+													Transferencia bancaria a:
+													<b><span t-if="company.bank_ids" t-field="company.bank_ids[0].acc_number"/></b>
+												</td>
+											</tr>
+											<tr style="border-top:black 1px solid;">
+												<td>
+													Recibo domiciliado:
+												</td>
+												<td style="border-left:black 1px solid;border-right:black 1px solid;width:10%"/>
+												<td>
+													Otros:
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<strong>Cuenta Cliente:</strong><br/>
+									<t t-if="o.partner_id.bank_ids">
+										<table style="width:100%;">
+											<tbody style="border:black 1px solid;">
+												<tr>
+													<td style="width:10%;border-right:black 1px solid;">
+														Cuenta
+													</td>
+													<td>
+														<span t-if="o.partner_id.bank_ids[0].acc_number" t-field="o.partner_id.bank_ids[0].acc_number"/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<table style="width:100%;">
+											<tbody style="border:black 1px solid;">
+												<tr>
+													<td style="width:10%;border-right:black 1px solid;">
+														Entidad
+													</td>
+													<td style="width:30%;border-right:black 1px solid;">
+														<span t-if="o.partner_id.bank_ids[0].bank_name" t-field="o.partner_id.bank_ids[0].bank_name"/>
+													</td>
+													<td style="width:10%;border-right:black 1px solid;">
+														Localidad
+													</td>
+													<td style="width:50%;border-right:black 1px solid;">
+														<span t-if="o.partner_id.bank_ids[0].acc_country_id.name" t-field="o.partner_id.bank_ids[0].acc_country_id.name"/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</t>
+									<t t-if="not o.partner_id.bank_ids">
+										<table style="width:100%;border:black solid 1px;">
+											<tbody>
+												<tr style="height:10px;">
+													<td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="background:black;width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="background:black;width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="background:black;width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%;border-right:black 1px solid;"/>
+													<td style="width:4,3%;border-right:black 1px solid;"/><td style="width:4,3%"/>
+												</tr>
+											</tbody>
+										</table>
+										<table style="width:100%;">
+											<tbody>
+												<tr style="border-bottom:black 1px solid;">
+													<td style="width:10%;border-right:black 1px solid;border-left:black 1px solid;">
+														Entidad
+													</td>
+													<td style="width:40%;border-right:black 1px solid;">
+													</td>
+													<td style="width:10%;border-right:black 1px solid;">
+														Localidad
+													</td>
+													<td style="width:40%;border-right:black 1px solid;">
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</t>
+									<table style="width:100%;">
+										<tbody>
+											<tr style="border-bottom:black 1px solid;">
+												<td style="width:10%;border-right:black 1px solid;border-left:black 1px solid;">
+													Nº de plazos
+												</td>
+												<td style="width:5%;border-right:black 1px solid;">
+													1
+												</td>
+												<td style="width:20%;border-right:black 1px solid;">
+													Días de Vencimientos
+												</td>
+												<td style="width:20%;border-right:black 1px solid;">
+													<span t-if="o.payment_term" t-field="o.payment_term.name"/>
+												</td>
+												<td style="width:45%;border-right:black 1px solid;">
+													<span t-if="o.payment_term.note" t-field="o.payment_term.note"/>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+							</ul>
+							<p><br/></p>
+						</div>
+						<t t-if="o.note">
+							<div>
+								<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+									<tbody>
+										<tr>
+											<td>
+												<strong>4.- Condiciones Generales:</strong>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<p><span style="font-size:11px;" t-field="o.note"/></p>
+								<p><br/></p>
+							</div>
+						</t>
+						<div>
+							<table style="border:black 1px solid; width:100%; background:#F2F2F2;">
+								<tbody>
+									<tr>
+										<td>
+											<strong>ACEPTACIÓN DE LA OFERTA</strong>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<br/>
+							<p style="font-size:11px;">Acepto la presente oferta con número <b style="font-size:12px;"><span t-field="o.name"/></b> estando de acuerdo con todos los términos y condiciones,
+							para lo que firmo la presente aceptación y las condiciones de pago</p>
+							<p style="font-size:11px;">Fdo. ___________________________</p>
+							<p style="font-size:11px;">Cargo __________________________</p>
+							<p style="font-size:11px;">Fecha __________________________</p>
+						</div>
+		            </div>
+		        </div>
+    			<t t-raw="0"/>
+			    <t t-call="report.external_layout_footer"/>
+		    </t>
+		</template>
+	</data>
+</openerp>
