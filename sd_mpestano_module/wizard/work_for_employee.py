@@ -10,7 +10,7 @@ class work_for_employee (models.TransientModel):
     date_type = fields.Selection (string = 'Start of work', selection = [('day', 'Daily'),
                                                                          ('week', 'Weekly'),
                                                                          ('month', 'Monthly')], default = 'day', required = True, copy=False)
-    day_ = fields.Date (string = "Day", default = time.strftime('%Y-%m-%d'), invisible = True)
+    day_ = fields.Date (string = "Day", default = time.strftime ('%Y-%m-%d'), invisible = True)
     tasks_ids = fields.One2many ('project.task', string = 'Tasks', compute = 'get_task', readonly = True)
     
     @api.one
@@ -20,13 +20,19 @@ class work_for_employee (models.TransientModel):
             period_init = self.day_
             period_end = self.day_
         elif self.date_type == 'week':
-            period_init = 0
+            def this_week ():
+                to_rst = datetime.date.today ().isocalendar ()[2] - 1
+                to_sum = 7 - datetime.date.today ().isocalendar ()[2]
+                first_day = datetime.date.today () - datetime.timedelta (days = to_rst)
+                last_day = datetime.date.today () + datetime.timedelta (days = to_sum)
+                return first_day.strftime ('%Y-%m-%d 00:00:00'), last_day.strftime ('%Y-%m-%d 23:59:59')
+            period_init, period_end = this_week ()
         elif self.date_type == 'month':
             def last_day_of_month (any_day):        #Devuelve el ultimo dia del mes, contempla febrero y los bisiestos
                 next_month = any_day.replace (day=28) + datetime.timedelta (days = 4)  # this will never fail
                 return next_month - datetime.timedelta (days = next_month.day)
             period_init = time.strftime ('%Y-%m-01 00:00:00')
-            period_end = last_day_of_month (datetime.date (int (time.strftime ('%Y')), int (time.strftime ('%m')), 1)).strftime('%Y-%m-%d 23:59:59')
+            period_end = last_day_of_month (datetime.date (int (time.strftime ('%Y')), int (time.strftime ('%m')), 1)).strftime ('%Y-%m-%d 23:59:59')
             
         tasks = self.env['project.task'].search ([('user_id', '=', self.partner_id.id), ('date_start', '>=', period_init), ('date_start', '<=', period_end)])
         self.tasks_ids = tasks
@@ -34,7 +40,7 @@ class work_for_employee (models.TransientModel):
     @api.multi
     def print_ (self):
         if self.tasks_ids:
-            return self.pool['report'].get_action(self._cr, self._uid, self._ids, 'sd_mpestano_module.sd_work_for_employee_report', data = None)
+            return self.pool['report'].get_action (self._cr, self._uid, self._ids, 'sd_mpestano_module.sd_work_for_employee_report', data = None)
         else:
             raise Warning(_("%s can not tasks on this period" % self.partner_id.name))
     

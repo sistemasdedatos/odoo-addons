@@ -185,7 +185,7 @@
 										así como la confección del Plan DD y  la planificación de los diferentes métodos de control.
 									</li>
 									<li>
-										El número de visitas anuales será de <b style="font-size:12px"><span t-foreach="o.order_line" t-as="l"><span t-esc="'%s para %s, ' % (l.product_uom_qty, l.name)"/> </span></b>.
+										El número de visitas anuales será de <b style="font-size:12px"><span t-foreach="o.order_line" t-as="l"><span t-esc="'%d para %s, ' % (l.product_uom_qty, l.name)"/> </span></b>.
 									    Este número de visitas tiene carácter estimativo ya que, el desarrollo de las distintas plagas a controlar depende de muchos factores externos, 
 										como pueden ser los climatológicos  o defectos estructurales, así como el propio resultado de los controles realizados por nuestro personal. Por ello el 
 										número de visitas totales que están incluidas en el presente presupuesto, no podrán incrementarse más de un 50% del número de visitas anuales  

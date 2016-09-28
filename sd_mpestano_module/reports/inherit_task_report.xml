@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="sd_print_project_work.sd_project_task_report_document">
+			<t t-call="report.external_layout">
+				<div class="page" style="font-size:11px">
+					<h3>Certificado del servicio: <span t-esc="'%.5d' % o.id"/><span t-if="o.analytic_account_id.code" class="pull-right" t-esc="'%s' % o.analytic_account_id.code"/></h3>
+					<div>
+						<t t-if="o.categ_ids">Objeto de la visita: <b><span t-foreach="o.categ_ids" t-as="c"> <span t-field="c.name"/> </span></b><br/></t>
+					</div>
+					<div style="margin-top:15px">
+						<div class="col-xs-6" style="margin-left:-15px">
+							<t t-if="o.partner_id.name">Razon social: <b><span t-field="o.partner_id.name"/></b><br/></t>
+							<t t-if="o.partner_id.comercial">Nombre comercial: <b><span t-field="o.partner_id.comercial"/></b><br/></t>
+							<t t-if="o.location_id.street">Dirección: 
+								<b>
+									<span t-esc="'%s, ' % o.partner_id.street" />
+									<span t-esc="'CP: %s, ' % o.partner_id.zip" />
+									<span t-esc="'%s, ' % o.partner_id.city" />
+									<span t-esc="'%s' % o.partner_id.country_id.name" />
+								</b>
+							</t>
+						</div>
+						<div class="pull-rigth col-xs-6">
+							<t t-if="o.location_id.function">Contacto: <b><span t-field="o.location_id.function"/></b><br/></t>
+							<t t-if="o.location_id.phone">Teléfono: <b><span t-field="o.location_id.phone"/></b><br/></t>
+						</div>
+					</div>
+					<div class="row">
+						<p><br/></p>					
+					</div>
+					<div>
+						<br/>
+						Instalación objeto del presente servicio: 
+						<b>
+							<t t-if="o.location_id">
+								<span t-field="o.location_id"/>
+							</t>
+							<t t-if="not o.location_id">
+								<span t-field="o.partner_id.name"/>
+							</t>
+						</b>
+					</div>
+					<div>
+						<p><u>Descripción de los servicios a realizar:</u><br/>
+							<t t-if="o.description">
+								<span t-field="o.description"/>
+							</t>
+							<t t-if="not o.description">
+								<div style="width:100%;height:150px;border:1px dashed black"/>
+							</t>
+						</p>
+						<table class="table table-condensed" t-if="o.work_ids">
+							<thead>
+								<tr>
+									<th>Servicios realizados</th>
+									<th>Tiempo dedicado</th>
+									<th>Fecha y hora</th>
+									<th>Técnico</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr t-foreach="o.work_ids" t-as="l">
+									<td><span t-field="l.name"/></td>
+									<td><span t-esc="'%s:%s' % (str('%.2d' % l.hours).split('.')[0], (str('%.2d' % int(float(str('%.2f' % l.hours).split('.')[1])/100*60))))"/></td>
+									<td><span t-field="l.date" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/></td>
+									<td><span t-field="l.user_id.name"/></td>
+								</tr>
+							</tbody>
+						</table>
+						<t t-if="o.work_ids"></t>
+						<table class="table table-condensed" t-if="o.material_ids">
+							<thead>
+								<tr>
+									<th>Producto aplicado</th>
+									<th>Descripción</th>
+									<th>Dosis/cantidad</th>
+									<th>Observaciones</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr t-foreach="o.material_ids" t-as="l">
+									<td><span t-field="l.product_id.name"/></td>
+									<td><span t-field="l.product_id.description"/></td>
+									<td><span t-field="l.quantity"/> <span /></td>
+									<td><span t-field="l.product_description"/></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</t>
+		</template>
+
+    	<report
+            id="sd_print_project_work.project_task"
+            model="project.task"        
+            name="sd_print_project_work.sd_project_task_report"
+            string="Print Task Report"
+            file="sd_print_project_work.sd_project_task_report"
+            report_type="qweb-pdf"
+            attachment="('Parte_'+str(object.id)+'.pdf')"
+            attachment_use="0"
+        />
+    </data>
+</openerp>
