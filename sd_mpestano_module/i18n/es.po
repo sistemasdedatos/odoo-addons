@@ -19,7 +19,7 @@ msgstr ""
 #: code:addons/sd_mpestano_module/wizard/work_for_employee.py:39
 #, python-format
 msgid "%s can not tasks on this period"
-msgstr "%s can not tasks on this period"
+msgstr "%s no tiene tareas en el periodo seleccionado"
 
 #. module: sd_mpestano_module
 #: view:website:sd_contract_template.sd_print_contract_document

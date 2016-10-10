@@ -88,6 +88,23 @@
 							</tbody>
 						</table>
 					</div>
+					<div>
+						<div class="col-xs-4">
+							Imagen<br/>
+							Fdo. Abel L. Acosta de Armas<br/>
+							Nº Carnet Cualificado NR/0018<br/>
+							Nº Carnet Legionella NR/1163<br/>
+						</div>
+						<div class="col-xs-4">
+							Fdo. ____________________<br/>
+							Responsable de la aplicación<br/>
+							Nº Carnet ____________<br/>
+						</div>
+						<div class="col-xs-4">
+							Fdo. ____________________<br/>
+							Responsable del local, quien queda en conocimiento de lo que este documento expone.<br/>
+						</div>
+					</div>
 				</div>
 			</t>
 		</template>

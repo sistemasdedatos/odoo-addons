@@ -15,6 +15,9 @@
             		<attribute name="help">En caso de instalación o empresa, nombre del contacto</attribute>
             		<attribute name="string">Puesto de trabajo / Contacto</attribute>
             	</xpath>
+            	<xpath expr="//notebook/page[@string='Contacts']" position="attributes">
+            		<attribute name="string">Contactos e Instalaciones</attribute>
+            	</xpath>
     		</field>
     	</record>
     </data>

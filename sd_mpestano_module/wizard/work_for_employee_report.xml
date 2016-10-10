@@ -4,7 +4,11 @@
     	<template id="sd_work_for_employee_report_document">
 			<t t-call="report.external_layout">
 				<div class="page">
-					<h3>Planificación <span t-field="o.date_type"/> para: <span t-field="o.partner_id.name"/></h3>
+					<h3>Planificación <span t-field="o.date_type"/> para: <span t-field="o.partner_id.name"/> 
+						<t t-if="o.date_type == 'day'">
+							- <span t-if="o.day_" t-field="o.day_"/>
+						</t>
+					</h3>
    					<table class="table table-condensed" style="font-size:10px">
 						<thead>
 							<tr>
