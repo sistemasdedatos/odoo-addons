@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="sd_inherit_view_users_form_simple_modif" model="ir.ui.view">
+            <field name="name">sd.inherit.res.users.preferences.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif" />
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='tz']" position="after">
+            		<field name="warehouse_id"/>
+            	</xpath>
+    		</field>
+    	</record>
+    </data>
+</openerp>
