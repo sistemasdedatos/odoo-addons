@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="sd_product_template_form_view_ean" model="ir.ui.view">
+            <field name="name">sd.product.template.only.form.ean</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <field name="ean13" position="after">
+                    <button colspan="2" name="button_gen_ean13" type="object" string="Set a Custom EAN"
+                            attrs="{'invisible': [('product_variant_count', '>', 1)]}" class="oe_link oe_edit_only"
+                            help="Ean13 code is generate by public price and internal code
+                            R -> FIRST ELEMENT OF REF :: P -> INTEGER PART OF PRICE :: 7 -> SEPARATOR :: P -> DECIMAL PART OF PRICE :: R -> REFERENCE
+                            C -> CONTROL DIGIT :: Example: price: 11,13, ref: 56113 -> 5 11 7 13 6113 00 2"/>
+                </field>
+                <xpath expr="//field[@name='value_ids']" position="attributes">
+                	<attribute name="delete">0</attribute>
+                </xpath>
+                <xpath expr="//tree[@string='Variants']" position="attributes">
+                	<attribute name="delete">0</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
