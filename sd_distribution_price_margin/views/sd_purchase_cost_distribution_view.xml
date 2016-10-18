@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_purchase_cost_distribution_form" model="ir.ui.view">
+			<field name="name">inherit.purchase.cost.distribution.form</field>
+			<field name="model">purchase.cost.distribution</field>
+			<field name="inherit_id" ref="purchase_landed_cost.purchase_cost_distribution_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='currency_id']" position="after">
+					<field name="benefit_margin"/>
+				</xpath>
+    			<xpath expr="//field[@name='standard_price_new']" position="after">
+    				<field name="benefit_margin"/>
+    				<field name="benefit_price"/>
+    			</xpath>
+    		</field>
+    	</record>
+    	<record id="inherit_view_purchase_cost_distribution_line_form" model="ir.ui.view">
+			<field name="name">inherit.purchase.cost.distribution.line.form</field>
+			<field name="model">purchase.cost.distribution.line</field>
+			<field name="inherit_id" ref="purchase_landed_cost.view_purchase_cost_distribution_line_form"/>
+			<field name="arch" type="xml">
+    			<xpath expr="//field[@name='product_price_unit']" position="after">
+    	        	<field name="benefit_margin" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
+                    <field name="benefit_price" readonly="1"/>
+                    <field name="state" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
+		
