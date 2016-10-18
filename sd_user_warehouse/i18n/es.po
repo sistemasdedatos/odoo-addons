@@ -1,0 +1,127 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_user_warehouse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-18 14:44+0000\n"
+"PO-Revision-Date: 2016-10-18 14:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_user_warehouse
+#: field:res.users,supplier_invoice_count:0
+msgid "# Supplier Invoices"
+msgstr "# Supplier Invoices"
+
+#. module: sd_user_warehouse
+#: field:res.users,purchase_order_count:0
+msgid "# of Purchase Order"
+msgstr "# of Purchase Order"
+
+#. module: sd_user_warehouse
+#: field:res.users,sale_order_count:0
+msgid "# of Sales Order"
+msgstr "# of Sales Order"
+
+#. module: sd_user_warehouse
+#: field:res.users,property_stock_customer:0
+msgid "Customer Location"
+msgstr "Customer Location"
+
+#. module: sd_user_warehouse
+#: field:res.users,invoice_warn:0
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: sd_user_warehouse
+#: field:res.users,calendar_last_notif_ack:0
+msgid "Last notification marked as read from base Calendar"
+msgstr "Last notification marked as read from base Calendar"
+
+#. module: sd_user_warehouse
+#: field:res.users,invoice_warn_msg:0
+msgid "Message for Invoice"
+msgstr "Message for Invoice"
+
+#. module: sd_user_warehouse
+#: field:res.users,purchase_warn_msg:0
+msgid "Message for Purchase Order"
+msgstr "Message for Purchase Order"
+
+#. module: sd_user_warehouse
+#: field:res.users,sale_warn_msg:0
+msgid "Message for Sales Order"
+msgstr "Message for Sales Order"
+
+#. module: sd_user_warehouse
+#: field:res.users,picking_warn_msg:0
+msgid "Message for Stock Picking"
+msgstr "Message for Stock Picking"
+
+#. module: sd_user_warehouse
+#: field:res.users,purchase_warn:0
+msgid "Purchase Order"
+msgstr "Purchase Order"
+
+#. module: sd_user_warehouse
+#: field:res.users,property_product_pricelist_purchase:0
+msgid "Purchase Pricelist"
+msgstr "Purchase Pricelist"
+
+#. module: sd_user_warehouse
+#: model:ir.model,name:sd_user_warehouse.model_sale_order
+#: field:res.users,sale_order_ids:0
+#: field:res.users,sale_warn:0
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sd_user_warehouse
+#: help:res.users,invoice_warn:0
+#: help:res.users,picking_warn:0
+#: help:res.users,purchase_warn:0
+#: help:res.users,sale_warn:0
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+
+#. module: sd_user_warehouse
+#: field:res.users,picking_warn:0
+msgid "Stock Picking"
+msgstr "Stock Picking"
+
+#. module: sd_user_warehouse
+#: field:res.users,property_stock_supplier:0
+msgid "Supplier Location"
+msgstr "Localización de Proveedor"
+
+#. module: sd_user_warehouse
+#: help:res.users,property_product_pricelist_purchase:0
+msgid "This pricelist will be used, instead of the default one, for purchases from the current partner"
+msgstr "This pricelist will be used, instead of the default one, for purchases from the current partner"
+
+#. module: sd_user_warehouse
+#: help:res.users,property_stock_customer:0
+msgid "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+msgstr "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+
+#. module: sd_user_warehouse
+#: help:res.users,property_stock_supplier:0
+msgid "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+msgstr "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+
+#. module: sd_user_warehouse
+#: model:ir.model,name:sd_user_warehouse.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: sd_user_warehouse
+#: field:res.users,warehouse_id:0
+msgid "Warehouse"
+msgstr "Almacén"
+
