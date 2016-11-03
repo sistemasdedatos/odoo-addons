@@ -27,7 +27,6 @@ class sd_office_config (models.Model):
     @api.multi
     def unlink (self):
         groups = self.env.ref ('sd_office_sincronize.sd_office_manager_group').read (['users'])[0]['users']
-        res = []
         for i in self:
             same_user = i._uid == i.create_uid.id
             if (not same_user) and (self._uid not in groups):
