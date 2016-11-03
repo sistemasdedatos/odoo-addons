@@ -1,0 +1,229 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_tecnimovil_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-03 11:07+0000\n"
+"PO-Revision-Date: 2016-11-03 11:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+#: view:website:sale.report_saleorder_document
+msgid "Address:"
+msgstr "Dirección:"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Alejandro Escudero López no se responsabiliza de la pérdida o deterioro de la información contenida en cualquier tipo de soporte, por ello se \n"
+"							recomienda realizar una copia de seguridad de aquellos datos importantes que desee conservar y conserve con usted, las tarjetas SIM y de \n"
+"							almacenamiento."
+msgstr "Alejandro Escudero López no se responsabiliza de la pérdida o deterioro de la información contenida en cualquier tipo de soporte, por ello se \n"
+"							recomienda realizar una copia de seguridad de aquellos datos importantes que desee conservar y conserve con usted, las tarjetas SIM y de \n"
+"							almacenamiento."
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Cancelled Invoice"
+msgstr "Factura cancelada"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+#: view:website:sale.report_saleorder_document
+msgid "Comercial name:"
+msgstr "Nombre comercial:"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Customer Code:"
+msgstr "Código de cliente"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Customer data"
+msgstr "Datos del cliente"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Date invoice:"
+msgstr "Fecha de factura:"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Description:"
+msgstr "Descripción:"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Draft Invoice"
+msgstr "Factura borrador"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "En caso de pérdida o extravío del presente documento, sólo podrá ser retirado el terminal objeto de la reparación, previa acreditación de la \n"
+"							identidad del titular, mediante la exhibición del DNI/NIF aportado en la presente ficha de reparación."
+msgstr "En caso de pérdida o extravío del presente documento, sólo podrá ser retirado el terminal objeto de la reparación, previa acreditación de la \n"
+"							identidad del titular, mediante la exhibición del DNI/NIF aportado en la presente ficha de reparación."
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "En ningún caso se devolverá el importe de la liberación o reparación efectuada si el terminal telefónico es bloqueado por la compañía telefónica."
+msgstr "En ningún caso se devolverá el importe de la liberación o reparación efectuada si el terminal telefónico es bloqueado por la compañía telefónica."
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "FIRMA CONFORME EL CLIENTE"
+msgstr "FIRMA CONFORME EL CLIENTE"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "FIRMA DEL TÉCNICO"
+msgstr "FIRMA DEL TÉCNICO"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+#: view:website:sale.report_saleorder_document
+msgid "Fiscal name:"
+msgstr "Nombre fiscal:"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "La persona que realiza la entrega del terminal telefónico para su reparación, declara bajo su responsabilidad, que es el legítimo propietario del mismo y que no existe impedimento alguno por parte de\n"
+"							persona física o jurídica alguna para su manipulación interna, incluida el posible desbloqueo o liberación."
+msgstr "La persona que realiza la entrega del terminal telefónico para su reparación, declara bajo su responsabilidad, que es el legítimo propietario del mismo y que no existe impedimento alguno por parte de\n"
+"							persona física o jurídica alguna para su manipulación interna, incluida el posible desbloqueo o liberación."
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Las reparaciones de Software o terminales mojados no tienen garantía."
+msgstr "Las reparaciones de Software o terminales mojados no tienen garantía."
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Los Terminales que no se puedan comprobar todas las funciones debido a que no enciende, Alejandro Escudero López no se hace cargo de otro problema \n"
+"						que surja"
+msgstr "Los Terminales que no se puedan comprobar todas las funciones debido a que no enciende, Alejandro Escudero López no se hace cargo de otro problema \n"
+"						que surja"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Los tiempos de entrega en los códigos de liberación por IMEI son orientativos y pueden sufrir retrasos en la misma debido a la \n"
+"							dependencia de terceros, no siendo posible su anulación una vez solicitados."
+msgstr "Los tiempos de entrega en los códigos de liberación por IMEI son orientativos y pueden sufrir retrasos en la misma debido a la \n"
+"							dependencia de terceros, no siendo posible su anulación una vez solicitados."
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+#: view:website:sale.report_saleorder_document
+msgid "NIF:"
+msgstr "NIF:"
+
+#. module: sd_tecnimovil_module
+#: view:website:sale.report_saleorder_document
+msgid "Order N°"
+msgstr "Pedido Nº"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Origin:"
+msgstr "Origen:"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+#: view:website:sale.report_saleorder_document
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: sd_tecnimovil_module
+#: view:website:sale.report_saleorder_document
+msgid "Quotation N°"
+msgstr "Presupuesto Nº"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Reference:"
+msgstr "Referencia:"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Refund"
+msgstr "Factura rectificativa"
+
+#. module: sd_tecnimovil_module
+#: model:ir.model,name:sd_tecnimovil_module.model_mrp_repair_line
+msgid "Repair Line"
+msgstr "Línea reparación"
+
+#. module: sd_tecnimovil_module
+#: model:ir.model,name:sd_tecnimovil_module.model_mrp_repair
+msgid "Repair Order"
+msgstr "Orden reparación"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Supplier Invoice"
+msgstr "Factura de proveedor"
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+msgid "Supplier Refund"
+msgstr "Factura rectificativa de proveedor"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Todas las reparaciones están garantizadas por 3 meses sobre la propia avería, en las condiciones especificadas en el artículo 6 del \n"
+"							Real Decreto 58/1988 del 29 de enero, sobre la Protección de los derechos del consumidor y por el que se regula prestación de servicios de \n"
+"							reparación de aparatos de uso doméstico."
+msgstr "Todas las reparaciones están garantizadas por 3 meses sobre la propia avería, en las condiciones especificadas en el artículo 6 del \n"
+"							Real Decreto 58/1988 del 29 de enero, sobre la Protección de los derechos del consumidor y por el que se regula prestación de servicios de \n"
+"							reparación de aparatos de uso doméstico."
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Transcurridos 10 días desde la comunicación de la reparación al cliente, si este no es retirado, se procederá al cobro de tres Euros diarios \n"
+"							en concepto de almacenaje. Si pasados tres meses desde el citado aviso, el cliente continúa sin retirar el terminal electrónico objeto de la \n"
+"							reparación, este será reciclado (Art. 2525,2528 del código civil)."
+msgstr "Transcurridos 10 días desde la comunicación de la reparación al cliente, si este no es retirado, se procederá al cobro de tres Euros diarios \n"
+"							en concepto de almacenaje. Si pasados tres meses desde el citado aviso, el cliente continúa sin retirar el terminal electrónico objeto de la \n"
+"							reparación, este será reciclado (Art. 2525,2528 del código civil)."
+
+#. module: sd_tecnimovil_module
+#: view:website:account.report_invoice_document
+#: view:website:mrp_repair.report_mrprepairorder
+#: view:website:sale.report_saleorder_document
+msgid "font-size:11px"
+msgstr "font-size:11px"
+
+#. module: sd_tecnimovil_module
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "font-size:18px;font-weight:bold"
+msgstr "font-size:18px;font-weight:bold"
+
+#. module: sd_tecnimovil_module
+#: view:website:report.external_layout_footer
+msgid "font-size:8px"
+msgstr "font-size:8px"
+
+#. module: sd_tecnimovil_module
+#: view:mrp.repair:sd_tecnimovil_module.inherit_view_repair_order_tree
+msgid "id desc"
+msgstr "id desc"
+
