@@ -11,8 +11,7 @@
 						</div>
 						<div class="col-xs-4">
 							<br />
-							<div t-field="company.partner_id"
-							t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}' style="font-size:14px"/>
+							<div>TECNIMOVIL CANARIAS</div>
 						</div>
 						<div class="col-xs-4">
 							<div class="pull-right">
