@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<lots>
+    <lot-line type="fields" name="id">
+        <code type="field" name="code"/>
+        <product type="field" name="name"/>
+        
+       	<variants type="zoom" name="attribute_value_ids">
+            <!-- <name type="field" name="attribute_id.name"/> -->
+            <value type="field" name="name"/>
+        </variants>
+
+        <ean13 type="field" name="ean13"/>
+        <eanNum type="field" name="ean13"/>
+    <!--     <price type="field" name="list_price"/>
+        <currency type="field" name="company_id.currency_id.name"/> -->
+    </lot-line>
+</lots>
