@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="inherit_sd_print_contract_document" inherit_id="sd_contract_template.sd_print_contract_document">
+    		<xpath expr="//div[@style='font-size:11px;margin-top:20px;']" position="replace">
+    			<div style="font-size:11px;margin-top:20px;">
+    				<big style="margin-left:45%"><b><u>Reunidos</u></b></big>
+					<br/>
+					<p></p>
+					<p>
+						<b>De una parte, <span t-field="o.partner_id.name"/></b>, mayor de edad y provisto de NIF 
+						número <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/> 
+					</p>
+					<p>
+						<b>Y de otra parte, </b>
+						<b>Don Antonio Buján Reyes</b>, mayor de edad y provisto de NIF número 78405396Y.
+					</p>
+					<big style="margin-left:45%"><b><u>Intervienen</u></b></big>
+					<br/>
+					<p></p>
+					<p>
+						<b>El primero, como <i>el cliente</i></b>, en nombre y representación de la entidad mercantil denominada 
+						<span t-field="o.partner_id.comercial"/>, con domicilio social en <span t-if="o.partner_id.street" t-field="o.partner_id.street"/>, 
+						<span t-if="o.partner_id.zip" t-field="o.partner_id.zip"/>, <span t-if="o.partner_id.city" t-field="o.partner_id.city"/> y provista
+						del NIF <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/>.
+					</p>
+					<p>
+						<b>El segundo, como <i>administrador</i></b>, en nombre y representación de la entidad mercantil <b><span t-field="company.name"/></b>, con domicilio
+						 social en <span t-if="company.street" t-field="company.street"/>, <span t-if="company.zip" t-field="company.zip"/>, 
+						 <span t-if="company.city" t-field="company.city"/> y provisto del NIF <span t-field="company.vat"/>.
+					</p>
+					<p>
+						Se reconocen recíprocamente, conforme intervienen con plena capacidad para llevar a cabo el presente contrato, a cuyo fin:
+					</p>
+					<br/>
+					<big style="margin-left:45%"><b><u>Exponen</u></b></big>
+					<br/>
+					<p></p>
+					<ol>
+						<li>
+							Que <b><i>el cliente</i></b> desea contratar el mantenimiento de limpieza del Sistema de extracción de humos y grasas de 
+							<span t-field="o.partner_id.comercial"/>, ubicado en la provincia de <span t-if="company.city" t-field="company.city"/>
+						</li>
+						<li>
+							Que <b><span t-field="company.name"/></b> posee la capacidad necesaria para prestar dichos servicios y para formalizar 
+							el presente contrato de servicios.
+						</li>
+						<li>
+							Que en virtud de ello, ambas partes acuerdan las siguientes:
+						</li>
+					</ol>
+    			</div>
+    		</xpath>
+    		<xpath expr="//div[@id='your_code_here']" position="inside">
+    			<div>
+    				El precio total anual de este contrato asciende a un importe de 
+    				<b style="font-size:13px"><span t-if="o.amount_max" t-field="o.amount_max" t-field-options='{"widget": "monetary", "display_currency": "company.currency_id"}'/></b>
+    				+ I.G.I.C.
+    			</div>
+    			<div t-if="o.recurring_invoices">
+    				Forma de pago: 
+    				<b style="font-size:12px"><span t-foreach="o.recurring_invoice_line_ids" t-as="l"><span t-field="l.name"/> </span></b>
+    				de
+    				<b style="font-size:12px"><span t-foreach="o.recurring_invoice_line_ids" t-as="l"><span t-field="l.price_unit" t-field-options='{"widget": "monetary", "display_currency": "company.currency_id"}'/> </span></b>
+    				+ I.G.I.C.
+    			</div>
+    		</xpath> 
+    	</template>
+    </data>
+</openerp>

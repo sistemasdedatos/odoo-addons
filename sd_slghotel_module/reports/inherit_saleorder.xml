@@ -4,12 +4,6 @@
 		<template id="sd_inherit_report_saleorder" inherit_id="sale.report_saleorder_document">
 
 			<xpath expr="//div/div[@class='row']" position="replace" />
-	
-			<xpath expr="//div/h2" position="before">
-				<br />
-				<div class="row mt8" />
-			</xpath>
-
 			<xpath expr="//div/h2" position="after">
 				<div style="font-size:12px">
 					<span t-if="o.partner_id.comercial">

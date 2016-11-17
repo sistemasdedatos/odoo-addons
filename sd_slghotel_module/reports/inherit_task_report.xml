@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="inherit_sd_project_task_report_document"
+			inherit_id="sd_print_project_work.sd_project_task_report_document">
+			<xpath expr="//div/h2" position="replace">
+				<h2 class="text-center">
+					Parte de trabajo Nº:
+					<span t-esc="'%.5d' % o.id" />
+				</h2>
+				<div class="col-xs-8 pull-right" style="font-size:14px">
+					<br>
+						<strong>Dirección: </strong>
+						<t t-if="o.partner_id.street">
+							<span t-esc="'%s, ' % o.partner_id.street" />
+						</t>
+						<t t-if="o.partner_id.city">
+							<span t-esc="'%s' % o.partner_id.city" />
+						</t>
+					</br>
+					<t t-if="o.internal_description">
+						<br>
+							<strong>Contacto:</strong>
+							<span t-field="o.internal_description" />
+						</br>
+					</t>
+				</div>
+			</xpath>
+
+			<xpath expr="//div/div[@class='row mt128 mb8 col-xs-offset-10']"
+				position="replace">
+				<strong>Observaciones</strong>
+				<img src="/sd_print_project_work/static/src/img/trabajo.png"
+					style="width:950px;height:100px" />
+				<div class="pull-right">
+					<h4>CLIENTE</h4>
+					<t t-if="o.signature_image">
+						<span t-field="o.signature_image"
+							t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}" />
+					</t>
+					<t t-if="not o.signature_image">
+						<img src="/sd_print_project_work/static/src/img/trabajo.png"
+							style="width:200px;height:100px" />
+					</t>
+				</div>
+				<div class="col-xs-pull-3">
+					<h4>SELIMGRAHOTEL</h4>
+					<img src="/sd_print_project_work/static/src/img/trabajo.png"
+						style="width:200px;height:100px" />
+				</div>
+			</xpath>
+
+			<xpath expr="//t[@t-if='o.categ_ids']" position="replace" />
+
+			<xpath expr="//p/strong" position="replace">
+				<strong>Operarios: </strong>
+			</xpath>
+
+			<xpath expr="//p/span[@t-field='o.user_id']" position="replace">
+				<t t-foreach="o.categ_ids" t-as="a">
+					<t t-esc="'%s, ' % a.name" />
+				</t>
+			</xpath>
+		</template>
+
+	</data>
+</openerp>

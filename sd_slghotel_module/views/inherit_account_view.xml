@@ -33,6 +33,32 @@
              		</tree>
              	</xpath>
             </field>
-		</record>    	
+		</record>
+		<record id="sd_inherit_account_analytic_account_form_form" model="ir.ui.view">
+            <field name="name">sd.inherit.account.analytic.account.invoice.form.inherit</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//button[@name="%(account_analytic_analysis.action_sales_order)d"]' position="replace">
+                	<button name="%(account_analytic_analysis.action_sales_order)d" string="Sales Orders" type="action" class="oe_link"
+                     context="{'search_default_partner_id': [partner_id], 'default_partner_id': [partner_id], 'search_default_project_id': [active_id],'default_project_id': [active_id], 'default_pricelist_id': pricelist_id}"
+                    />
+                </xpath>
+            </field>
+        </record>
+        <record id="sd_inherit_view_account_analytic_account_form" model="ir.ui.view">
+            <field name="name">sd.inherit.analytic.analytic.account.form</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="sd_contract_template.inherit_view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//separator[@name='description']" position="attributes">
+                	<attribute name="invisible">0</attribute>
+                	<attribute name="string">Notas</attribute>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="attributes">
+                	<attribute name="invisible">0</attribute>
+                </xpath>
+    		</field>
+    	</record>
     </data>
 </openerp>
