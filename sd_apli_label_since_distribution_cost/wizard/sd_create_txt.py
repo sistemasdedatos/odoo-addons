@@ -46,13 +46,17 @@ class ProductProductLabel(models.TransientModel):
 
     def get_content(self):
         global record
-        res = "Codigo EAN;Descripcion;Atributos\r\n"
+        res = "Codigo EAN;Codigo;Descripcion;Atributos\r\n"
         for product in self.browse([record]).label_lines:
             for i in range (product.quantity):
-                res += str (product.product_id.ean13) + ';'
-                res += str (product.product_id.name) + ';'
+                res += str (product.product_id.ean13 or '') + ';'
+                res += (product.product_id.default_code) or ''
+                res += ';'
+                res += product.product_id.name
+                res += ';'
                 for at in product.product_id.attribute_value_ids:
-                    res += str (at.name) + ' '
+                    res += at.name
+                    res += ' '
                 res += "\r\n"
         return res
     
