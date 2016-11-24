@@ -8,42 +8,28 @@
 					<br/>
 					<p></p>
 					<p>
-						<b>De una parte, <span t-field="o.partner_id.name"/></b>, mayor de edad y provisto de NIF 
-						número <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/> 
+						<b>De una parte, <span t-field="o.partner_id.comercial"/></b>, provisto de NIF 
+						número <b><span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/></b>, con domicilio a efecto de notificaciones en 
+						<b><span t-if="o.partner_id.street" t-field="o.partner_id.street"/>, <span t-if="o.partner_id.zip" t-field="o.partner_id.zip"/>, 
+						<span t-if="o.partner_id.city" t-field="o.partner_id.city"/>, <span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name" /></b> 
+						(en lo sucesivo, el Cliente).
 					</p>
 					<p>
-						<b>Y de otra parte, </b>
-						<b>Don Antonio Buján Reyes</b>, mayor de edad y provisto de NIF número 78405396Y.
+						Y de otra parte, <b><span t-field="company.name"/></b>, provisto de NIF número <b><span t-field="company.vat"/></b>,
+						con domicilio a efecto de notificaciones en <b><span t-if="o.partner_id.street" t-field="o.partner_id.street"/>, 
+						<span t-if="o.partner_id.zip" t-field="o.partner_id.zip"/>, <span t-if="company.partner_id.street2" t-field="company.partner_id.street2" />, 
+						<span t-if="o.partner_id.city" t-field="o.partner_id.city"/>, <span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name" /></b>
 					</p>
-					<big style="margin-left:45%"><b><u>Intervienen</u></b></big>
-					<br/>
-					<p></p>
-					<p>
-						<b>El primero, como <i>el cliente</i></b>, en nombre y representación de la entidad mercantil denominada 
-						<span t-field="o.partner_id.comercial"/>, con domicilio social en <span t-if="o.partner_id.street" t-field="o.partner_id.street"/>, 
-						<span t-if="o.partner_id.zip" t-field="o.partner_id.zip"/>, <span t-if="o.partner_id.city" t-field="o.partner_id.city"/> y provista
-						del NIF <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/>.
-					</p>
-					<p>
-						<b>El segundo, como <i>administrador</i></b>, en nombre y representación de la entidad mercantil <b><span t-field="company.name"/></b>, con domicilio
-						 social en <span t-if="company.street" t-field="company.street"/>, <span t-if="company.zip" t-field="company.zip"/>, 
-						 <span t-if="company.city" t-field="company.city"/> y provisto del NIF <span t-field="company.vat"/>.
-					</p>
-					<p>
-						Se reconocen recíprocamente, conforme intervienen con plena capacidad para llevar a cabo el presente contrato, a cuyo fin:
-					</p>
-					<br/>
 					<big style="margin-left:45%"><b><u>Exponen</u></b></big>
 					<br/>
 					<p></p>
 					<ol>
 						<li>
-							Que <b><i>el cliente</i></b> desea contratar el mantenimiento de limpieza del Sistema de extracción de humos y grasas de 
-							<span t-field="o.partner_id.comercial"/>, ubicado en la provincia de <span t-if="company.city" t-field="company.city"/>
+							Que el cliente desea contratar el servicio que se especifica en la estipulación primera, en las instalaciones  de 
+							<b><span t-field="o.partner_id.name"/></b>, ubicado en la provincia de <b><span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name"/></b>
 						</li>
 						<li>
-							Que <b><span t-field="company.name"/></b> posee la capacidad necesaria para prestar dichos servicios y para formalizar 
-							el presente contrato de servicios.
+							Que ambas partes se reconocen recíprocamente e intervienen con plena capacidad para llevar a cabo el presente contrato.
 						</li>
 						<li>
 							Que en virtud de ello, ambas partes acuerdan las siguientes:

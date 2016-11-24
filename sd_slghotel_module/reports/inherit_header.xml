@@ -20,9 +20,13 @@
 							<div style="font-size:11px" t-field="company.partner_id.street" />
 							<div style="font-size:11px">
 								<span t-esc="'%s ' % company.partner_id.zip" />
-								<span t-esc="'%s, San Miguel de Abona' % company.partner_id.city" />
+								<span t-field="company.partner_id.street2" />,
+								<span t-esc="'%s' % company.partner_id.city" />
 							</div>
-							<div style="font-size:11px" t-field="company.partner_id.country_id.name" />
+							<div style="font-size:11px">
+								<span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name" />, 
+								<span t-field="company.partner_id.country_id.name" />
+							</div>
 							<div style="font-size:11px" t-field="company.partner_id.phone" />
 							<div style="font-size:11px" t-field="company.partner_id.email" />
 						</div>
