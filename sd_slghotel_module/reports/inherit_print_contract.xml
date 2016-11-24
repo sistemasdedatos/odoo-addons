@@ -43,13 +43,6 @@
     				<b style="font-size:13px"><span t-if="o.amount_max" t-field="o.amount_max" t-field-options='{"widget": "monetary", "display_currency": "company.currency_id"}'/></b>
     				+ I.G.I.C.
     			</div>
-    			<div t-if="o.recurring_invoices">
-    				Forma de pago: 
-    				<b style="font-size:12px"><span t-foreach="o.recurring_invoice_line_ids" t-as="l"><span t-field="l.name"/> </span></b>
-    				de
-    				<b style="font-size:12px"><span t-foreach="o.recurring_invoice_line_ids" t-as="l"><span t-field="l.price_unit" t-field-options='{"widget": "monetary", "display_currency": "company.currency_id"}'/> </span></b>
-    				+ I.G.I.C.
-    			</div>
     		</xpath> 
     	</template>
     </data>
