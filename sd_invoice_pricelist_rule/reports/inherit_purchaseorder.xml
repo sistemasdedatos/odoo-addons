@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="purchase_discount.report_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document">
+            <xpath expr="//th[strong[text()='Net Price']]" position="before">
+            	<t t-set="DU" t-value="0" />
+   				<t t-set="DD" t-value="0" />
+    			<t t-foreach="o.order_line" t-as="l">
+					<t t-if="l.discount">
+						<t t-set="DU" t-value="1" />
+					</t>
+					<t t-if="l.discount2">
+						<t t-set="DD" t-value="1" />
+					</t>
+				</t>
+                <t t-if="DU"><th class="text-right"><strong>Dto 1(%)</strong></th></t>
+                <t t-if="DD"><th class="text-right" groups="product_pricelist_rules.group_second_discount">Dto 2(%)</th></t>
+            </xpath>
+            <xpath expr="//td[span[@t-field='line.price_subtotal']]" position="before">
+                <t t-if="DU"><td class="text-right"><span t-field="line.discount"/>%</td></t>
+                <t t-if="DD"><td class="text-right" groups="product_pricelist_rules.group_second_discount"><span t-field="line.discount2"/>%</td></t>
+            </xpath>
+        </template>
+    </data>
+</openerp>

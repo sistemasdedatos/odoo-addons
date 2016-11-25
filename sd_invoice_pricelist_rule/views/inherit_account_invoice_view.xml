@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="discount_invoice_form" model="ir.ui.view">
+         	<field name="name">discount.account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            	<xpath	expr="//field[@name='discount']" position="after">
+            		<field name="discount2" groups="product_pricelist_rules.group_second_discount"/>
+            		<field name="discount3" groups="product_pricelist_rules.group_third_discount"/>
+            	</xpath>
+            </field>
+        </record>
+            
+    	<record model="ir.ui.view" id="discounts_account_invoice_line_tree">
+        	<field name="name">inherit.account.invoice.line.tree</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_tree"/>
+            <field name="arch" type="xml">
+            	<xpath	expr="//field[@name='discount']" position="after">
+            		<field name="discount2" groups="product_pricelist_rules.group_second_discount"/>
+            		<field name="discount3" groups="product_pricelist_rules.group_third_discount"/>
+            	</xpath>
+            </field>
+        </record>
+        <record id="discounts_view_invoice_line_form" model="ir.ui.view">
+            <field name="name">inherit.account.invoice.line.form</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='discount']" position="after">
+                	<label for="discount2" groups="product_pricelist_rules.group_second_discount" />
+                    <div name="discount2" groups="product_pricelist_rules.group_second_discount">
+                    	<field name="discount2" class="oe_inline" />%
+                    </div>
+                    <label for="discount3" groups="product_pricelist_rules.group_third_discount" />
+                    <div name="discount3" groups="product_pricelist_rules.group_third_discount">
+                    	<field name="discount3" class="oe_inline" />%
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        <record id="inherit_invoice_supplier_form" model="ir.ui.view">
+            <field name="name">inherit.account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+            	<xpath	expr="//field[@name='discount']" position="after">
+            		<field name="discount2" groups="product_pricelist_rules.group_second_discount"/>
+            	</xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
