@@ -2,6 +2,14 @@
 <openerp>
     <data>
 		<template id="sd_inherit_report_mrprepairorder" inherit_id="mrp_repair.report_mrprepairorder">
+			 <xpath expr="//div[@t-field='o.partner_invoice_id']" position="replace">
+			 	<div t-field="o.partner_invoice_id"
+                     t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "mobile", "fax", "email"], "no_marker": true}'/>
+             </xpath>
+             <xpath expr="//div[@t-field='o.address_id']" position="replace">
+			 	<div t-field="o.address_id" 
+                     t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "mobile", "fax", "email"], "no_marker": true}'/>
+             </xpath>
 			<xpath expr="//div[@class='page']" position="attributes">
 				<attribute name="style">font-size:11px</attribute>
 			</xpath>

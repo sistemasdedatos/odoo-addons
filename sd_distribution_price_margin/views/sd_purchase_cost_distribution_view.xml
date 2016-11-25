@@ -8,6 +8,9 @@
 			<field name="arch" type="xml">
 				<xpath expr="//field[@name='currency_id']" position="after">
 					<field name="benefit_margin"/>
+					<button colspan="2" name="set_margin" type="object" string="Set Margin"
+                            attrs="{'invisible': [('state', 'in', ['done', 'error'])]}" class="oe_link oe_edit_only"
+                            help="Set global margin in all lines"/>
 				</xpath>
     			<xpath expr="//field[@name='standard_price_new']" position="after">
     				<field name="benefit_margin"/>

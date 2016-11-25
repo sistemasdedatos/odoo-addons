@@ -21,8 +21,8 @@ class sd_cash_count (models.TransientModel):
         return self.env['res.users'].browse ([self._uid]).pos_config.id
     
     @api.multi
-    def set_date_end (self):
-        def last_day_of_month (any_day):
+    def set_date_end (self):        
+        def last_day_of_month (any_day):        #Devuelve el ultimo dia del mes, contempla febrero y los bisiestos
             next_month = any_day.replace (day=28) + datetime.timedelta (days=4)  # this will never fail
             return next_month - datetime.timedelta (days = next_month.day)
         return last_day_of_month (datetime.date (int (time.strftime ('%Y')), int (time.strftime ('%m')), 1))

@@ -29,8 +29,8 @@
 FactorYdea Module
 =================
 
-Module that modifies the program interface and the reports to G21 consulting
-----------------------------------------------------------------------------
+Module that modifies the program interface and the reports to FactorYdea
+------------------------------------------------------------------------
 * EDIT Header
 * EDIT Footer
 * EDIT Report invoice 

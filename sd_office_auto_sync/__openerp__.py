@@ -31,6 +31,7 @@ Office Auto Sincronize
 
 Module that automatical sync Office 365 calendar with Odoo calendar
 -------------------------------------------------------------------
+This module is not compatible with google sync
 
     """,
     'website': 'http://www.sdatos.com',

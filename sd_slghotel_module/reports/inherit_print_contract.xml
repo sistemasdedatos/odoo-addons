@@ -11,7 +11,7 @@
 						<b>De una parte, <span t-field="o.partner_id.comercial"/></b>, provisto de NIF 
 						número <b><span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/></b>, con domicilio a efecto de notificaciones en 
 						<b><span t-if="o.partner_id.street"><span t-field="o.partner_id.street"/>, </span><span t-if="o.partner_id.zip"><span t-field="o.partner_id.zip"/>, 
-						</span><span t-if="o.partner_id.city"><span t-field="o.partner_id.city"/>, <span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name" /></b> 
+						</span><span t-if="o.partner_id.city"><span t-field="o.partner_id.city"/>, </span><span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name" /></b> 
 						(en lo sucesivo, el Cliente).
 					</p>
 					<p>

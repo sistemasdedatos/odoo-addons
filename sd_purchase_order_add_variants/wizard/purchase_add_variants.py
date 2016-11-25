@@ -54,7 +54,6 @@ class purchaseAddVariants(models.TransientModel):
         for line in self.variant_line_ids:
             if not line.product_uom_qty:
                 continue
-            print line.product_uom_qty
             line_values = {
                 'product_id': line.product_id.id,
                 'product_qty': line.product_uom_qty,
