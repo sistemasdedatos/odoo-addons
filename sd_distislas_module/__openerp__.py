@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Distribuciones Islas',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -45,7 +45,9 @@ Module that modifies the program interface and the reports to Distribuciones Isl
                  'product_variants_types',
                  'sd_ean13_generator',
                  'sd_user_warehouse',
-                 'sd_distribution_price_margin'],
+                 'sd_distribution_price_margin',
+                 'sd_invoice_pricelist_rule',
+                 'sd_cost_repercution_purchase'],
     'data': ['reports/footer_report.xml',
              'reports/header_report.xml',
              'reports/invoice_report.xml',
