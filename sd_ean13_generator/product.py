@@ -4,7 +4,7 @@ from openerp.tools.translate import _
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 import psycopg2
 import openerp.addons.product.product
-
+import re
 import openerp.addons.decimal_precision as dp
 from openerp.tools.float_utils import float_round, float_compare
 
@@ -52,10 +52,17 @@ class product_product(models.Model):
     @api.multi
     def generate_ean13 (self, count = 0):
         for s in self:
+            d_code = []
             if s.default_code:
-                ean = str (s.default_code)[0]
+                d_code = list (str (s.default_code))
+                while True:
+                    if not len (d_code) or re.match (r"[1-9]", d_code[0]): break
+                    else: d_code.pop (0)
+            if len (d_code):
+                d_code = ''.join(d_code)
+                ean = d_code[0]
                 ean += str ('%.2d' % abs (s.lst_price)).split ('.')[0] + '7' + str ('%.2d' % int (float (str('%.2f' % abs (s.lst_price)).split ('.')[1])))
-                ean += str (s.default_code)[1:len(s.default_code)]
+                ean += d_code[1:len(d_code)]
             else:
                 ean = str (s.id)[0]
                 ean += str ('%.2d' % abs (s.lst_price)).split ('.')[0] + '7' + str ('%.2d' % int (float (str('%.2f' % abs (s.lst_price)).split ('.')[1])))
