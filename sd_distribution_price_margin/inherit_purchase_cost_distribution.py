@@ -27,7 +27,7 @@ class PurchaseCostDistribution(models.Model):
     @api.one
     def action_done(self):
         for line in self.cost_lines:
-            if line.benefit_margin >= 0:
+            if line.benefit_margin >= 0 and line.product_id.lst_price == 0:
                 line.product_id.lst_price = line.benefit_price
         super (PurchaseCostDistribution, self).action_done ()
     
@@ -37,3 +37,4 @@ class PurchaseCostDistributionLine(models.Model):
     state = fields.Selection (readonly = True, related = "distribution.state")
     benefit_margin = fields.Float (string = 'Margin %', readonly = False, default = -1)
     benefit_price = fields.Float (string = 'Sale Price', readonly = True)
+    prev_pvp = fields.Float (related="product_id.lst_price", readonly = True)
