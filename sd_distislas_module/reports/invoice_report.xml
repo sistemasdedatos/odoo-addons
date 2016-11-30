@@ -5,19 +5,19 @@
 
 			<xpath expr="//div/div/div[@class='col-xs-5 col-xs-offset-7']"
 				position="replace">
-				<div class="col-xs-4 col-xs-offset-4" style="font-size:14px">
+				<div class="col-xs-4 col-xs-offset-4" style="font-size:16px">
 					<strong>
 						<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
 						<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
 						<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
 						<span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-						<span t-if="o.type == 'out_refund'">Refund</span>
+						<span t-if="o.type == 'out_refund'">Refund <span style="color:#8A0829">Abono</span></span>
 						<span t-if="o.type == 'in_refund'">Supplier Refund</span>
 						<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
 						<span t-field="o.number" />
 					</strong>
 				</div>
-				<div style="font-size:11px">
+				<div style="font-size:12px">
 					<div class="col-xs-8">
 						<strong>
 							<br>
@@ -61,19 +61,14 @@
 							Customer data
 							<br />
 						</strong>
-						<span t-if="o.partner_id.comercial">
-							<strong>Fiscal name: </strong>
-							<span t-field="o.partner_id.comercial" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.vat">
-							<strong>NIF: </strong>
-							<span t-field="o.partner_id.vat" />
-							<br />
-						</span>
 						<span t-if="o.partner_id.name">
-							<strong>Comercial name: </strong>
+							<strong>Fiscal name: </strong>
 							<span t-field="o.partner_id.name" />
+							<br />
+						</span>
+						<span t-if="o.partner_id.comercial">
+							<strong>Comercial name: </strong>
+							<span t-field="o.partner_id.comercial" />
 							<br />
 						</span>
 						<span t-if="o.partner_id.street">
@@ -82,6 +77,11 @@
 							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
 							<span t-esc="'%s, ' % o.partner_id.city" />
 							<span t-esc="'%s' % o.partner_id.country_id.name" />
+							<br />
+						</span>
+						<span t-if="o.partner_id.vat">
+							<strong>NIF: </strong>
+							<span t-field="o.partner_id.vat" />
 						</span>
 					</div>
 				</div>
@@ -114,6 +114,12 @@
 
 			<xpath expr="//div/p[@t-if='o.fiscal_position.note']" position="attributes">
 				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			<xpath expr="//div/p[@t-if='o.fiscal_position.note']" position="after">
+				<div t-if="o.user_id" style="font-size:11px"> 
+					Comercial: <span t-field="o.user_id.name"/>,
+					<span t-if="o.user_id.partner_id.mobilo">Tfno: <span t-field="o.user_id.partner_id.mobile"/></span>
+				</div>
 			</xpath>
 
 		</template>

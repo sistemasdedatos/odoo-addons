@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_product_product_tree_view" model="ir.ui.view">
+            <field name="name">inherit.product.product.tree</field>
+            <field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='lst_price']" position="after">
+					<field name="standard_price" string="Precio de costo"/>
+				</xpath>
+			</field>
+		</record>
+    </data>
+</openerp>
