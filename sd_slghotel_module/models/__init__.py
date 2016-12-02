@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-import models
+import account_invoice, project_task

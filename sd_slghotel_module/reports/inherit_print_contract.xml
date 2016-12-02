@@ -17,7 +17,7 @@
 					<p>
 						Y de otra parte, <b><span t-field="company.name"/></b>, provisto de NIF número <b><span t-field="company.vat"/></b>,
 						con domicilio a efecto de notificaciones en <b><span t-if="company.street" t-field="company.street"/>, 
-						<span t-if="company.zip" t-field="o.partner_id.zip"/>, <span t-if="company.partner_id.street2" t-field="company.partner_id.street2" />, 
+						<span t-if="company.zip" t-field="company.zip"/>, <span t-if="company.partner_id.street2" t-field="company.partner_id.street2" />, 
 						<span t-if="company.city" t-field="company.city"/>, <span t-if="company.partner_id.state_id" t-field="company.partner_id.state_id.name" /></b>.
 					</p>
 					<big style="margin-left:45%"><b><u>Exponen</u></b></big>

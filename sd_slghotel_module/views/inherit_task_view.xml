@@ -12,6 +12,9 @@
 				<xpath expr="//field[@name='categ_ids']" position="attributes">
 					<attribute name="string">Operarios</attribute>		
 				</xpath>
+				<xpath expr="//field[@name='description']" position="after">
+					<field name="html_description"/>	
+				</xpath>
 	   	 	</field>  	
     	</record>
     	

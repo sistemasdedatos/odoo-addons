@@ -26,7 +26,14 @@
 					</t>
 				</div>
 			</xpath>
-
+			<xpath expr="//t[@t-if='o.description']" position="after">
+				<t t-if="o.html_description">
+					<span t-field="o.html_description" />
+				</t>
+			</xpath>
+			<xpath expr="//t[@t-if='not o.description']" position="attributes">
+				<attribute name="t-if">not o.description and not o.html_description</attribute>
+			</xpath>
 			<xpath expr="//div/div[@class='row mt128 mb8 col-xs-offset-10']"
 				position="replace">
 				<strong>Observaciones</strong>
