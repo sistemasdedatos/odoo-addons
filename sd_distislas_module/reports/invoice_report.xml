@@ -62,17 +62,17 @@
 							<br />
 						</strong>
 						<span t-if="o.partner_id.name">
-							<strong>Fiscal name: </strong>
+							<!-- <strong>Fiscal name: </strong> -->
 							<span t-field="o.partner_id.name" />
 							<br />
 						</span>
 						<span t-if="o.partner_id.comercial">
-							<strong>Comercial name: </strong>
+							<!-- <strong>Comercial name: </strong> -->
 							<span t-field="o.partner_id.comercial" />
 							<br />
 						</span>
 						<span t-if="o.partner_id.street">
-							<strong>Address: </strong>
+							<!-- <strong>Address: </strong> -->
 							<span t-esc="'%s, ' % o.partner_id.street" />
 							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
 							<span t-esc="'%s, ' % o.partner_id.city" />
@@ -80,7 +80,7 @@
 							<br />
 						</span>
 						<span t-if="o.partner_id.vat">
-							<strong>NIF: </strong>
+							<!-- <strong>NIF: </strong> -->
 							<span t-field="o.partner_id.vat" />
 						</span>
 					</div>
@@ -118,7 +118,7 @@
 			<xpath expr="//div/p[@t-if='o.fiscal_position.note']" position="after">
 				<div t-if="o.user_id" style="font-size:11px"> 
 					Comercial: <span t-field="o.user_id.name"/>,
-					<span t-if="o.user_id.partner_id.mobilo">Tfno: <span t-field="o.user_id.partner_id.mobile"/></span>
+					<span t-if="o.user_id.partner_id.mobile">Tfno: <span t-field="o.user_id.partner_id.mobile"/></span>
 				</div>
 			</xpath>
 
