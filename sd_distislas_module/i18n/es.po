@@ -157,3 +157,12 @@ msgstr "font-size:16px"
 msgid "font-size:8px"
 msgstr "font-size:8px"
 
+#. module: sd_distislas_module
+#: view:website:account.report_invoice_document
+msgid "Bank:"
+msgstr "Banco:"
+
+#. module: sd_distislas_module
+#: view:website:account.report_invoice_document
+msgid "Account:"
+msgstr "Número de cuenta:"

@@ -120,6 +120,10 @@
 					Comercial: <span t-field="o.user_id.name"/>,
 					<span t-if="o.user_id.partner_id.mobile">Tfno: <span t-field="o.user_id.partner_id.mobile"/></span>
 				</div>
+				<div class="mt16" t-if="o.partner_bank_id" style="font-size:11px">
+					Bank: <span t-field="o.partner_bank_id.bank_name"/><br/>
+					Account: <span t-field="o.partner_bank_id.acc_number"/>
+				</div>
 			</xpath>
 
 		</template>
