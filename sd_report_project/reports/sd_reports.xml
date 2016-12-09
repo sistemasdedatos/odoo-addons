@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<report
+            id="sd_report_project.project_print"
+            model="sd.wizard.project.report"        
+            name="sd_report_project.project_report"
+            string="Print Prject Report"
+            file="sd_report_project.project_report"
+            report_type="qweb-pdf"
+            attachment_use="False"
+            menu="False"
+        />
+        <report
+            id="project_task"
+            model="project.task"        
+            name="sd_report_project.sd_task_report"
+            string="Print Task Report 2"
+            file="sd_report_project.sd_task_report"
+            report_type="qweb-pdf"
+            attachment_use="True"
+            attachment="('Parte_'+str(object.id)+'_sdatos.pdf')"
+        />
+    </data>
+</openerp>

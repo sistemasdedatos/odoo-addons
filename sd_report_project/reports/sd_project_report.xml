@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<template id="sd_report_project.project_report">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_report_project.project_report_document')" />
+				</t>
+			</t>
+		</template>
+		
+		<template id="sd_report_project.project_report_document">
+			<t t-call="report.external_layout">
+				<div class="page" style="font-size:11px">
+					<h3 class="text-center">
+						Report for
+						<span t-field="o.partner_id" />
+						<br>
+							<group col="4">
+								Period from
+								<span t-field="o.date_from"
+									t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}" />
+								to
+								<span t-field="o.date_to"
+									t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}" />
+							</group>
+						</br>
+					</h3>
+					<div t-foreach="o.wizard_task_ids" t-as="task"><t t-foreach="task.task_id" t-as="t">
+						<h4>
+							<strong t-field="t.name" />
+						</h4>
+						<p>
+							<t t-if="t.description">
+								<u style="font-size:12px">Description:</u>
+								<br />
+								<span t-field="t.description" />
+							</t>
+						</p>
+						<t t-if="t.work_ids">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th class="col-xs-1 text-center">Date</th>
+										<th class="col-xs-7 text-center">Completed tasks</th>
+										<th class="col-xs-1 text-center">Time in</th>
+										<th class="col-xs-2 text-center">Employee</th>
+										<th class="col-xs-1 text-center">Time spent</th>
+									</tr>
+								</thead>
+								<tbody class="invoice_tbody">
+									<tr t-foreach="t.work_ids" t-as="w">
+										<td class="col-xs-2 text-center">
+											<span t-field="w.date"
+												t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}" />
+										</td>
+										<td class="col-xs-6">
+											<span t-field="w.name" />
+										</td>
+										<td class="text-center">
+											<span t-field="w.date"
+												t-field-options="{&quot;format&quot;: &quot;hh:mm&quot;}" />
+										</td>
+										<td>
+											<span t-field="w.user_id.name" />
+										</td>
+										<td class="text-right">
+											<span
+												t-esc="'%s:%s' % (str('%.2d' % w.hours).split('.')[0], (str('%.2d' % int(float(str('%.2f' % w.hours).split('.')[1])/100*60))))" />
+										</td>
+									</tr>
+									<tr style="font-size:12px">
+										<td />
+										<td />
+										<td />
+										<td class="text-right"><strong><i>Total: </i></strong></td>
+										<td class="text-left">
+											<span t-field="task.total_time"/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</t>
+						<t t-if="t.material_ids">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>Element/Component</th>
+										<th>Description</th>
+										<th>Quantity</th>
+									</tr>
+								</thead>
+								<tbody class="invoice_tbody">
+									<tr t-foreach="t.material_ids" t-as="w">
+										<td>
+											<span t-field="w.product_id" />
+										</td>
+										<td>
+											<span t-field="w.product_description" />
+										</td>
+										<td>
+											<span t-esc="'%.2f ' % w.quantity"/><span t-esc="'%s' % w.product_id.uom_id.name" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</t>
+					</t></div>
+					<div class="row">
+						<div class="text-center">
+							<strong>
+								<i>
+									Total time:
+									<span t-field="o.total_time" />
+								</i>
+							</strong>
+						</div>
+					</div>
+				</div>
+			</t>
+		</template>
+
+		<template id="sd_task_report_document">
+			<t t-call="report.external_layout">
+				<div class="page">
+					<h2 class="text-center">Working part Nº: <span t-esc="'%.5d' % o.id"/></h2>
+					<p style="font-size:14px">
+						<br>
+							<strong>Customer:</strong>
+						</br>
+						<span t-field="o.partner_id.name" />
+						<br />
+						<strong>Employee:</strong>
+						<span t-field="o.user_id" />
+						<br />
+					</p>
+					<div style="font-size:14px">
+						<strong>Title of task: </strong>
+						<span t-field="o.name" />
+						<br />
+						<t t-if="o.categ_ids">
+							<strong>Labels: </strong>
+							<t t-foreach="o.categ_ids" t-as="a">
+								<t t-esc="'%s, ' % a.name" />
+							</t>
+							<br />
+						</t>
+						<br>
+							<u>Description</u>
+						</br>
+						<br />
+						<t t-if="o.description">
+							<span t-field="o.description" />
+						</t>
+						<t t-if="not o.description">
+							<img src="/sd_report_project/static/src/img/trabajo.png"
+								style="width:950px;height:200px" />
+						</t>
+
+					</div>
+					<br />
+					<table class="table table-condensed">
+						<thead>
+							<tr style="font-size:14px">
+								<th>Work</th>
+								<th class="text-center">Time in</th>
+								<th class="text-center">Time spent</th>
+								<th class="text-center">Date</th>
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+							<t t-if="o.work_ids">
+								<tr t-foreach="o.work_ids" t-as="l" style="font-size:14px">
+									<td>
+										<span t-field="l.name" />
+									</td>
+									<td class="text-center">
+										<span t-field="l.date" t-field-options="{&quot;format&quot;: &quot;HH:mm&quot;}" />
+									</td>
+									<td class="text-center">
+										<span
+											t-esc="'%s:%s' % (str('%.2d' % l.hours).split('.')[0], (str('%.2d' % int(float(str('%.2f' % l.hours).split('.')[1])/100*60))))" />
+									</td>
+									<td class="text-center">
+										<span t-field="l.date"
+											t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}" />
+									</td>
+								</tr>
+							</t>
+							<t t-if="not o.work_ids">
+								<tr>
+									<td>
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:610px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:610px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:610px;height:50px" />
+									</td>
+									<td class="text-right">
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+									</td>
+									<td class="text-right">
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+									</td>
+									<td class="text-right">
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+									</td>
+								</tr>
+							</t>
+						</tbody>
+					</table>
+					<table class="table table-condensed">
+						<thead>
+							<tr style="font-size:14px">
+								<th>Element/Component</th>
+								<th>Description</th>
+								<th class="text-center">Quantity</th>
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+							<t t-if="o.material_ids">
+								<tr t-foreach="o.material_ids" t-as="w" style="font-size:14px">
+									<td>
+										<span t-field="w.product_id" />
+									</td>
+									<td>
+										<span t-field="w.product_description" />
+									</td>
+									<td class="text-center">
+										<span t-esc="'%.2f ' % w.quantity"/><span t-esc="'%s' % w.product_id.uom_id.name" />
+									</td>
+								</tr>
+							</t>
+							<t t-if="not o.material_ids">
+								<tr>
+									<td>
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:415px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:415px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:415px;height:50px" />
+									</td>
+									<td>
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:415px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:415px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:415px;height:50px" />
+									</td>
+									<td>
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+										<img src="/sd_report_project/static/src/img/trabajo.png"
+											style="width:100px;height:50px" />
+									</td>
+									
+								</tr>
+							</t>
+						</tbody>
+					</table>
+				<div class="row mt128 mb8 col-xs-offset-10">
+					<h4>Customer Signature</h4>
+					<t t-if="o.signature_image">
+						<span t-field="o.signature_image"
+							t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}" />
+					</t>
+					<t t-if="not o.signature_image">
+						<img src="/sd_report_project/static/src/img/trabajo.png"
+							style="width:150px;height:70px" />
+					</t>
+					</div>
+				</div>
+			</t>
+		</template>
+
+		<template id="sd_task_report">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_report_project.sd_task_report_document')" />
+				</t>
+			</t>
+		</template>
+	</data>
+</openerp>

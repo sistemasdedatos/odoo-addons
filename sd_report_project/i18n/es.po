@@ -1,0 +1,277 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_report_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-09 14:03+0000\n"
+"PO-Revision-Date: 2016-12-09 14:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_report_project
+#: view:sd.wizard.project.report:sd_report_project.sd_wizard_project_report_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Completed tasks"
+msgstr "Descripción del servicio"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,create_uid:0
+#: field:sd.wizard.task,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,create_date:0
+#: field:sd.wizard.task,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Customer Signature"
+msgstr "Firma de cliente"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Customer:"
+msgstr "Cliente:"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Date"
+msgstr "Fecha"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Description:"
+msgstr "Descripción:"
+
+#. module: sd_report_project
+#: field:report.sd_report_project.project_report,display_name:0
+#: field:sd.wizard.project.report,display_name:0
+#: field:sd.wizard.task,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Element/Component"
+msgstr "Elemento/Componente"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Employee"
+msgstr "Técnico"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Employee:"
+msgstr "Técnico:"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,date_to:0
+msgid "End of period"
+msgstr "Fin del periodo"
+
+#. module: sd_report_project
+#: model:ir.actions.act_window,name:sd_report_project.sd_action_wizard_project_report
+#: view:sd.wizard.project.report:sd_report_project.sd_wizard_project_report_form_view
+msgid "Filter by date"
+msgstr "Filtrar por fecha"
+
+#. module: sd_report_project
+#: view:project.project:sd_report_project.sd_inherit_project
+msgid "Get Report"
+msgstr "Sacar informe"
+
+#. module: sd_report_project
+#: field:report.sd_report_project.project_report,id:0
+#: field:sd.wizard.project.report,id:0
+#: field:sd.wizard.task,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Labels:"
+msgstr "Tipo de servicio:"
+
+#. module: sd_report_project
+#: field:report.sd_report_project.project_report,__last_update:0
+#: field:sd.wizard.project.report,__last_update:0
+#: field:sd.wizard.task,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,write_uid:0
+#: field:sd.wizard.task,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,write_date:0
+#: field:sd.wizard.task,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,partner_id:0
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Period from"
+msgstr "Periodo desde"
+
+#. module: sd_report_project
+#: view:sd.wizard.project.report:sd_report_project.sd_wizard_project_report_form_view
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: sd_report_project
+#: model:ir.actions.report.xml,name:sd_report_project.project_print
+msgid "Print Prject Report"
+msgstr "Informe de proyecto"
+
+#. module: sd_report_project
+#: model:ir.actions.report.xml,name:sd_report_project.project_task
+msgid "Print Task Report 2"
+msgstr "Parte"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,project_id:0
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Report for"
+msgstr "Informe para"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,stage_ids:0
+msgid "Stages"
+msgstr "Etapas"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,date_from:0
+msgid "Start of period"
+msgstr "Inicio del periodo"
+
+#. module: sd_report_project
+#: field:sd.wizard.task,task_id:0
+msgid "Task id"
+msgstr "Task id"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,wizard_task_ids:0
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: sd_report_project
+#: code:addons/sd_report_project/wizard/sd_wizard_project_report.py:22
+#, python-format
+msgid "There are not tasks in that period time or in that stages"
+msgstr "No hay tareas para ese periodo y etapas seleccionadas"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Time in"
+msgstr "Hora de entrada"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Time spent"
+msgstr "Tiempo dedicado"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Title of task:"
+msgstr "Título de la tarea:"
+
+#. module: sd_report_project
+#: view:sd.wizard.project.report:sd_report_project.sd_wizard_project_report_form_view
+msgid "To print a particular month we select, from 01 to 31/30 of that\n"
+"						month"
+msgstr "Para imprimir un mes en particular se debe seleccionar, desde 01 hasta el 30/31\n"
+"						del mes correspondiente"
+
+#. module: sd_report_project
+#: field:sd.wizard.project.report,total_time:0
+msgid "Total time"
+msgstr "Tiempo total"
+
+#. module: sd_report_project
+#: field:sd.wizard.task,total_time:0
+msgid "Total time task"
+msgstr "Tiempo total de la tarea"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Total time:"
+msgstr "Tiempo total:"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "Total:"
+msgstr "Total:"
+
+#. module: sd_report_project
+#: field:sd.wizard.task,wizard_project_id:0
+msgid "Wizard Project Report"
+msgstr "Wizard Project Report"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Work"
+msgstr "Trabajo"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Working part Nº:"
+msgstr "Parte de trabajo Nº:"
+
+#. module: sd_report_project
+#: view:project.task:sd_report_project.sd_view_task_kanban
+msgid "date_deadline DESC"
+msgstr "date_deadline DESC"
+
+#. module: sd_report_project
+#: view:sd.wizard.project.report:sd_report_project.sd_wizard_project_report_form_view
+msgid "or"
+msgstr "o"
+
+#. module: sd_report_project
+#: view:website:sd_report_project.project_report_document
+msgid "to"
+msgstr "hasta"
+
