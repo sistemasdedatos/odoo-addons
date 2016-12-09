@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Distribuciones Islas',
-    'version' : '0.3',
+    'version' : '0.3.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',

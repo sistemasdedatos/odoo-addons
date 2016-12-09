@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 14:25+0000\n"
-"PO-Revision-Date: 2016-10-18 14:25+0000\n"
+"POT-Creation-Date: 2016-12-09 11:34+0000\n"
+"PO-Revision-Date: 2016-12-09 11:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,10 @@ msgstr ""
 
 #. module: sd_distislas_module
 #: view:website:account.report_invoice_document
+msgid "Abono"
+msgstr "Abono"
+
+#. module: sd_distislas_module
 #: view:website:sale.report_saleorder_document
 msgid "Address:"
 msgstr "Dirección:"
@@ -27,15 +31,20 @@ msgid "Cancelled Invoice"
 msgstr "Factura cancelada"
 
 #. module: sd_distislas_module
-#: view:website:account.report_invoice_document
 #: view:website:sale.report_saleorder_document
 msgid "Comercial name:"
 msgstr "Nombre comercial:"
 
 #. module: sd_distislas_module
 #: view:website:account.report_invoice_document
+msgid "Comercial:"
+msgstr "Comercial:"
+
+#. module: sd_distislas_module
+#: view:website:account.report_invoice_document
+#: view:website:sale.report_saleorder_document
 msgid "Customer Code:"
-msgstr "Código de cliente"
+msgstr "Código de cliente:"
 
 #. module: sd_distislas_module
 #: view:website:account.report_invoice_document
@@ -58,7 +67,6 @@ msgid "Draft Invoice"
 msgstr "Factura borrador"
 
 #. module: sd_distislas_module
-#: view:website:account.report_invoice_document
 #: view:website:sale.report_saleorder_document
 msgid "Fiscal name:"
 msgstr "Nombre fiscal:"
@@ -69,7 +77,6 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: sd_distislas_module
-#: view:website:account.report_invoice_document
 #: view:website:sale.report_saleorder_document
 msgid "NIF:"
 msgstr "NIF:"
@@ -83,6 +90,31 @@ msgstr "Origen:"
 #: view:website:account.report_invoice_document
 msgid "PRO-FORMA"
 msgstr "PRO-FORMA"
+
+#. module: sd_distislas_module
+#: view:product.product:sd_distislas_module.inherit_product_product_tree_view
+msgid "Precio de costo"
+msgstr "Precio de costo"
+
+#. module: sd_distislas_module
+#: model:ir.model,name:sd_distislas_module.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: sd_distislas_module
+#: model:ir.model,name:sd_distislas_module.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: sd_distislas_module
+#: model:ir.model,name:sd_distislas_module.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: sd_distislas_module
+#: model:ir.model,name:sd_distislas_module.model_purchase_cost_distribution
+msgid "Purchase landed costs distribution"
+msgstr "Distribución de costes de compra"
 
 #. module: sd_distislas_module
 #: view:website:account.report_invoice_document
@@ -103,6 +135,11 @@ msgstr "Factura de proveedor"
 #: view:website:account.report_invoice_document
 msgid "Supplier Refund"
 msgstr "Factura rectificativa de proveedor"
+
+#. module: sd_distislas_module
+#: view:website:account.report_invoice_document
+msgid "Tfno:"
+msgstr "Tfno:"
 
 #. module: sd_distislas_module
 #: view:website:account.report_invoice_document
