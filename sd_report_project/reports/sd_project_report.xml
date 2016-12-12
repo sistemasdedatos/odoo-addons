@@ -124,69 +124,72 @@
 
 		<template id="sd_task_report_document">
 			<t t-call="report.external_layout">
-				<div class="page">
-					<h2 class="text-center">Working part Nº: <span t-esc="'%.5d' % o.id"/></h2>
-					<p style="font-size:14px">
-						<br>
+				<div class="page" style="font-size:11px">
+					<h3 class="text-center">Working part Nº: <span t-esc="'%.5d' % o.id"/></h3>
+					<div class="col-xs-6 mt16" style="font-size:12px">
+						<div>
 							<strong>Customer:</strong>
-						</br>
-						<span t-field="o.partner_id.name" />
-						<br />
-						<strong>Employee:</strong>
-						<span t-field="o.user_id" />
-						<br />
-					</p>
-					<div style="font-size:14px">
-						<strong>Title of task: </strong>
-						<span t-field="o.name" />
-						<br />
-						<t t-if="o.categ_ids">
+							<span t-field="o.partner_id.name" />
+						</div>
+						<div>
+							<strong>Employee:</strong>
+							<span t-field="o.user_id" />
+						</div>
+					</div>
+					<div class="col-xs-6 mt16" style="font-size:12px">
+						<div>
+							<strong>Title of task: </strong>
+							<span t-field="o.name" />
+						</div>
+						<div t-if="o.categ_ids">
 							<strong>Labels: </strong>
 							<t t-foreach="o.categ_ids" t-as="a">
 								<t t-esc="'%s, ' % a.name" />
 							</t>
-							<br />
-						</t>
-						<br>
-							<u>Description</u>
-						</br>
-						<br />
-						<t t-if="o.description">
-							<span t-field="o.description" />
-						</t>
-						<t t-if="not o.description">
-							<img src="/sd_report_project/static/src/img/trabajo.png"
-								style="width:950px;height:200px" />
-						</t>
-
+						</div>
 					</div>
-					<br />
+					<div class="col-xs-12 mt16 mb16" t-if="o.description">
+						<div><u>Description</u></div>
+						<div t-field="o.description" />
+					</div>
+					<div class="col-xs-12 mt16 mb16" t-if="not o.description">
+						<img src="/sd_report_project/static/src/img/trabajo.png"
+							style="width:950px;height:200px" />
+					</div>
+					<t t-set="total_hours" t-value="0.0"/>
 					<table class="table table-condensed">
 						<thead>
-							<tr style="font-size:14px">
-								<th>Work</th>
-								<th class="text-center">Time in</th>
-								<th class="text-center">Time spent</th>
-								<th class="text-center">Date</th>
+							<tr>
+								<th class="col-xs-7">Work</th>
+								<th class="col-xs-1 text-center">Time in</th>
+								<th class="col-xs-2 text-center">Date</th>
+								<th class="col-xs-1 text-center">Time spent</th>
 							</tr>
 						</thead>
 						<tbody class="invoice_tbody">
 							<t t-if="o.work_ids">
-								<tr t-foreach="o.work_ids" t-as="l" style="font-size:14px">
-									<td>
+								<tr t-foreach="o.work_ids" t-as="l">
+									<td class="col-xs-7">
 										<span t-field="l.name" />
 									</td>
-									<td class="text-center">
+									<td class="col-xs-1 text-center">
 										<span t-field="l.date" t-field-options="{&quot;format&quot;: &quot;HH:mm&quot;}" />
 									</td>
-									<td class="text-center">
-										<span
-											t-esc="'%s:%s' % (str('%.2d' % l.hours).split('.')[0], (str('%.2d' % int(float(str('%.2f' % l.hours).split('.')[1])/100*60))))" />
-									</td>
-									<td class="text-center">
+									<td class="col-xs-1 text-center">
 										<span t-field="l.date"
 											t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}" />
 									</td>
+									<td class="col-xs-2 text-center">
+										<t t-set="total_hours" t-value="total_hours + l.hours"/>
+										<span
+											t-esc="'%s:%s' % (str('%.2d' % l.hours).split('.')[0], (str('%.2d' % int(float(str('%.2f' % l.hours).split('.')[1])/100*60))))" />
+									</td>
+								</tr>
+								<tr style="font-size:12px">
+									<td></td>
+									<td></td>
+									<td class="text-right"><strong>Total:</strong></td>
+									<td class="text-center"><span t-esc="'%s:%s' % (str('%.2d' % total_hours).split('.')[0], (str('%.2d' % int(float(str('%.2f' % total_hours).split('.')[1])/100*60))))"/></td>
 								</tr>
 							</t>
 							<t t-if="not o.work_ids">
@@ -229,7 +232,7 @@
 					</table>
 					<table class="table table-condensed">
 						<thead>
-							<tr style="font-size:14px">
+							<tr>
 								<th>Element/Component</th>
 								<th>Description</th>
 								<th class="text-center">Quantity</th>
@@ -237,7 +240,7 @@
 						</thead>
 						<tbody class="invoice_tbody">
 							<t t-if="o.material_ids">
-								<tr t-foreach="o.material_ids" t-as="w" style="font-size:14px">
+								<tr t-foreach="o.material_ids" t-as="w">
 									<td>
 										<span t-field="w.product_id" />
 									</td>
@@ -280,16 +283,16 @@
 							</t>
 						</tbody>
 					</table>
-				<div class="row mt128 mb8 col-xs-offset-10">
-					<h4>Customer Signature</h4>
-					<t t-if="o.signature_image">
-						<span t-field="o.signature_image"
-							t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}" />
-					</t>
-					<t t-if="not o.signature_image">
-						<img src="/sd_report_project/static/src/img/trabajo.png"
-							style="width:150px;height:70px" />
-					</t>
+					<div class="row mt32 col-xs-offset-9">
+						<h4>Customer Signature</h4>
+						<t t-if="o.signature_image">
+							<span t-field="o.signature_image"
+								t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}" />
+						</t>
+						<t t-if="not o.signature_image">
+							<img src="/sd_report_project/static/src/img/trabajo.png"
+								style="width:150px;height:70px" />
+						</t>
 					</div>
 				</div>
 			</t>
