@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_task_kanban" model="ir.ui.view">
+			<field name="name">inherit.view.task.kanban</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="project.view_task_kanban" />
+			<field name="arch" type="xml">
+				<xpath expr="//div[@class='oe_kanban_content']/div" position="before">
+					<div><field name="phisical_part"/></div>
+				</xpath>
+			</field>
+		</record>
+		<record id="inherit_view_task_form2" model="ir.ui.view">
+			<field name="name">project.task.form.inherit</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="project.view_task_form2" />
+			<field name="arch" type="xml">
+				<xpath expr="//header/field[@name='stage_id']" position="before">
+	            	<button name="action_task_sent" type="object" string="Send by Email" class="oe_highlight" groups="base.group_user"/>
+                </xpath>
+				<xpath expr="//field[@name='categ_ids']" position="attributes">
+					<attribute name="string">Servicio</attribute>				
+				</xpath>
+				<xpath expr="//field[@name='date_deadline']" position="before">
+					<field name="phisical_part" string="Parte físico Nº"/>	
+				</xpath>
+	   	 	</field>
+	   	 </record>
+		 <record id="inherit_sign_view_task_form2" model="ir.ui.view">
+			<field name="name">project.task.sign.form.inherit</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="sd_digital_sign.inherit_view_task_form2" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='signature_image']" position="after">
+					<field name="signature_client"/>				
+				</xpath>
+				<xpath expr="//div[@class='col-xs-offset-9']" position="attributes">
+					<attribute name="class">col-xs-offset-0</attribute>
+				</xpath>
+	   	 	</field>
+	   	 </record>
+    </data>
+</openerp>
