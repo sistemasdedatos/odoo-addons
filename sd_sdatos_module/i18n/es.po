@@ -6,14 +6,142 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-18 08:26+0000\n"
-"PO-Revision-Date: 2015-11-18 08:26+0000\n"
+"POT-Creation-Date: 2016-12-12 14:30+0000\n"
+"PO-Revision-Date: 2016-12-12 14:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: sd_sdatos_module
+#: model:email.template,body_html:sd_sdatos_module.email_template_edi_sd_task
+msgid "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Estimado/a ${object.partner_id.name},</p>\n"
+"\n"
+"    <p>en base a su solicitud, Sistemas de Datos ha realizado el siguiente trabajo: </p>\n"
+"    \n"
+"    <p style=\"border-left: 1px solid #1A4F28; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCIAS</strong><br />\n"
+"       &nbsp;&nbsp;Parte Nº: <strong>${object.id}</strong><br />\n"
+"       &nbsp;&nbsp;Técnico: <strong>${object.user_id.name}</strong><br />\n"
+"       &nbsp;&nbsp;Fecha: ${object.date_deadline}<br />\n"
+"       &nbsp;&nbsp;Adjunto va el parte de trabajo.\n"
+"    </p>  \n"
+"    \n"
+"    <br/>\n"
+"    <p>Si tiene cualquier cuestión, no dude en ponerse en contacto con nosotros.</p>\n"
+"    <p>Gracias por seguir confiando en ${object.company_id.name or 'us'}!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #1A4F28; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"        % if object.company_id.street:\n"
+"            ${object.company_id.street}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.street2:\n"
+"            ${object.company_id.street2}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.city or object.company_id.zip:\n"
+"            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.country_id:\n"
+"            ${object.company_id.state_id and ('%s, ' % object.company_id.state_id.name) or ''} ${object.company_id.country_id.name or ''}<br/>\n"
+"        % endif\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Teléfono:&nbsp; ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr "\n"
+"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Estimado/a ${object.partner_id.name},</p>\n"
+"\n"
+"    <p>en base a su solicitud, Sistemas de Datos ha realizado el siguiente trabajo: </p>\n"
+"    \n"
+"    <p style=\"border-left: 1px solid #1A4F28; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCIAS</strong><br />\n"
+"       &nbsp;&nbsp;Parte Nº: <strong>${object.id}</strong><br />\n"
+"       &nbsp;&nbsp;Técnico: <strong>${object.user_id.name}</strong><br />\n"
+"       &nbsp;&nbsp;Fecha: ${object.date_deadline}<br />\n"
+"       &nbsp;&nbsp;Adjunto va el parte de trabajo.\n"
+"    </p>  \n"
+"    \n"
+"    <br/>\n"
+"    <p>Si tiene cualquier cuestión, no dude en ponerse en contacto con nosotros.</p>\n"
+"    <p>Gracias por seguir confiando en ${object.company_id.name or 'us'}!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #1A4F28; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"        % if object.company_id.street:\n"
+"            ${object.company_id.street}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.street2:\n"
+"            ${object.company_id.street2}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.city or object.company_id.zip:\n"
+"            ${object.company_id.zip} ${object.company_id.city}<br/>\n"
+"        % endif\n"
+"        % if object.company_id.country_id:\n"
+"            ${object.company_id.state_id and ('%s, ' % object.company_id.state_id.name) or ''} ${object.company_id.country_id.name or ''}<br/>\n"
+"        % endif\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Teléfono:&nbsp; ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: sd_sdatos_module
+#: model:email.template,subject:sd_sdatos_module.email_template_edi_sd_task
+msgid "${object.company_id.name|safe} Parte (Nº: ${object.id or 'n/a'}) ${object.name or 'n/a'}"
+msgstr "${object.company_id.name|safe} Parte (Nº: ${object.id or 'n/a'}) ${object.name or 'n/a'}"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.project_report_document
+msgid ",\n"
+"								Tipo B:"
+msgstr ",\n"
+"								Tipo B:"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.project_report_document
+msgid ",\n"
+"								Tipo C:"
+msgstr ",\n"
+"								Tipo C:"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -28,9 +156,14 @@ msgstr "Factura cancelada"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
-#: view:website:sale.report_saleorder_document
 msgid "Comercial name:"
 msgstr "Nombre comercial:"
+
+#. module: sd_sdatos_module
+#: code:addons/sd_sdatos_module/models/project.py:29
+#, python-format
+msgid "Compose Email"
+msgstr "Preparar Email"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -38,7 +171,7 @@ msgid "Customer Code:"
 msgstr "Código de cliente"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
+#: view:website:sd_report_project.sd_task_report_document
 msgid "Customer Signature"
 msgstr "Firma de cliente"
 
@@ -48,24 +181,9 @@ msgid "Customer data"
 msgstr "Datos de cliente"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Customer:"
-msgstr "Cliente:"
-
-#. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Date"
-msgstr "Fecha"
-
-#. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
 msgid "Date invoice:"
 msgstr "Fecha de factura:"
-
-#. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Description"
-msgstr "Descripción"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -73,19 +191,19 @@ msgid "Description:"
 msgstr "Descripción:"
 
 #. module: sd_sdatos_module
+#: view:website:sale.report_saleorder_document
+msgid "Disc.(%)"
+msgstr "Dto."
+
+#. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
 msgid "Draft Invoice"
 msgstr "Factura borrador"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Element/Component"
-msgstr "Elemento/Componente"
-
-#. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Employee:"
-msgstr "Técnico:"
+#: model:ir.actions.act_window,name:sd_sdatos_module.action_email_templates
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -94,20 +212,55 @@ msgid "Fiscal name:"
 msgstr "Nombre fiscal:"
 
 #. module: sd_sdatos_module
+#: view:website:sd_report_project.project_report_document
+msgid "Incidencias Consumidas:"
+msgstr "Incidencias Consumidas:"
+
+#. module: sd_sdatos_module
+#: field:sd.wizard.project.report,total_incidencias:0
+msgid "Incidencias totales"
+msgstr "Incidencias totales"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.sd_task_report_document
+msgid "Instalación:"
+msgstr "Instalación:"
+
+#. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
 msgid "Invoice"
 msgstr "Factura"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Labels:"
-msgstr "Tipo de servicio:"
+#: view:crm.lead:sd_sdatos_module.inherit_crm_case_tree_view_leads
+msgid "Leads"
+msgstr "Iniciativas"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
 #: view:website:sale.report_saleorder_document
 msgid "NIF:"
 msgstr "NIF:"
+
+#. module: sd_sdatos_module
+#: view:crm.lead:sd_sdatos_module.inherit_crm_case_form_view_leads
+msgid "Nº de iniciativa:"
+msgstr "Nº de iniciativa:"
+
+#. module: sd_sdatos_module
+#: view:crm.lead:sd_sdatos_module.inherit_crm_case_form_view_oppor
+msgid "Nº de oportunidad:"
+msgstr "Nº de oportunidad:"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.project_report_document
+msgid "Nº de parte físico:"
+msgstr "Nº de parte físico:"
+
+#. module: sd_sdatos_module
+#: view:crm.lead:sd_sdatos_module.inherit_crm_case_kanban_view_leads
+msgid "Nº:"
+msgstr "Nº:"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -120,14 +273,29 @@ msgid "PRO-FORMA"
 msgstr "PRO-FORMA"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
+#: view:website:sd_report_project.sd_task_report_document
 msgid "Para cualquier incidencia envíe un correo a:"
 msgstr "Para cualquier incidencia envíe un correo a:"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Quantity"
-msgstr "Cantidad"
+#: view:project.task:sd_sdatos_module.inherit_view_task_form2
+msgid "Parte físico Nº"
+msgstr "Parte físico Nº"
+
+#. module: sd_sdatos_module
+#: model:email.template,report_name:sd_sdatos_module.email_template_edi_sd_task
+msgid "Parte_${(object.id or '')}_sdatos"
+msgstr "Parte_${(object.id or '')}_sdatos"
+
+#. module: sd_sdatos_module
+#: model:ir.model,name:sd_sdatos_module.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: sd_sdatos_module
+#: field:project.task,phisical_part:0
+msgid "Phisical part"
+msgstr "Parte físico"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -140,6 +308,31 @@ msgid "Refund"
 msgstr "Factura rectificativa"
 
 #. module: sd_sdatos_module
+#: model:ir.model,name:sd_sdatos_module.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sd_sdatos_module
+#: view:project.task:sd_sdatos_module.inherit_view_task_form2
+msgid "Send by Email"
+msgstr "Enviar por email"
+
+#. module: sd_sdatos_module
+#: view:project.task:sd_sdatos_module.inherit_view_task_form2
+msgid "Servicio"
+msgstr "Servicio"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.project_report_document
+msgid "Servicio:"
+msgstr "Servicio:"
+
+#. module: sd_sdatos_module
+#: field:project.task,signature_client:0
+msgid "Signature client"
+msgstr "Firma del cliente"
+
+#. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
 msgid "Supplier Invoice"
 msgstr "Factura de proveedor"
@@ -150,29 +343,44 @@ msgid "Supplier Refund"
 msgstr "Factura rectificativa de proveedor"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Time in"
-msgstr "Hora de entrada"
+#: model:ir.model,name:sd_sdatos_module.model_project_task
+msgid "Task"
+msgstr "Tarea"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Time spent"
-msgstr "Tiempo dedicado"
+#: field:sd.wizard.project.report,total_TA:0
+msgid "Tipo A"
+msgstr "Tipo A"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Title of task:"
-msgstr "Título de la tarea:"
+#: view:website:sd_report_project.project_report_document
+msgid "Tipo A:"
+msgstr "Tipo A:"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Work"
-msgstr "Trabajo"
+#: field:sd.wizard.project.report,total_TB:0
+msgid "Tipo B"
+msgstr "Tipo B"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Working part"
-msgstr "Parte de trabajo"
+#: field:sd.wizard.project.report,total_TC:0
+msgid "Tipo C"
+msgstr "Tipo C"
+
+#. module: sd_sdatos_module
+#: field:sd.wizard.project.report,total_desplaza:0
+msgid "Total Tiempo de desplazamiento"
+msgstr "Total Tiempo de desplazamiento"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.project_report_document
+msgid "Total tiempo de desplazamiento:"
+msgstr "Total tiempo de desplazamiento:"
+
+#. module: sd_sdatos_module
+#: view:project.task:sd_sdatos_module.inherit_sign_view_task_form2
+msgid "col-xs-offset-0"
+msgstr "col-xs-offset-0"
 
 #. module: sd_sdatos_module
 #: view:website:account.report_invoice_document
@@ -191,8 +399,22 @@ msgid "font-size:8px"
 msgstr "font-size:8px"
 
 #. module: sd_sdatos_module
-#: view:website:sd_print_project_work.sd_project_task_report_document
+#: view:website:sd_report_project.sd_task_report_document
 msgid "incidencias@sdatos.es"
 msgstr "incidencias@sdatos.es"
 
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.sd_task_report_document
+msgid "o.material_ids"
+msgstr "o.material_ids"
+
+#. module: sd_sdatos_module
+#: view:website:sd_report_project.sd_task_report_document
+msgid "o.work_ids"
+msgstr "o.work_ids"
+
+#. module: sd_sdatos_module
+#: view:crm.lead:sd_sdatos_module.inherit_crm_case_kanban_view_leads
+msgid "write_date desc"
+msgstr "write_date desc"
 

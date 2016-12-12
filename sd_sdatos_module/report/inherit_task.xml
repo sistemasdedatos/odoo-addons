@@ -37,7 +37,7 @@
 					<div class="text-center">
 						<strong>
 							<i>
-								Total teimpo de desplazamiento:
+								Total tiempo de desplazamiento:
 								<span t-field="o.total_desplaza" />
 							</i>
 						</strong>  
