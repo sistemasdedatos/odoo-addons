@@ -50,7 +50,6 @@ class sd_custom_report_employee(models.AbstractModel):
     def render_html(self, data=None):
          
         report_obj = self.env['report']
-         
         report = report_obj._get_report_from_name('sd_employee_report.sd_project_task_employee_report')
         docargs = {
              'doc_ids': self._ids,
