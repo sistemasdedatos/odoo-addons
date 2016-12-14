@@ -54,7 +54,7 @@ class product_product(models.Model):
         for s in self:
             d_code = []
             if s.default_code:
-                d_code = list (str (s.default_code))
+                d_code = list (s.default_code)
                 while True:
                     if not len (d_code) or re.match (r"[1-9]", d_code[0]): break
                     else: d_code.pop (0)

@@ -1,0 +1,47 @@
+#. module: purchase
+#: view:res.partner:purchase.res_partner_view_purchase_account_buttons
+msgid "Supplier Inv."
+msgstr "Facturas"
+
+#. module: account
+#: view:res.partner:account.partner_view_buttons
+msgid "Journal Items"
+msgstr "Apuntes"
+
+#. module: stock
+#: view:product.product:stock.product_form_view_procurement_button
+#: view:product.template:stock.product_template_form_view_procurement_button
+msgid "Reordering Rules"
+msgstr "Reglas/Stock"
+
+#. module: product
+#: view:product.template:product.product_template_only_form_view
+msgid "List of Variants"
+msgstr "Variantes"
+
+#. module: product
+#: view:product.template:product.product_template_only_form_view
+msgid "Variant Prices"
+msgstr "Variantes/Precios "
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.act_res_partner_2_sale_order
+msgid "Sales"
+msgstr "Pedidos de venta"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.act_res_partner_3_sale_order
+msgid "Quotations"
+msgstr "Presupuestos"
+
+#. module: sd_custom_translated
+#: view:res.partner:sd_custom_translated.inherit_crm_lead_partner_kanban_view
+#: view:res.partner:sd_custom_translated.inherit_res_partner_view_buttons
+msgid "Quotations"
+msgstr "Presupuestos"
+
+#. module: sd_custom_translated
+#: view:res.partner:sd_custom_translated.inherit_crm_lead_partner_kanban_view
+#: view:res.partner:sd_custom_translated.inherit_res_partner_view_buttons
+msgid "Sales"
+msgstr "Ventas"

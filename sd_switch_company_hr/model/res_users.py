@@ -30,8 +30,6 @@ class res_users(Model):
     def change_current_company(self, cr, uid, company_id, context=None):
         hr_id = self.pool['hr.employee'].search(cr, 1, [('user_id', '=', uid)], context=context)
         journal_id = self.pool['account.analytic.journal'].search(cr, 1, [('company_id', '=', company_id),('name', '=', 'Timesheet Journal')], context=context)
-        print hr_id
-        print journal_id
         if len (hr_id) and len (journal_id):
             self.pool['hr.employee'].write (cr, 1, hr_id, {'company_id': company_id,
                                                            'journal_id': journal_id[0]})

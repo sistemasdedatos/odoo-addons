@@ -41,7 +41,6 @@ This module allows print employee spending in tasks with a period.
                  'project_task_materials'],            
     'data': ['views/sd_report_print.xml',
              'views/sd_report.xml',
-             'views/inherit_print_project_work.xml',
              'security/sd_employee_report_security.xml',
              'security/ir.model.access.csv'], 
     'images':[], 

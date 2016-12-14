@@ -28,6 +28,7 @@
 			</xpath>
 			<xpath expr="//t[@t-if='o.description']" position="after">
 				<t t-if="o.html_description">
+					<br/>
 					<span t-field="o.html_description" />
 				</t>
 			</xpath>

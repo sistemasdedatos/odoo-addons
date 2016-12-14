@@ -28,7 +28,6 @@ class AccountInvoiceLine (models.Model):
     @api.model
     def move_line_get (self, invoice_id):
         res = super (AccountInvoiceLine, self).move_line_get (invoice_id)
-        print res
         return res
 
 

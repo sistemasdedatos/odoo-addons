@@ -417,4 +417,3 @@ msgstr "o.work_ids"
 #: view:crm.lead:sd_sdatos_module.inherit_crm_case_kanban_view_leads
 msgid "write_date desc"
 msgstr "write_date desc"
-

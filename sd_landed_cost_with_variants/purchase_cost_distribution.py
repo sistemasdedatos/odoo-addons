@@ -24,9 +24,7 @@ class PurchaseCostDistribution(models.Model):
                     ('id', 'not in', move.quant_ids.ids),
                     ('location_id.usage', '=', 'internal')]
                 quants = self.env['stock.quant'].search(domain_quant)
-                print quants
                 current_valuation = sum([(q.cost * q.qty) for q in quants])
-                print current_valuation
                 # Get the standard price
                 new_std_price = (
                     (current_valuation + new_price * move.product_qty) /

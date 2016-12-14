@@ -44,6 +44,7 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
 		       'web',
 		       'edi',
                'report',
+               'sale',
 		       'sd_digital_sign',
 		       'sd_report_project',
 		       'sd_employee_report',
