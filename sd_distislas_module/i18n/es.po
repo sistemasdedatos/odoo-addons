@@ -166,3 +166,8 @@ msgstr "Banco:"
 #: view:website:account.report_invoice_document
 msgid "Account:"
 msgstr "Número de cuenta:"
+
+#. module: sd_distislas_module
+#: view:website:sale.report_saleorder_document
+msgid "Phone:"
+msgstr "Teléfono:"

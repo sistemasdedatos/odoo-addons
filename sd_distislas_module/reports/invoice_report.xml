@@ -62,17 +62,14 @@
 							<br />
 						</strong>
 						<span t-if="o.partner_id.name">
-							<!-- <strong>Fiscal name: </strong> -->
 							<span t-field="o.partner_id.name" />
 							<br />
 						</span>
 						<span t-if="o.partner_id.comercial">
-							<!-- <strong>Comercial name: </strong> -->
 							<span t-field="o.partner_id.comercial" />
 							<br />
 						</span>
 						<span t-if="o.partner_id.street">
-							<!-- <strong>Address: </strong> -->
 							<span t-esc="'%s, ' % o.partner_id.street" />
 							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
 							<span t-esc="'%s, ' % o.partner_id.city" />
@@ -80,8 +77,17 @@
 							<br />
 						</span>
 						<span t-if="o.partner_id.vat">
-							<!-- <strong>NIF: </strong> -->
 							<span t-field="o.partner_id.vat" />
+							<br/>
+						</span>
+						<span t-if="o.partner_id.phone">
+							<span t-field="o.partner_id.phone" />
+						</span>
+						<span t-if="o.partner_id.phone and o.partner_id.mobile">
+							-- 
+						</span>
+						<span t-if="o.partner_id.mobile">
+							<span t-field="o.partner_id.mobile" />
 						</span>
 					</div>
 				</div>

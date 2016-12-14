@@ -20,7 +20,11 @@
                     	<span t-esc="'CP: %s, ' % o.partner_id.zip"/>
                     	<span t-esc="'%s, ' % o.partner_id.city"/>
                     	<span t-esc="'%s' % o.partner_id.country_id.name"/>
+                    	<br/>
                     </span>
+                    <span t-if="o.partner_id.phone"><strong>Phone: </strong><span t-field="o.partner_id.phone" /></span>
+                    <span t-if="o.partner_id.phone and o.partner_id.mobile"> -- </span>
+                    <span t-if="o.partner_id.mobile"><span t-field="o.partner_id.mobile" /></span>
 				</div>
 			</xpath>
 			
