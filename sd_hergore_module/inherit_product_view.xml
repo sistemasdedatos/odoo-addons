@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+    	<menuitem id="product.menu_products" action="product.product_normal_action_sell" parent="base.menu_product" sequence="0" groups="base.group_system"/>
 		<record id="inherit_product_template_tree_view" model="ir.ui.view">
 			<field name="name">sd.view.product.tree</field>
             <field name="model">product.template</field>
@@ -15,8 +16,25 @@
             	<xpath expr="//field[@name='categ_id']" position="attributes">
             		<attribute name="invisible">1</attribute>
             	</xpath>
+            	<xpath expr="//field[@name='state']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	<xpath expr="//field[@name='state']" position="after">
+            		<field name="standard_price"/>
+            		<field name="lst_price"/>
+            	</xpath>
             </field>
     	</record>
+    	<record id="inherit_product_product_tree_view" model="ir.ui.view">
+			<field name="name">inherit.view.product.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='lst_price']" position="before">
+            		<field name="standard_price"/>
+            	</xpath>
+            </field>
+        </record>
     	<record id="product_template_form_view_inherit" model="ir.ui.view">
             <field name="name">product.template.form.inherit</field>
             <field name="model">product.template</field>

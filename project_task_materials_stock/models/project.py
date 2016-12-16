@@ -121,11 +121,12 @@ class ProjectTaskMaterials(models.Model):
 
     def _prepare_stock_move(self):
         product = self.product_id
-        print "aqui"
         company_id = self.env['res.company']._company_default_get(
             'account.analytic.line')
-        print self.env.ref(
-                'stock.stock_location_customers').id
+        partner_id = self.env['res.users'].browse ([self._uid]).partner_id.id
+        location = (self.pool['stock.location'].search(self._cr, 1, [('company_id', '=', company_id), ('partner_id', '=', partner_id), ('name', 'in', ['Existencias', 'Stock'])])[0] 
+                    if self.pool['stock.location'].search(self._cr, 1, [('company_id', '=', company_id), ('partner_id', '=', partner_id), ('name', 'in', ['Existencias', 'Stock'])])[0] 
+                    else self.pool['stock.location'].search(self._cr, 1, [('company_id', '=', company_id), ('name', 'in', ['Existencias', 'Stock'])])[0])
         res = {
             'product_id': product.id,
             'name': product.partner_ref,
@@ -135,9 +136,9 @@ class ProjectTaskMaterials(models.Model):
             'product_uom_qty': self.quantity,
             'product_uos_qty': self.quantity,
             'origin': self.task_id.name,
-            'location_id': self.pool['stock.location'].search(self._cr, 1, [('company_id', '=', company_id),('name', '=', 'Stock')])[0],
+            'location_id': location,
             'location_dest_id': self.env.ref(
-                'stock.stock_location_customers').id,
+            'stock.stock_location_customers').id,
         }
         return res
 

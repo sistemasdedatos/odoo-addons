@@ -2,6 +2,11 @@
 <openerp>
 	<data>
 		<template id="sd_inherit_report_invoice" inherit_id="account.report_invoice_document">
+		
+			<xpath expr="//div[@class='page']" position="inside">
+	            	<img src="/sd_hergore_module/static/src/img/COPY.PNG"
+							style="position:absolute;left:40%;top:20%;width:170px;height:500px;z-index:10;" />
+			</xpath>
 
 			<xpath expr="//div/div/div[@class='col-xs-5 col-xs-offset-7']" position="replace">
                 <div class="row mt16"/>

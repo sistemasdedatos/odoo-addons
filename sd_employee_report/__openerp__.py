@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Print Employee spending',
-    'version' : '0.1',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Project',
@@ -39,9 +39,11 @@ This module allows print employee spending in tasks with a period.
                  'project',
                  'project_timesheet',
                  'project_task_materials'],            
-    'data': ['views/sd_report_print.xml',
-             'views/sd_report.xml',
-             'security/sd_employee_report_security.xml',
+    'data': ['reports/sd_report_print.xml',
+             'reports/sd_report.xml',
+             'views/inherit_project_view.xml',
+             'views/sd_wizard_view.xml',
+#              'security/sd_employee_report_security.xml',
              'security/ir.model.access.csv'], 
     'images':[], 
     'installable': True,        

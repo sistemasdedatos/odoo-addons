@@ -1346,7 +1346,6 @@ class pos_order_line(osv.osv):
                product_id, qty or 1.0, partner_id)[pricelist]
 
        discount = self.pool.get('product.product').browse (cr, uid, product_id, context=context).discount
-       print product_id
        result = self.onchange_qty(cr, uid, ids, product_id, 0.0, qty, price, context=context)
        result['value']['price_unit'] = price
        result['value']['discount'] = discount
