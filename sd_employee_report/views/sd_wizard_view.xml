@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>	 
+	    <record id="view_sd_report_employee_form" model="ir.ui.view">
+			<field name="name">view.sd.report_employee.form</field>
+			<field name="model">sd.employee_report</field>
+			<field name="arch" type="xml">
+				<form string="Filter date">
+					<!-- <sheet> -->
+						<br>
+							<h2 class="text-center">Filter by employee and month</h2>
+						</br>
+						<p class="text-center">
+							To print a particular month we select, from 01 to 31/30 of that month
+							<br />
+						</p>
+						<group col="4">
+                       		<field name="date_start"/>
+                       		<field name="date_end"/>
+                    	</group>
+                    	<group col="2" class="text-center">
+                    		<field name="user_id" widget="many2one"/>
+                    	</group>
+                    <footer>
+                       	<button name="print_" string="Print" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+				</form>
+			</field>
+		</record>
+	     		
+		<record id="sd_open_view_print_employee" model="ir.actions.act_window">
+            <field name="name">Print report employee</field>
+            <field name="view_type">form</field>
+            <field name="res_model">sd.employee_report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="sd_employee_report.view_sd_report_employee_form"/>
+        </record>
+    
+    </data>
+</openerp>

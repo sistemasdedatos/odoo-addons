@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-27 15:43+0000\n"
-"PO-Revision-Date: 2015-10-27 15:43+0000\n"
+"POT-Creation-Date: 2016-12-19 11:54+0000\n"
+"PO-Revision-Date: 2016-12-19 11:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,15 @@ msgstr "Coste"
 
 #. module: sd_employee_report
 #: field:sd.employee_report,create_uid:0
+#: field:sd.wizard.employee.task,create_uid:0
+#: field:sd.wizard.materials,create_uid:0
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: sd_employee_report
 #: field:sd.employee_report,create_date:0
+#: field:sd.wizard.employee.task,create_date:0
+#: field:sd.wizard.materials,create_date:0
 msgid "Created on"
 msgstr "Creado en"
 
@@ -51,7 +55,21 @@ msgid "Date:"
 msgstr "Fecha:"
 
 #. module: sd_employee_report
-#: field:sd.employee_report,partner_id:0
+#: field:project.task.materials.internal,product_description:0
+#: view:website:sd_employee_report.sd_project_task_employee_report_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sd_employee_report
+#: field:report.sd_employee_report.sd_project_task_employee_report,display_name:0
+#: field:sd.employee_report,display_name:0
+#: field:sd.wizard.employee.task,display_name:0
+#: field:sd.wizard.materials,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: sd_employee_report
+#: field:sd.employee_report,user_id:0
 msgid "Employee"
 msgstr "Empleado"
 
@@ -63,7 +81,7 @@ msgstr "Fin"
 #. module: sd_employee_report
 #: view:sd.employee_report:sd_employee_report.view_sd_report_employee_form
 msgid "Filter by employee and month"
-msgstr "Filtro por empleado y por mes"
+msgstr "Filtro por empleado y por fecha"
 
 #. module: sd_employee_report
 #: view:sd.employee_report:sd_employee_report.view_sd_report_employee_form
@@ -76,36 +94,54 @@ msgid "From"
 msgstr "Desde"
 
 #. module: sd_employee_report
+#: view:website:sd_employee_report.sd_project_task_employee_report_document
+msgid "To"
+msgstr "hasta"
+
+#. module: sd_employee_report
 #: field:report.sd_employee_report.sd_project_task_employee_report,id:0
 #: field:sd.employee_report,id:0
+#: field:sd.wizard.employee.task,id:0
+#: field:sd.wizard.materials,id:0
 msgid "ID"
 msgstr "ID"
 
 #. module: sd_employee_report
+#: field:report.sd_employee_report.sd_project_task_employee_report,__last_update:0
+#: field:sd.employee_report,__last_update:0
+#: field:sd.wizard.employee.task,__last_update:0
+#: field:sd.wizard.materials,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: sd_employee_report
 #: field:sd.employee_report,write_uid:0
+#: field:sd.wizard.employee.task,write_uid:0
+#: field:sd.wizard.materials,write_uid:0
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: sd_employee_report
 #: field:sd.employee_report,write_date:0
+#: field:sd.wizard.employee.task,write_date:0
+#: field:sd.wizard.materials,write_date:0
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: sd_employee_report
-#: view:website:sd_employee_report.sd_project_task_employee_report_document
-msgid "Monthly report"
-msgstr "Informe mensual de"
+#: field:sd.wizard.materials,material_internal_id:0
+msgid "Material internal id"
+msgstr "Material internal id"
 
 #. module: sd_employee_report
-#: field:project.task,office:0
-msgid "Office"
-msgstr "Instalación"
+#: field:sd.employee_report,wizard_employee_task_ids:0
+msgid "Materials"
+msgstr "Materials"
 
 #. module: sd_employee_report
 #: view:website:sd_employee_report.sd_project_task_employee_report_document
-#: view:website:sd_print_project_work.sd_project_task_report_document
-msgid "Office:"
-msgstr "Instalación:"
+msgid "Nº"
+msgstr "Nº"
 
 #. module: sd_employee_report
 #: view:sd.employee_report:sd_employee_report.view_sd_report_employee_form
@@ -133,14 +169,29 @@ msgid "Quantity"
 msgstr "Cantidad"
 
 #. module: sd_employee_report
+#: view:website:sd_employee_report.sd_project_task_employee_report_document
+msgid "Report"
+msgstr "Informe de"
+
+#. module: sd_employee_report
+#: field:sd.wizard.materials,spending:0
+msgid "Spending"
+msgstr "Gasto"
+
+#. module: sd_employee_report
 #: field:sd.employee_report,date_start:0
 msgid "Start of work"
 msgstr "Fecha de inicio"
 
 #. module: sd_employee_report
-#: model:ir.model,name:sd_employee_report.model_project_task
-msgid "Task"
-msgstr "Tarea"
+#: model:ir.model,name:sd_employee_report.model_project_task_materials_internal
+msgid "Task Internal Materials Used"
+msgstr "Tarea interna, material/gastos"
+
+#. module: sd_employee_report
+#: field:sd.wizard.employee.task,task_id:0
+msgid "Task id"
+msgstr "Task id"
 
 #. module: sd_employee_report
 #: view:website:sd_employee_report.sd_project_task_employee_report_document
@@ -148,9 +199,10 @@ msgid "Task/Work:"
 msgstr "Tarea/Parte:"
 
 #. module: sd_employee_report
-#: field:sd.employee_report,tasks_id:0
-msgid "Tasks"
-msgstr "Tarea"
+#: code:addons/sd_employee_report/wizard/sd_employee_report.py:26
+#, python-format
+msgid "There are not expenses in that period time or for this user"
+msgstr "No hay gastos en ese periodo de tiempo para el empleado seleccionado"
 
 #. module: sd_employee_report
 #: view:sd.employee_report:sd_employee_report.view_sd_report_employee_form
@@ -158,12 +210,38 @@ msgid "To print a particular month we select, from 01 to 31/30 of that month"
 msgstr "Para imprimir un mes en particular debemos seleccionar, desde 01 hasta 31/30 del mes concreto"
 
 #. module: sd_employee_report
+#: field:sd.employee_report,total_amount:0
+msgid "Total amount materials"
+msgstr "Cuantía total"
+
+#. module: sd_employee_report
 #: view:website:sd_employee_report.sd_project_task_employee_report_document
 msgid "Total expenditure:"
 msgstr "Total gastos:"
 
 #. module: sd_employee_report
+#: field:sd.wizard.employee.task,wizard_employee_id:0
+#: field:sd.wizard.materials,wizard_employee_task_id:0
+msgid "Wizard Employee Report"
+msgstr "Asistente de informe de empredo"
+
+#. module: sd_employee_report
+#: field:sd.wizard.employee.task,wizard_material_ids:0
+msgid "Wizard material ids"
+msgstr "Wizard material ids"
+
+#. module: sd_employee_report
+#: view:project.project:sd_employee_report.sd_view_project_kanban
+msgid "name"
+msgstr "nombre"
+
+#. module: sd_employee_report
 #: view:sd.employee_report:sd_employee_report.view_sd_report_employee_form
 msgid "or"
 msgstr "o"
+
+#. module: sd_employee_report
+#: view:project.project:sd_employee_report.sd_view_project_kanban
+msgid "parent_id"
+msgstr "parent_id"
 

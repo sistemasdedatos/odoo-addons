@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<template id="sd_project_task_employee_report_document">
+			<t t-call="report.external_layout">
+				<div class="page">
+					<h3 class="text-center">
+						Report
+						<span t-field="o.user_id" />
+					</h3>
+					<h5 class="text-center">
+						From
+						<span t-field="o.date_start" />
+						To
+						<span t-field="o.date_end" />
+					</h5>
+					<div t-foreach="o.wizard_employee_task_ids" t-as="task"><t t-foreach="task.task_id" t-as="t">
+						<div class="col-xs-4 pull-right" style="font-size:8px">
+							<strong>Date: </strong>
+							<span t-field="t.date_deadline" />
+						</div>
+						<div style="font-size:8px">
+							<strong>Customer: </strong>
+							<span t-field="t.partner_id" />
+						</div>
+						<div class="col-xs-4 pull-right" style="font-size:8px">
+							<strong>Task/Work: </strong>
+							Nº <span t-field="t.id"/>,
+							<span t-field="t.name" />
+						</div>
+						<div style="font-size:8px">
+							<strong>Contract/Project: </strong>
+							<span t-field="t.project_id" />
+						</div>
+						<!-- <div t-if="t.office" style="font-size:8px">
+							<strong>Office: </strong>
+							<span t-field="t.office" />
+						</div> -->
+						<table class="table table-condensed">
+							<thead>
+								<tr style="font-size:8px">
+									<th class="col-xs-2">Product/Element</th>
+									<th class="col-xs-8">Description</th>
+									<th class="col-xs-1">Quantity</th>
+									<th class="col-xs-1">Cost</th>
+								</tr>
+							</thead>
+							<tbody class="invoice_tbody">
+								<tr t-foreach="task.wizard_material_ids" t-as="work" style="font-size:8px"><t t-foreach="work.material_internal_id" t-as="w">
+									<td class="col-xs-2">
+										<span t-field="w.product_id.name" />
+									</td>
+									<td class="col-xs-8">
+										<span t-field="w.product_description"/>
+									</td>
+									<td class="col-xs-1">
+										<span t-field="w.quantity"/><span t-field="w.product_id.uom_id.name" />
+									</td>
+									<td class="col-xs-1">
+										<span t-field="work.spending"/>€
+									</td>
+								</t></tr>
+							</tbody>
+						</table>
+					</t></div>
+					<div class="col-xs-4 pull-right" style="font-size:10px">
+						<strong>Total expenditure: </strong>
+						<span t-field="o.total_amount"/>€
+					</div>
+				</div>
+			</t>
+		</template>
+
+		<template id="sd_project_task_employee_report">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'user_id.lang', 'sd_employee_report.sd_project_task_employee_report_document')" />
+				</t>
+			</t>
+		</template>
+	</data>
+</openerp>

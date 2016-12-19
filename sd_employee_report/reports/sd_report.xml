@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<report
+            id="project_task_employee"
+            model="sd.employee_report"        
+            name="sd_employee_report.sd_project_task_employee_report"
+            string="Print Task Report Employee"
+            file="sd_employee_report.sd_project_task_employee_report"
+            report_type="qweb-pdf"
+            attachment_use="False"
+            menu="True"
+        />
+    </data>
+</openerp>

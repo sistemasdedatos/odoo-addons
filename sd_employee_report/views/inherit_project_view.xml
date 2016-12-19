@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record id="sd_view_project_kanban" model="ir.ui.view">
+			<field name="name">sd.view.project.kanban</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.view_project_kanban" />
+			<field name="arch" type="xml">
+				<xpath expr="//kanban[@class='oe_background_grey']" position="attributes">
+					<attribute name="default_order">name</attribute>
+					<attribute name="default_group_by">parent_id</attribute>
+				</xpath>
+			</field>
+		</record>
+		
+		<record id="inherit_view_project_task_form_materials" model="ir.ui.view">
+			<field name="name">inherit.project.task.form.materials</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="project_task_materials.view_project_task_form_materials" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='internal_material_ids']/tree/field[@name='quantity']" position="after">
+					<field name="create_uid" readonly="True"/>
+				</xpath>
+				<xpath expr="//field[@name='internal_material_ids']/tree/field[@name='quantity']" position="before">
+					<field name="product_description"/>
+				</xpath>
+			</field>
+		</record>
+         
+        <menuitem action="sd_open_view_print_employee" id="project.sd_report_employee_form"
+			name="Print report employee" parent="project.menu_project_management" sequence="40"/>
+			
+    </data>
+</openerp>
