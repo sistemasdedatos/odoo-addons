@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="inherit_project_task_employee_report" inherit_id="sd_employee_report.sd_project_task_employee_report_document">
+	   	 	<xpath expr="//table" position="before">
+	   	 		<div t-if="t.office" style="font-size:8px">
+					<strong>Office: </strong>
+					<span t-field="t.office" />
+				</div>
+	   	 	</xpath>
+    	</template>
+    </data>
+</openerp>

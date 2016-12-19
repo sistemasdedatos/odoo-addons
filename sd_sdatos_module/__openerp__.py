@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Sistemas de Datos',
-    'version' : '2.0',
+    'version' : '2.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -47,7 +47,7 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
                'sale',
 		       'sd_digital_sign',
 		       'sd_report_project',
-		       'sd_employee_report',
+# 		       'sd_employee_report',
 		       'crm'],            
     'data':['views/search_res_partner.xml',
             'views/sd_digital_sign_inherit.xml',
@@ -59,6 +59,7 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
             'report/invoice_report.xml',
             'report/saleorder_report.xml',
 	        'report/inherit_task.xml',
+            'report/inherit_employee_report.xml',
 	        'edi/sd_template_email_task.xml',],
     'images':['static/src/img/IBM.png',
               'static/src/img/iso_9001.png'], 

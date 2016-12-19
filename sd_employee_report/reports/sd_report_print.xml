@@ -33,10 +33,6 @@
 							<strong>Contract/Project: </strong>
 							<span t-field="t.project_id" />
 						</div>
-						<!-- <div t-if="t.office" style="font-size:8px">
-							<strong>Office: </strong>
-							<span t-field="t.office" />
-						</div> -->
 						<table class="table table-condensed">
 							<thead>
 								<tr style="font-size:8px">

@@ -1,5 +1,4 @@
 from openerp import api, models, fields
-from openerp.osv import osv
 import time
 from openerp.exceptions import Warning
 from openerp.tools.translate import _
@@ -9,6 +8,7 @@ class task (models.Model):
     
     signature_client = fields.Char ('Signature client', select = True, copy = False, required = False)
     phisical_part = fields.Char ('Phisical part')
+    office = fields.Text ('Office')
                 
     @api.multi
     def action_task_sent (self):
