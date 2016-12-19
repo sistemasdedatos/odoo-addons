@@ -47,7 +47,7 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
                'sale',
 		       'sd_digital_sign',
 		       'sd_report_project',
-# 		       'sd_employee_report',
+ 		       'sd_employee_report',
 		       'crm'],            
     'data':['views/search_res_partner.xml',
             'views/sd_digital_sign_inherit.xml',
