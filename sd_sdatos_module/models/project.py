@@ -7,8 +7,8 @@ class task (models.Model):
     _inherit = 'project.task'
     
     signature_client = fields.Char ('Signature client', select = True, copy = False, required = False)
-    phisical_part = fields.Char ('Phisical part')
-    office = fields.Text ('Office')
+    phisical_part = fields.Char ('Phisical part', copy = False)
+    office = fields.Text ('Office', copy = False)
                 
     @api.multi
     def action_task_sent (self):
