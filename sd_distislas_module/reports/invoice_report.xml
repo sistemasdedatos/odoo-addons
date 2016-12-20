@@ -61,34 +61,50 @@
 							Customer data
 							<br />
 						</strong>
-						<span t-if="o.partner_id.name">
+						<div t-if="o.partner_id.name">
 							<span t-field="o.partner_id.name" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.comercial">
+						</div>
+						<div t-if="o.partner_id.comercial">
 							<span t-field="o.partner_id.comercial" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.street">
-							<span t-esc="'%s, ' % o.partner_id.street" />
-							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
-							<span t-esc="'%s, ' % o.partner_id.city" />
-							<span t-esc="'%s' % o.partner_id.country_id.name" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.vat">
+						</div>
+						<div>
+							<span t-if="o.partner_id.street">
+								<span t-field="o.partner_id.street"/>
+								<span t-if="o.partner_id.street2">,</span>
+							</span>
+							<span t-if="o.partner_id.street2">
+								<span t-field="o.partner_id.street2"/>
+							</span>
+						</div>
+						<div t-if="o.partner_id.city">
+							<span t-field="o.partner_id.city" />
+						</div>
+						<div>
+							<span t-if="o.partner_id.zip">
+								<span t-field="o.partner_id.zip" />
+								<span t-if="o.partner_id.state_id">,</span>
+								<span t-if="not o.partner_id.state_id and o.partner_id.country_id">,</span>
+							</span>
+							<span t-if="o.partner_id.state_id">
+								<span t-field="o.partner_id.state_id.name"/>
+								<span t-if="o.partner_id.country_id">,</span>
+							</span>
+							<span t-if="o.partner_id.country_id">
+								<span t-field="o.partner_id.country_id.name" />
+							</span>
+						</div>
+						<div t-if="o.partner_id.vat">
 							<span t-field="o.partner_id.vat" />
-							<br/>
-						</span>
-						<span t-if="o.partner_id.phone">
-							<span t-field="o.partner_id.phone" />
-						</span>
-						<span t-if="o.partner_id.phone and o.partner_id.mobile">
-							-- 
-						</span>
-						<span t-if="o.partner_id.mobile">
-							<span t-field="o.partner_id.mobile" />
-						</span>
+						</div>
+						<div>
+							<span t-if="o.partner_id.phone">
+								<span t-field="o.partner_id.phone" />
+								<span t-if="o.partner_id.mobile">--</span>
+							</span>
+							<span t-if="o.partner_id.mobile">
+								<span t-field="o.partner_id.mobile" />
+							</span>
+						</div>
 					</div>
 				</div>
 			</xpath>
