@@ -18,4 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import purchase_cost_distribution, purchase_order, sale_add_variants, product
+import purchase_cost_distribution, purchase_order, product

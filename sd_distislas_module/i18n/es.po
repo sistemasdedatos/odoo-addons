@@ -62,6 +62,16 @@ msgid "Description:"
 msgstr "Descripción:"
 
 #. module: sd_distislas_module
+#: field:purchase.add.variants.line,discount:0
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: sd_distislas_module
+#: field:purchase.add.variants.line,discount2:0
+msgid "Discount 2 (%)"
+msgstr "Descuento 2 (%)"
+
+#. module: sd_distislas_module
 #: view:website:account.report_invoice_document
 msgid "Draft Invoice"
 msgstr "Factura borrador"
