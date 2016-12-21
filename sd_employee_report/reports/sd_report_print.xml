@@ -54,7 +54,7 @@
 										<span t-field="w.quantity"/><span t-field="w.product_id.uom_id.name" />
 									</td>
 									<td class="col-xs-1">
-										<span t-field="work.spending"/>€
+										<span t-field="work.spending" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
 									</td>
 								</t></tr>
 							</tbody>
@@ -62,7 +62,7 @@
 					</t></div>
 					<div class="col-xs-4 pull-right" style="font-size:10px">
 						<strong>Total expenditure: </strong>
-						<span t-field="o.total_amount"/>€
+						<span t-field="o.total_amount" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
 					</div>
 				</div>
 			</t>
