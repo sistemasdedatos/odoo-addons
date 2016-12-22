@@ -40,7 +40,7 @@ class purchaseAddVariants(models.TransientModel):
                     'product_uom': variant.uom_id.id,
                     'price_unit': 0.0,
                     'discount': item_obj.discount,
-                    'discount2': item_ids.discount2
+                    'discount2': item_obj.discount2
                 }])
             self.variant_line_ids = variant_lines
             
