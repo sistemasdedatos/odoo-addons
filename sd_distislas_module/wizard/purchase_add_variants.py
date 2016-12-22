@@ -29,14 +29,18 @@ class purchaseAddVariants(models.TransientModel):
     def _onchange_product_tmpl_id(self):
         if self.product_tmpl_id:
             variant_lines = []
+            purchase_order = self.env['purchase.order'].browse (self._context['active_id'])
+            order_line_obj = self.env['purchase.order.line']
             for variant in self.product_tmpl_id.product_variant_ids:
+                item_ids = order_line_obj._get_possible_item_ids (purchase_order.pricelist_id.id, product_id = variant.id, qty = 0)
+                item_obj = self.env['product.pricelist.item'].browse (item_ids)[0]
                 variant_lines.append([0, 0, {
                     'product_id': variant.id,
                     'product_uom_qty': 0,
                     'product_uom': variant.uom_id.id,
                     'price_unit': 0.0,
-                    'discount': 0.0,
-                    'discount2': 0.0
+                    'discount': item_obj.discount,
+                    'discount2': item_ids.discount2
                 }])
             self.variant_line_ids = variant_lines
             
