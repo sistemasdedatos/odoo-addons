@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="sd_inherit_report_pricelist" inherit_id="product.report_pricelist">
+    		<xpath expr="//tbody/t/tr/td/span" position="after">
+    			<t t-if="p['attribute']">
+                	(<span t-esc="p['attribute']"/>)
+                </t> 
+    		</xpath>
+    	</template>
+    </data>
+</openerp>

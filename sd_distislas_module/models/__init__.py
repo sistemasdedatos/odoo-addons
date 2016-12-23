@@ -18,4 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import purchase_cost_distribution, purchase_order, product, inherit_account_print_overdue
+import purchase_cost_distribution, purchase_order, product, inherit_account_print_overdue, inherit_product_pricelist

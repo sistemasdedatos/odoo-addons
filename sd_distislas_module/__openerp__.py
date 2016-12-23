@@ -56,6 +56,7 @@ Module that modifies the program interface and the reports to Distribuciones Isl
              'reports/invoice_report.xml',
              'reports/saleorder_report.xml',
              'reports/product_report.xml',
+             'reports/report_pricelist.xml',
              'views/inherit_product_view.xml',
              'views/inherit_purchase_add_variants_view.xml'],
     'images':[],                
