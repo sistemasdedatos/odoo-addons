@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Distribuciones Islas',
-    'version' : '0.3.2',
+    'version' : '0.3.3',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -58,7 +58,8 @@ Module that modifies the program interface and the reports to Distribuciones Isl
              'reports/product_report.xml',
              'reports/report_pricelist.xml',
              'views/inherit_product_view.xml',
-             'views/inherit_purchase_add_variants_view.xml'],
+             'views/inherit_purchase_add_variants_view.xml',
+             'views/search_res_partner.xml'],
     'images':[],                
     'installable': True,
     'auto_install': False,        
