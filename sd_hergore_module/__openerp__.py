@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos HERGORE',
-    'version' : '0.1',
+    'version' : '1.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -48,9 +48,9 @@ Module that modifies the program interface and the reports to Herrajes Hergore S
                  'product_price_history',
                  'purchase',
                  'stock_card'],           
-    'data': ['inherit_res_partner.xml',
-             'inherit_product_view.xml',
-             'inherit_view_stock_card.xml',
+    'data': ['views/inherit_res_partner.xml',
+             'views/inherit_product_view.xml',
+             'views/inherit_view_stock_card.xml',
              'report/inherit_footer.xml',
              'report/inherit_header.xml',
              'report/inherit_invoice.xml',
