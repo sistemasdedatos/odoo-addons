@@ -58,7 +58,7 @@ Module that modifies the program interface and the reports to Herrajes Hergore S
              'report/invoice_summary.xml',
              'report/inherit_report_generalledger.xml',
              'report/inherit_purchasequotation.xml'],
-    'images':['static/src/img/COPY.PNG'], 
+    'images':[], 
     'installable': True,        
     'auto_install': False,        
     'application': False,
