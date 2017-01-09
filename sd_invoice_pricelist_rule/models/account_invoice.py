@@ -15,6 +15,13 @@ class AccountInvoiceLine (models.Model):
     discount2 = fields.Float (string='Disc. 2 (%)', digits = dp.get_precision ('Discount'), default = 0.0, readonly = False)
     discount3 = fields.Float (string='Disc. 3 (%)', digits = dp.get_precision ('Discount'), default = 0.0, readonly = False)
     
+    _sql_constraints = [
+        ('discount2_limit', 'CHECK (discount2 <= 100.0)',
+         'Second discount must be lower than 100%.'),
+        ('discount3_limit', 'CHECK (discount3 <= 100.0)',
+         _('Third discount must be lower than 100%.')),
+    ]
+    
     @api.one
     @api.depends ('price_unit', 'discount', 'discount2', 'discount3', 'invoice_line_tax_id', 'quantity',
         'product_id', 'invoice_id.partner_id', 'invoice_id.currency_id')
@@ -29,7 +36,20 @@ class AccountInvoiceLine (models.Model):
     def move_line_get (self, invoice_id):
         res = super (AccountInvoiceLine, self).move_line_get (invoice_id)
         return res
-
+    
+    @api.multi
+    def product_id_change(self, product, uom_id, qty=0, name='', type='out_invoice',
+            partner_id=False, fposition_id=False, price_unit=False, currency_id=False,
+            company_id=None):
+        res = super (AccountInvoiceLine, self).product_id_change (product, uom_id, qty, name, type, partner_id, fposition_id, price_unit, currency_id, company_id)
+        partner = self.env['res.partner'].browse (partner_id)
+        if self.env.ref ('sale.group_discount_per_so_line') in self.env['res.users'].browse ([self._uid]).groups_id:
+            res['value']['discount'] = partner.property_product_pricelist.version_id[0].items_id[0].discount
+            if self.env.ref ('product_pricelist_rules.group_second_discount') in self.env['res.users'].browse ([self._uid]).groups_id:
+                res['value']['discount2'] = partner.property_product_pricelist.version_id[0].items_id[0].discount2
+                if self.env.ref ('product_pricelist_rules.group_third_discount') in self.env['res.users'].browse ([self._uid]).groups_id:
+                    res['value']['discount3'] = partner.property_product_pricelist.version_id[0].items_id[0].discount3
+        return res
 
 class account_invoice_tax (models.Model):
     _inherit = "account.invoice.tax"
@@ -41,7 +61,7 @@ class account_invoice_tax (models.Model):
         for line in invoice.invoice_line:
             disc[line.id] = line.discount or 0.0
             line.discount = (1 - (1 - (line.discount or 0.0) / 100.0) * (1 - (line.discount2 or 0.0) / 100.0) * (1 - (line.discount3 or 0.0) / 100.0)) * 100
-        tax_grouped = super (account_invoice_tax, self).compute (invoice)        
+        tax_grouped = super (account_invoice_tax, self).compute (invoice)
         for line in invoice.invoice_line:
             line.discount = disc[line.id]
         
