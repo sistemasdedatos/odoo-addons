@@ -3,23 +3,47 @@
 	<data>
 		<template id="sd_inherit_report_saleorder" inherit_id="sale.report_saleorder_document">
 			
-			<xpath expr="//div/div[@class='row']" position="replace"/>
-
+			<xpath expr="//div/div[@class='row']" position="replace">
+				<div class="row"/>
+			</xpath>
 			<xpath expr="//div/h2" position="attributes">
-				<attribute name="style">font-size:16px</attribute>
+				<attribute name="style">font-size:16px; text-align:center</attribute>
 			</xpath>
 			
 			<xpath expr="//div/h2" position="after">
 				<div style="font-size:11px">
-					<span t-if="o.partner_id.comercial"><strong>Fiscal name: </strong><span t-field="o.partner_id.comercial"/><br/></span>
-					<span t-if="o.partner_id.vat"><strong>NIF: </strong><span t-field="o.partner_id.vat"/><br/></span>
-					<span t-if="o.partner_id.name"><strong>Comercial name: </strong><span t-field="o.partner_id.name"/><br/></span>
-                    <span t-if="o.partner_id.street"><strong>Address: </strong> 
-                    	<span t-esc="'%s, ' % o.partner_id.street"/>
-                    	<span t-esc="'CP: %s, ' % o.partner_id.zip"/>
-                    	<span t-esc="'%s, ' % o.partner_id.city"/>
-                    	<span t-esc="'%s' % o.partner_id.country_id.name"/>
-                    </span>
+					<div t-if="o.partner_id.comercial">
+						<strong>Fiscal name: </strong>
+						<span t-field="o.partner_id.name"/>
+					</div>
+					<div t-if="o.partner_id.vat">
+						<strong>NIF: </strong>
+						<span t-field="o.partner_id.vat"/>
+					</div>
+					<div t-if="o.partner_id.name">
+						<strong>Comercial name: </strong>
+						<span t-field="o.partner_id.comercial"/>
+					</div>
+                    <div t-if="o.partner_id.street or o.partner_id.street2 or o.partner_id.zip or o.partner_id.city or o.partner_id.state_id or o.partner_id.country_id">
+						<strong>Address: </strong>
+						<span t-field="o.partner_id.street"/>
+						<span t-if="o.partner_id.street">, </span>
+						<span t-field="o.partner_id.street2"/>
+						<span t-if="o.partner_id.street2">, </span>
+						<span t-field="o.partner_id.zip"/>
+						<span t-if="o.partner_id.zip">, </span>
+						<span t-field="o.partner_id.city"/>
+						<span t-if="o.partner_id.city">, </span>
+						<span t-field="o.partner_id.state_id.name"/>
+						<span t-if="o.partner_id.state_id">, </span>
+						<span t-field="o.partner_id.country_id.name"/>
+					</div>
+					<div t-if="o.partner_id.phone or o.partner_id.mobile">
+						<strong>Tfno: </strong>
+						<span t-field="o.partner_id.phone" />
+						<span t-if="o.partner_id.phone and o.partner_id.mobile"> - </span>
+						<span t-field="o.partner_id.mobile" />
+					</div>
 				</div>
 			</xpath>
 			
@@ -42,8 +66,6 @@
 			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
 				<attribute name="style">font-size:11px</attribute>
 			</xpath>
-			
-			<xpath expr="//div/div/div[@t-if='o.payment_term']" position="replace"/>
 			
 		</template>
 	</data>

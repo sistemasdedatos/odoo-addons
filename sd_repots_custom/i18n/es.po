@@ -35,7 +35,7 @@ msgstr "Nombre comercial:"
 #. module: sd_repots_custom
 #: view:website:account.report_invoice_document
 msgid "Customer Code:"
-msgstr "Código de cliente"
+msgstr "Código de cliente:"
 
 #. module: sd_repots_custom
 #: view:website:account.report_invoice_document

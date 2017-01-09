@@ -20,36 +20,26 @@
 				<div style="font-size:11px">
 					<div class="col-xs-8">
 						<strong>
-							<br>
-								<span t-if="o.date_invoice">
-									Date invoice:
-									<span t-field="o.date_invoice" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.origin">
-									Origin:
-									<span t-field="o.origin" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.partner_id.ref">
-									Customer Code:
-									<span t-field="o.partner_id.ref" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.reference">
-									Reference:
-									<span t-field="o.reference" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.name">
-									Description:
-									<span t-field="o.name" />
-								</span>
-							</br>
+							<div t-if="o.date_invoice">
+								Date invoice:
+								<span t-field="o.date_invoice" />
+							</div>
+							<div t-if="o.origin">
+								Origin:
+								<span t-field="o.origin" />
+							</div>
+							<div t-if="o.partner_id.ref">
+								Customer Code:
+								<span t-field="o.partner_id.ref" />
+							</div>
+							<div t-if="o.reference">
+								Reference:
+								<span t-field="o.reference" />
+							</div>
+							<div t-if="o.name">
+								Description:
+								<span t-field="o.name" />
+							</div>
 							<br>
 								<p />
 							</br>
@@ -61,28 +51,41 @@
 							Customer data
 							<br />
 						</strong>
-						<span t-if="o.partner_id.comercial">
+						<div t-if="o.partner_id.name">
 							<strong>Fiscal name: </strong>
-							<span t-field="o.partner_id.comercial" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.vat">
+							<span t-field="o.partner_id.name" />
+						</div>
+						<div t-if="o.partner_id.vat">
 							<strong>NIF: </strong>
 							<span t-field="o.partner_id.vat" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.name">
+						</div>
+						<div t-if="o.partner_id.comercial">
 							<strong>Comercial name: </strong>
-							<span t-field="o.partner_id.name" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.street">
+							<span t-field="o.partner_id.comercial" />
+						</div>
+						<div t-if="o.partner_id.street or o.partner_id.street2 or o.partner_id.zip or o.partner_id.city or o.partner_id.state_id or o.partner_id.country_id">
 							<strong>Address: </strong>
-							<span t-esc="'%s, ' % o.partner_id.street" />
-							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
-							<span t-esc="'%s, ' % o.partner_id.city" />
-							<span t-esc="'%s' % o.partner_id.country_id.name" />
-						</span>
+							<span t-field="o.partner_id.street"/>
+							<span t-if="o.partner_id.street">, </span>
+							<span t-field="o.partner_id.street2"/>
+							<span t-if="o.partner_id.street2">, </span>
+							<span t-field="o.partner_id.zip"/>
+							<span t-if="o.partner_id.zip">, </span>
+							<span t-field="o.partner_id.city"/>
+							<span t-if="o.partner_id.city">, </span>
+							<span t-field="o.partner_id.state_id.name"/>
+							<span t-if="o.partner_id.state_id">, </span>
+							<span t-field="o.partner_id.country_id.name"/>
+						</div>
+						<div t-if="o.partner_id.phone or o.partner_id.mobile">
+							<strong>Tfno: </strong>
+							<span t-field="o.partner_id.phone" />
+							<span t-if="o.partner_id.phone and o.partner_id.mobile"> - </span>
+							<span t-field="o.partner_id.mobile" />
+						</div>
+						<br>
+							<p />
+						</br>
 					</div>
 				</div>
 			</xpath>
