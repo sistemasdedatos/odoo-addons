@@ -1,12 +1,12 @@
-﻿<!--templates>
-    <!-- Templates modified at the web start, before loading of a database. >
+﻿<!-- <templates>
+    <Templates modified at the web start, before loading of a database. >
 
-    <!-- Remove the Manage database link, but keep the Powered by OpenERP>
+    <Remove the Manage database link, but keep the Powered by OpenERP>
     <t t-extend="DatabaseManager">
        <xpath expr="//div[@class='oe_view_manager_view_form']" position="replace">
        </xpath>
     </t>
-</templates-->
+</templates> -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim:fdl=1:
 -->

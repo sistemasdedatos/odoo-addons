@@ -260,3 +260,7 @@ msgstr "Total vendido"
 msgid "or"
 msgstr "o"
 
+#. module: sd_pos_cash_count
+#: model:ir.ui.menu,name:point_of_sale.sd_cash_count_form
+msgid "Print Summary Cash Count"
+msgstr "Resúmen Arqueo de caja"
