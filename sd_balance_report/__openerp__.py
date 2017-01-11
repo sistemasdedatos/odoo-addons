@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2016 Sistemas de Datos (<http://www.sdatos.com>).
+#    Copyright (C) 2017 Sistemas de Datos (<http://www.sdatos.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,4 +18,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import res_partner
+{
+    'name' : 'Balance Report',
+    'version' : '0.1',
+    'author' : 'Sistemas de Datos',
+    'maintainer': 'Sistemas de Datos',
+    'category' : 'Account',             
+    'summary': 'Balance report for too much accounts',
+    'description' : """
+Balance Report
+==============
+
+This module reapir error to print balance with too much accounts
+----------------------------------------------------------------
+    """,
+    'website': 'http://www.sdatos.com',
+    # End General Data
+    'depends':['account'],            
+    'data':[],
+    'installable': True,        
+    'auto_install': False,        
+    'application': False,
+}
