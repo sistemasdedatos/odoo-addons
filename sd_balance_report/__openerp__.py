@@ -29,7 +29,7 @@
 Balance Report
 ==============
 
-This module reapir error to print balance with too much accounts
+This module repair error to print balance with too much accounts
 ----------------------------------------------------------------
     """,
     'website': 'http://www.sdatos.com',

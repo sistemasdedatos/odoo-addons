@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="sd_invoice_copy_document">
+			<t t-call="account.report_invoice_document"/>
+			<t t-call="account.report_invoice_document">
+				<div class="page">
+					<div style="position:absolute;top:0;width:100px;height:100px;z-index:10;color:rgba(255,0,0,0.5);font-size:26px" >
+						<strong>COPIA</strong>
+					</div>
+				</div>
+			</t>
+					
+		</template>
+
+		<template id="sd_invoice_copy">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_hergore_module.sd_invoice_copy_document')" />
+				</t>
+			</t>
+		</template>
+		<report id="invoice_copy" model="account.invoice"
+			name="sd_hergore_module.sd_invoice_copy" string="Factura con copia"
+			file="sd_hergore_module.sd_invoice_copy" report_type="qweb-pdf"
+			attachment_use="True" />
+			
+		<!-- <template id="sd_invoice_summary">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_hergore_module.sd_invoice_summary_document')" />
+				</t>
+			</t>
+		</template>
+		<report id="invoice_summary" model="account.invoice"
+			name="sd_hergore_module.sd_invoice_summary" string="Factura resumida"
+			file="sd_hergore_module.sd_invoice_summary" report_type="qweb-pdf"
+			attachment_use="True" /> -->
+    
+    </data>
+</openerp>
