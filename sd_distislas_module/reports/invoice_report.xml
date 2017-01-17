@@ -20,36 +20,22 @@
 				<div style="font-size:12px">
 					<div class="col-xs-8">
 						<strong>
-							<br>
-								<span t-if="o.date_invoice">
-									Date invoice:
-									<span t-field="o.date_invoice" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.origin">
-									Origin:
-									<span t-field="o.origin" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.partner_id.ref">
-									Customer Code:
-									<span t-field="o.partner_id.ref" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.reference">
-									Reference:
-									<span t-field="o.reference" />
-								</span>
-							</br>
-							<br>
-								<span t-if="o.name">
-									Description:
-									<span t-field="o.name" />
-								</span>
-							</br>
+							<div t-if="o.date_invoice">
+								Date invoice:
+								<span t-field="o.date_invoice" />
+							</div>
+							<div t-if="o.origin">
+								Origin:
+								<span t-field="o.origin" />
+							</div>
+							<div t-if="o.partner_id.ref">
+								Customer Code:
+								<span t-field="o.partner_id.ref" />
+							</div>
+							<div t-if="o.name">
+								Description:
+								<span t-field="o.name" />
+							</div>
 							<br>
 								<p />
 							</br>

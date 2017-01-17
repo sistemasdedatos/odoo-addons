@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="inherit_report_voucher_document" inherit_id="voucher_print.report_voucher_document">
+    		<xpath expr="//span[@t-field='o.company_id']" position="replace"/>
+    		<xpath expr="//div/div[2]" position="replace">
+    			<div>
+    				<table class="table table-condensed" style="font-size:12px">
+						<thead>
+							<tr>
+								<th>Fecha de factura</th>
+								<th>Pedido - Factura</th>
+								<th>Importe a pagar</th>
+								<th>Importe pagado</th>
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+							<tr t-foreach="o.line_cr_ids" t-as="l">
+								<td>
+									<span t-field="l.move_line_id.invoice.date_invoice" />
+								</td>
+								<td>
+									<span t-field="l.move_line_id.invoice.number" />
+								</td>
+								<td>
+									<span t-field="l.move_line_id.invoice.amount_total" />
+								</td>
+								<td>
+									<span t-field="l.amount" />
+								</td>
+							</tr>
+						</tbody>
+					</table>	
+    			</div>
+    		</xpath>
+    	</template>
+    </data>
+</openerp>
