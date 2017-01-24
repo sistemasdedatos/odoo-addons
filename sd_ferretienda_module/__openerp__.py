@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Ferretienda',
-    'version' : '0.1',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -51,7 +51,8 @@ Module that modifies the program interface and the reports to Ferretería la lla
              'report/inherit_saleorder.xml',
              'report/inherit_invoice.xml',
              'report/invoice_summary.xml',
-             'inherit_product_view.xml',
+             'views/inherit_product_view.xml',
+             'views/inherit_search_pos.xml',
              'static/src/xml/sd_pos.xml'],
     'images':[], 
     'installable': True,        
