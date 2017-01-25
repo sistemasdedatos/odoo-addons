@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template id="template" xml:space="preserve">
+	<t t-name="ResponsiveViewManagerAction" t-extend="ViewManagerAction"/>
+	<t t-name="ResponsiveFormView" t-extend="FormView"/>
+	<t t-name="ResponsiveListView" t-extend="ListView"/>
+	
+</template>

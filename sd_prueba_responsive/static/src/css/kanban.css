@@ -1,0 +1,53 @@
+/*
+ *    Copyright (c) 2015 - Present Ahmed Magdy
+ *    All Rights Reserved
+ *    Author: Ahmed Magdy <ahmed.magdy40@gmail.com>
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    A copy of the GNU General Public License is available at:
+ *    <http://www.gnu.org/licenses/gpl.html>.
+*/
+
+
+.openerp .oe_bold {
+  font-weight: bold;
+}
+
+.openerp .oe_bounce_container {
+  display: inline-block;
+}
+
+.openerp .oe_kanban_view .oe_kanban_button_new {
+  color: white;
+  background: #DC5F59;
+}
+
+.openerp .oe_kanban_view .oe_kanban_card{
+	display: inline-block !important;
+}
+
+.openerp .oe_kanban_view .oe_kanban_card.oe_kanban_global_click.oe_kanban_draghandle{
+	width: 100%;
+}
+
+.openerp .oe_kanban_view .oe_kanban_column {
+    height: 1px !important;
+}
+.openerp .oe_kanban_view .oe_kanban_groups{
+	height: 100%;
+	width: 100%;
+	min-height: inherit;
+}
+
+.openerp .oe_kanban_view.oe_kanban_grouped .oe_kanban_column, .openerp .oe_kanban_view.oe_kanban_grouped .oe_kanban_column_cards{
+  height: 100% !important;
+}
