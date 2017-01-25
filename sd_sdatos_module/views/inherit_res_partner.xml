@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record model="ir.ui.view" id="sd_crm_lead_partner_kanban_view">
+            <field name="name">sd.res.partner.kanban.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="crm.crm_lead_partner_kanban_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='meeting_count']" position="replace">
+            		<field name="meeting_count" invisible="True"/>
+            		<field name="sd_meeting_count"/>
+            	</xpath>
+            	<xpath expr="//a[@t-if='record.meeting_count.value>0']" position="attributes">
+            		<attribute name="t-if">record.sd_meeting_count.value>0</attribute>
+            	</xpath>
+            	<xpath expr="//t[@t-esc='record.meeting_count.value']" position="replace">
+            		<t t-esc="record.sd_meeting_count.value"/> Meetings
+            	</xpath>
+            </field>
+        </record>
+        <record id="sd_view_partners_form_crm1" model="ir.ui.view">
+            <field name="name">sd.view.res.partner.form.crm.inherited1</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
+            <field name="arch" type="xml">
+	            <xpath expr="//field[@name='meeting_count']" position="replace">
+	            	<field string="Meetings" name="sd_meeting_count" widget="statinfo"/>
+	            </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

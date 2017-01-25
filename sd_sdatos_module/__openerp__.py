@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Sistemas de Datos',
-    'version' : '2.1',
+    'version' : '3.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -54,6 +54,7 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
             'views/inherit_project_view.xml',
             'views/inherit_crm_view.xml',
             'views/saleorder_view.xml',
+            'views/inherit_res_partner.xml',
 	        'report/header_report.xml',
             'report/footer_report.xml',
             'report/invoice_report.xml',
