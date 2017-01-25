@@ -1,5 +1,6 @@
 /*/*.pyc
 /*/*/*.pyc
 .settings
+.settings/*
 .project
 .pydevproject
