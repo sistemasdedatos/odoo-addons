@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Distribuciones Islas',
-    'version' : '0.4.1',
+    'version' : '0.4.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -63,7 +63,8 @@ Module that modifies the program interface and the reports to Distribuciones Isl
              'views/inherit_product_view.xml',
              'views/inherit_purchase_add_variants_view.xml',
              'views/search_res_partner.xml',
-             'views/inherit_commission_invoice_view.xml'],
+             'views/inherit_commission_invoice_view.xml',
+             'views/res_partner_inherit.xml'],
     'images':[],                
     'installable': True,
     'auto_install': False,        
