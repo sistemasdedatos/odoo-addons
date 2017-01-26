@@ -38,7 +38,7 @@ Modulo para hacer el cliente web responsive
     'depends' : ['web'],           
     'data': ['views/sd_responsive.xml'],
     'images':[], 
-    'qweb' : ["static/src/xml/*.xml"],
+#     'qweb' : ["static/src/xml/*.xml"],
     'installable': True,
     'auto_install': False,
     'application': False,
