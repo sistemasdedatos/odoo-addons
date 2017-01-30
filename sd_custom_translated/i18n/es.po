@@ -45,3 +45,8 @@ msgstr "Presupuestos"
 #: view:res.partner:sd_custom_translated.inherit_res_partner_view_buttons
 msgid "Sales"
 msgstr "Ventas"
+
+#. module: account
+#: view:account.move:account.view_move_form
+msgid "Post"
+msgstr "Asentar"
