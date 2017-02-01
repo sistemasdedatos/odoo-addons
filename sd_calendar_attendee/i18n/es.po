@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sd_calendar_attendee
+# 
+# Translators:
+# Sistemas de Datos S.L. <sdatos@sdatos.es>, 2017
+# Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-31 11:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: sd_calendar_attendee
+#: field:calendar.event,partner_in_ids:0
+msgid "Send mail"
+msgstr "Enviar email"
+
+#. module: sd_calendar_attendee
+#: help:calendar.event,partner_in_ids:0
+msgid "Check the box to notify the guest by email"
+msgstr "Marcar la casilla para notificar al invitado por email"
+
+#. module: calendar
+#: view:calendar.event:calendar.view_calendar_event_form
+msgid "Invitations"
+msgstr "Estado de invitaciones"
+
+#. module: calendar
+#: view:calendar.event:calendar.view_calendar_event_form_popup
+#: view:calendar.event:calendar.view_calendar_event_form
+msgid "Attendees"
+msgstr "Invitaciones"
+
+#. module: calendar
+#: field:calendar.event,attendee_ids:0 field:calendar.event,partner_ids:0
+msgid "Attendees"
+msgstr "Invitados"
+
+#. module: calendar
+#: view:calendar.event:calendar.view_calendar_event_form
+msgid "Owner"
+msgstr "Propietario"

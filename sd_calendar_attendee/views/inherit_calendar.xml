@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record model="ir.ui.view" id="inherit_view_calendar_event_form">
+	        <field name="name">inherit.calendar.event.form</field>
+	        <field name="model">calendar.event</field>
+	        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//label[@for='partner_ids']" position="attributes">
+	        		<attribute name="invisible">1</attribute>
+	        	</xpath>
+	        	<xpath expr="//h2" position="attributes">
+	        		<attribute name="invisible">1</attribute>
+	        	</xpath>
+	        	<xpath expr="//page[@string='Misc']" position="attributes">
+	        		<attribute name="string">Attendees</attribute>
+	        	</xpath>
+	        	<xpath expr="//page[4]/label[@string='Owner']" position="attributes">
+	        		<attribute name="invisible">1</attribute>
+	        	</xpath>
+	        	<xpath expr="//page[4]/field[@name='user_id']" position="attributes">
+	        		<attribute name="invisible">1</attribute>
+	        	</xpath>
+	        	<xpath expr="//page[4]" position="inside">
+        			<field name="partner_id" invisible="True"/>
+        			<group>
+        				<field name="user_id" string="Owner"/>
+        			</group>
+        			<group>
+		        		<field name="partner_ids" on_change="onchange_partner_ids(partner_ids)" 
+		        			   widget="many2manyattendee" options="{'no_create': True}"/>
+		        	</group>	
+		        	<group>
+		        		<field name="partner_in_ids" widget="many2many_checkboxes" options="{'no_create': True}"/>
+		        	</group>
+	        	</xpath>
+	    	</field>
+	    </record>
+    </data>
+</openerp>
