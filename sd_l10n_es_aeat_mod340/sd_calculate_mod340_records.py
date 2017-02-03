@@ -135,14 +135,16 @@ class L10nEsAeatMod340CalculateRecords(orm.TransientModel):
                 sign = 1
                 if invoice.type in ('out_refund', 'in_refund'):
                     sign = -1
-                if (str(invoice.amount_untaxed * sign) != str(check_base)) & (str(invoice.partner_id.property_account_payable.code)[0:4] != '4757'):
+                if ((str(invoice.cc_amount_untaxed * sign) != str(check_base)) & 
+                    (str(invoice.partner_id.property_account_payable.code)[0:4] != '4757') & 
+                    (invoice.type != 'in_invoice')):
                     
                     raise orm.except_orm(
                         "REVIEW INVOICE",
                         _('Invoice  %s, Amount untaxed Lines %.2f do not '
                           'correspond to AmountUntaxed on Invoice %.2f') %
                         (invoice.number, check_base,
-                         invoice.amount_untaxed * sign))
+                         invoice.cc_amount_untaxed * sign))
         if recalculate:
             mod340.write({
                 'state': 'calculated',

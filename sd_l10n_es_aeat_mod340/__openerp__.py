@@ -22,7 +22,7 @@
 
 {
     'name' : 'Sistemas de Datos mod340 Module',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Localisation/Account Charts',
