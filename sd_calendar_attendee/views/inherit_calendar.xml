@@ -27,8 +27,8 @@
         				<field name="user_id" string="Owner"/>
         			</group>
         			<group>
-		        		<field name="partner_ids" on_change="onchange_partner_ids(partner_ids)" 
-		        			   widget="many2manyattendee" options="{'no_create': True}"/>
+		        		<field name="partner_ids" widget="many2manyattendee" on_change="onchange_partner_ids(partner_ids)" 
+		        			    options="{'no_create': True}"/>
 		        	</group>	
 		        	<group>
 		        		<field name="partner_in_ids" widget="many2many_checkboxes" options="{'no_create': True}"/>

@@ -44,9 +44,6 @@ class calendar_event (models.Model):
                     'access_token': access_token,
                     'email': partner.email,
                 }
-
-                if partner.id == current_user.partner_id.id:
-                    values['state'] = 'accepted'
                 att_id = self.env['calendar.attendee'].create (values)
                 new_attendees.append (att_id)
                 new_att_partner_ids.append (partner.id)
@@ -56,7 +53,21 @@ class calendar_event (models.Model):
                     if not context.get('no_email'):
                         if att_id._send_mail_to_attendees(email_from=mail_from):
                             event.message_post (body=_("An invitation email has been sent to attendee %s") % (partner.name,), subtype="calendar.subtype_invitation")
-
+            
+            if (event.partner_id in event.partner_ids) and (event.partner_id.id not in attendees):
+                access_token = self.new_invitation_token (event, event.partner_id.id)
+                values = {
+                    'partner_id': event.partner_id.id,
+                    'event_id': event.id,
+                    'access_token': access_token,
+                    'email': event.partner_id.email,
+                    'state': 'accepted',
+                }
+                att_id = self.env['calendar.attendee'].create (values)
+                new_attendees.append (att_id)
+                new_att_partner_ids.append (event.partner_id.id)
+                
+            
             for att in new_attendees:
                 event.write({'attendee_ids': [(4, att.id)]})
             if new_att_partner_ids:
