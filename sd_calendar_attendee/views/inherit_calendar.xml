@@ -13,26 +13,26 @@
 	        		<attribute name="invisible">1</attribute>
 	        	</xpath>
 	        	<xpath expr="//page[@string='Misc']" position="attributes">
-	        		<attribute name="string">Attendees</attribute>
+	        		<attribute name="invisible">1</attribute>
 	        	</xpath>
 	        	<xpath expr="//page[4]/label[@string='Owner']" position="attributes">
 	        		<attribute name="invisible">1</attribute>
 	        	</xpath>
-	        	<xpath expr="//page[4]/field[@name='user_id']" position="attributes">
-	        		<attribute name="invisible">1</attribute>
-	        	</xpath>
-	        	<xpath expr="//page[4]" position="inside">
-        			<field name="partner_id" invisible="True"/>
-        			<group>
-        				<field name="user_id" string="Owner"/>
-        			</group>
-        			<group>
-		        		<field name="partner_ids" widget="many2manyattendee" on_change="onchange_partner_ids(partner_ids)" 
-		        			    options="{'no_create': True}"/>
-		        	</group>	
-		        	<group>
-		        		<field name="partner_in_ids" widget="many2many_checkboxes" options="{'no_create': True}"/>
-		        	</group>
+	        	<xpath expr="//page[4]/field[@name='user_id']" position="replace"/>
+	        	<xpath expr="//page[1]" position="before">
+	        		<page string="Attendees">
+	        			<field name="partner_id" invisible="True"/>
+	        			<group>
+	        				<field name="user_id" string="Owner"/>
+	        			</group>
+	        			<group>
+			        		<field name="partner_ids" widget="many2manyattendee" on_change="onchange_partner_ids(partner_ids)" 
+			        			    options="{'no_create': True}"/>
+			        	</group>	
+			        	<group>
+			        		<field name="partner_in_ids" widget="many2many_checkboxes" options="{'no_create': True}"/>
+			        	</group>
+		        	</page>
 	        	</xpath>
 	    	</field>
 	    </record>
