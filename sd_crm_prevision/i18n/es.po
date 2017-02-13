@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_crm_prevision
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-13 13:18+0000\n"
+"PO-Revision-Date: 2017-02-13 13:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_crm_prevision
+#: field:crm.case.section,sd_invoiced_forecast:0
+msgid "Anual Invoice Forecast"
+msgstr "Previsión de facturación anual"
+
+#. module: sale
+#: view:crm.case.section:sale.crm_case_section_salesteams_view_kanban
+msgid "Forecast"
+msgstr "Previsión/Año"
+
+#. module: sale
+#: help:crm.case.section,invoiced_forecast:0
+msgid "Forecast of the invoice revenue for the current month. This is the amount the sales \n"
+"team should invoice this month. It is used to compute the progression ratio \n"
+" of the current and forecast revenue on the kanban view."
+msgstr "Previsión de los ingresos de facturación para el año actual. Éste es el importe que el "
+"equipo de ventas debería facturar este año.\nSe calcula en base a las oportunidades del año en curso."
+
+#. module: sale
+#: view:crm.case.section:sale.crm_case_section_salesteams_view_kanban
+#: field:sale.order,invoice_exists:0
+#: field:sale.order.line,invoiced:0
+msgid "Invoiced"
+msgstr "Facturado/Mes"
