@@ -1,18 +1,12 @@
 from O365 import *
 from openerp import models, fields, api
-from openerp.exceptions import Warning 
-from openerp.tools.translate import _
-import html2text
-from matplotlib.cbook import Null
-import datetime
-import time
+import datetime, time
 
-
-class calendar_event(models.Model):
+class calendar_event (models.Model):
     _inherit = "calendar.event"
     
-    last_start = fields.Datetime('Last start', default = datetime.datetime.now (), readonly = True)
-    last_stop = fields.Datetime('Last stop', default = datetime.datetime.now (), readonly = True)
+    last_start = fields.Datetime ('Last start', default = datetime.datetime.now (), readonly = True)
+    last_stop = fields.Datetime ('Last stop', default = datetime.datetime.now (), readonly = True)
     
     @api.multi
     def write (self, val):
@@ -40,12 +34,11 @@ class calendar_event(models.Model):
             delete_office = office_sync.delete_office (i, self.attendee_ids)
         return super (calendar_event, self).unlink ()
     
-class calendar_attendee(models.Model):
-    
+class calendar_attendee (models.Model):
     _inherit = 'calendar.attendee'
     
     @api.multi
-    def do_accept(self):
+    def do_accept (self):
         start = datetime.datetime.strptime (self.event_id.start, '%Y-%m-%d %H:%M:%S') - datetime.timedelta (days = 1)
         stop = datetime.datetime.strptime (self.event_id.stop, '%Y-%m-%d %H:%M:%S') + datetime.timedelta (days = 1)
         office_sync = self.env['sd.office.sync'].create ({'sd_office_config_id': False,
