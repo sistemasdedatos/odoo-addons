@@ -21,11 +21,11 @@
 
 {
     'name' : 'SDatos Sistemas de Datos',
-    'version' : '3.1',
+    'version' : '3.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
-#     'sequence': 3,                
+    'sequence': 30,                
     'summary': 'Custom reports for clients',
     'description' : """
 Sdatos Module
@@ -45,6 +45,8 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
 		       'edi',
                'report',
                'sale',
+               'portal_sale',
+               'calendar',
 		       'sd_digital_sign',
 		       'sd_report_project',
  		       'sd_employee_report',
