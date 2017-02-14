@@ -132,6 +132,9 @@
 					Bank: <span t-field="o.partner_bank_id.bank_name"/><br/>
 					Account: <span t-field="o.partner_bank_id.acc_number"/>
 				</div>
+				<div class="mt16" style="font-size:11px">
+					REVISADO POR:
+				</div>
 			</xpath>
 
 		</template>
