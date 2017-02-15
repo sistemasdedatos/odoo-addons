@@ -28,6 +28,13 @@
 				<xpath expr="//field[@name='categ_ids']" position="after">
 					<field name="office"/>				
 				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="replace"/>
+				<xpath expr="//field[@name='project_id']" position="before">
+					<field name="partner_id" domain="[('customer', '=', True)]"/>
+				</xpath>
+				<xpath expr="//field[@name='project_id']" position="attributes">
+					<attribute name="domain">[('partner_id', '=', partner_id)]</attribute>
+				</xpath>
 	   	 	</field>
 	   	 </record>
 		 <record id="inherit_sign_view_task_form2" model="ir.ui.view">
