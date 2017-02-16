@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record model="ir.ui.view" id="sd_helpdesk_kanban_view">
+            <field name="name">CRM - Helpdesk Kanban</field>
+            <field name="model">crm.helpdesk</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" default_order="priority desc,create_date asc">
+                	<field name="state"/>
+                	<field name="priority"/>
+                	<field name="user_id"/>
+                	<field name="color"/>
+                	<templates>
+                		<t t-name="kanban-box">
+	                		<div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+	                			<div class="oe_dropdown_toggle oe_dropdown_kanban">
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <li><a name="%(mail.action_email_compose_message_wizard)d" type="action">Send Email</a></li>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+	                			<div class="oe_kanban_content">
+	                				<div style="padding-left: 0.7em" t-attf-class="oe_kanban_text_red">
+	                					<field name="create_date"/>
+                                	</div>
+                                	<b>
+	                                	<div>
+		                                	<field name="name"/>
+	                                	</div>
+		                                <div style="color: #477DE1;">
+		                                	<field name="partner_id"/>
+		                                </div>
+	                                </b>
+	                                <div class="oe_kanban_bottom_right">
+	                                    <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
+	                                    <div class="pull-left" groups="base.group_user">
+	                                        <field name="priority" widget="priority"/>
+	                                    </div>
+	                                </div>
+	                                <div class="oe_clear"></div>
+	                			</div>
+	                		</div>
+	                	</t>
+                	</templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="crm_helpdesk.crm_case_helpdesk_act111">
+            <field name="name">Helpdesk Requests</field>
+            <field name="res_model">crm.helpdesk</field>
+            <field name="view_mode">kanban,tree,calendar,form</field>
+            <field name="view_id" ref="sd_helpdesk_kanban_view"/>
+            <field name="search_view_id" ref="crm_helpdesk.view_crm_case_helpdesk_filter"/>
+            <field name="context">{"search_default_user_id":uid}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new request. 
+              </p><p>
+                Helpdesk and Support allow you to track your interventions.
+              </p><p>
+                Use the Odoo Issues system to manage your support
+                activities. Issues can be connected to the email gateway: new
+                emails may create issues, each of them automatically gets the
+                history of the conversation with the customer.
+              </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_crm_sec_kanban_view_act111">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="sd_helpdesk_kanban_view"/>
+            <field name="act_window_id" ref="crm_helpdesk.crm_case_helpdesk_act111"/>
+        </record>
+    </data>
+</openerp>

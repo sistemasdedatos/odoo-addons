@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data noupdate="1">
+        <record id="mt_helpdesk_assigned" model="mail.message.subtype">
+            <field name="name">Helpdesk Assigned</field>
+            <field name="hidden" eval="True"/>
+            <field name="res_model">crm.helpdesk</field>
+            <field name="default" eval="False"/>
+            <field name="description">Helpdesk Assigned</field>
+        </record>
+
+   	</data>
+</openerp>
