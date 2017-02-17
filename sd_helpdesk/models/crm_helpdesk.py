@@ -21,6 +21,8 @@
 
 from openerp import fields, models, api
 from openerp.osv import fields as old_fields
+from openerp.exceptions import Warning
+from openerp.tools.translate import _
 
 class crm_helpdesk (models.Model):
     _inherit = 'crm.helpdesk'
@@ -29,14 +31,29 @@ class crm_helpdesk (models.Model):
     _track = {
         'user_id': {
             'sd_helpdesk.mt_helpdesk_assigned': lambda self, cr, uid, obj, ctx=None: obj.user_id and obj.user_id.id,
-        }
+        },
+        'state': {
+            'sd_helpdesk.mt_helpdesk_done': lambda self, cr, uid, obj, ctx=None: obj.state == 'done',
+            'sd_helpdesk.mt_helpdesk_state': lambda self, cr, uid, obj, ctx=None: obj.state,
+        }    
     }
     user_id = fields.Many2one (track_visibility = 'onchange')
     priority = fields.Selection (default = "0")
-    color = fields.Integer('Color Index', default = 0)
-
-    @api.multi
-    def message_get_subscription_data (self):
-        print self
-        return super(crm_helpdesk, self).message_get_subscription_data ()
-        
+    color = fields.Integer ('Color Index', default = 0)
+ 
+    @api.cr_uid_ids_context
+    def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification', subtype=None, parent_id=False, attachments=None, context=None, content_subtype='html', **kwargs):
+        if subtype != None:
+            if subtype == 'sd_helpdesk.mt_helpdesk_assigned':
+                datas = self.pool.get('crm.helpdesk').read (cr, uid, thread_id, ['partner_id', 'name', 'user_id', 'priority', 'description'])
+                body = "<span>" + self.pool.get('res.users').read (cr, uid, uid, ['name'])['name'] + " le ha asignado un Helpdesk</span>"
+                if datas['partner_id']:
+                     body += "<div> &nbsp; &nbsp; &bull; <b>Cliente</b>: " + datas['partner_id'][1] + "</div>"
+                body += "<div> &nbsp; &nbsp; &bull; <b>Tecnico asignado</b>: " + datas['user_id'][1] + "</div>"
+                body += "<div> &nbsp; &nbsp; &bull; <b>Prioridad</b>: " + datas['priority'] + "</div>"
+                if datas['description']:
+                    body += "<div> &nbsp; &nbsp; &bull; <b>Notas</b>: " + datas['description'] + "</div>"
+            if context is None:
+                context = {}
+            return super(crm_helpdesk, self).message_post(cr, uid, thread_id, body=body, subject=subject, type=type, subtype=subtype, parent_id=parent_id, attachments=attachments, context=context, content_subtype=content_subtype, **kwargs)
+        return False

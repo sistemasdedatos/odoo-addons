@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_helpdesk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-17 13:53+0000\n"
+"PO-Revision-Date: 2017-02-17 13:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_helpdesk
+#: field:crm.helpdesk,color:0
+msgid "Color Index"
+msgstr "Color"
+
+#. module: sd_helpdesk
+#: model:ir.model,name:sd_helpdesk.model_crm_helpdesk
+msgid "Helpdesk"
+msgstr "Helpdesk"
+
+#. module: sd_helpdesk
+#: model:mail.message.subtype,description:sd_helpdesk.mt_helpdesk_assigned
+#: model:mail.message.subtype,name:sd_helpdesk.mt_helpdesk_assigned
+msgid "Helpdesk Assigned"
+msgstr "Helpdesk Assignado"
+
+#. module: sd_helpdesk
+#: model:mail.message.subtype,description:sd_helpdesk.mt_helpdesk_done
+#: model:mail.message.subtype,name:sd_helpdesk.mt_helpdesk_done
+msgid "Helpdesk Done"
+msgstr "Helpdesk Cerrado"
+
+#. module: sd_helpdesk
+#: model:mail.message.subtype,name:sd_helpdesk.mt_helpdesk_state
+msgid "State Changed"
+msgstr "Cambio de estado"
+
+#. module: sd_helpdesk
+#: model:mail.message.subtype,description:sd_helpdesk.mt_helpdesk_state
+msgid "State changed"
+msgstr "Cambio de estado"
+
+#. module: sd_helpdesk
+#: view:crm.helpdesk:sd_helpdesk.inherit_crm_case_form_view_helpdesk
+msgid "{'search_default_partner_id': partner_id, 'partner_id': partner_id}"
+msgstr "{'search_default_partner_id': partner_id, 'partner_id': partner_id}"
+
+#. module: crm_helpdesk
+#: view:crm.helpdesk.report:crm_helpdesk.view_report_crm_helpdesk_graph
+#: model:ir.model,name:crm_helpdesk.model_crm_helpdesk
+#: model:ir.ui.menu,name:crm_helpdesk.menu_config_helpdesk
+msgid "Helpdesk"
+msgstr "Helpdesk"
+
+#. module: crm_helpdesk
+#: model:ir.actions.act_window,name:crm_helpdesk.action_report_crm_helpdesk
+#: model:ir.ui.menu,name:crm_helpdesk.menu_report_crm_helpdesks_tree
+msgid "Helpdesk Analysis"
+msgstr "Análisis de Helpdesk"
+
+#. module: crm_helpdesk
+#: model:ir.actions.act_window,name:crm_helpdesk.crm_helpdesk_categ_action
+msgid "Helpdesk Categories"
+msgstr "Categorías Helpdesk"
+
+#. module: crm_helpdesk
+#: view:crm.helpdesk:crm_helpdesk.crm_case_helpdesk_calendar_view
+msgid "Helpdesk Supports"
+msgstr "Soportes de Helpdesk"
+
+#. module: crm_helpdesk
+#: model:ir.ui.menu,name:crm_helpdesk.menu_help_support_main
+msgid "Helpdesk and Support"
+msgstr "Helpdesk"
+
+#. module: crm_helpdesk
+#: model:ir.model,name:crm_helpdesk.model_crm_helpdesk_report
+msgid "Helpdesk report after Sales Services"
+msgstr "Informe de helpdesk después del servicio de ventas"
+
+#. module: crm_helpdesk
+#: view:crm.helpdesk:crm_helpdesk.view_crm_case_helpdesk_filter
+msgid ""
+"Helpdesk requests that are assigned to me or to one of the sale teams I "
+"manage"
+msgstr "Solicitudes helpdesk que están asignada a mi o a uno de los equipos que yo gestiono"
+
+#. module: crm_helpdesk
+#: view:crm.helpdesk:crm_helpdesk.view_crm_case_helpdesk_filter
+#: field:crm.helpdesk,user_id:0
+msgid "Responsible"
+msgstr "Técnico Asignado"

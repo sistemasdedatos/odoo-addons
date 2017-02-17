@@ -3,11 +3,21 @@
 	<data noupdate="1">
         <record id="mt_helpdesk_assigned" model="mail.message.subtype">
             <field name="name">Helpdesk Assigned</field>
-            <field name="hidden" eval="True"/>
             <field name="res_model">crm.helpdesk</field>
             <field name="default" eval="False"/>
             <field name="description">Helpdesk Assigned</field>
         </record>
-
+ 		<record id="mt_helpdesk_done" model="mail.message.subtype">
+            <field name="name">Helpdesk Done</field>
+            <field name="res_model">crm.helpdesk</field>
+            <field name="default" eval="False"/>
+            <field name="description">Helpdesk Done</field>
+        </record>
+        <record id="mt_helpdesk_state" model="mail.message.subtype">
+            <field name="name">State Changed</field>
+            <field name="res_model">crm.helpdesk</field>
+            <field name="default" eval="False"/>
+            <field name="description">State changed</field>
+        </record>
    	</data>
 </openerp>

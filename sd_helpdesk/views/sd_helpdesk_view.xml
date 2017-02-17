@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+    	<record model="ir.ui.view" id="inherit_crm_case_form_view_helpdesk">
+            <field name="name">SD - Helpdesk Support Form</field>
+            <field name="model">crm.helpdesk</field>
+            <field name="inherit_id" ref="crm_helpdesk.crm_case_form_view_helpdesk"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='ref']" position="attributes">
+            		<attribute name="context">{'search_default_partner_id': partner_id, 'partner_id': partner_id}</attribute>
+            	</xpath>
+            	<xpath expr="//field[@name='ref2']" position="attributes">
+            		<attribute name="context">{'search_default_partner_id': partner_id, 'partner_id': partner_id}</attribute>
+            	</xpath>
+            </field>
+    	</record>
     	<record model="ir.ui.view" id="sd_helpdesk_kanban_view">
             <field name="name">CRM - Helpdesk Kanban</field>
             <field name="model">crm.helpdesk</field>
@@ -16,7 +29,6 @@
 	                			<div class="oe_dropdown_toggle oe_dropdown_kanban">
                                     <span class="oe_e">í</span>
                                     <ul class="oe_dropdown_menu">
-                                        <li><a name="%(mail.action_email_compose_message_wizard)d" type="action">Send Email</a></li>
                                         <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
                                     </ul>
                                 </div>
@@ -67,7 +79,7 @@
             </field>
         </record>
         <record model="ir.actions.act_window.view" id="action_crm_sec_kanban_view_act111">
-            <field name="sequence" eval="1"/>
+            <field name="sequence" eval="0"/>
             <field name="view_mode">kanban</field>
             <field name="view_id" ref="sd_helpdesk_kanban_view"/>
             <field name="act_window_id" ref="crm_helpdesk.crm_case_helpdesk_act111"/>
