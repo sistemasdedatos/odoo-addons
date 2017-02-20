@@ -33,14 +33,30 @@ class crm_helpdesk (models.Model):
             'sd_helpdesk.mt_helpdesk_assigned': lambda self, cr, uid, obj, ctx=None: obj.user_id and obj.user_id.id,
         },
         'state': {
-            'sd_helpdesk.mt_helpdesk_done': lambda self, cr, uid, obj, ctx=None: obj.state == 'done',
+            'sd_helpdesk.mt_helpdesk_done': lambda self, cr, uid, obj, ctx=None: obj.state == '3done',
             'sd_helpdesk.mt_helpdesk_state': lambda self, cr, uid, obj, ctx=None: obj.state,
         }    
     }
+    state = fields.Selection([('0draft', 'New'),
+                              ('1open', 'In Progress'),
+                              ('2pending', 'Pending'),
+                              ('3done', 'Closed'),
+                              ('4cancel', 'Cancelled')])
     user_id = fields.Many2one (track_visibility = 'onchange')
     priority = fields.Selection (default = "0")
     color = fields.Integer ('Color Index', default = 0)
- 
+    
+    _defaults = {'state': lambda *a: '0draft',}
+    
+    def write(self, cr, uid, ids, values, context=None):
+        """ Override to add case management: open/close dates """
+        if values.get('state'):
+            if values.get('state') in ['0draft', '1open'] and not values.get('date_open'):
+                values['date_open'] = fields.datetime.now()
+            elif values.get('state') == '3done' and not values.get('date_closed'):
+                values['date_closed'] = fields.datetime.now()
+        return super(crm_helpdesk, self).write(cr, uid, ids, values, context=context)
+    
     @api.cr_uid_ids_context
     def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification', subtype=None, parent_id=False, attachments=None, context=None, content_subtype='html', **kwargs):
         if subtype != None:
