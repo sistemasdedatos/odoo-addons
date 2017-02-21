@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Helpdesk',
-    'version' : '0.2',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Customer Relationship Management',

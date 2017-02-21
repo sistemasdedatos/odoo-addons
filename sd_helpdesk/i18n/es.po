@@ -29,7 +29,7 @@ msgstr "Helpdesk"
 #: model:mail.message.subtype,description:sd_helpdesk.mt_helpdesk_assigned
 #: model:mail.message.subtype,name:sd_helpdesk.mt_helpdesk_assigned
 msgid "Helpdesk Assigned"
-msgstr "Helpdesk Assignado"
+msgstr "Helpdesk Asignado"
 
 #. module: sd_helpdesk
 #: model:mail.message.subtype,description:sd_helpdesk.mt_helpdesk_done
@@ -97,3 +97,15 @@ msgstr "Solicitudes helpdesk que están asignada a mi o a uno de los equipos que
 #: field:crm.helpdesk,user_id:0
 msgid "Responsible"
 msgstr "Técnico Asignado"
+
+#. module: sd_helpdesk
+#: model:mail.message.subtype,description:sd_helpdesk.mt_helpdesk_done
+#: model:mail.message.subtype,name:sd_helpdesk.mt_helpdesk_done
+msgid "Helpdesk Done"
+msgstr "Helpdesk Cerrado"
+
+#. module: sd_helpdesk
+#: view:crm.helpdesk:sd_helpdesk.inherit_crm_case_form_view_helpdesk
+#: field:crm.helpdesk,res_description:0
+msgid "Resolution"
+msgstr "Resolución"

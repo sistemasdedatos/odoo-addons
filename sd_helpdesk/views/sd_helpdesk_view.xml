@@ -12,6 +12,10 @@
             	<xpath expr="//field[@name='ref2']" position="attributes">
             		<attribute name="context">{'search_default_partner_id': partner_id, 'partner_id': partner_id}</attribute>
             	</xpath>
+            	<xpath expr="//field[@name='description']" position="after">
+	            	<separator string="Resolution"/>
+	                <field name="res_description"/>
+	            </xpath>
             </field>
     	</record>
     	<record model="ir.ui.view" id="sd_helpdesk_kanban_view">
