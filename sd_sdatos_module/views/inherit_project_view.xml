@@ -50,5 +50,16 @@
 				</xpath>
 	   	 	</field>
 	   	 </record>
+	   	 
+	   	 <menuitem name="Customer Support"
+            id="menu_support"
+            parent="base.menu_main_pm"
+            sequence="0"/>
+            
+         <menuitem action="crm_helpdesk.crm_case_helpdesk_act111" 
+         	name="Helpdesk" 
+         	id="menu_helpdesk" 
+         	parent="sd_sdatos_module.menu_support" 
+         	sequence="10"/>
     </data>
 </openerp>
