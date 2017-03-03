@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Office Sincronize',
-    'version' : '0.3',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
@@ -39,7 +39,7 @@ Module that sync Office 365 calendar with Odoo calendar
                  'mail',
                  'calendar'],
     'external_dependencies': {'python': ['O365','html2text']},
-    'data': ['sd_office_data.xml',
+    'data': ['security/sd_office_data.xml',
              'security/ir.model.access.csv',
              'views/sd_config_view.xml',
              'views/sd_sync_view.xml'],

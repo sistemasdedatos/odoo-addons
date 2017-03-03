@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+    	<record model="calendar.event.type" id="categ_office1">
+            <field name="name">Office Sync</field>
+        </record>
+        <record id="sd_office_user_group" model="res.groups">
+            <field name="name">Office Account User</field>
+            <field name="category_id" ref="base.module_category_usability"/>
+            <field name="comment">The user can configure office account only delete your account</field>
+        </record>
+        <record id="sd_office_manager_group" model="res.groups">
+            <field name="name">Office Account Manager</field>
+            <field name="category_id" ref="base.module_category_usability"/>
+            <field name="implied_ids" eval="[(4, ref('sd_office_sincronize.sd_office_user_group'))]"/>
+            <field name="comment">The user can configure office account and delete</field>
+        </record>
+        <record id="sd_user_365_rule" model="ir.rule">
+	        <field name="name">User 365</field>
+	        <field ref="model_sd_office_config" name="model_id"/>
+	        <field name="domain_force">['|',('create_uid','=',user.id),('create_uid','=',False)]</field>
+	        <field name="groups" eval="[(4, ref('sd_office_sincronize.sd_office_user_group'))]"/>
+	    </record>
+	    <record id="sd_manager_365_rule" model="ir.rule">
+	        <field name="name">Manager 365</field>
+	        <field ref="model_sd_office_config" name="model_id"/>
+	        <field name="domain_force">[(1,'=',1)]</field>
+	        <field name="groups" eval="[(4, ref('sd_office_sincronize.sd_office_manager_group'))]"/>
+	    </record>
+    </data>
+</openerp>
