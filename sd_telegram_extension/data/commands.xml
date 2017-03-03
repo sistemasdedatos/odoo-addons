@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+	    <record model="telegram.command" id="person_command">
+	        <field name="name">/person%</field>
+	        <field name="description">Search contacts</field>
+	        <field name="sequence" eval="100"/>
+	        <field name="type">normal</field>
+	        <field name="universal">True</field>
+	        <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+	        <field name="response_code"><![CDATA[
+PARTNER_KEY='p'
+partner_id = None
+callback_data = telegram.get('callback_data') or {}
+callback_query = telegram.get('callback_query') or {}
+filter = ''
+data['partner']='None'
+if callback_data:
+    partner_id = callback_data.get(PARTNER_KEY)
+if partner_id:
+    data['partner']=env['res.partner'].browse(partner_id)
+else:
+    filter=telegram['tmessage'].text[7:len(telegram['tmessage'].text)]
+    parent_ids = env['res.partner'].search([('name','ilike',filter)])
+    partner_ids = env['res.partner'].search(['|',('id','in',parent_ids.mapped('id')),('parent_id','in',parent_ids.mapped('id'))])
+    buttons = []
+    for r in partner_ids:
+        buttons.append({
+            'text': r.name, 
+            'callback_data': {
+                PARTNER_KEY: r.id,
+            }})
+    if buttons:
+        command.inline_keyboard_buttons(options, buttons, row_width=2)
+]]>
+	        </field>
+	        <field name="response_template" type="xml">
+            	<t>
+                	<t t-if="data['partner'] == 'None'">
+Select client
+</t>
+<t t-if="data['partner'] != 'None'">
+<t t-set="partner" t-value="data['partner']"/>
+Name: <t t-esc="partner.name"/>
+<t t-if="partner.phone">Phone: <t t-esc="partner.phone"/></t>
+<t t-if="partner.mobile">Mobile: <t t-esc="partner.mobile"/></t>
+<t t-if="partner.street">Address: <t t-esc="partner.street"/> <t t-esc="partner.street2"/>
+</t>
+</t>
+	            </t>
+	        </field>
+	    </record>  
+    </data>
+</openerp>
