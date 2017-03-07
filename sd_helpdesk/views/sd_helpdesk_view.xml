@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+    	<record id="inherit_view_crm_case_helpdesk_filter" model="ir.ui.view">
+            <field name="name">SD - Helpdesk Search</field>
+            <field name="model">crm.helpdesk</field>
+            <field name="inherit_id" ref="crm_helpdesk.view_crm_case_helpdesk_filter"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='user_id']" position="after">
+            		<field name="create_uid"/>
+            	</xpath>
+            </field>
+        </record>
     	<record model="ir.ui.view" id="inherit_crm_case_form_view_helpdesk">
             <field name="name">SD - Helpdesk Support Form</field>
             <field name="model">crm.helpdesk</field>
