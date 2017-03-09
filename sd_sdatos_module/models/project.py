@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from openerp import api, models, fields
 import time
 from openerp.exceptions import Warning
@@ -35,4 +36,18 @@ class task (models.Model):
             'view_id': compose_form.id,
             'target': 'new',
             'context': ctx,
-        } 
+        }
+        
+    @api.cr_uid_ids_context
+    def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification', subtype=None, parent_id=False, attachments=None, context=None, content_subtype='html', **kwargs):
+        if subtype != None:
+            if subtype == 'project.mt_task_assigned':
+                datas = self.pool.get('project.task').read (cr, uid, thread_id, ['description', 'internal_description'])
+                if datas['description']:
+                    body += "<div> &nbsp; &nbsp; &bull; <b>Descripcion</b>: " + datas['description'] + "</div>"
+                if datas['internal_description']:
+                    body += "<div> &nbsp; &nbsp; &bull; <b>Notas internas</b>: " + datas['internal_description'] + "</div>"
+            if context is None:
+                context = {}
+            return super(task, self).message_post(cr, uid, thread_id, body=body, subject=subject, type=type, subtype=subtype, parent_id=parent_id, attachments=attachments, context=context, content_subtype=content_subtype, **kwargs)
+        return False

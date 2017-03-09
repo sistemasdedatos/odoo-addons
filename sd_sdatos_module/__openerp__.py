@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Sistemas de Datos',
-    'version' : '3.4',
+    'version' : '3.5',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
