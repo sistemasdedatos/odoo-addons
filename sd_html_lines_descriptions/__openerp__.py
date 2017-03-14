@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos HTML Descriptions',
-    'version' : '0.1',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
@@ -31,16 +31,19 @@ Line Descriptions Extension
 ===========================
 
 This module adds rich text to invoice and budget lines. This way you can send more personalized documents.
+Convenient to install with web_ckeditor4 module. It can find in https://github.com/OCA/web/tree/8.0/web_ckeditor4.
 
     """,
     'website': 'http://www.sdatos.com',
     # End General Data
     'depends':['web',
-               'sale',
-               'account'],
+               'sale'],
     'data':['static/src/xml/assets.xml',
             'views/sale_view.xml',
-            'views/invoice_view.xml'],
+            'report/saleorder_report.xml'],
+    "price": 150.00,
+    "currency": "EUR",
+    "post_init_hook": "load_sale_order",
     'installable': True,        
     'auto_install': False,        
     'application': False,

@@ -19,3 +19,10 @@
 #
 ##############################################################################
 import models
+from openerp import SUPERUSER_ID
+ 
+def load_sale_order (cr, registry):  
+    sale_order_line = registry['sale.order.line']
+    lines_ids = sale_order_line.search (cr, SUPERUSER_ID, [(1, '=', 1)])
+    for line in sale_order_line.browse (cr, SUPERUSER_ID, lines_ids):
+        line.write ({'html_name': line.name})
