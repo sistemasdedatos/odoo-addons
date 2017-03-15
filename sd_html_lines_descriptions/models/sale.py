@@ -21,8 +21,6 @@ class sale_order_line (models.Model):
     @api.multi
     def write (self, values):
         for s in self:
-            if 'html_name' in values.keys ():
+            if 'html_name' in values.keys () and 'carga_inicial' not in s._context.keys ():
                 values['name'] = html2plaintext (values['html_name']) 
-            return super (sale_order_line, s).write (values)
-
-        
+        return super (sale_order_line, self).write (values)

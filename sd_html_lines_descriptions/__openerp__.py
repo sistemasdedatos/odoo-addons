@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos HTML Descriptions',
-    'version' : '1.0',
+    'version' : '1.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
@@ -30,7 +30,7 @@
 Line Descriptions Extension
 ===========================
 
-This module adds rich text to invoice and budget lines. This way you can send more personalized documents.
+This module adds rich text to budget lines. This way you can send more personalized documents.
 Convenient to install with web_ckeditor4 module. It can find in https://github.com/OCA/web/tree/8.0/web_ckeditor4.
 
     """,
