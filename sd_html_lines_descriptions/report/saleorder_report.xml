@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 	<data>
-		<template id="sd_inherit_report_saleorder" inherit_id="sale.report_saleorder_document">
+		<template id="sd_inherit_report_saleorder" priority="20" inherit_id="sale.report_saleorder_document">
 			<xpath expr="//tr[@t-foreach='o.order_line']/td/span[@t-field='l.name']" position="replace">
 				<span t-field="l.html_name" />
 			</xpath>
