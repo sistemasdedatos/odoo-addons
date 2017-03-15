@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Sistemas de Datos',
-    'version' : '3.6',
+    'version' : '3.5',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -51,8 +51,7 @@ Module that modifies the program interface and the reports to Sistemas de Datos 
 		       'sd_report_project',
  		       'sd_employee_report',
 		       'crm',
-               'crm_helpdesk',
-               'sd_html_lines_descriptions'],            
+               'crm_helpdesk'],
     'data':['views/search_res_partner.xml',
             'views/sd_digital_sign_inherit.xml',
             'views/inherit_project_view.xml',
