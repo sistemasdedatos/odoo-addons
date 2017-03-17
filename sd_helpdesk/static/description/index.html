@@ -1,0 +1,176 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h1 class="oe_slogan">Extensión del módulo de Helpdesk</h1>
+            <h2 class="oe_slogan">Descripción</h2>
+            <h3 class="oe_slogan">Resúmen</h3>
+        </div>
+        <div class="oe_span12">
+            <p>
+Se ha extendido la funcionalidad estándar del módulo crm_helpdesk, creando el módulo
+sd_helpdesk. El funcionamiento básico no cambia, se han añadido envíos automáticos de
+emails y vista kanban.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Funcionamiento</h2>
+        <h3 class="oe_slogan">Abriendo un Helpdesk</h3>
+        <div class="oe_span6">
+            <p>
+Nos situamos en el menú “Ventas/Servicios postventa/Helpdesk”.
+            </p>
+            <p>Al crear uno nuevo lo único obligatorio será la consulta, sin embargo es importante saber
+preguntar al cliente de qué se trata y si le urge solución, de este modo podremos rellenar
+también el campo “Notas” y “Prioridad” y así facilitar la labor del técnico asignado.
+			</p>
+			<p>Por defecto la prioridad establecida es 0 (baja), a no ser que sea urgente, este campo no
+debería modificarse.
+			</p>
+			<p>
+Entonces, viendo lo anterior, para crear un helpdesk en primer lugar rellenamos de qué se
+trata la consulta, a continuación seleccionamos el técnico asignado, continuamos rellenando
+las notas y la prioridad. En el momento de guardar, se mandará un correo electrónico al
+técnico asignado.
+			</p>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="menu.png">
+            </div>
+        </div>
+        <div>
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="creado.png">
+            </div>
+            <div class="oe_span12">
+	            <p>En la imagen anterior vemos el cuerpo del mensaje que se mandó por email al técnico
+	asignado.
+				</p>
+			</div>
+        </div>
+        <h3 class="oe_slogan">Cerrando un Helpdesk</h3>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="mensaje.png">
+            </div>
+        </div>
+        <div class="oe_span6">
+            <p>Una vez nos llegue el correo de que tenemos un Helpdesk asignado, podemos proceder a
+actuar con él.
+            </p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+        	<p>Nos dirigimos al menú “Helpdesk” (o simplemente podemos entrar desde el mismo mensaje).
+Por defecto se abrirá en vista “Kanban”, ordenados primero por prioridad (de más alta a másbaja) y segundo por fecha de creación (las más viejas primero).
+			</p>
+			<p>
+			Al igual que en las tareas, no veremos la etapa si no tenemos nada en ella, por ejemplo, en
+este caso no vemos las etapas “Cerrado” ni “Cancelado”, esto se debe a que no hay ningún
+Helpdesk en dichas etapas.
+			</p>
+			<p>
+			Cuando estemos trabajando en un helpdesk, lo primero que debemos hacer es cambiarlo al
+estado “En proceso”.
+			</p>
+		</div>
+		<div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="kanban.png">
+            </div>
+        </div>
+        <div class="oe_span12">
+       		<p>Rellenamos el campo “Resolución” con la descripción de las actuaciones que se llevaron a
+cabo.
+       		</p>
+		</div>
+        <div class="oe_span12">
+       		<div class="oe_row_img oe_centered">
+               <img class="oe_picture oe_screenshot" src="resolucion.png">
+        	</div>
+       	</div>
+       	<div class="oe_span12">
+       		<p>A continuación podemos asociarle dos referencias, es decir, si el helpdesk viene de un
+presupuesto lo podemos asociar, si deriba en una tarea, también, incluso podemos crear la
+tarea desde el propio helpdesk. Para esto utilizamos los campos “Referencia” y “Referencia 2”
+ubicados en la pestaña “Información extra”.
+       		</p>
+		</div>
+        <div class="oe_span12">
+       		<div class="oe_row_img oe_centered">
+               <img class="oe_picture oe_screenshot" src="referencias.png">
+        	</div>
+       	</div>
+       	<div class="oe_span12">
+       		<p>Una vez hayamos acabado con el helpdesk podremos pasarlo a la etapa “Cerrado”. En este
+momento se establecerá la fecha y hora de cierre y se enviará un correo a los seguidores (por
+defecto, el usuario que creó el helpdesk estará como seguidor).
+       		</p>
+		</div>
+        <div class="oe_span12">
+       		<div class="oe_row_img oe_centered">
+               <img class="oe_picture oe_screenshot" src="cierre.png">
+        	</div>
+       	</div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Campos referencias</h2>
+        <h3 class="oe_slogan">Funcionamiento</h3>
+        <ol>
+	        <li class="oe_span12">
+		        <p>
+		Seleccionamos el modelo odoo al que queremos referenciar (Tarea, Proyecto,
+		Presupuesto...).
+		      	</p>
+		        <div class="oe_row_img oe_centered">
+		            <img class="oe_picture" src="ref_modelo.png">
+		        </div>
+		    </li>
+		    <li class="oe_span12">
+		        <p>
+		Buscamos el formulario correspondiente (o podemos crearlo).
+		      	</p>
+		        <div class="oe_row_img oe_centered">
+		        	<img class="oe_picture" src="ref_formulario.png">
+		        </div>
+		    </li>
+		    <li class="oe_span12">
+		        <p>
+		En la lista desplegable veremos numerosas tareas, probablemente no esté la que
+buscamos, para esto debemos darle al botón “Buscar más”. En este momento se abrirá
+una ventana de búsqueda con el filtro del cliente ya establecido.
+		      	</p>
+		        <div class="oe_row_img oe_centered">
+		        	<img class="oe_picture" src="ref_busca.png">
+		        </div>
+		    </li>
+		</ol>
+    </div>
+</section>
+
+<section class="oe_container">
+	<div class="oe_row oe_spaced">
+		<h2>Créditos</h2>
+		<div class="oe_span3">
+			<p>
+				Este módulo fue desarrollado y es mantenido por:
+			</p>
+		</div>
+		<div class="oe_span3 oe_mt16">
+			<a href="http://www.sdatos.com" class="reference external image-reference">
+				<img alt="Sistemas de datos" src="http://www.sdatos.com/wp-content/uploads/2014/04/logofinalnegro7.png">
+			</a>
+		</div>
+	</div>
+</section>
