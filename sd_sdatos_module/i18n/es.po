@@ -626,3 +626,13 @@ msgstr "<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-
 #: model:ir.ui.menu,name:sd_sdatos_module.menu_support
 msgid "Customer Support"
 msgstr "Atención al Cliente"
+
+#. module: sd_sdatos_module
+#: view:hr.analytic.timesheet:sd_sdatos_module.sd_hr_timesheet_line_search
+msgid "Timesheet Day"
+msgstr "Día del parte de horas"
+
+#. module: sd_sdatos_module
+#: view:hr.analytic.timesheet:sd_sdatos_module.sd_hr_timesheet_line_search
+msgid "Timesheet by Day"
+msgstr "Día del parte de horas"
