@@ -46,7 +46,7 @@ msgstr "Descargar fichero"
 #. module: sd_apli_label_since_distribution_cost
 #: view:product.product.label:sd_apli_label_since_distribution_cost.product_product_label_view_form
 msgid "Generate file"
-msgstr "Generadr fichero"
+msgstr "Generar fichero"
 
 #. module: sd_apli_label_since_distribution_cost
 #: field:product.product.label,id:0

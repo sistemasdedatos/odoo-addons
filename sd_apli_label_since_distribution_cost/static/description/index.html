@@ -1,0 +1,147 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<section class="oe_container">
+	<h1 class="oe_slogan">Etiquetas APLI en distribución de costo</h1>
+    <div class="oe_row oe_spaced oe_dark">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Descripción</h2>
+            <h3 class="oe_slogan">Resúmen</h3>
+        </div>
+        <div class="oe_span12">
+            <p>
+Módulo desarrollado para generar etiquetas APLI desde una distribución de gastos.
+Con este módulo podemos generar un fichero txt o un xls con las etiquetas para cargarlo desde la aplicación de apli.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Configuración</h2>
+        <h3 class="oe_slogan">Tipo de archivo generado</h3>
+        <div class="oe_span6">
+            <p>
+Previamente debemos configurar el tipo de archivo que vamos a generar (TXT o XLS).
+			</p>
+			<p>
+En el directorio del módulo, dentro de wizard, debemos editar el fichero __init__.py en el cual le decimos que fichero .py debe cargar. <b>Solo se puede cargar uno</b>.
+			</p>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="fich_generado.png">
+            </div>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced oe_dark">
+        <h3 class="oe_slogan">APLI</h3>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="programa.png">
+            </div>
+        </div>
+        <div class="oe_span6">
+            <p>
+En el directorio "doc" dentro del módulo encontraremos el programa APLI y una configuración de etiquetas, esa será la que debemos editar y ponerle al cliente.
+            </p>
+            <p>
+En el cliente deberemos generar un fichero de etiquetas y dentro del programa de APLI cargarlo como base de datos. Cada vez que generemos un fichero nuevo, debemos sobrescribir el anterior.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Funcionamiento</h2>
+        <h3 class="oe_slogan">Generar fichero</h3>
+        <div class="oe_span6">
+	        <div class="oe_row_img oe_centered">
+	            <img class="oe_picture" src="boton.png">
+	        </div>
+		</div>
+		<div class="oe_span6">
+		    <p>
+Una vez la distribución se encuentre en estado realizado, nos dirigimos al botón "Más", "Etiquetas de productos".
+		    </p>
+		    <p>
+Se abrirá un wizard donde seleccionará todos los productos con las cantidades que hay en la distribución, por lo que se generará una etiqueta para cada unidad de producto.
+		    </p>
+		</div>
+		<div class="oe_span6">
+	        <p>
+En caso de que queramos imprimir más cantidades (o menos), siempre podemos editar el número de cantidad para imprimir las etiquetas que deseamos.
+También podemos eliminar artículos, por los teníamos etiquetados previamente.
+	      	</p>
+	      	<p>
+Una vez conformes con el número de etiquetas que vamos a imprimir, pulsamos el botón "Generar fichero". 
+Con ello se ejecutará el código de generación del archivo para posteriormete poder descargarlo.
+	      	</p>
+	    </div>
+	    <div class="oe_span6">
+	        <div class="oe_row_img oe_centered">
+	        	<img class="oe_picture" src="wizard.png">
+	        </div>
+		</div>
+	</div>
+	<div class="oe_row oe_spaced">
+		<div class="oe_span6">
+	        <div class="oe_row_img oe_centered">
+	        	<img class="oe_picture" src="productos.png">
+	        </div>
+		</div>
+		<div class="oe_span6">
+	        <p>
+También podemos generar etiquetas desde el menú "Ventas/Productos/Variantes de producto".
+	      	</p>
+	      	<p>
+ Al marcar varios, en el botón "Más" encontraremos "Etiquetas de productos".
+	      	</p>
+	    </div>
+	</div>
+	<div class="oe_dark">
+		<div class="oe_row oe_spaced">
+			<h3 class="oe_slogan">Fichero generado</h3>
+			<div class="oe_span6">
+				<div class="oe_row_img oe_centered">
+		            <img class="oe_picture" src="guarda.png">
+		        </div>
+			</div>	
+			<div class="oe_span6">
+				<p>
+En el momento de darle a "Generar fichero" se abrirá otra vista para descargarlo.
+				</p>
+			</div>
+		</div>
+		<div class="oe_row oe_spaced">
+			<div class="oe_span6">
+				<p>
+	En la imagen podemos apreciar la estructura de un fichero xls, en caso de ser un txt, la estructura será la misma pero separado por ";".
+				</p>
+			</div>
+			<div class="oe_span6">
+				<div class="oe_row_img oe_centered">
+		            <img class="oe_picture" src="xls.png">
+		        </div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="oe_container">
+	<div class="oe_row oe_spaced">
+		<h2 style="margin-left:20%;" >Créditos</h2>
+		<div class="oe_span3">
+			<p style="text-align:right;">
+Este módulo fue desarrollado y es mantenido por:
+			</p>
+		</div>
+		<div class="oe_span3 oe_mt32">
+			<a href="http://www.sdatos.com" class="reference external image-reference">
+				<img alt="Sistemas de datos" src="http://www.sdatos.com/wp-content/uploads/2014/04/logofinalnegro7.png">
+			</a>
+		</div>
+	</div>
+</section>
