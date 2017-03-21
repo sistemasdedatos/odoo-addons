@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="sd_custom_pos_ticket" inherit_id="point_of_sale.report_receipt">
+			<xpath expr="//div[@class='page']" position="replace">
+			<t t-set="descuento" t-value="0.0"/>
+				<div class="page">
+					<div class="row" style="font-size:11px">
+						<div class="col-xs-12 text-center">
+							<span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy HH:mm&quot;}"/>
+							<h5>Factura simplificada
+								<span t-esc="o.name"/>
+							</h5>
+						</div>
+						<div class="text-center">
+							<span t-esc="o.user_id.company_id.partner_id.comercial"/><br/>
+							<span t-esc="o.user_id.company_id.name"/><br/>
+							<t t-if="o.user_id.company_id.vat">
+								Nif: <span t-esc="o.user_id.company_id.vat"/><br/>
+							</t>
+							<t t-if="o.user_id.company_id.phone">
+								Teléfono: <span t-esc="o.user_id.company_id.phone"/><br/>
+							</t>
+							<t t-if="o.user_id.company_id.email">
+								Email: <span t-esc="o.user_id.company_id.email"/><br/>
+							</t>
+							Vendedor: <span t-esc="o.user_id.name"/>
+						</div>
+					</div>
+
+					<div class="row" style="font-size:11px">
+						<div class="text-center">
+							<t t-if="o.partner_id">
+								<u>Datos del cliente</u>
+								<br/>
+								Nombre: <span t-esc="o.partner_id.name"/><br/>
+								NIF: <span t-esc="o.partner_id.vat"/><br/>				
+							</t>
+						</div>
+					</div>
+					
+					<div class="row">---------------------------------------</div>
+		
+					
+					<div class="row">
+						<table style="font-size:11px">
+                			<colgroup>
+                    			<col width='85%' />
+                	    		<col width='15%' />
+        	        		</colgroup>
+    	            		<tr t-foreach="o.lines" t-as="line">
+	                    		<td>
+                        			<t t-if="line.product_id.default_code">[<t t-esc="line.product_id.default_code"/>]</t><t t-esc="line.product_id.name"/>
+                        			<br/>Precio: <t t-esc="formatLang(line.price_unit, currency_obj=res_company.currency_id)"/>
+                         			<t t-if="line.discount != 0.0">
+                        	    		<div class="pos-disc-font" style="font-size:11px">
+                    	            		<i>> Con un <t t-esc="line.discount"/>% descuento</i>
+                    	            		<!-- <t t-set="descuento" t-value="descuento+line.price_unit-line.price_subtotal"/> -->
+                	            		</div>
+            	            		</t>
+            	            		<div>---------------------------------------</div>
+        	            		</td>
+    	                		<td>
+	                        		<t t-esc="line.qty"/>
+                    				<br/><t t-esc="formatLang(line.price_subtotal, currency_obj=res_company.currency_id)"/>
+                    			</td>
+                			</tr>
+            			</table>
+            		</div>
+					<br/>
+					<div class="row">
+						<table style="font-size:11px">
+	                		<colgroup>
+	                    		<col width='85%' />
+	                    		<col width='15%' />
+	                    	</colgroup>
+	                    	<t t-if="o.amount_tax">
+	                   			<tr>
+	                   				<td>Subtotal</td>
+	                   				<td><t t-esc="formatLang((o.amount_total-o.amount_tax), currency_obj=res_company.currency_id)"/></td>
+	                   			</tr>
+							</t>
+	                   		<t t-if="o.amount_tax">
+	                   			<tr>
+	                   				<td><t t-esc="o.taxes.name"/></td>
+	                   				<td><t t-esc="formatLang(o.amount_tax, currency_obj=res_company.currency_id)"/></td>
+	                   			</tr>
+	                   		</t>
+	                   		<t t-if="descuento">
+	                   			<tr>
+	                   				<td>Descuento</td>
+	                   				<td><t t-esc="formatLang(descuento, currency_obj=res_company.currency_id)"/></td>
+	                   			</tr>
+	                   		</t>
+	                   		<tr style="font-size:16px">
+	                   			<td><b>Total</b></td>
+	                   			<td class="text-right"><b><t t-esc="formatLang(o.amount_total, currency_obj=res_company.currency_id)"/></b></td>
+	                   		</tr>
+	                   	</table>
+                    </div>	
+					<div class="row">
+						<table style="font-size:11px">
+	                		<colgroup>
+	                    		<col width='85%' />
+	                    		<col width='15%' />
+	                    	</colgroup>
+	                   		<tr t-foreach="get_journal_amt(o)" t-as="d">
+	                   			<t t-if="d['amt'] &gt; 0.0">
+	                   				<td><t t-esc="d['name']"/>(EUR)</td>
+	                   				<td class="text-right"><t t-esc="formatLang(d['amt'], currency_obj=res_company.currency_id)"/></td>
+	                   			</t>
+	                   		</tr>
+	                   		<tr>
+	                   			<td>Cambio</td>
+	                   			<td class="text-right"><t t-esc="formatLang(abs(o.amount_return), currency_obj=res_company.currency_id)"/></td>
+	                   		</tr>
+	                   	</table>
+					</div>
+					<br/>
+					<t t-if="o.amount_tax">
+						<div class="row">
+							<table class="table table-condensed" style="font-size:11px">
+		                   		<tr class="border-black">
+		                   			<th class="text-center">Impuesto</th>
+		                   			<th class="text-center">Base imponible</th>
+		                   			<th class="text-center">Importe</th>
+		                   		</tr>
+		                   		<tr>
+		                   			<td class="text-center"><t t-esc="o.taxes.name"/></td>
+		                   			<td class="text-center"><t t-esc="formatLang((o.amount_total-o.amount_tax), currency_obj=res_company.currency_id)"/></td>
+		                   			<td class="text-center"><t t-esc="formatLang(o.amount_tax, currency_obj=res_company.currency_id)"/></td>
+		                   		</tr>
+		                   	</table>
+						</div>
+					</t>
+					<div class="text-center" style="font-size:9px"><br>".:Comerciante minorista:."</br></div>
+					<div class="text-center" style="font-size:9px"><br>IGIC incluido</br></div>
+					<div class="text-center" style="font-size:13px"><h5>Gracias por su visita</h5></div>
+				</div>
+			</xpath>
+		</template>
+		
+		<template id="sd_ticket_invoice_document">
+			<t t-call="report.external_layout">
+				<div class="page">
+					<div class="row"/>
+		            <div class="col-xs-4 col-xs-offset-4" style="font-size:18px">
+						<strong>
+		                	Factura <span t-field="o.name"/>
+		                </strong>
+		            </div>
+					<div style="font-size:12px">
+						<div class="col-xs-8">
+							<strong>
+								<br>
+									<span t-if="o.date_order">
+										Fecha de factura:
+										<span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/>
+									</span>
+								</br>
+								<br>
+									<span t-if="o.pos_reference">
+										Origen:
+										<span t-field="o.pos_reference" />
+									</span>
+								</br>
+								<br>
+									<span t-if="o.partner_id.ref">
+										Código de cliente:
+										<span t-field="o.partner_id.ref" />
+									</span>
+								</br>
+								<br>
+									<p />
+								</br>
+								<br />
+							</strong>
+						</div>
+						<div class="col-xs-pull-11">
+							<strong>
+								Datos del cliente
+								<br />
+							</strong>
+							<span t-if="o.partner_id.comercial">
+								<strong>Nombre comercial: </strong>
+								<span t-field="o.partner_id.comercial" />
+								<br />
+							</span>
+							<span t-if="o.partner_id.vat">
+								<strong>NIF: </strong>
+								<span t-field="o.partner_id.vat" />
+								<br />
+							</span>
+							<span t-if="o.partner_id.name">
+								<strong>Nombre fiscal: </strong>
+								<span t-field="o.partner_id.name" />
+								<br />
+							</span>
+							<span t-if="o.partner_id.street">
+								<strong>Dirección: </strong>
+								<span t-esc="'%s, ' % o.partner_id.street" />
+								<span t-esc="'CP: %s, ' % o.partner_id.zip" />
+								<span t-esc="'%s, ' % o.partner_id.city" />
+								<span t-esc="'%s' % o.partner_id.country_id.name" />
+							</span>
+						</div>
+					</div>
+		
+		            <table class="table table-condensed">
+		                <thead>
+		                    <tr>
+		                        <th>Descripción</th>
+		                        <th>Cantidad</th>
+		                        <th class="text-right">Precio unidad</th>
+		                        <th class="text-right">Dto.(%)</th>
+		                        <t t-if="o.taxes.name"><th class="text-right">Impuestos</th></t>
+		                        <th class="text-right">Importe</th>
+		                    </tr>
+		                </thead>
+		                <tbody class="invoice_tbody">
+		                    <tr t-foreach="o.lines" t-as="l">
+		                        <td><span t-field="l.product_id.name"/></td>
+		                        <td>
+		                            <span t-field="l.qty"/>
+		                            <!-- <span t-field="l.uos_id" groups="product.group_uom"/> -->
+		                        </td>
+		                        <td class="text-right">
+		                            <span t-field="l.price_unit"/>
+		                        </td>
+		                        <td class="text-right">
+		                        	<span t-field="l.discount"/>
+		                        </td>
+		                        <t t-if="o.taxes.name">
+		                        	<td class="text-right">
+		                            	<span t-esc="o.taxes.name"/>
+		                        	</td>
+		                        </t>
+		                        <td class="text-right">
+		                            <span t-field="l.price_subtotal"/> €
+		                        </td>
+		                    </tr>
+		                </tbody>
+		            </table>
+		
+		            <div class="row">
+		                <div class="col-xs-4 pull-right">
+		                    <table class="table table-condensed">
+		                    	<t t-if="o.amount_tax">
+			                        <tr class="border-black">
+			                            <td><strong>Total sin impuesto</strong></td>
+			                            <td class="text-right">
+			                                <span t-esc="o.amount_total-o.amount_tax"/>
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>Impuestos</td>
+			                            <td class="text-right">
+			                                <span t-esc="o.amount_tax"/>
+			                            </td>
+			                        </tr>
+			                    </t>
+		                        <tr class="border-black">
+		                            <td><strong>Total</strong></td>
+		                            <td class="text-right">
+		                                 <span t-field="o.amount_total"/> €
+		                            </td>
+		                        </tr>
+		                    </table>
+		                </div>
+		            </div>
+		
+		            <div class="row" t-if="o.amount_tax">
+		                <div class="col-xs-6">
+		                    <table class="table table-condensed">
+		                        <thead>
+		                            <tr>
+		                                <th>Impuesto</th>
+		                                <th class="text-right">Base</th>
+		                                <th class="text-right">Importe</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                            <tr t-foreach="o.taxes" t-as="t">
+		                                <td><span t-esc="t.name"/></td>
+		                                <td class="text-right">
+		                                    <span t-esc="t.base"/>
+		                                </td>
+		                                <td class="text-right">
+		                                    <span t-esc="t.amount"/>
+		                                </td>
+		                            </tr>
+		                        </tbody>
+		                    </table>
+		                </div>
+		            </div>
+		
+		            <p t-if="o.note">
+		                <strong>Nota:</strong>
+		                <span t-field="o.note"/>
+		            </p>
+		        </div>
+		    </t>
+		</template>
+		
+		<template id="sd_ticket_invoice">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_custom_pos_ticket.sd_ticket_invoice_document')" />
+				</t>
+			</t>
+		</template>
+
+	</data>
+</openerp>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_external_layout_footer" inherit_id="report.external_layout_footer">
+			<xpath expr="//div[@class='footer']" position="attributes">
+				<attribute name="style">font-size:10px; font-weight:bold</attribute>
+			</xpath>
+		</template>
+	</data>
+</openerp>
+			

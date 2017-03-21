@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_deogracias_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-21 09:28+0000\n"
+"PO-Revision-Date: 2017-03-21 09:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_deogracias_module
+#: view:website:report.external_layout_footer
+msgid "font-size:8px"
+msgstr "font-size:8px"
+
+#. module: sd_deogracias_module
+#: view:website:report.external_layout_header
+msgid "Fiscal name:"
+msgstr "Razón social:"
+
+#. module: sd_deogracias_module
+#: view:website:report.external_layout_header
+msgid "Address:"
+msgstr "Dirección:"
+
+#. module: sd_deogracias_module
+#: view:website:report.external_layout_header
+msgid "TIN:"
+msgstr "NIF:"
+
+#. module: sd_deogracias_module
+#: view:website:report.external_layout_header
+msgid "Contact:"
+msgstr "Contacto:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+msgid "Fiscal name:"
+msgstr "Nombre fiscal:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+msgid "Comercial name:"
+msgstr "Nombre comercial:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+msgid "TIN:"
+msgstr "NIF:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+msgid "Address:"
+msgstr "Dirección:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+#: view:website:account.report_invoice_document
+msgid "Customer Code:"
+msgstr "Código de cliente:"
+
+#. module: sd_deogracias_module
+#: view:website:account.report_invoice_document
+msgid "Origin:"
+msgstr "Orígen:"
+
+#. module: sd_deogracias_module
+#: view:website:account.report_invoice_document
+msgid "Customer data"
+msgstr "Datos de cliente"
+
+#. module: sd_deogracias_module
+#: view:website:account.report_invoice_document
+msgid "Date invoice:"
+msgstr "Fecha de factura:"
+
+#. module: sd_deogracias_module
+#: view:website:sale.report_saleorder_document
+#: view:website:account.report_invoice_document
+msgid "Disc.(%)"
+msgstr "Dto.(%)"

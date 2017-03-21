@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_report_saleorder" inherit_id="sale.report_saleorder_document">
+			
+			<xpath expr="//div[@class='page']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/div[@class='row']" position="replace"/>
+			
+			<xpath expr="//div/h2" position="attributes">
+				<attribute name="class">col-xs-offset-5</attribute>
+				<attribute name="style">font-size:16px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/h2" position="after">
+				<t t-set="DESCUENTO" t-value="0"/>
+				<t t-foreach="o.order_line" t-as="l">
+					<t t-if="l.discount > 0">
+						<t t-set="DESCUENTO" t-value="1" />
+					</t>
+				</t>
+				<div style="font-size:12px">
+					<div t-if="o.partner_id.name"><strong>Fiscal name: </strong><span t-field="o.partner_id.name"/></div>
+					<div t-if="o.partner_id.comercial"><strong>Comercial name: </strong><span t-field="o.partner_id.comercial"/></div>
+					<div t-if="o.partner_id.vat"><strong>TIN: </strong><span t-field="o.partner_id.vat"/></div>
+					<div t-if="o.partner_id.ref"><strong>Customer Code: </strong><span t-field="o.partner_id.ref" /></div>
+                    <div>
+                    	<strong>Address: </strong>
+	                    <span t-if="o.partner_id.street">
+	                    	<span t-field="o.partner_id.street"/>,
+	                    </span>
+	                    <span t-if="o.partner_id.zip">
+	                    	CP: <span t-field="o.partner_id.zip"/>,
+	                    </span>
+	                    <span t-if="o.partner_id.city">
+	                    	<span t-field="o.partner_id.city"/>,
+	                    </span>
+	                    <span t-if="o.partner_id.state_id">
+	                    	<span t-field="o.partner_id.state_id.name"/>,
+	                    </span>
+	                    <span t-if="o.partner_id.country_id">
+	                    	<span t-field="o.partner_id.country_id.name"/>
+	                    </span>
+                    </div>
+                    <div t-if="o.partner_id.phone or o.partner_id.mobile">
+                    	<strong>Phone: </strong>
+	                    <span t-if="o.partner_id.phone">
+	                    	<span t-field="o.partner_id.phone" />
+	                    	<span t-if="o.partner_id.mobile"> -- </span>
+	                    </span>
+	                    <span t-if="o.partner_id.mobile">
+	                    	<span t-field="o.partner_id.mobile" />
+	                    </span>
+	                </div>
+				</div>
+			</xpath>
+			
+			<xpath expr="//div/div[@id='informations']" position="attributes">
+				<attribute name="class">row mt8 mb8</attribute>
+			</xpath>
+			
+			<xpath expr="//div/div[@id='informations']/div[@t-if='o.user_id.name']" position="replace"/>
+			
+			<xpath expr="//div/table[@class='table table-condensed']" position="replace">
+				<table class="table table-condensed">
+	                <thead>
+	                    <tr>
+	                        <th class="col-xs-5">Description</th>
+	                        <th class="col-xs-2 text-center">Quantity</th>
+	                        <th class="col-xs-2 text-center">Unit Price</th>
+	                        <t t-if="DESCUENTO">
+	                        	<th class="col-xs-1 text-center" groups="sale.group_discount_per_so_line">Disc.(%)</th>
+	                        </t>
+	                        <th class="col-xs-2 text-center">Price</th>
+	                    </tr>
+	               </thead>
+	               <tbody class="sale_tbody">
+	                    <tr t-foreach="o.order_line" t-as="l">
+	                        <td class="col-xs-5">
+	                           <span t-field="l.name"/>
+	                        </td>
+	                        <td class="col-xs-2 text-center">
+	                            <span t-field="l.product_uom_qty"/>
+	                            <span groups="product.group_uom" t-field="l.product_uom"/>
+	                        </td>
+	                        <td class="col-xs-2 text-center">
+	                            <span t-field="l.price_unit" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+	                        </td>
+	                        <t t-if="DESCUENTO">
+		                        <td class="col-xs-1 text-center" groups="sale.group_discount_per_so_line">
+		                            <span t-field="l.discount"/>
+		                        </td>
+	                        </t>
+	                        <td class="col-xs-2 text-center">
+	                            <span t-field="l.price_subtotal" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.pricelist_id.currency_id&quot;}"/>
+	                        </td>
+	                    </tr>
+	                </tbody>
+	            </table>
+			</xpath>
+			
+			<xpath expr="//div/div[@class='row']//table[@class='table table-condensed']/tr[2]" position="replace"/> <!-- En caso de necesitar impuesto borrar esta linea -->
+			
+			<xpath expr="//div/div[@class='row']//table[@class='table table-condensed']/tr[1]" position="replace"/> <!-- En caso de necesitar impuesto borrar esta linea -->
+			
+			<xpath expr="//div/div/div[@t-if='o.payment_term']" position="replace"/>
+			
+		</template>
+	</data>
+</openerp>

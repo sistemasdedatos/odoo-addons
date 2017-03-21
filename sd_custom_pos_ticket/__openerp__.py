@@ -1,6 +1,6 @@
 {
     'name': 'SDatos Custom POS Ticket',
-    'version': '0.1',
+    'version': '0.2',
     'category': 'Point Of Sale',
     'sequence': 6,
     'summary': 'Custom pos ticket',
@@ -14,8 +14,8 @@ Custom pos ticket
     'depends': ['report',
                 'point_of_sale',
                 'l10n_es_pos'],
-    'data': ['inherit_pos.xml',
-             'invoice_report.xml'],
+    'data': ['reports/inherit_pos.xml',
+             'reports/invoice_report.xml'],
     'installable': True,
     'application': False,
     'qweb': [],
