@@ -42,6 +42,11 @@
 			<field name="model">project.task</field>
 			<field name="inherit_id" ref="sd_digital_sign.inherit_view_task_form2" />
 			<field name="arch" type="xml">
+				<xpath expr="//group[@string='Signature']" position="before">
+					<group>
+						<field name="material_factured"/>
+					</group>				
+				</xpath>
 				<xpath expr="//field[@name='signature_image']" position="after">
 					<field name="signature_client"/>				
 				</xpath>

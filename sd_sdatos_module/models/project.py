@@ -10,6 +10,7 @@ class task (models.Model):
     signature_client = fields.Char ('Signature client', select = True, copy = False, required = False)
     phisical_part = fields.Char ('Phisical part', copy = False)
     office = fields.Text ('Office', copy = False)
+    material_factured = fields.Boolean ('Piezas facturadas')
                 
     @api.multi
     def action_task_sent (self):
