@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_inherit_report_invoice" inherit_id="account.report_invoice_document">
+
+			<xpath expr="//div[@class='page']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+			
+			<xpath expr="//div/div/div[@class='col-xs-5 col-xs-offset-7']" position="replace">
+				<div class="col-xs-4 col-xs-offset-4" style="font-size:14px">
+					<strong>
+						<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+						<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+						<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+						<span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+						<span t-if="o.type == 'out_refund'">Refund</span>
+						<span t-if="o.type == 'in_refund'">Supplier Refund</span>
+						<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+						<span t-field="o.number" />
+					</strong>
+				</div>
+				<div>
+					<div class="col-xs-8">
+						<strong>
+							<div t-if="o.date_invoice">
+								Date invoice:
+								<span t-field="o.date_invoice" />
+							</div>
+							<div t-if="o.origin">
+								Origin:
+								<span t-field="o.origin" />
+							</div>
+							<div t-if="o.partner_id.ref">
+								Customer Code:
+								<span t-field="o.partner_id.ref" />
+							</div>
+							<div t-if="o.reference">
+								Reference:
+								<span t-field="o.reference" />
+							</div>
+							<div t-if="o.name">
+								Description:
+								<span t-field="o.name" />
+							</div>
+							<br>
+								<p />
+							</br>
+							<br />
+						</strong>
+					</div>
+					<div class="col-xs-pull-11">
+						<div>	
+							<strong>
+								Customer data
+							</strong>
+						</div>
+						<div t-if="o.partner_id.name">
+							<strong>Fiscal name: </strong>
+							<span t-field="o.partner_id.name" />
+						</div>
+						<div t-if="o.partner_id.comercial">
+							<strong>Comercial name: </strong>
+							<span t-field="o.partner_id.comercial" />
+						</div>
+						<div t-if="o.partner_id.vat">
+							<strong>NIF: </strong>
+							<span t-field="o.partner_id.vat" />
+						</div>
+						<div t-if="o.partner_id.street">
+							<strong>Address: </strong>
+							<span t-esc="'%s, ' % o.partner_id.street" />
+							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
+							<span t-esc="'%s, ' % o.partner_id.city" />
+							<span t-esc="'%s' % o.partner_id.country_id.name" />
+						</div>
+					</div>
+				</div>
+			</xpath>
+
+			<xpath expr="//div/div[@class='row mt32 mb32']" position="replace" />
+
+			<xpath expr="//div/h2" position="replace" />
+
+			<!-- <xpath expr="//div/table[@class='table table-condensed']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+
+			<xpath expr="//div/div[@class='col-xs-4 pull-right']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+
+			<xpath expr="//div/div[@class='col-xs-6']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+
+			<xpath expr="//div/p[@t-if='o.comment']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+
+			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath>
+
+			<xpath expr="//div/p[@t-if='o.fiscal_position.note']" position="attributes">
+				<attribute name="style">font-size:11px</attribute>
+			</xpath> -->
+
+		</template>
+	</data>
+</openerp>
