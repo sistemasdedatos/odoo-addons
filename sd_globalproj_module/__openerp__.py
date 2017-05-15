@@ -40,12 +40,14 @@ Module that modifies the program interface and the reports to Global Project SL
     # End General Data
     'depends' : ['report',
                  'account',
-                 'sale'],
+                 'sale',
+                 'stock'],
     'data': ['reports/header_report.xml',
              'reports/footer_report.xml',
              'reports/saleorder_report.xml',
-             'reports/invoice_report.xml'],
-    'installable': False,
+             'reports/invoice_report.xml',
+             'views/stock_view.xml'],
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

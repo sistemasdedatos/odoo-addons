@@ -7,24 +7,19 @@
 					<div class="row">
 						<div class="col-xs-3">
 							<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
-								style="max-height: 100px;" />
+								style="max-height:100px;width:220;" />
 						</div>
 						<div class="pull-right" style="font-size:11px">
 							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}'/>
-							
-							<div>NIF:<span t-field="company.partner_id.vat"/></div>
+							<div>NIF: <span t-field="company.partner_id.vat"/></div>
 							<div t-field="company.partner_id.street"/>
+							<div t-field="company.partner_id.street2"/>
 							<div>
 								<span t-esc="'%s ' % company.partner_id.zip" />
 								<span t-esc="'%s ' % company.partner_id.city" />
 							</div>
 							<div t-field="company.partner_id.country_id.name"/>
-							<div t-field="company.partner_id.phone"/>
-							<div t-field="company.partner_id.email"/>
 						</div>
-						<!-- <div class="col-xs-offset-9">
-								<img class="img img-responsive" src="/sd_sdatos_module/static/src/img/iso_9001.png" style="width:50px;height:50px" />
-						</div> -->
 					</div>
 					<div class="row zero_min_height">
 						<div class="col-xs-13">

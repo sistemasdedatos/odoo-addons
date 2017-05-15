@@ -5,14 +5,17 @@
 			<xpath expr="//div[@class='footer']" position="attributes">
 				<attribute name="style">font-size:8px</attribute>>			
 			</xpath>
-<!-- 			<xpath expr="//div/div/t" position="inside">
+ 			<xpath expr="//div/div/t" position="inside">
 				<div class="pull-right">
-					<br><p/></br>
-					<img class="img img-responsive" src="/sd_sdatos_module/static/src/img/IBM.png"
-							style="width:65px;height:30px" />
+					<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/a_registrado.png"
+							style="width:50px;height:75px;display:inline" />
+					<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/a_ambiental.png"
+							style="width:50px;height:75px;display:inline" />
+					<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/excelencia.png"
+							style="width:50px;height:75px;display:inline" />
 				</div>
 			</xpath>
- -->		</template>
+ 		</template>
 	</data>
 </openerp>
 			
