@@ -8,5 +8,5 @@ class PurchaseCostDistribution(models.Model):
     def action_done(self):
         super (PurchaseCostDistribution, self).action_done ()
         for line in self.cost_lines:
-            if not line.product_id.ean13:
+            if line.benefit_margin >= 0:
                 line.product_id.generate_ean13 ()

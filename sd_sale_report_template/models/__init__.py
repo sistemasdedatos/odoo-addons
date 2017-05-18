@@ -18,27 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    'name' : 'SDatos Distribution Price Margin',
-    'version' : '1.0',
-    'author' : 'Sistemas de Datos',
-    'maintainer': 'Sistemas de Datos',
-    'category' : 'Purchases',
-    'summary': 'Introduce margin in distribution cost to established sale price',
-    'description' : """
-Sale Price Margin in Distribution Cost
-======================================
-
-This module allows introduce benefits margin in distribution cost of purchases
-------------------------------------------------------------------------------
-    """,
-    'website': 'http://www.sdatos.com',
-    # End General Data
-    'depends' : ['sale',
-                 'purchase_landed_cost'],
-    'data': ['views/sd_purchase_cost_distribution_view.xml'],
-    'images':[],                
-    'installable': True,
-    'auto_install': False,        
-    'application': False,
-}
+import sale_templates

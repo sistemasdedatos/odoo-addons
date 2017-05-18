@@ -17,6 +17,12 @@
     				<field name="prev_pvp" string="PVP previo"/>
     				<field name="benefit_price"/>
     			</xpath>
+    			<xpath expr="//field[@name='move_id']" position="before">
+                	<field name="partner"/>
+                </xpath>
+                <xpath expr="//field[@name='move_id']" position="attributes">
+                	<attribute name="invisible">1</attribute>
+                </xpath>
     		</field>
     	</record>
     	<record id="inherit_view_purchase_cost_distribution_line_form" model="ir.ui.view">

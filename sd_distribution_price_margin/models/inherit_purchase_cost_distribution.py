@@ -27,7 +27,7 @@ class PurchaseCostDistribution(models.Model):
     @api.one
     def action_done(self):
         for line in self.cost_lines:
-            if line.benefit_margin >= 0 and line.product_id.lst_price == 0:
+            if line.benefit_margin >= 0:
                 line.product_id.lst_price = line.benefit_price
         super (PurchaseCostDistribution, self).action_done ()
     
