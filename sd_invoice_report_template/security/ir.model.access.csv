@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sd_invoice_template_access_u,sd_invoice_template user,model_sd_invoice_template,account.group_account_invoice,1,0,0,0
+sd_invoice_template_access_m,sd_invoice_template manager,model_sd_invoice_template,account.group_account_manager,1,1,1,1
+sd_invoice_template_access_settings_u,sd_invoice_template user,model_sd_invoice_template,account.group_account_invoice,1,1,1,0
+sd_invoice_template_access_settings_m,sd_invoice_template manager,model_sd_invoice_template,account.group_account_manager,1,1,1,1

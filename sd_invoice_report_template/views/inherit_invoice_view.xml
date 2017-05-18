@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_invoice_form" model="ir.ui.view">
+            <field name="name">inherit.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//div[@groups='base.group_multi_currency']" position="after">
+            		<field name="invoice_template_id"/>
+            	</xpath>
+            </field>
+    	</record>
+    </data>
+</openerp>

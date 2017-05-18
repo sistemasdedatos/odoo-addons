@@ -78,7 +78,12 @@
 				</t>			
 			</xpath>
 			<xpath expr="//tr[@t-foreach='o.order_line']/td[@groups='sale.group_discount_per_so_line']" position="replace"/>
-			
+			<!-- <xpath expr="//div[@class='page']" position="inside">
+				<t t-if="o.sale_template_id">
+					<p style="page-break-after:always;"></p>Salto de pagina 
+					<span t-field="o.sale_template_id.template"/>Plantilla
+				</t>
+			</xpath> -->
 		</template>
 	</data>
 </openerp>

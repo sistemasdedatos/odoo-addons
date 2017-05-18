@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record model="ir.ui.view" id="view_invoice_template_form">
+	        <field name="name">sd.invoice.template.form</field>
+	        <field name="model">sd.invoice.template</field>
+	        <field name="arch" type="xml">
+	            <form string="Invoice Template" class="oe_form_nomargin">
+	                <header>
+	                    <field name="name" placeholder="Name"/>
+	                    <field name="description" placeholder="Description template..."/>
+	                </header>
+	                <field name="template" widget="html" class="oe_memo" editor_height="700px" />
+	            </form>
+	        </field>
+    	</record>
+    
+    	<record model="ir.ui.view" id="view_invoice_template_tree">
+		    <field name="name">sd.invoice.template.tree</field>
+		    <field name="model">sd.invoice.template</field>
+		    <field name="arch" type="xml">
+			    <tree string="Templates">
+				    <field name="name"/>
+				    <field name="description"/>
+			    </tree>
+		    </field>
+    	</record>
+    	
+    	<record model="ir.actions.act_window" id="action_sd_invoice_template">
+			<field name="name">Invoice Templates</field>
+			<field name="res_model">sd.invoice.template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="help" type="html">
+			    <p class="oe_view_nocontent_create">
+			    	Click to add a new Invoice Template.
+			    </p>
+		    </field>
+	    </record>
+
+    	<menuitem name="Invoice Templates" id="menu_sd_invoice_template" parent="account.menu_configuration_misc" sequence="9" action="sd_invoice_report_template.action_sd_invoice_template"/>
+    	
+    </data>
+</openerp>

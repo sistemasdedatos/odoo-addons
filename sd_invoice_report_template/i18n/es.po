@@ -1,0 +1,111 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_invoice_report_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-17 08:22+0000\n"
+"PO-Revision-Date: 2017-05-17 08:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_invoice_report_template
+#: model:ir.actions.act_window,help:sd_invoice_report_template.action_sd_invoice_template
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"			    	Click to add a new Invoice Template.\n"
+"			    </p>\n"
+"		    "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"			    	Click para añadir una nueva plantilla de factura.\n"
+"			    </p>\n"
+"		    "
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,description:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sd_invoice_report_template
+#: view:sd.invoice.template:sd_invoice_report_template.view_invoice_template_form
+msgid "Description template..."
+msgstr "Descripción de la plantilla..."
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,display_name:0
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sd_invoice_report_template
+#: model:ir.model,name:sd_invoice_report_template.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sd_invoice_report_template
+#: view:sd.invoice.template:sd_invoice_report_template.view_invoice_template_form
+msgid "Invoice Template"
+msgstr "Plantilla para factura"
+
+#. module: sd_invoice_report_template
+#: model:ir.actions.act_window,name:sd_invoice_report_template.action_sd_invoice_template
+#: model:ir.ui.menu,name:sd_invoice_report_template.menu_sd_invoice_template
+msgid "Invoice Templates"
+msgstr "Plantillas para facturas"
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: sd_invoice_report_template
+#: field:sd.invoice.template,write_date:0
+msgid "Last Updated on"
+msgstr "Última actulización el"
+
+#. module: sd_invoice_report_template
+#: view:sd.invoice.template:sd_invoice_report_template.view_invoice_template_form
+#: field:sd.invoice.template,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: sd_invoice_report_template
+#: field:account.invoice,invoice_template_id:0
+#: field:sd.invoice.template,template:0
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: sd_invoice_report_template
+#: help:account.invoice,invoice_template_id:0
+msgid "Template to print invoice"
+msgstr "Plantilla para imprimir con factura"
+
+#. module: sd_invoice_report_template
+#: view:sd.invoice.template:sd_invoice_report_template.view_invoice_template_tree
+msgid "Templates"
+msgstr "Plantillas"
+

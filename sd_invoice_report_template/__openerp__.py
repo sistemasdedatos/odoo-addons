@@ -19,37 +19,28 @@
 #
 ##############################################################################
 {
-    'name' : 'SDatos Global Project',
-    'version' : '0.2',
+    'name' : 'SDatos Report Invoice Template ',
+    'version' : '0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
-    'summary': 'Custom reports for clients',
+    'summary': 'Custom reports sale with templates',
     'description' : """
-Global Project S.L. Module
-==========================
+Report Invoice Templates
+========================
 
-Module that modifies the program interface and the reports to Global Project SL
--------------------------------------------------------------------------------
-* EDIT Header
-* EDIT Footer
-* EDIT Report invoice 
-* EDIT Repor sale order
-""",
+This module allow reports invoice templates 
+-------------------------------------------
+* EDIT Repor invoice
+    """,
     'website': 'http://www.sdatos.com',
     # End General Data
     'depends' : ['report',
-                 'account',
-                 'sale',
-                 'stock',
-                 'sd_invoice_report_template',
-                 'sd_sale_report_template'],
-    'data': ['reports/header_report.xml',
-             'reports/footer_report.xml',
-             'reports/saleorder_report.xml',
-             'reports/invoice_report.xml',
-             'views/stock_view.xml'],
+                 'account'],
+    'data': ['views/view_invoice_template.xml',
+             'views/inherit_invoice_view.xml',
+             'security/ir.model.access.csv'],
     'installable': True,
-    'auto_install': False,
+    'auto_install': False,        
     'application': False,
 }
