@@ -43,7 +43,9 @@ class task (models.Model):
     def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification', subtype=None, parent_id=False, attachments=None, context=None, content_subtype='html', **kwargs):
         if subtype != None:
             if subtype == 'project.mt_task_assigned':
-                datas = self.pool.get('project.task').read (cr, uid, thread_id, ['description', 'internal_description'])
+                datas = self.pool.get('project.task').read (cr, uid, thread_id, ['description', 'internal_description', 'partner_id'])
+                if datas['partner_id']:
+                    body += "<div> &nbsp; &nbsp; &bull; <b>Cliente</b>: " + datas['partner_id'][1] + "</div>"
                 if datas['description']:
                     body += "<div> &nbsp; &nbsp; &bull; <b>Descripcion</b>: " + datas['description'] + "</div>"
                 if datas['internal_description']:
