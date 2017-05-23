@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<menuitem name="Backup"
+            id="menu_backup"
+            groups="sd_download_backup.sd_backup_user_group,base.group_system"
+            sequence="116"/>
+            
+		<menuitem name="Backup download" id="menu_backup_download"
+            parent="sd_download_backup.menu_backup" sequence="50"/>
+        
+        <record model="ir.actions.act_window" id="action_week_backup_tree">
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="name">Week backups</field>
+	        <field name="res_model">document.directory</field>
+	        <field name="view_type">tree</field>
+	        <field name="view_id" ref="document.view_document_directory_tree"/>
+	        <field name="domain">[('name','=','Copias de seguridad')]</field>
+	    </record>    
+            
+        <menuitem
+	        action="sd_download_backup.action_week_backup_tree"
+	        id="menu_week_tree"
+	        parent="sd_download_backup.menu_backup_download" sequence="5"/>
+	        
+    </data>
+</openerp>

@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_download_backup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-23 07:34+0000\n"
+"PO-Revision-Date: 2017-05-23 07:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_download_backup
+#: model:ir.ui.menu,name:sd_download_backup.menu_backup
+msgid "Backup"
+msgstr "Copia de seguridad"
+
+#. module: sd_download_backup
+#: model:ir.ui.menu,name:sd_download_backup.menu_backup_download
+msgid "Backup download"
+msgstr "Descargar backup"
+
+#. module: sd_download_backup
+#: model:res.groups,name:sd_download_backup.sd_backup_user_group
+msgid "Download backup"
+msgstr "Descargar backup"
+
+#. module: sd_download_backup
+#: model:res.groups,comment:sd_download_backup.sd_backup_user_group
+msgid "The user can download the odoo backup"
+msgstr "El usuario puede descargar la copia de seguridad"
+
+#. module: sd_download_backup
+#: model:ir.actions.act_window,name:sd_download_backup.action_week_backup_tree
+#: model:ir.ui.menu,name:sd_download_backup.menu_week_tree
+msgid "Week backups"
+msgstr "Copias semanales"
+
+#. module: sd_download_backup
+#: model:document.directory,name:sd_download_backup.dir_backup
+msgid "Backups"
+msgstr "Copias de seguridad"
+
+#. module: sd_download_backup
+#: model:document.directory,name:sd_download_backup.dir_week_backup
+msgid "Week Backups"
+msgstr "Copias semanales"
+
+#. module: sd_download_backup
+#: model:ir.attachment,name:sd_download_backup.monday_backup
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: sd_download_backup
+#: model:ir.attachment,name:sd_download_backup.tuesday_backup
+msgid "Tuesday"
+msgstr "Martes"
+
+#. module: sd_download_backup
+#: model:ir.attachment,name:sd_download_backup.wednesday_backup
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#. module: sd_download_backup
+#: model:ir.attachment,name:sd_download_backup.thursday_backup
+msgid "Thursday"
+msgstr "Jueves"
+
+#. module: sd_download_backup
+#: model:ir.attachment,name:sd_download_backup.friday_backup
+msgid "Friday"
+msgstr "Viernes"
+
+#. module: sd_download_backup
+#: model:ir.attachment,name:sd_download_backup.saturday_backup
+msgid "Saturday"
+msgstr "Sábado"

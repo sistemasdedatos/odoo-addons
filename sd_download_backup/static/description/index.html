@@ -1,0 +1,78 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h1 class="oe_slogan">Copias de seguridad</h1>
+            <h2 class="oe_slogan">Descripción</h2>
+            <h3 class="oe_slogan">Resúmen</h3>
+        </div>
+        <div class="oe_span12">
+            <p>
+Módulo para enlazar el directorio con las copias de seguridad realizadas por sistemas de datos con la gestión de Odoo.
+Mediante enlaces simbólicos se accede a las copias de seguridad realizadas por el script: backup-all.sh realizado por Sistemas de Datos.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced oe_dark">
+        <h2 class="oe_slogan">Configuración previa</h2>
+        <h3 class="oe_slogan">Crear directorio y enlaces</h3>
+         
+        <div class="oe_span12">
+            <p>
+Nos situamos en el directorio (físico) de almacenamiento de adjuntos, por defecto es "~/.local/share/Odoo/filestore/nom_bbdd/".
+Debemos crear un directorio nuevo con el nombre "backups".
+			</p>	
+        </div>
+        <div>
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="directorio.png">
+            </div>
+        </div>
+        <div class="oe_span6">
+       		<p>Dentro del directorio debemos crear los enlaces simbólicos. Los nombres deben ser los días de la semana exceptuando el Domingo.
+			</p>
+		</div>
+		<div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="martes.png">
+            </div>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan">Permiso a usuario</h3>
+        <div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="permiso.png">
+            </div>
+        </div>
+        <div class="oe_span6">
+            <p>En la configuración del usuario debemos activar el permiso "Descargar backup" para tener acceso al menú.
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_row_img oe_left">
+                <img class="oe_picture oe_screenshot" src="menu.png">
+            </div>
+            <div class="oe_row_img oe_right">
+                <img class="oe_picture oe_screenshot" src="menu2.png">
+            </div>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+        	<p>Por seguridad, a pesar de tener los botones visibles, no podremos editar ni eliminar los backups. Este derecho es reservado solo para el usuario 1 (administrador)
+			</p>
+		</div>
+		<div class="oe_span6">
+            <div class="oe_row_img oe_centered">
+                <img class="oe_picture oe_screenshot" src="error.png">
+            </div>
+        </div>
+    </div>
+</section>
+
