@@ -46,6 +46,12 @@
 			</t>
 			<t t-call="report.external_layout">
         		<div class="page">
+        			<t t-set="DESCUENTO" t-value="0" />
+					<t t-foreach="o.invoice_line" t-as="l">
+						<t t-if="l.discount > 0">
+							<t t-set="DESCUENTO" t-value="1" />
+						</t>
+					</t>
         			<div style="font-size:12px">
 						<div class="col-xs-6 mb16">
 							<strong>
@@ -122,7 +128,9 @@
 		                        <th class="col-xs-4">Description</th>
 		                        <th class="col-xs-2 text-right">Quantity</th>
 		                        <th class="col-xs-2 text-right">Unit Price</th>
-		                        <th class="col-xs-2 text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+		                        <t t-if="DESCUENTO">
+		                        	<th class="col-xs-2 text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+		                        </t>
 		                        <th class="col-xs-2 text-right">Amount</th>
 		                    </tr>
 		                </thead>
@@ -136,7 +144,9 @@
 		                        <td class="col-xs-2 text-right">
 		                            <span t-field="l.price_unit"/>
 		                        </td>
-		                        <td class="col-xs-2 text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+		                        <t t-if="DESCUENTO">
+		                       		<td class="col-xs-2 text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+		                       	</t>
 		                        <td class="col-xs-2 text-right">
 		                            <span t-field="l.price_subtotal" 
 		                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
