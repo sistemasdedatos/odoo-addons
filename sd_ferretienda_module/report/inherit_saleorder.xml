@@ -50,38 +50,47 @@
 						</t>
 					</t>
             		<div class="col-xs-6 mb16" style="font-size:12px">
-						<span t-if="o.partner_id.ref">
+						<div t-if="o.partner_id.ref">
 							<strong>Cliente: </strong>
 							<span t-field="o.partner_id.ref" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.comercial">
+						</div>
+						<div t-if="o.partner_id.comercial">
 							<strong>Nombre comercial: </strong>
 							<span t-field="o.partner_id.comercial" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.vat">
+						</div>
+						<div t-if="o.partner_id.vat">
 							<strong>NIF: </strong>
 							<span t-field="o.partner_id.vat" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.name">
+						</div>
+						<div t-if="o.partner_id.name">
 							<strong>Nombre fiscal: </strong>
 							<span t-field="o.partner_id.name" />
-							<br />
-						</span>
-						<span t-if="o.partner_id.street">
+						</div>
+						<div t-if="o.partner_id.street or o.partner_id.zip or o.partner_id.city or o.partner_id.country_id">
 							<strong>Dirección: </strong>
-							<span t-esc="'%s, ' % o.partner_id.street" />
-							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
-							<span t-esc="'%s, ' % o.partner_id.city" />
-							<span t-esc="'%s' % o.partner_id.country_id.name" />
-							<br/>
-						</span>
-						<span t-if="o.partner_id.phone">
+							<t t-if="o.partner_id.street">
+								<span t-field="o.partner_id.street"/>
+								<span t-if="o.partner_id.zip">,</span>
+								<span t-if="not o.partner_id.zip and o.partner_id.city">,</span>
+								<span t-if="not o.partner_id.city and not o.partner_id.city and o.partner_id.country_id">,</span>
+							</t>
+							<t t-if="o.partner_id.zip">
+								CP: <span t-field="o.partner_id.zip"/>
+								<span t-if="o.partner_id.city">,</span>
+								<span t-if="not o.partner_id.city and o.partner_id.country_id">,</span>
+							</t>
+							<t t-if="o.partner_id.city">
+								<span t-field="o.partner_id.city"/>
+								<span t-if="o.partner_id.country_id">,</span>
+							</t>
+							<t t-if="o.partner_id.country_id">
+								<span t-field="o.partner_id.country_id.name"/>
+							</t>
+						</div>
+						<div t-if="o.partner_id.phone">
 							<strong>Tfno: </strong>
 							<span t-field="o.partner_id.phone" />
-						</span>
+						</div>
 					</div>
 	                <div class="col-xs-6 mb16" id="informations" style="font-size:12px;">
 		                <div t-if="o.client_order_ref">
