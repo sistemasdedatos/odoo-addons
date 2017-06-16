@@ -8,6 +8,7 @@
 	            <form string="Invoice Template" class="oe_form_nomargin">
 	                <header>
 	                    <field name="name" placeholder="Name"/>
+	                    <field name="company_id" groups="base.group_multi_company" options='{"no_create":True, "no_open": True}'/>
 	                    <field name="description" placeholder="Description template..."/>
 	                </header>
 	                <field name="template" widget="html" class="oe_memo" editor_height="700px" />
@@ -22,6 +23,7 @@
 			    <tree string="Templates">
 				    <field name="name"/>
 				    <field name="description"/>
+				    <field name="company_id" groups="base.group_multi_company"/>
 			    </tree>
 		    </field>
     	</record>
@@ -38,7 +40,7 @@
 			    </p>
 		    </field>
 	    </record>
-
+	    
     	<menuitem name="Invoice Templates" id="menu_sd_invoice_template" parent="account.menu_configuration_misc" sequence="9" action="sd_invoice_report_template.action_sd_invoice_template"/>
     	
     </data>

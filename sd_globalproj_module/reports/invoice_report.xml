@@ -102,12 +102,12 @@
 
 			<xpath expr="//tbody/tr/td[@groups='sale.group_discount_per_so_line']" position="replace"/>
 			
-			<!-- <xpath expr="//div[@class='page']" position="inside">
+			<xpath expr="//div[@class='page']" position="inside">
 				<t t-if="o.invoice_template_id">
 					<p style="page-break-after:always;"></p>Salto de pagina 
 					<span t-field="o.invoice_template_id.template"/>
 				</t>
-			</xpath> -->
+			</xpath>
 
 		</template>
 	</data>

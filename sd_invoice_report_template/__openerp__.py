@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Report Invoice Template ',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -39,7 +39,8 @@ This module allow reports invoice templates
                  'account'],
     'data': ['views/view_invoice_template.xml',
              'views/inherit_invoice_view.xml',
-             'security/ir.model.access.csv'],
+             'security/ir.model.access.csv',
+             'security/sd_invoice_template_security.xml'],
     'installable': True,
     'auto_install': False,        
     'application': False,

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+	    <record id="sd_invoice_template_company_rule" model="ir.rule">
+	        <field name="name">Company invoice template</field>
+	        <field ref="model_sd_invoice_template" name="model_id"/>
+	        <field name="domain_force">['|',('company_id','child_of',[user.company_id.id]),('company_id','=',False)]</field>
+	    </record>
+    </data>
+</openerp>

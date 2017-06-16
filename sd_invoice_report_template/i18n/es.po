@@ -109,3 +109,8 @@ msgstr "Plantilla para imprimir con factura"
 msgid "Templates"
 msgstr "Plantillas"
 
+#. module: sd_invoice_report_template
+#: view:sd.invoice.template:sd_invoice_report_template.view_invoice_template_form
+#: field:sd.invoice.template,company_id:0
+msgid "Company"
+msgstr "Compañía"
