@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Global Project',
-    'version' : '0.3',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -42,6 +42,7 @@ Module that modifies the program interface and the reports to Global Project SL
                  'account',
                  'sale',
                  'stock',
+                 'project_task_materials_stock',
                  'sd_invoice_report_template'],
                  #'sd_sale_report_template'],
     'data': ['reports/header_report.xml',

@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos Ferretienda',
-    'version' : '1.2',
+    'version' : '1.3',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
