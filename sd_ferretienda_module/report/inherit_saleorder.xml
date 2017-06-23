@@ -54,17 +54,26 @@
 							<strong>Cliente: </strong>
 							<span t-field="o.partner_id.ref" />
 						</div>
-						<div t-if="o.partner_id.comercial">
-							<strong>Nombre comercial: </strong>
-							<span t-field="o.partner_id.comercial" />
+						<div>
+							<strong>Nombre fiscal: </strong>
+							<t t-if="o.partner_id.parent_id">
+								<span t-field="o.partner_id.parent_id.name" />
+							</t>
+							<t t-if="not o.partner_id.parent_id">
+								<span t-field="o.partner_id.name" />
+							</t>
 						</div>
 						<div t-if="o.partner_id.vat">
 							<strong>NIF: </strong>
 							<span t-field="o.partner_id.vat" />
 						</div>
-						<div t-if="o.partner_id.name">
-							<strong>Nombre fiscal: </strong>
-							<span t-field="o.partner_id.name" />
+						<div t-if="o.partner_id.parent_id.comercial">
+							<strong>Nombre comercial: </strong>
+							<span t-field="o.partner_id.parent_id.comercial" />
+						</div>
+						<div t-if="o.partner_id.parent_id">
+							<strong>Sucursal/Contacto: </strong>
+							<span t-field="o.partner_id.name"/>
 						</div>
 						<div t-if="o.partner_id.street or o.partner_id.zip or o.partner_id.city or o.partner_id.country_id">
 							<strong>Dirección: </strong>
@@ -72,7 +81,7 @@
 								<span t-field="o.partner_id.street"/>
 								<span t-if="o.partner_id.zip">,</span>
 								<span t-if="not o.partner_id.zip and o.partner_id.city">,</span>
-								<span t-if="not o.partner_id.city and not o.partner_id.city and o.partner_id.country_id">,</span>
+								<span t-if="not o.partner_id.zip and not o.partner_id.city and o.partner_id.country_id">,</span>
 							</t>
 							<t t-if="o.partner_id.zip">
 								CP: <span t-field="o.partner_id.zip"/>

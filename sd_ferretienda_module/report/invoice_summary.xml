@@ -50,59 +50,76 @@
 						<div style="font-size:12px">
 							<div class="col-xs-6 mb16">
 								<strong>
-									<span t-if="o.date_invoice">
+									<div t-if="o.date_invoice">
 										Fecha de factura:
 										<span t-field="o.date_invoice" />
-										<br/>
-									</span>
-									<span t-if="o.partner_id.ref">
+									</div>
+									<div t-if="o.partner_id.ref">
 										Código de cliente:
 										<span t-field="o.partner_id.ref" />
-										<br/>
-									</span>
-									<span t-if="o.name">
+									</div>
+									<div t-if="o.reference">
+										Referencia:
+										<span t-field="o.reference"/>
+									</div>
+									<div t-if="o.name">
 										Descripción: Factura resumida
-										<br/>
-									</span>
-									<br>
-										<p />
-									</br>
-									<br />
+									</div>
 								</strong>
 							</div>
 							<div class="col-xs-6 mb16">
 								<div class="pull-right">
-									<strong>
-										Datos del cliente
-										<br />
-									</strong>
-									<span t-if="o.partner_id.comercial">
-										<strong>Nombre comercial: </strong>
-										<span t-field="o.partner_id.comercial" />
-										<br />
-									</span>
-									<span t-if="o.partner_id.vat">
-										<strong>NIF: </strong>
-										<span t-field="o.partner_id.vat" />
-										<br />
-									</span>
-									<span t-if="o.partner_id.name">
+									<div>
+										<strong>
+											Datos del cliente
+										</strong>
+									</div>
+									<div t-if="o.partner_id.name">
 										<strong>Nombre fiscal: </strong>
-										<span t-field="o.partner_id.name" />
-										<br />
-									</span>
-									<span t-if="o.partner_id.street">
+										<t t-if="o.partner_id.parent_id">
+											<span t-field="o.partner_id.parent_id.name" />
+										</t>
+										<t t-if="not o.partner_id.parent_id">
+											<span t-field="o.partner_id.name" />
+										</t>
+									</div>
+									<div t-if="o.partner_id.vat">
+										<strong>NIF: </strong>
+										<span t-field="o.partner_id.vat"/>
+									</div>
+									<div t-if="o.partner_id.parent_id.comercial">
+										<strong>Nombre comercial: </strong>
+										<span t-field="o.partner_id.parent_id.comercial" />
+									</div>
+									<div t-if="o.partner_id.parent_id">
+										<strong>Sucursal/Contacto: </strong>
+										<span t-field="o.partner_id.name"/>
+									</div>
+									<div t-if="o.partner_id.street or o.partner_id.zip or o.partner_id.city or o.partner_id.country_id">
 										<strong>Dirección: </strong>
-										<span t-esc="'%s, ' % o.partner_id.street" />
-										<span t-esc="'CP: %s, ' % o.partner_id.zip" />
-										<span t-esc="'%s, ' % o.partner_id.city" />
-										<span t-esc="'%s' % o.partner_id.country_id.name" />
-										<br />
-									</span>
-									<span t-if="o.partner_id.phone">
+										<t t-if="o.partner_id.street">
+											<span t-field="o.partner_id.street"/>
+											<span t-if="o.partner_id.zip">,</span>
+											<span t-if="not o.partner_id.zip and o.partner_id.city">,</span>
+											<span t-if="not o.partner_id.zip and not o.partner_id.city and o.partner_id.country_id">,</span>
+										</t>
+										<t t-if="o.partner_id.zip">
+											CP: <span t-field="o.partner_id.zip"/>
+											<span t-if="o.partner_id.city">,</span>
+											<span t-if="not o.partner_id.city and o.partner_id.country_id">,</span>
+										</t>
+										<t t-if="o.partner_id.city">
+											<span t-field="o.partner_id.city"/>
+											<span t-if="o.partner_id.country_id">,</span>
+										</t>
+										<t t-if="o.partner_id.country_id">
+											<span t-field="o.partner_id.country_id.name"/>
+										</t>
+									</div>
+									<div t-if="o.partner_id.phone">
 										<strong>Tfno: </strong>
-										<span t-esc="o.partner_id.phone" />
-									</span>
+										<span t-esc="o.partner_id.phone"/>
+									</div>
 								</div>
 							</div>
 						</div>
