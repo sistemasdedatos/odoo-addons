@@ -520,19 +520,19 @@
         </record>
         <record id="igic_ded_911" model="account.tax.code.template">
             <field name="name">[16BI] IGIC Recargo equivalencia ded. Base imponible 0,7%</field>
-            <field name="code">IREBI07</field>
+            <field name="code">IREDBI07</field>
             <field name="parent_id" ref="igic_ded_base_total_16"/>
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_912" model="account.tax.code.template">
             <field name="name">[16BI] IGIC Recargo equivalencia ded. Base imponible 0,95%</field>
-            <field name="code">IREBI095</field>
+            <field name="code">IREDBI095</field>
             <field name="parent_id" ref="igic_ded_base_total_16"/>
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_913" model="account.tax.code.template">
             <field name="name">[16BI] IGIC Recargo equivalencia ded. Base imponible 1,35%</field>
-            <field name="code">IREBI135</field>
+            <field name="code">IREDBI135</field>
             <field name="parent_id" ref="igic_ded_base_total_16"/>
             <field name="sign">1.0</field>
         </record>
