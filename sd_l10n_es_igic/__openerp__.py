@@ -22,7 +22,7 @@
 
 {
     'name' : 'Sistemas de Datos IGIC Module',
-    'version' : '1.2',
+    'version' : '1.3',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Localisation/Account Charts',
