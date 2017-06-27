@@ -73,18 +73,15 @@ class ProjectTaskMaterials(models.Model):
             'account_id': analytic_account.id,
             'user_id': self._uid,
         }
-        print self.env['product.pricelist'].price_get_multi ([(product, self.quantity, self.task_id.partner_id.id)])[product.id][1] * (-1) *self.quantity
         analytic_line_obj = self.pool.get('account.analytic.line')
         amount_dic = analytic_line_obj.on_change_unit_amount(
             self._cr, self._uid, self._ids, product.id, self.uos_qty(),
             company_id, False, journal.id, self._context)
-#         print amount_dic
+        amount_dic['value']['amount'] = self.env['product.pricelist'].price_get_multi ([(product, self.quantity, self.task_id.partner_id.id)])[product.id][1] * (-1) * self.quantity
         res.update(amount_dic['value'])
         res['product_uom_id'] = self.product_uom.id
         to_invoice = getattr(self.task_id.project_id.analytic_account_id,
                              'to_invoice', None)
         if to_invoice is not None:
             res['to_invoice'] = to_invoice.id
-#         print res['amount']
-#         return res
-        raise exceptions.Warning("AA")
+        return res
