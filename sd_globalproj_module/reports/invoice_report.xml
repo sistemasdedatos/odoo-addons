@@ -69,12 +69,26 @@
 							<strong>NIF: </strong>
 							<span t-field="o.partner_id.vat" />
 						</div>
-						<div t-if="o.partner_id.street">
-							<strong>Address: </strong>
-							<span t-esc="'%s, ' % o.partner_id.street" />
-							<span t-esc="'CP: %s, ' % o.partner_id.zip" />
-							<span t-esc="'%s, ' % o.partner_id.city" />
-							<span t-esc="'%s' % o.partner_id.country_id.name" />
+						<div t-if="o.partner_id.street or o.partner_id.zip or o.partner_id.city or o.partner_id.country_id">
+							<strong>Dirección: </strong>
+							<t t-if="o.partner_id.street">
+								<span t-field="o.partner_id.street"/>
+								<span t-if="o.partner_id.zip">,</span>
+								<span t-if="not o.partner_id.zip and o.partner_id.city">,</span>
+								<span t-if="not o.partner_id.zip and not o.partner_id.city and o.partner_id.country_id">,</span>
+							</t>
+							<t t-if="o.partner_id.zip">
+								CP: <span t-field="o.partner_id.zip"/>
+								<span t-if="o.partner_id.city">,</span>
+								<span t-if="not o.partner_id.city and o.partner_id.country_id">,</span>
+							</t>
+							<t t-if="o.partner_id.city">
+								<span t-field="o.partner_id.city"/>
+								<span t-if="o.partner_id.country_id">,</span>
+							</t>
+							<t t-if="o.partner_id.country_id">
+								<span t-field="o.partner_id.country_id.name"/>
+							</t>
 						</div>
 					</div>
 				</div>
@@ -104,7 +118,7 @@
 			
 			<xpath expr="//div[@class='page']" position="inside">
 				<t t-if="o.invoice_template_id">
-					<p style="page-break-after:always;"></p>Salto de pagina 
+					<p style="page-break-after:always;"></p><!-- Salto de pagina  -->
 					<span t-field="o.invoice_template_id.template"/>
 				</t>
 			</xpath>

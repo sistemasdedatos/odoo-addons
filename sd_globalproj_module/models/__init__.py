@@ -18,4 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import project
+import project, product, account_move_line, res_partner#, account_entries_report

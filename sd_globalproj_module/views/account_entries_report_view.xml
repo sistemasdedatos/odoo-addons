@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <record id="inherit_view_account_entries_report_tree" model="ir.ui.view">
+	        <field name="name">sd.account.entries.report.tree</field>
+	        <field name="model">account.entries.report</field>
+	        <field name="inherit_id" ref="account.view_account_entries_report_tree"/>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//tree" position="inside">
+	        		<field name="product_default_code" invisible="1"/>
+	        	</xpath>
+	        </field>
+	    </record>
+	    <record id="inherit_view_account_entries_report_graph" model="ir.ui.view">
+	         <field name="name">sd.account.entries.report.graph</field>
+	         <field name="model">account.entries.report</field>
+	         <field name="inherit_id" ref="account.view_account_entries_report_graph"/>
+	         <field name="arch" type="xml">
+	         	<xpath expr="//graph[@type='pivot']" position="inside">
+	         		<field name="product_default_code" type="measure"/>
+	         		<field name="account_id" type="row"/>
+	         	</xpath>
+	         </field>
+	    </record>
+	    <record id="inherit_view_company_analysis_tree" model="ir.ui.view">
+	         <field name="name">sd.account.company.analysis.tree</field>
+	         <field name="model">account.entries.report</field>
+	         <field name="inherit_id" ref="account.view_company_analysis_tree"/>
+	         <field name="arch" type="xml">
+	         	<xpath expr="//tree" position="inside">
+	         		<field name="product_default_code"/>
+	         	</xpath>
+	         </field>
+	    </record>
+	    <record id="inherit_view_account_entries_report_search" model="ir.ui.view">
+	        <field name="name">sd.account.entries.report.search</field>
+	        <field name="model">account.entries.report</field>
+	        <field name="inherit_id" ref="account.view_account_entries_report_search"/>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//field[@name='product_id']" position="after">
+	        		<field name="product_default_code"/>
+	        	</xpath>
+	        </field>
+	    </record>
+	</data>
+</openerp>

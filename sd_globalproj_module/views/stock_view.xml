@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+    <!--<delete id="stock.menu_stock_root" model="ir.ui.view"/>-->
     	<menuitem name="Warehouse"
             id="stock.menu_stock_root"
             groups="base.group_erp_manager"
-            sequence="70"/>   
+            sequence="70"/>
     </data>
 </openerp>

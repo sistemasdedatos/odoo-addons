@@ -85,3 +85,16 @@ class ProjectTaskMaterials(models.Model):
         if to_invoice is not None:
             res['to_invoice'] = to_invoice.id
         return res
+
+
+class Task(models.Model):
+    _inherit = "project.task"
+    
+    @api.multi
+    def write(self, vals):
+        res = super(Task, self).write(vals)
+        for task in self:
+            if 'stage_id' in vals and task.stage_id.consume_material and task.stock_move_ids:
+                task.action_assign()
+                task.action_done()
+        return res

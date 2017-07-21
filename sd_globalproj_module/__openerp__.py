@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Global Project',
-    'version' : '1.0',
+    'version' : '1.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -49,7 +49,11 @@ Module that modifies the program interface and the reports to Global Project SL
              'reports/footer_report.xml',
              'reports/saleorder_report.xml',
              'reports/invoice_report.xml',
-             'views/stock_view.xml'],
+             'views/stock_view.xml',
+             'views/account_view.xml',
+#             'views/account_entries_report_view.xml',
+             'views/product_view.xml',
+             'views/res_partner_view.xml'],
     'installable': True,
     'auto_install': False,
     'application': False,
