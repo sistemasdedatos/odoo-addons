@@ -71,7 +71,7 @@ msgstr "Número de factura:"
 #. module: sd_repots_custom
 #: view:website:account.report_invoice_document
 #: view:website:sale.report_saleorder_document
-msgid "NIF:"
+msgid "TIN:"
 msgstr "NIF:"
 
 #. module: sd_repots_custom
@@ -103,6 +103,12 @@ msgstr "Factura de proveedor"
 #: view:website:account.report_invoice_document
 msgid "Supplier Refund"
 msgstr "Factura rectificativa de proveedor"
+
+
+#. module: sd_repots_custom
+#: view:website:account.report_invoice_document
+msgid "Address"
+msgstr "Dirección"
 
 #. module: sd_repots_custom
 #: view:website:account.report_invoice_document
