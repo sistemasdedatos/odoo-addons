@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Download Backup',
-    'version' : '0.1',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
@@ -31,9 +31,12 @@ Download backup
 """,
     'website': 'http://www.sdatos.com',
     # End General Data
-    'depends' : ['document'],
+    'depends' : [],
     'data': ['security/sd_backup_data.xml',
-             'views/sd_download_view.xml'],
+             'views/sd_download_config.xml',
+             'views/sd_download_view.xml',
+             'data/ir_cron.xml',
+             'security/ir.model.access.csv'],
     'installable': True,
     'auto_install': False,
     'application': False,

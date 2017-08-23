@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sd_backup_config_access_m,sd_config_dwn_backup user,model_sd_config_dwn_backup,base.group_system,1,1,1,1
+sd_office_sync_access_u,sd_download_backup user,model_sd_download_backup,sd_download_backup.sd_backup_user_group,1,0,0,0
+sd_office_sync_access_m,sd_download_backup manager,model_sd_download_backup,base.group_system,1,1,1,1

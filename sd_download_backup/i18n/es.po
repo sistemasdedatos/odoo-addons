@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 07:34+0000\n"
-"PO-Revision-Date: 2017-05-23 07:34+0000\n"
+"POT-Creation-Date: 2017-08-23 10:00+0000\n"
+"PO-Revision-Date: 2017-08-23 10:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,18 +17,190 @@ msgstr ""
 
 #. module: sd_download_backup
 #: model:ir.ui.menu,name:sd_download_backup.menu_backup
+#: model:ir.ui.menu,name:sd_download_backup.submenu_backup
 msgid "Backup"
-msgstr "Copia de seguridad"
+msgstr "Copias de seguridad"
+
+#. module: sd_download_backup
+#: model:ir.actions.act_window,name:sd_download_backup.sd_config_dwn_back_action
+msgid "Backup Configuration"
+msgstr "Configuración del FTP para el Backup"
+
+#. module: sd_download_backup
+#: model:ir.ui.menu,name:sd_download_backup.sd_dwn_back_config_menu
+msgid "Backup FTP Configuration"
+msgstr "Backup FTP "
+
+#. module: sd_download_backup
+#: view:sd.config_dwn_backup:sd_download_backup.view_sd_config_dwn_back_form
+#: view:sd.config_dwn_backup:sd_download_backup.view_sd_config_dwn_back_tree
+msgid "Backup configuration"
+msgstr "Configuración del backup"
+
+#. module: sd_download_backup
+#: field:sd.download_backup,config_id:0
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: sd_download_backup
+#: selection:sd.config_dwn_backup,state:0
+msgid "Configured"
+msgstr "Configurado"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,create_uid:0
+#: field:sd.download_backup,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,create_date:0
+#: field:sd.download_backup,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: sd_download_backup
+#: field:sd.download_backup,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: sd_download_backup
+#: field:sd.download_backup,day:0
+msgid "Day"
+msgstr "Día"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,local_dir:0
+msgid "Dir backup"
+msgstr "Directorio en el servidor FTP"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,display_name:0
+#: field:sd.download_backup,display_name:0
+msgid "Display Name"
+msgstr "Mostrar nombre"
+
+#. module: sd_download_backup
+#: model:ir.actions.act_window,name:sd_download_backup.sd_dwn_back_action
+msgid "Week Backup"
+msgstr "Semana de copias"
+
+#. module: sd_download_backup
+#: view:sd.download_backup:sd_download_backup.view_sd_dwn_back_tree
+msgid "Download"
+msgstr "Descargar"
 
 #. module: sd_download_backup
 #: model:ir.ui.menu,name:sd_download_backup.menu_backup_download
-msgid "Backup download"
-msgstr "Descargar backup"
+msgid "Download Backup"
+msgstr "Descargar los Backups"
 
 #. module: sd_download_backup
 #: model:res.groups,name:sd_download_backup.sd_backup_user_group
+#: view:sd.download_backup:sd_download_backup.view_sd_dwn_back_tree
 msgid "Download backup"
 msgstr "Descargar backup"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,download_ids:0
+msgid "Downloads per day"
+msgstr "Descargas por día"
+
+#. module: sd_download_backup
+#: selection:sd.config_dwn_backup,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: sd_download_backup
+#: code:addons/sd_download_backup/models/sd_download_backup.py:47
+#, python-format
+msgid "ERROR\n"
+"Connection FTP failed, Server not correct configured"
+msgstr "ERROR\n"
+"En conexión FTP, es posible que el servidor no esté configurado correctamente"
+
+#. module: sd_download_backup
+#: code:addons/sd_download_backup/models/sd_download_backup.py:57
+#, python-format
+msgid "ERROR\n"
+"No create ftp lines"
+msgstr "ERROR\n"
+"No se crean las líneas del ftp"
+
+#. module: sd_download_backup
+#: code:addons/sd_download_backup/models/sd_download_backup.py:39
+#, python-format
+msgid "ERROR\n"
+"Read backup files"
+msgstr "ERROR\n"
+"Al leer los fichero de backup"
+
+#. module: sd_download_backup
+#: code:addons/sd_download_backup/models/sd_download_backup.py:26
+#, python-format
+msgid "ERROR\n"
+"Unlink download lines"
+msgstr "ERROR\n"
+"Al borrar las líneas de descarga"
+
+#. module: sd_download_backup
+#: field:sd.download_backup,url:0
+msgid "FTP URL"
+msgstr "FTP URL"
+
+#. module: sd_download_backup
+#: view:sd.config_dwn_backup:sd_download_backup.view_sd_config_dwn_back_form
+msgid "FTP configuration to download backup"
+msgstr "Configuración FTP para descargar los backups"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,id:0
+#: field:sd.download_backup,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sd_download_backup
+#: view:sd.config_dwn_backup:sd_download_backup.view_sd_config_dwn_back_form
+msgid "Initialize"
+msgstr "Inicializar"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,__last_update:0
+#: field:sd.download_backup,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,write_uid:0
+#: field:sd.download_backup,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,write_date:0
+#: field:sd.download_backup,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,passwd:0
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,name:0
+msgid "Server"
+msgstr "Servidor"
+
+#. module: sd_download_backup
+#: field:sd.download_backup,size:0
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: sd_download_backup
+#: field:sd.config_dwn_backup,state:0
+msgid "State"
+msgstr "Estado"
 
 #. module: sd_download_backup
 #: model:res.groups,comment:sd_download_backup.sd_backup_user_group
@@ -36,47 +208,7 @@ msgid "The user can download the odoo backup"
 msgstr "El usuario puede descargar la copia de seguridad"
 
 #. module: sd_download_backup
-#: model:ir.actions.act_window,name:sd_download_backup.action_week_backup_tree
-#: model:ir.ui.menu,name:sd_download_backup.menu_week_tree
-msgid "Week backups"
-msgstr "Copias semanales"
+#: field:sd.config_dwn_backup,user:0
+msgid "User"
+msgstr "Usuario"
 
-#. module: sd_download_backup
-#: model:document.directory,name:sd_download_backup.dir_backup
-msgid "Backups"
-msgstr "Copias de seguridad"
-
-#. module: sd_download_backup
-#: model:document.directory,name:sd_download_backup.dir_week_backup
-msgid "Week Backups"
-msgstr "Copias semanales"
-
-#. module: sd_download_backup
-#: model:ir.attachment,name:sd_download_backup.monday_backup
-msgid "Monday"
-msgstr "Lunes"
-
-#. module: sd_download_backup
-#: model:ir.attachment,name:sd_download_backup.tuesday_backup
-msgid "Tuesday"
-msgstr "Martes"
-
-#. module: sd_download_backup
-#: model:ir.attachment,name:sd_download_backup.wednesday_backup
-msgid "Wednesday"
-msgstr "Miércoles"
-
-#. module: sd_download_backup
-#: model:ir.attachment,name:sd_download_backup.thursday_backup
-msgid "Thursday"
-msgstr "Jueves"
-
-#. module: sd_download_backup
-#: model:ir.attachment,name:sd_download_backup.friday_backup
-msgid "Friday"
-msgstr "Viernes"
-
-#. module: sd_download_backup
-#: model:ir.attachment,name:sd_download_backup.saturday_backup
-msgid "Saturday"
-msgstr "Sábado"
