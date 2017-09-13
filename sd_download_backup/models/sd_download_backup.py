@@ -59,7 +59,10 @@ class sd_config_dwn_backup (models.Model):
     @api.model
     def action_scheduler (self):
         """Run all scheduled backups."""
-        return self.search([]).initialize_action()
+        if self.state == 'Configured':
+            return self.search([]).initialize_action()
+        else:
+            return False
     
     @api.multi
     def write (self, vals):
