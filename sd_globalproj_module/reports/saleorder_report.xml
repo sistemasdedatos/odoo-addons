@@ -78,6 +78,7 @@
 				</t>			
 			</xpath>
 			<xpath expr="//tr[@t-foreach='o.order_line']/td[@groups='sale.group_discount_per_so_line']" position="replace"/>
+			<xpath expr="//div[@id='informations']" position="replace"/>
 		</template>
 	</data>
 </openerp>

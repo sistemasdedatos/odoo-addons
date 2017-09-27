@@ -324,3 +324,18 @@ msgstr "<p class=\"oe_view_nocontent_create\">\n"
 #: field:res.partner,nif_company_group:0
 msgid "NIF Group Company"
 msgstr "Código de agrupación de empresas"
+
+#. module: sd_globalproj_module
+#: field:sale.order,client_order_ref:0
+msgid "Reference/Description"
+msgstr "Inicio-Fin Curso"
+
+#. module: sd_globalproj_module
+#: view:product.product:sd_globalproj_module.product_form_view_account_button
+msgid "Move Lines"
+msgstr "Apuntes"
+
+#. module: sd_globalproj_module
+#: view:product.product:sd_globalproj_module.product_form_view_account_button
+msgid "Moves"
+msgstr "Asientos"

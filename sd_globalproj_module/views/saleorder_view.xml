@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_quotation_tree" model="ir.ui.view">
+    		<field name="name">inherit.sale.order.tree2</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_quotation_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="client_order_ref"/>
+				</xpath>
+			</field>
+    	</record>
+    	<record id="inherit_view_order_tree" model="ir.ui.view">
+    		<field name="name">inherit.sale.order.tree</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="client_order_ref"/>
+				</xpath>
+			</field>
+    	</record>
+    </data>
+</openerp>

@@ -31,5 +31,18 @@
             	</xpath>
             </field>
         </record>
+         <record id="inherit_view_account_move_line_filter" model="ir.ui.view">
+            <field name="name">Inherit Journal Items</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//search/field[@name='date']" position="after">
+            		<field name="product_id"/>
+            	</xpath>
+            	<xpath expr="//search/group" position='inside'>
+            		<filter string="Move" icon="terp-go-month" domain="[]" context="{'group_by':'move_id'}"/>
+            	</xpath>
+            </field>
+        </record>
     </data>
 </openerp>
