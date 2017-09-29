@@ -18,4 +18,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import project, product, account_move_line, res_partner, account_invoice, crm_lead#, account_entries_report
+
+from openerp import models, fields, api
+
+class CrmLead(models.Model):
+    _inherit = 'crm.lead'
+
+    @api.multi
+    def get_sale_order_view(self, order_states, view_title):
+        res = super (CrmLead, self).get_sale_order_view(order_states, view_title)
+        res['context']="{'default_print_works':0}"
+        return res

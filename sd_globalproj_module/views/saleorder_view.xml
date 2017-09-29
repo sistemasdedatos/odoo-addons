@@ -21,5 +21,18 @@
 				</xpath>
 			</field>
     	</record>
+    	<record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="context">{'search_default_my_sale_orders_filter': 1, 'default_print_works':0}</field>
+        </record>
+        <record id="sale.act_res_partner_2_sale_order" model="ir.actions.act_window">
+            <field name="context">{'search_default_partner_id': active_id, 'default_print_works':0}</field>
+        </record>
+        <record id="sale.action_view_sale_advance_payment_inv" model="ir.actions.act_window">
+            <field name="context">{'default_print_works':0}</field>
+        </record>
+        <record id="sale_crm.action_crm_make_sale" model="ir.actions.act_window">
+            <field name="context">{'default_print_works':0}</field>
+        </record>
+        
     </data>
 </openerp>

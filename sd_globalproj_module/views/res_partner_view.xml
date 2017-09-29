@@ -13,6 +13,21 @@
             	</xpath>
             </field>
         </record>
+        
+        <record id="inherit_view_partner_form" model="ir.ui.view">
+            <field name="name">sd.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field eval="50" name="priority"/>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+        		<!-- <xpath expr="//sheet/group/group/div/div[@class='address_format']/field[@name='zip']" position="attributes">
+        			<attribute name="options">'{"no_open": True, "no_create": True}'</attribute>
+        		</xpath> -->
+        		<xpath expr="//sheet/group/group/div/div[@class='address_format']/field[@name='state_id']" position="attributes">
+        			<attribute name="options">{"no_open": True, "no_create": True}</attribute>
+        		</xpath>
+            </field>
+        </record>
     
     </data>
 </openerp>

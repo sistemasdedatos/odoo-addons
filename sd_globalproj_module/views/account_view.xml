@@ -44,5 +44,11 @@
             	</xpath>
             </field>
         </record>
+        <record id="account.action_invoice_tree1" model="ir.actions.act_window">
+            <field name="context">{'default_type':'out_invoice', 'type':'out_invoice', 'journal_type': 'sale', 'default_print_works':0}</field>
+        </record>
+        <record id="account.action_invoice_tree3" model="ir.actions.act_window">
+        	<field name="context">{'default_type':'out_refund', 'type':'out_refund', 'journal_type': 'sale_refund', 'default_print_works':0}</field>
+        </record>
     </data>
 </openerp>
