@@ -43,11 +43,11 @@
                 <xpath expr="//div[@name='buttons']" position="inside">
                     <button class="oe_inline oe_stat_button" name="action_view_account_move_line"
                         type="object" icon="fa-list-alt">
-                        <field string="Moves Lines" name="count_account_move" widget="statinfo" />
+                        <field string="Moves Lines" name="count_account_move_lines" widget="statinfo" />
                     </button>
                     <button class="oe_inline oe_stat_button" name="action_view_account_move"
                         type="object" icon="fa-list-alt">
-                        <field string="Move" name="count_account_move_lines" widget="statinfo" />
+                        <field string="Move" name="count_account_move" widget="statinfo" />
                     </button>
                 </xpath>
             </field>
