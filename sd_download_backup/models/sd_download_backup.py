@@ -53,16 +53,17 @@ class sd_config_dwn_backup (models.Model):
                                            'size': i['sz'],
                                            'config_id': self.id})
             self.state = '1'
+            return True
         except:
             raise Warning (_("ERROR\nNo create ftp lines"))
     
     @api.model
     def action_scheduler (self):
         """Run all scheduled backups."""
-        if self.state == 'Configured':
-            return self.search([]).initialize_action()
-        else:
-            return False
+        res = False
+        for s in self.search([]):
+            res = s.initialize_action() if s.state == "1" else False
+        return res
     
     @api.multi
     def write (self, vals):

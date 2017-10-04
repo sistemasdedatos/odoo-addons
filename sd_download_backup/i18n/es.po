@@ -51,13 +51,13 @@ msgstr "Configurado"
 #: field:sd.config_dwn_backup,create_uid:0
 #: field:sd.download_backup,create_uid:0
 msgid "Created by"
-msgstr "Created by"
+msgstr "Creado por"
 
 #. module: sd_download_backup
 #: field:sd.config_dwn_backup,create_date:0
 #: field:sd.download_backup,create_date:0
 msgid "Created on"
-msgstr "Created on"
+msgstr "Creado el"
 
 #. module: sd_download_backup
 #: field:sd.download_backup,date:0
@@ -168,19 +168,19 @@ msgstr "Inicializar"
 #: field:sd.config_dwn_backup,__last_update:0
 #: field:sd.download_backup,__last_update:0
 msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Última modificación el"
 
 #. module: sd_download_backup
 #: field:sd.config_dwn_backup,write_uid:0
 #: field:sd.download_backup,write_uid:0
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Última actualización por"
 
 #. module: sd_download_backup
 #: field:sd.config_dwn_backup,write_date:0
 #: field:sd.download_backup,write_date:0
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Última actualización el"
 
 #. module: sd_download_backup
 #: field:sd.config_dwn_backup,passwd:0
@@ -189,6 +189,7 @@ msgstr "Contraseña"
 
 #. module: sd_download_backup
 #: field:sd.config_dwn_backup,name:0
+#: view:sd.download_backup:sd_download_backup.view_sd_dwn_back_search
 msgid "Server"
 msgstr "Servidor"
 
@@ -212,3 +213,7 @@ msgstr "El usuario puede descargar la copia de seguridad"
 msgid "User"
 msgstr "Usuario"
 
+#. module: sd_download_backup
+#: view:sd.download_backup:sd_download_backup.view_sd_dwn_back_search
+msgid "Group By"
+msgstr "Agrupar por"

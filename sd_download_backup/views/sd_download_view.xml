@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data> 
+    	<record id="view_sd_dwn_back_search" model="ir.ui.view">
+			<field name="name">sd.dwn.back.search</field>
+			<field name="model">sd.download_backup</field>
+			<field name="arch" type="xml">
+				<search string="Search Invoice">
+					<field name="config_id"/>
+					<group expand="0" string="Group By">
+						<filter name="group_by_server" string="Server" context="{'group_by':'config_id'}"/>
+					</group>
+                </search>
+			</field>
+		</record>
+    
     	<record id="view_sd_dwn_back_tree" model="ir.ui.view">
 			<field name="name">sd.dwn.back.tree</field>
 			<field name="model">sd.download_backup</field>

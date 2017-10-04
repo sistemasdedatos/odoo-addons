@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Download Backup',
-    'version' : '1.2',
+    'version' : '2.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
