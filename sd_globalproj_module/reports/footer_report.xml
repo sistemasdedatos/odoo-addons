@@ -7,12 +7,22 @@
 			</xpath>
  			<xpath expr="//div/div/t" position="inside">
 				<div class="pull-right">
-					<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/a_registrado.png"
-							style="width:50px;height:75px;display:inline" />
-					<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/a_ambiental.png"
-							style="width:50px;height:75px;display:inline" />
-					<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/excelencia.png"
-							style="width:50px;height:75px;display:inline" />
+					<t t-if="company.id == 1 or company.id == 4 or company.id == 5 or company.id == 7">
+						<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/a_registrado.png"
+								style="width:50px;height:75px;display:inline" />
+					</t>
+					<t t-if="company.id == 1 or company.id == 4 or company.id == 5 or company.id == 7">
+						<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/a_ambiental.png"
+								style="width:50px;height:75px;display:inline" />
+					</t>
+					<t t-if="company.id == 1 or company.id == 4 or company.id == 5">
+						<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/excelencia.png"
+								style="width:50px;height:75px;display:inline" />
+					</t>
+					<t t-if="company.id == 1">
+						<img class="img img-responsive" src="/sd_globalproj_module/static/src/img/accesibilidad.png"
+								style="width:50px;height:75px;display:inline" />
+					</t>
 				</div>
 			</xpath>
 			<xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.phone']" position="attributes">
