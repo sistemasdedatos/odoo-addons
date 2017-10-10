@@ -15,6 +15,22 @@
 							style="width:50px;height:75px;display:inline" />
 				</div>
 			</xpath>
+			<xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.phone']" position="attributes">
+				<attribute name="style">width:100px</attribute>
+			</xpath>
+			
+			<!-- <xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.email'][2]" position="replace"/> -->
+			
+			<xpath expr="//ul[@t-if='not company.custom_footer']" position="inside">
+				<li t-if="company.bank_ids">
+					Cuenta bancaria: 
+					<span t-foreach="company.bank_ids" t-as="c">
+						<span t-field="c.bank_name" />
+						<strong t-field="c.acc_number" />
+						<span>&amp;bull;</span>
+					</span>
+				</li>
+			</xpath>
  		</template>
 	</data>
 </openerp>

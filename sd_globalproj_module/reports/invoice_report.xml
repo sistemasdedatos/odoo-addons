@@ -29,6 +29,10 @@
 				<div>
 					<div class="col-xs-8" style="min-height:60px;">
 						<strong>
+							<div t-if="o.company_id.partner_id.nif_company_group and o.number and 'FO' in o.number">
+								Código de agrupación de empresas: 
+								<span t-field="o.company_id.partner_id.nif_company_group"/>
+							</div>
 							<div t-if="o.date_invoice">
 								Date invoice:
 								<span t-field="o.date_invoice" />
@@ -147,6 +151,13 @@
 	                	</t>
 	                </td>
 				</tr>
+			</xpath>
+			
+			<xpath expr="//p[@t-if='o.comment']" position="after">
+				<p>
+					<strong>Forma de pago:</strong>
+					<span>Transferencia bancaria a la cuenta descrita en el pié de página</span>
+				</p>			
 			</xpath>
 			<xpath expr="//div[@class='page']" position="inside">
 				<t t-if="o.invoice_template_id">

@@ -12,7 +12,6 @@
 						<div class="pull-right col-xs-5" style="font-size:11px">
 							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}'/>
 							<div>NIF: <span t-field="company.partner_id.vat"/></div>
-							<div t-if="company.partner_id.nif_company_group">Código de agrupación de empresas: <span t-field="company.partner_id.nif_company_group"/></div>
 							<div t-field="company.partner_id.street"/>
 							<div t-field="company.partner_id.street2"/>
 							<div>
