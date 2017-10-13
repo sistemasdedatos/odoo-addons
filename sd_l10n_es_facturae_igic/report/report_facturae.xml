@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data> 	
+    	<template id="inherit_template_facturae" inherit_id="l10n_es_facturae.template_facturae">
+    		<xpath expr="//Invoice/TaxesOutputs/Tax/TaxTypeCode" position="replace">
+    			<TaxTypeCode t-esc="'03'"/>
+    		</xpath>
+    		<xpath expr="//Invoice/Items/InvoiceLine/TaxesOutputs/Tax/TaxTypeCode" position="replace">
+    			<TaxTypeCode t-esc="'03'"/>
+    		</xpath>
+    	</template>
+	</data>
+</openerp>
