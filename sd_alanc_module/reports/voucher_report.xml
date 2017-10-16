@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<template id="inherit_report_voucher_document" inherit_id="voucher_print.report_voucher_document">
+    		<xpath expr="//div[@class='page']/div[@class='row']/div[2]/p" position="replace">
+    			<p>
+					<strong>
+						<span t-if="o.type == 'receipt'">Paid to:</span>
+						<span t-if="o.type == 'payment'">Paid by:</span>
+					</strong>
+					<span t-field="o.company_id" />
+				</p>
+    		</xpath>
+    		<xpath expr="//div[@class='page']/div[2]" position="replace">
+    			<t t-if="o.type == 'receipt'">
+	    			<h5>Importe recibido: 
+	    				<strong>
+			   				<span t-field="o.amount" />
+							<span t-field="o.currency_id" />
+						</strong>
+	    			</h5>
+	    			<div>
+	    				<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th class="text-center">Fecha de factura</th>
+									<th class="text-center">Nº Factura</th>
+									<th class="text-center">Total Factura</th>
+									<th class="text-center">Importe pagado</th>
+									<th class="text-center">Pendiente de pago</th>
+								</tr>
+							</thead>
+							<tbody class="invoice_tbody">
+								<tr t-foreach="o.line_cr_ids" t-as="l">
+									<t t-if="l.amount > 0">
+										<td class="text-center">
+											<span t-field="l.date_original"/>
+										</td>
+										<td class="text-center">
+											<t t-if="l.move_line_id.invoice">
+												<span t-field="l.move_line_id.invoice.number" />
+											</t>
+											<t t-if="not l.move_line_id.invoice">
+												<span t-field="l.move_line_id"/>
+											</t>
+										</td>
+										<td class="text-center">
+											<span t-field="l.amount_original" />
+											<span t-field="o.currency_id" />
+										</td>
+										<td class="text-center">
+											<span t-field="l.amount" />
+											<span t-field="o.currency_id" />
+										</td>
+										<td class="text-center">
+											<span t-esc="l.amount_unreconciled - l.amount"/>
+											<span t-field="o.currency_id" />
+										</td>
+									</t>
+								</tr>
+								<t t-if="o.line_dr_ids">
+									<tr>
+										<td><strong>Rectificaciones/Abonos</strong></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr t-foreach="o.line_dr_ids" t-as="l">
+										<t t-if="l.amount > 0">
+											<td class="text-center">
+												<span t-field="l.date_original"/>
+											</td>
+											<td class="text-center">
+												<t t-if="l.move_line_id.invoice">
+													<span t-field="l.move_line_id.invoice.number" />
+												</t>
+												<t t-if="not l.move_line_id.invoice">
+													<span t-field="l.move_line_id"/>
+												</t>
+											</td>
+											<td class="text-center">
+												<span t-field="l.amount_original" />
+												<span t-field="o.currency_id" />
+											</td>
+											<td class="text-center">
+												<span t-field="l.amount" />
+												<span t-field="o.currency_id" />
+											</td>
+											<td class="text-center">
+												<span t-esc="l.amount_unreconciled - l.amount"/>
+												<span t-field="o.currency_id" />
+											</td>
+										</t>
+									</tr>
+								</t>
+							</tbody>
+						</table>	
+	    			</div>
+	    		</t>
+	    		<t t-if="o.type == 'payment'">
+	    			<div>
+						<p>
+							<span>Paid to</span>
+							<strong>
+								<span t-field="o.partner_id" />
+							</strong>
+							- Address:
+							<span t-field="o.partner_id.contact_address" />
+						</p>
+						<p>
+							Amount of
+							<strong>
+								<span t-field="o.amount" />
+								<span t-field="o.currency_id" />
+							</strong>
+							Payment method
+							<strong>
+								<span t-field="o.journal_id" />
+							</strong>
+							<span t-if="o.reference">
+								With Reference/as value of
+								<strong>
+									<span t-field="o.reference" />
+								</strong>
+							</span>
+						</p>
+					</div>
+				</t>
+    		</xpath>
+    		<xpath expr="//div[@class='page']/div[@class='row']/div[@class='col-xs-4'][2]" position="replace">
+    			<t t-if="o.reference">	
+    				<div class="col-xs-4">
+						<strong>Reference/Description:</strong>
+						<p t-field="o.reference" />
+					</div>
+				</t>
+    		</xpath>
+    		<xpath expr="//div[@class='page']/div[@style='text-align:center;']" position="replace"/>
+    	</template>
+    </data>
+</openerp>
