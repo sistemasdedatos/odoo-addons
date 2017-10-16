@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Ferreteria Deogracias',
-    'version' : '0.2',
+    'version' : '0.3',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -41,6 +41,7 @@ Module that modifies the program interface and the reports to Ferreteria Deograc
                  'sale',
                  'point_of_sale'],
     'data': ['views/res_partner.xml',
+             'views/product_view.xml',
              'reports/header_report.xml',
              'reports/footer_report.xml',
              'reports/saleorder_report.xml',
