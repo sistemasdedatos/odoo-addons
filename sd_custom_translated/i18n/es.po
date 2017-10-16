@@ -50,3 +50,128 @@ msgstr "Ventas"
 #: view:account.move:account.view_move_form
 msgid "Post"
 msgstr "Asentar"
+
+#. module: account_invoice_supplierinfo_update
+#: view:account.invoice:account_invoice_supplierinfo_update.view_account_invoice_form
+msgid "Check Supplier Informations"
+msgstr "Comprobar información de proveedore"
+
+#. module: account_invoice_supplierinfo_update
+#: view:account.invoice:account_invoice_supplierinfo_update.view_account_invoice_form
+msgid "Check if the invoice informations are similar from the supplier informations"
+msgstr "Comprobar si la información de la factura corresponde con la información del proveedor"
+
+#. module: account_invoice_supplierinfo_update
+#: help:account.invoice,supplierinfo_ok:0
+msgid "Checked if the check of supplierinfo has been done.\n"
+" - Uncheck this box, if you want to check again this invoice\n"
+" - Check this box, if you want to mark this invoice as checked"
+msgstr "Verificar si el check de información de proveedor se realizó.\n"
+" - Desmarcar este campo, si quiere comprobar nuevamente la factura\n"
+" - Marcar este campo, si quiere marcar la factura como verificada"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,current_min_quantity:0
+msgid "Current Min Quantity"
+msgstr "Cantidad mínima actual"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,current_price:0
+msgid "Current Unit Price"
+msgstr "Precio unidad actual"
+
+#. module: account_invoice_supplierinfo_update
+#: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Ignore (Set the invoice as Checked)"
+msgstr "Ignorar (Establecer factura como confirmada)"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo,invoice_id:0
+msgid "Invoice id"
+msgstr "Invoice id"
+
+#. module: account_invoice_supplierinfo_update
+#: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "List of products to update"
+msgstr "Lista de productos a actualizar"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,new_min_quantity:0
+msgid "New Min Quantity"
+msgstr "Nueva cantidad mínima"
+
+#. module: account_invoice_supplierinfo_update
+#: selection:wizard.update.invoice.supplierinfo.line,state:0
+msgid "New Partner Info"
+msgstr "Nueva información del partner"
+
+#. module: account_invoice_supplierinfo_update
+#: selection:wizard.update.invoice.supplierinfo.line,state:0
+msgid "New Supplier Info"
+msgstr "Nueva información de proveedor"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,new_price:0
+msgid "New Unit Price"
+msgstr "Nuevo precio unidad"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,partnerinfo_id:0
+msgid "Partnerinfo id"
+msgstr "Partnerinfo id"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,price_variation:0
+msgid "Price Variation (%)"
+msgstr "Variación de precio (%)"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo,state:0
+msgid "Status"
+msgstr "Estados"
+
+#. module: account_invoice_supplierinfo_update
+#: field:account.invoice,supplierinfo_ok:0
+msgid "Supplier Informations Checked"
+msgstr "Información del proveedor confirmada"
+
+#. module: account_invoice_supplierinfo_update
+#: field:account.invoice,supplier_partner_id:0
+msgid "Supplier Partner"
+msgstr "Supplier Partner"
+
+#. module: account_invoice_supplierinfo_update
+#: field:wizard.update.invoice.supplierinfo.line,supplierinfo_id:0
+msgid "Supplierinfo id"
+msgstr "Supplierinfo id"
+
+#. module: account_invoice_supplierinfo_update
+#: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "This will mark the invoice as checked. Are you sure? It will be possible to uncheck manually in the 'Other Info' tab."
+msgstr "Marcará la factura como comprobada. ¿Está seguro? Es posible desmarcar manualmente en la pestaña 'Otra información'."
+
+#. module: account_invoice_supplierinfo_update
+#: selection:wizard.update.invoice.supplierinfo.line,state:0
+msgid "Update Partner Info"
+msgstr "Actualizar información del proveedor"
+
+#. module: account_invoice_supplierinfo_update
+#: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Update and Validate"
+msgstr "Actualizar y validar"
+
+#. module: account_invoice_supplierinfo_update
+#: code:addons/account_invoice_supplierinfo_update/models/account_invoice.py:72
+#, python-format
+msgid "Update supplier informations of products"
+msgstr "Actualizar información del proveedor de los productos"
+
+#. module: account_invoice_supplierinfo_update
+#: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Update without Validating"
+msgstr "Actualizar sin validar"
+
+#. module: account_invoice_supplierinfo_update_on_validate
+#: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update_on_validate.view_wizard_update_invoice_supplierinfo_form
+msgid "Validate without updating"
+msgstr "Validar sin actualizar"
