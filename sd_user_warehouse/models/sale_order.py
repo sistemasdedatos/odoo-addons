@@ -18,4 +18,21 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import models
+from openerp.tools.translate import _
+from openerp import fields, models, api
+    
+class sale_order(models.Model):
+    _inherit = "sale.order"
+
+    @api.multi 
+    def onchange_partner_id(self, part):
+        if not part:
+            return {'value': {'partner_invoice_id': False, 'partner_shipping_id': False, 'payment_term': False, 'fiscal_position': False}}
+        res = super(sale_order, self).onchange_partner_id (part)
+        user_id = self.env['res.users'].browse ([self._uid])
+        warehouse = user_id.warehouse_id and user_id.warehouse_id.id or False
+        if warehouse:
+            res.get ('value', {}).update ({'warehouse_id': warehouse})
+        return res
+ 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

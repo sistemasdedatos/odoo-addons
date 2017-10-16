@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="sd_inherit_view_account_journal_form" model="ir.ui.view">
+            <field name="name">sd.inherit.account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='sequence_id']" position="after">
+            		<field name="warehouse_id"/>
+            	</xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
