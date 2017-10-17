@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="sd_only_one_warehouse" model="res.groups">
+            <field name="name">Only one warehouse</field>
+            <field name="category_id" ref="base.module_category_warehouse_management"/>
+            <field name="comment">The user can see only one warehouse</field>
+        </record>
+        <record id="sd_only_one_warehouse_journal_rule" model="ir.rule">
+	        <field name="name">Only one warehouse journal</field>
+	        <field ref="account.model_account_journal" name="model_id"/>
+	        <field name="domain_force">['|',('warehouse_id','=',False),('warehouse_id','=',user.warehouse_id.id)]</field>
+	        <field name="groups" eval="[(4, ref('sd_user_warehouse.sd_only_one_warehouse'))]"/>
+	    </record>
+ 	    <record id="sd_only_one_warehouse_invoice_rule" model="ir.rule">
+	        <field name="name">Only one warehouse invoice</field>
+	        <field ref="account.model_account_invoice" name="model_id"/>
+	        <field name="domain_force">['|',('journal_id.warehouse_id','=',False),('journal_id.warehouse_id','=',user.warehouse_id.id)]</field>
+	        <field name="groups" eval="[(4, ref('sd_user_warehouse.sd_only_one_warehouse'))]"/>
+	    </record>
+    </data>
+</openerp>
