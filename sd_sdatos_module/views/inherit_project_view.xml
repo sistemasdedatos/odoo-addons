@@ -56,6 +56,17 @@
 	   	 	</field>
 	   	 </record>
 	   	 
+	   	 <record id="inherit_view_task_search_form" model="ir.ui.view">
+	   	 	<field name="name">sd.project.task.search.form</field>
+	   	 	<field name="model">project.task</field>
+	   	 	<field name="inherit_id" ref="project.view_task_search_form"/>
+	   	 	<field name="arch" type="xml">
+	   	 		<xpath expr="//field[@name='name']" position="after">
+	   	 			<field name="phisical_part" string="Parte Nº" filter_domain="['|',('id','=',self),('phisical_part','=',self)]"/>
+	   	 		</xpath>
+	   	 	</field>
+	   	 </record>
+	   	 
 	   	 <menuitem name="Customer Support"
             id="menu_support"
             parent="base.menu_main_pm"
