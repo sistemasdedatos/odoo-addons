@@ -36,9 +36,7 @@
 	# End General Data
     'depends' : ['web'],
 	'css': ['static/src/css/login.css'],
-	#'qweb': ['static/src/xml/base.xml'],
     'data' : ['static/src/xml/webclient_template.xml'],
-    #'icon' : ['static/src/img/icon.png'],
     'installable': True,		
     'auto_install': True,
 }
