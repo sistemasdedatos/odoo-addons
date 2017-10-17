@@ -38,7 +38,7 @@ This module allows define a preferred warehouse for each salesman/user
                  'sale', 
                  'stock', 
                  'sale_stock'],        
-    'data': ['security/groups.xml',
+    'data': ['security/data.xml',
              'views/res_user_view.xml',
              'views/account.xml'],  
     'installable': True,        
