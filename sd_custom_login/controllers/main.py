@@ -19,50 +19,6 @@
 #
 ##############################################################################
 
-#from web import http
-#from openerp.addons.web.controllers.main import Database, db_list
-#openerpweb = http
-#import ast
-#import base64
-#import csv
-#import functools
-#import glob
-#import itertools
-#import jinja2
-#import logging
-#import operator
-#import datetime
-#import hashlib
-#import os
-#import re
-#import simplejson
-#import sys
-#import time
-#import urllib2
-#import zlib
-#from xml.etree import ElementTree
-#from cStringIO import StringIO
-
-#import babel.messages.pofile
-#import werkzeug.utils
-#import werkzeug.wrappers
-#try:
-    #import xlwt
-#except ImportError:
-    #xlwt = None
-
-#import openerp
-#import openerp.modules.registry
-#from openerp.addons.base.ir.ir_qweb import AssetsBundle, QWebTemplateNotFound
-#from openerp.modules import get_module_resource
-#from openerp.tools import topological_sort
-#from openerp.tools.translate import _
-#from openerp.tools import ustr
-#from openerp import http
-
-#from openerp.http import request, serialize_exception as _serialize_exception
-#from openerp import http
-
 import jinja2
 import os
 import simplejson

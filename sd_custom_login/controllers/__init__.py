@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2014 Sistemas de Datos (<http://www.sdatos.com>).
+#    Copyright (C) 2017 Sistemas de Datos (<http://www.sdatos.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,29 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-	# General Data
-    'name' : 'Custom Login Page',
-    'version' : '3.0',
-    'author' : 'Sistemas de Datos',
-	'maintainer': 'Sistemas de Datos',
-    'category' : 'Tools',
-    'description' : """
-		This module cutomize the login page:
-			- The logo and some css properties.
-			- Hide the database management link.
-			- Disable database management utilization.
-    """,
-    'website': 'http://www.sdatos.com',
-	# End General Data
-    'depends' : ['web'],
-	'css': ['static/src/css/login.css'],
-	#'qweb': ['static/src/xml/base.xml'],
-    'data' : ['static/src/xml/webclient_template.xml'],
-    #'icon' : ['static/src/img/icon.png'],
-    'installable': True,		
-    'auto_install': True,
-}
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+import main

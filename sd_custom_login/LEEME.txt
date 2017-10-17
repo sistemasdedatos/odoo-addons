@@ -1,7 +1,0 @@
-SD_CUSTOM_LOGIN
-===============
-
-The file sd_custom_login\static\src\img\nologo.png need to be copied in the web\static\src\img\nologo.png to replace the original file.
-The file sd_custom_login\static\src\img\favicon.ico need to be copied in the web\static\src\img\favicon.ico to replace the original file.
-
-And need to be replace after every update.
