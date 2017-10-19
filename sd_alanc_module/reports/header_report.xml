@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 	<data>
-		<template id="report.external_layout_header">
+		<!-- <template id="report.external_layout_header">
 			<t t-name="report.external_layout_header">
 				<div class="header">
 					<div class="row">
@@ -39,9 +39,36 @@
 					</div>
 				</div>
 			</t>
+		</template> -->
+		<template id="report.external_layout_header">
+			<t t-name="report.external_layout_header">
+				<div class="header">
+					<div class="row">
+						<div class="col-xs-3">
+							<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+								style="max-height: 100px;" />
+						</div>
+						<div class="col-xs-5 pull-right">
+							<div><br/></div>
+							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}' style="font-size:11px"/>
+							<div style="font-size:11px">NIF:<span t-field="company.partner_id.vat"/></div>
+							<div style="font-size:11px" t-field="company.partner_id.street"/>
+							<div style="font-size:11px">
+								<span t-esc="'%s ' % company.partner_id.zip" />
+								<span t-esc="'%s ' % company.partner_id.city" />,
+								<span style="font-size:11px" t-field="company.partner_id.country_id.name"/>
+							</div>
+							<div style="font-size:11px" t-field="company.partner_id.phone"/>
+							<div style="font-size:11px" t-field="company.partner_id.email"/>
+						</div>
+					</div>
+					<div class="row zero_min_height">
+						<div class="col-xs-13">
+							<div style="border-bottom: 1px solid black;" />
+						</div>
+					</div>
+				</div>
+			</t>
 		</template>
-		<record id="report.paperformat_euro" model="report.paperformat">
-			<field name="header_spacing">40</field>
-		</record>
 	</data>
 </openerp>
