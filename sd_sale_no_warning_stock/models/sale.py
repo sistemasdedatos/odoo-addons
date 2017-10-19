@@ -33,5 +33,6 @@ class sale_order_line (models.Model):
                                    flag = False, warehouse_id = False):
         res = super(sale_order_line, self).product_id_change_with_wh (pricelist, product, qty, uom, qty_uos, uos, name, partner_id, lang, 
                                                                    update_tax, date_order, packaging, fiscal_position, flag, warehouse_id)
-        res.pop('warning')
+        if 'warning' in res.keys():
+            res.pop('warning')  
         return res
