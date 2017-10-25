@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Ferreteria Deogracias',
-    'version' : '0.3',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
