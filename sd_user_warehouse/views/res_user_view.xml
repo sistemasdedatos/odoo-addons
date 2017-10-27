@@ -21,5 +21,15 @@
             	</xpath>
             </field>
         </record>
+        <record id="inherit_view_users_tree" model="ir.ui.view">
+            <field name="name">sd.res.users.tree</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang']" position="before">
+                    <field name="warehouse_id"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </openerp>
