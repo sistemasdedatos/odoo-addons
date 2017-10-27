@@ -18,21 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api
+from openerp import models, fields
 
-class account_move(models.Model):
-    _inherit = "account.move"
-    _order = 'name desc'
+class purchase_order_line (models.Model):
+    _inherit = 'purchase.order.line'
     
-class account_invoice (models.Model):
-    _name = "account.invoice"
-    _inherit = "account.invoice"
-    
-    sale_order_ids = fields.Many2many ('sale.order', 'sale_order_invoice_rel', 'invoice_id', 'order_id', 'Sales', 
-                                       readonly = True, copy = False, 
-                                       help = "This is the list of invoices that have been generated for this sales order. The same sales order may have been invoiced in several times (by line for example).")
-    
-    @api.multi
-    def check_supplierinfo(self):
-        res = super (account_invoice, self).check_supplierinfo ()
-        return res if res else self.signal_workflow('invoice_open')
+    product_id = fields.Many2one (required = True)

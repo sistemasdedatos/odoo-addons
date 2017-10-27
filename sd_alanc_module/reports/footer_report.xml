@@ -3,7 +3,15 @@
 	<data>
 		<template id="sd_inherit_external_layout_footer" inherit_id="report.external_layout_footer">
 			<xpath expr="//div[@class='footer']" position="attributes">
-				<attribute name="style">font-size:12px</attribute>>			
+				<attribute name="style">font-size:10px</attribute>>			
+			</xpath>
+			<xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.phone']" position="replace">
+				<div>
+					<strong>Sucursal La Gomera: </strong><span>C/ Ruiz de Padrón, 103, Edif San Perdro 2ºE, 38800 - 922 870 010</span>
+				</div>
+				<div>
+					<strong>Sucursal Tenerife: </strong><span>Pol. Iind. de Güimar, manzana E nave 1, 38520 - 922 626 304</span>
+				</div>
 			</xpath>
 		</template>
 	</data>

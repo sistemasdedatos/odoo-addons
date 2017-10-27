@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_account_invoice_filter" model="ir.ui.view">
+            <field name="name">sd.account.invoice.select</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="before">
+                	<field name="date_invoice"/>
+                	<field name="date_due"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

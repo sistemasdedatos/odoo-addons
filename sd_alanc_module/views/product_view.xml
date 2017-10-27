@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+     <record model="ir.ui.view" id="inherit_product_template_form_view_procurement_button">
+            <field name="name">sd.product.template_procurement</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_open_quants']" position="attributes">
+                	<attribute name="groups"></attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

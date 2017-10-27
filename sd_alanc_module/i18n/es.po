@@ -217,4 +217,13 @@ msgstr "font-size:12px"
 msgid "font-size:16px"
 msgstr "font-size:16px"
 
+#. module: sd_alanc_module
+#: help:account.invoice,sale_order_ids:0
+msgid "This is the list of invoices that have been generated for this sales order. The same sales order may have been invoiced in several times (by line for example)."
+msgstr "Listado de facturas generados por este pedido de venta. El mismo pedido puede ser facturado en diferentes facturas (por ejemplo en caso de facturar algunas líneas)."
+
+#. module: sd_alanc_module
+#: field:account.invoice,sale_order_ids:0
+msgid "Sales"
+msgstr "Pedidos de venta"
 
