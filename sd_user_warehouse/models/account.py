@@ -42,3 +42,10 @@ class account_invoice (models.Model):
             journal_id = self.env['account.journal'].search ([('warehouse_id', '=', warehouse), ('type', '=', types[type])])[0]
             res.get ('value', {}).update ({'journal_id': journal_id.id})
         return res
+
+class account_voucher (models.Model):
+    _inherit = 'account.voucher'
+    
+    @api.multi
+    def recompute_voucher_lines (self, partner_id, journal_id, price, currency_id, ttype, date):
+        return super (account_voucher, self.sudo ()).recompute_voucher_lines (partner_id, journal_id, price, currency_id, ttype, date)

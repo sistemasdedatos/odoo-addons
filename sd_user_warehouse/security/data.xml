@@ -16,16 +16,6 @@
 	        <field name="name">Only one warehouse invoice</field>
 	        <field ref="account.model_account_invoice" name="model_id"/>
 	        <field name="domain_force">['|',('journal_id.warehouse_id','=',False),('journal_id.warehouse_id','=',user.warehouse_id.id)]</field>
-	        <field name="perm_read" eval="0"/>
-	        <field name="groups" eval="[(4, ref('sd_user_warehouse.sd_only_one_warehouse'))]"/>
-	    </record>
-	    <record id="sd_only_one_warehouse_invoice2_rule" model="ir.rule">
-	        <field name="name">Only one warehouse invoice 2</field>
-	        <field ref="account.model_account_invoice" name="model_id"/>
-	        <field name="domain_force">['|',('journal_id.warehouse_id','=',False),('journal_id.warehouse_id','=',user.warehouse_id.id)]</field>
-	        <field name="perm_create" eval="0"/>
-	        <field name="perm_write" eval="0"/>
-	        <field name="perm_unlink" eval="0"/>
 	        <field name="groups" eval="[(4, ref('sd_user_warehouse.sd_only_one_warehouse'))]"/>
 	    </record>
     </data>

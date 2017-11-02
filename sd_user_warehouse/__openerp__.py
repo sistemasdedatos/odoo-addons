@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos User Warehouse',
-    'version' : '1.3',
+    'version' : '1.4',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Warehouse Management',
