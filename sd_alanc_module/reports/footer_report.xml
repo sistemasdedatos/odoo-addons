@@ -7,10 +7,10 @@
 			</xpath>
 			<xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.phone']" position="replace">
 				<div>
-					<strong>Sucursal La Gomera: </strong><span>C/ Ruiz de Padrón, 103, Edif San Perdro 2ºE, 38800 - 922 870 010</span>
+					<strong>Sucursal La Gomera: </strong><span>Av. José Aviar Nº40, 38800 - Tfno: 922 870 010 - Fax: 922 141 157</span>
 				</div>
 				<div>
-					<strong>Sucursal Tenerife: </strong><span>Pol. Iind. de Güimar, manzana E nave 1, 38520 - 922 626 304</span>
+					<strong>Sucursal Tenerife: </strong><span>Pol. Iind. de Güimar, manzana E nave 1, 38520 - Tfno: 922 626 304 - Fax: 922 613 095</span>
 				</div>
 			</xpath>
 		</template>

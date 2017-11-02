@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Alan Canarias',
-    'version' : '2.0',
+    'version' : '2.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -42,7 +42,8 @@ Module that modifies the program interface and the reports to Alan Canarias 2010
                  'purchase_landed_cost',
                  'account_invoice_supplierinfo_update',
                  'stock'],
-    'data': ['views/account_invoice_view.xml',
+    'data': ['security/security.xml',
+             'views/account_invoice_view.xml',
              'views/product_view.xml',
              'views/sale_order_view.xml',
              'reports/header_report.xml',
@@ -50,7 +51,8 @@ Module that modifies the program interface and the reports to Alan Canarias 2010
              'reports/invoice_report.xml',
              'reports/saleorder_report.xml',
              'reports/voucher_report.xml',
-             'reports/invoice_summary.xml'],
+             'reports/invoice_summary.xml',
+             'reports/picking_report_with_pvp.xml'],
     'qweb': [],
     'installable': True,
     'auto_install': False,        

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="sd_picking_with_pvp_document">
+			<t t-call="report.external_layout">
+				<div class="page">
+					<div class="row">
+						<div class="col-xs-6" style="font-size:16px">
+							<strong>
+								<div>
+									Nº: <span t-field="o.name"/>
+								</div>
+								<div>
+									Almacén: <span t-field="o.picking_type_id.warehouse_id.name"/> 
+								</div>
+							</strong>
+						</div>
+						<div class="col-xs-6" style="font-size:16px">
+							<strong>
+								<div>
+									Tipo de albarán: <span t-field="o.picking_type_id.name"/>
+								</div>
+								<div t-if="o.partner_id.name">
+									Empresa: <span t-field="o.partner_id.name"/>
+								</div>
+							</strong>
+						</div>
+					</div>
+					<div style="min-height:30px;"/>
+					<table class="table table-condensed" style="font-size:11px">
+						<thead>
+							<tr>
+								<th>Producto</th>
+								<th>Referencia</th>
+								<th class="text-right">Precio de compra</th>
+								<th class="text-right">Coste almacendo en ficha</th>
+								<th class="text-right">PVP</th>
+							</tr>
+						</thead>
+					
+						<tbody class="invoice_tbody">
+							<tr t-foreach="o.move_lines" t-as="l">
+								<td>
+									<span t-field="l.product_id.name" />
+								</td>
+								<td>
+									<span t-field="l.product_id.default_code" />
+								</td>
+								<td class="text-right">
+									<span t-field="l.price_unit" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+								</td>
+								<td class="text-right">
+									<span t-field="l.product_id.standard_price" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+								</td>
+								<td class="text-right">
+									<span t-field="l.product_id.lst_price" t-field-options='{"widget": "monetary", "display_currency": "o.company_id.currency_id"}'/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="font-size:9px"><strong>Todos los precios son unitarios</strong></div>
+				</div>
+			</t>
+		</template>
+
+		<template id="sd_picking_with_pvp">
+			<t t-call="report.html_container">
+				<t t-foreach="doc_ids" t-as="doc_id">
+					<t
+						t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sd_alanc_module.sd_picking_with_pvp_document')" />
+				</t>
+			</t>
+		</template>
+		<report id="picking_with_pvp" model="stock.picking"
+			name="sd_alanc_module.sd_picking_with_pvp" string="Listado de productos"
+			file="sd_alanc_module.sd_picking_with_pvp" report_type="qweb-pdf"
+			attachment_use="False" />
+	</data>
+</openerp>
