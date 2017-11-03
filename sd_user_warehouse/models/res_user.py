@@ -18,9 +18,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import fields, models
+from openerp import fields, models, api
 
 
-class res_users(models.Model):
+class res_users (models.Model):
     _inherit = "res.users"
-    warehouse_id = fields.Many2one('stock.warehouse', 'Warehouse')
+    warehouse_id = fields.Many2one ('stock.warehouse', 'Warehouse')
+    
+    @api.model
+    def context_get (self):  #Se incluye el almacen al contexto para facilitar los filtros en las vistas
+        res = super (res_users, self).context_get ()
+        if res.get ('uid') != None and self.browse (res.get ('uid')).warehouse_id:
+            res['warehouse'] = self.browse (res.get ('uid')).warehouse_id.id
+        else:
+            res['warehouse'] = False
+        return res

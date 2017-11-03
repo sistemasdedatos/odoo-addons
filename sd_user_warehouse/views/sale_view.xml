@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="inherit_view_sales_order_filter" model="ir.ui.view">
+            <field name="name">sd.sale.order.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='product_id']" position="after">
+					<field name="warehouse_id"/>
+				</xpath>
+				<xpath expr="//group" position="inside">
+					<filter string="Almacen" domain="[]" context="{'group_by':'warehouse_id'}"/>		
+				</xpath>            
+            </field>
+        </record>
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="context">{'search_default_my_sale_orders_filter': 1,'search_default_warehouse_id': context.get('warehouse')}</field>
+        </record>
+        <record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="context">{'search_default_my_sale_orders_filter': 1,'search_default_warehouse_id': context.get('warehouse')}</field>
+        </record>
+    </data>
+</openerp>

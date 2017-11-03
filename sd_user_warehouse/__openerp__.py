@@ -21,7 +21,7 @@
 
 {
     'name' : 'SDatos User Warehouse',
-    'version' : '1.4',
+    'version' : '1.5',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Warehouse Management',
@@ -40,7 +40,9 @@ This module allows define a preferred warehouse for each salesman/user
                  'sale_stock'],
     'data': ['security/data.xml',
              'views/res_user_view.xml',
-             'views/account.xml'],  
+             'views/account.xml',
+             'views/stock_view.xml',
+             'views/sale_view.xml'],
     'installable': True,        
     'auto_install': False,        
     'application': False,
