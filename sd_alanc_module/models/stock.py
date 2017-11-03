@@ -18,4 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import account, purchase, stock
+from openerp import models, fields
+
+class stock_picking (models.Model):
+    _inherit = "stock.picking"
+    _order = "priority desc, date desc, id desc"
