@@ -3,7 +3,7 @@
 	<data>
 		<template id="sd_inherit_external_layout_footer" inherit_id="report.external_layout_footer">
 			<xpath expr="//div[@class='footer']" position="attributes">
-				<attribute name="style">font-size:8px</attribute>>			
+				<attribute name="style">font-size:9px</attribute>>			
 			</xpath>
  			<xpath expr="//div/div/t" position="inside">
 				<div class="pull-right">

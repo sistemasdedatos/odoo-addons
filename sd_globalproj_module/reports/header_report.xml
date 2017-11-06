@@ -9,7 +9,7 @@
 							<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
 								style="max-height:100px;width:220;" />
 						</div>
-						<div class="pull-right col-xs-5" style="font-size:11px">
+						<div class="pull-right col-xs-5" style="font-size:12px">
 							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}'/>
 							<div>NIF: <span t-field="company.partner_id.vat"/></div>
 							<div t-field="company.partner_id.street"/>
