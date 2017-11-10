@@ -10,7 +10,7 @@
 					<field name="warehouse_id"/>
 				</xpath>
 				<xpath expr="//group" position="inside">
-					<filter string="Almacen" domain="[]" context="{'group_by':'warehouse_id'}"/>		
+					<filter string="Warehouse" domain="[]" context="{'group_by':'warehouse_id'}"/>		
 				</xpath>            
             </field>
         </record>
