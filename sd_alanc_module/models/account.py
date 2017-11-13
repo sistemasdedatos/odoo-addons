@@ -36,3 +36,11 @@ class account_invoice (models.Model):
     def check_supplierinfo(self):
         res = super (account_invoice, self).check_supplierinfo ()
         return res if res else self.signal_workflow('invoice_open')
+    
+    @api.multi
+    def invoice_pay_customer (self):
+        res = super (account_invoice, self).invoice_pay_customer ()
+        res['context']['default_reference'] = self.number
+        res['context']['default_name'] = self.name
+        return res
+    
