@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Global Project',
-    'version' : '2.7',
+    'version' : '2.8',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',

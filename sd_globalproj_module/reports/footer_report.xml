@@ -3,7 +3,7 @@
 	<data>
 		<template id="sd_inherit_external_layout_footer" inherit_id="report.external_layout_footer">
 			<xpath expr="//div[@class='footer']" position="attributes">
-				<attribute name="style">font-size:9px</attribute>>			
+				<attribute name="style">font-size:11px</attribute>>			
 			</xpath>
  			<xpath expr="//div/div/t" position="inside">
 				<div class="pull-right">
@@ -33,7 +33,7 @@
 			
 			<!-- <xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.email'][2]" position="replace"/> -->
 			
-			<xpath expr="//ul[@t-if='not company.custom_footer']" position="inside">
+			<!-- <xpath expr="//ul[@t-if='not company.custom_footer']" position="inside">
 				<li t-if="company.bank_ids">
 					Cuenta bancaria: 
 					<span t-foreach="company.bank_ids" t-as="c">
@@ -42,7 +42,7 @@
 						<span>&amp;bull;</span>
 					</span>
 				</li>
-			</xpath>
+			</xpath> -->
  		</template>
 	</data>
 </openerp>
