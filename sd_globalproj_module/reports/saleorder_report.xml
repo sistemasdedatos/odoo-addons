@@ -6,7 +6,7 @@
 			<xpath expr="//div/div[@class='row']" position="replace"/>
 
 			<xpath expr="//div/h2" position="attributes">
-				<attribute name="style">font-size:16px;margin-left:40%</attribute>
+				<attribute name="style">font-size:17px;margin-left:40%</attribute>
 			</xpath>
 			
 			<xpath expr="//div/h2" position="after">
@@ -16,7 +16,7 @@
 						<t t-set="DESCUENTO" t-value="1" />
 					</t>
 				</t>
-				<div style="font-size:12px">
+				<div style="font-size:14px">
 					<div t-if="o.partner_id.name">
 						<strong>Fiscal name: </strong>
 						<span t-field="o.partner_id.name"/>
@@ -40,11 +40,11 @@
 			</xpath>
 			
 			<xpath expr="//div/div[@class='row mt32 mb32']" position="attributes">
-				<attribute name="style">font-size:13px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/table[@class='table table-condensed']" position="attributes">
-				<attribute name="style">font-size:13px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/div[@class='row']" position="attributes">
@@ -52,11 +52,11 @@
 			</xpath>
 			
 			<xpath expr="//div/p[@t-field='o.note']" position="attributes">
-				<attribute name="style">font-size:13px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
-				<attribute name="style">font-size:13px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 <!--             <xpath expr="//div/p[@t-field='o.note']" position="before">
                 <p style="page-break-after:always;"></p>Salto de pagina 

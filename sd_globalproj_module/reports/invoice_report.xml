@@ -4,11 +4,11 @@
 		<template id="sd_inherit_report_invoice" inherit_id="account.report_invoice_document">
 
 			<xpath expr="//div[@class='page']" position="attributes">
-				<attribute name="style">font-size:13px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/div/div[@class='col-xs-5 col-xs-offset-7']" position="replace">
-				<div class="col-xs-4 col-xs-offset-4" style="font-size:16px">
+				<div class="col-xs-4 col-xs-offset-4" style="font-size:17px">
 					<strong>
 						<span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
 						<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
@@ -27,7 +27,7 @@
 					</t>
 				</div>
 				<div>
-					<div class="col-xs-8" style="min-height:80px;">
+					<div class="col-xs-8" style="min-height:110px;">
 						<strong>
 							<div t-if="o.company_id.partner_id.nif_company_group and o.number and 'FO' in o.number">
 								Código de agrupación de empresas: 
