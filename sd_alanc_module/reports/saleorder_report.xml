@@ -11,7 +11,7 @@
 			</xpath>
 			
 			<xpath expr="//div/h2" position="after">
-				<div style="font-size:12px">
+				<div style="font-size:14px">
 					<div t-if="o.partner_id.vat"><strong>NIF: </strong><span t-field="o.partner_id.vat"/></div>
 					<div t-if="o.partner_id.name"><strong>Fiscal name: </strong><span t-field="o.partner_id.name"/></div>
 					<div t-if="o.partner_id.comercial"><strong>Comercial name: </strong><span t-field="o.partner_id.comercial"/></div>
@@ -48,23 +48,23 @@
 			</xpath>
 			
 			<xpath expr="//div/div[@class='row mt32 mb32']" position="attributes">
-				<attribute name="style">font-size:12px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/table[@class='table table-condensed']" position="attributes">
-				<attribute name="style">font-size:12px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/div[@class='row']" position="attributes">
-				<attribute name="style">font-size:12px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/p[@t-field='o.note']" position="attributes">
-				<attribute name="style">font-size:12px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/p[@t-if='o.payment_term.note']" position="attributes">
-				<attribute name="style">font-size:12px</attribute>
+				<attribute name="style">font-size:14px</attribute>
 			</xpath>
 			
 			<xpath expr="//div/div/div[@t-if='o.payment_term']" position="replace"/>

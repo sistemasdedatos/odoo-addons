@@ -5,7 +5,7 @@
 			<t t-call="report.external_layout">
 				<div class="page">
 					<div class="row">
-						<div class="col-xs-6" style="font-size:16px">
+						<div class="col-xs-6" style="font-size:18px">
 							<strong>
 								<div>
 									Nº: <span t-field="o.name"/>
@@ -15,7 +15,7 @@
 								</div>
 							</strong>
 						</div>
-						<div class="col-xs-6" style="font-size:16px">
+						<div class="col-xs-6" style="font-size:18px">
 							<strong>
 								<div>
 									Tipo de albarán: <span t-field="o.picking_type_id.name"/>
@@ -27,7 +27,7 @@
 						</div>
 					</div>
 					<div style="min-height:30px;"/>
-					<table class="table table-condensed" style="font-size:11px">
+					<table class="table table-condensed" style="font-size:14px">
 						<thead>
 							<tr>
 								<th>Producto</th>
@@ -58,7 +58,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<div style="font-size:9px"><strong>Todos los precios son unitarios</strong></div>
+					<div style="font-size:11px"><strong>Todos los precios son unitarios</strong></div>
 				</div>
 			</t>
 		</template>

@@ -3,7 +3,7 @@
 	<data>
 		<template id="sd_inherit_external_layout_footer" inherit_id="report.external_layout_footer">
 			<xpath expr="//div[@class='footer']" position="attributes">
-				<attribute name="style">font-size:10px</attribute>>			
+				<attribute name="style">font-size:12px</attribute>>			
 			</xpath>
 			<xpath expr="//ul[@t-if='not company.custom_footer']/li[@t-if='company.phone']" position="replace">
 				<div>

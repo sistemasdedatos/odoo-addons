@@ -11,16 +11,16 @@
 						</div>
 						<div class="col-xs-5 pull-right">
 							<div><br/></div>
-							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}' style="font-size:11px"/>
-							<div style="font-size:11px">NIF:<span t-field="company.partner_id.vat"/></div>
-							<div style="font-size:11px" t-field="company.partner_id.street"/>
-							<div style="font-size:11px">
+							<div t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["name"], "no_marker": true}' style="font-size:14px"/>
+							<div style="font-size:14px">NIF:<span t-field="company.partner_id.vat"/></div>
+							<div style="font-size:14px" t-field="company.partner_id.street"/>
+							<div style="font-size:14px">
 								<span t-esc="'%s ' % company.partner_id.zip" />
 								<span t-esc="'%s ' % company.partner_id.city" />,
-								<span style="font-size:11px" t-field="company.partner_id.country_id.name"/>
+								<span style="font-size:14px" t-field="company.partner_id.country_id.name"/>
 							</div>
-							<div style="font-size:11px" t-field="company.partner_id.phone"/>
-							<div style="font-size:11px" t-field="company.partner_id.email"/>
+							<div style="font-size:14px" t-field="company.partner_id.phone"/>
+							<div style="font-size:14px" t-field="company.partner_id.email"/>
 						</div>
 					</div>
 					<div class="row zero_min_height">
