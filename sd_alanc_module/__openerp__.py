@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Alan Canarias',
-    'version' : '2.5',
+    'version' : '2.6',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -47,6 +47,7 @@ Module that modifies the program interface and the reports to Alan Canarias 2010
              'views/account_invoice_view.xml',
              'views/product_view.xml',
              'views/sale_order_view.xml',
+             'views/purchase_view.xml',
              'reports/header_report.xml',
              'reports/footer_report.xml',
              'reports/invoice_report.xml',
