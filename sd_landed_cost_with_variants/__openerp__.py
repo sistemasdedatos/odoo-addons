@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Purchase landed costs Variant',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Purchase Management',
@@ -33,7 +33,7 @@ Module inherit from purchase_landed_cost for allow landed cost in product varian
     'website': 'http://www.sdatos.com',
     # End General Data
     'depends' : ['purchase_landed_cost',
-                 'product_variant_cost'],
+                 'product_variant_cost_price'],
     'data': [],                
     'installable': True,
     'auto_install': False,       
