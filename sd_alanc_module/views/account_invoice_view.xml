@@ -12,5 +12,15 @@
                 </xpath>
             </field>
         </record>
+         <record id="inherit_invoice_tree" model="ir.ui.view">
+            <field name="name">sd.account.invoice.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='reference']" position="attributes">
+            		<attribute name="invisible">0</attribute>
+            	</xpath>
+            </field>
+        </record>
     </data>
 </openerp>
