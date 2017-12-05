@@ -11,7 +11,7 @@
         </template>
         
         <template id="no_select_db" inherit_id="web.login" name="Login">
-            <xpath expr="//t[@t-call='web.database_select']" position="replace"/>
+            <!-- <xpath expr="//t[@t-call='web.database_select']" position="replace"/> -->
 	    	<xpath expr="//div[@class='form-group field-login']" position="replace">
 				<div class="form-group field-login">
 	                <label for="login" class="control-label">Usuario</label>

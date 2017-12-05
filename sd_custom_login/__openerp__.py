@@ -22,7 +22,7 @@
 {
 	# General Data
     'name' : 'Custom Login Page',
-    'version' : '3.0',
+    'version' : '3.1',
     'author' : 'Sistemas de Datos',
 	'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
