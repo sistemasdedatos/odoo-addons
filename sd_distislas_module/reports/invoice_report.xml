@@ -2,6 +2,15 @@
 <openerp>
 	<data>
 		<template id="sd_inherit_report_invoice" inherit_id="account.report_invoice_document">
+		
+			<!-- <xpath expr="//div[@class='page']" position="inside">
+				<div t-if="o.type == 'out_refund'" style="position:absolute; left: 45%; width:200px;
+				                                         height: 110px; z-index:-1; color: rgba(255,0,0,0.5); 
+				                                         transform: rotate(-25deg); -webkit-transform: rotate(-25deg); 
+				                                         -ms-transform: rotate(-25deg); font-size:50px" >
+					<strong>ABONO</strong>
+				</div>
+			</xpath> -->
 
 			<xpath expr="//div/div/div[@class='col-xs-5 col-xs-offset-7']"
 				position="replace">
@@ -11,10 +20,14 @@
 						<span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
 						<span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
 						<span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-						<span t-if="o.type == 'out_refund'">Refund <span style="color:#8A0829">Abono</span></span>
+						<span t-if="o.type == 'out_refund'">Refund</span>
 						<span t-if="o.type == 'in_refund'">Supplier Refund</span>
 						<span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
 						<span t-field="o.number" />
+						<div t-if="o.type == 'out_refund'" style="position:absolute; left: 5%; top: 100%; width:200px;
+				                                         		  height: 110px; z-index:10; color: rgba(255,0,10,0.6); font-size:50px" >
+							<strong>ABONO</strong>
+						</div>
 					</strong>
 				</div>
 				<div style="font-size:12px">
