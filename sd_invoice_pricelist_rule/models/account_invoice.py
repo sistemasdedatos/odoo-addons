@@ -1,4 +1,4 @@
-from openerp import models, fields, api, _
+from openerp import models, fields, api, _, exceptions
 from openerp.osv import fields as old_fields
 import openerp.addons.decimal_precision as dp
 from lxml import etree
@@ -35,6 +35,9 @@ class AccountInvoiceLine (models.Model):
     @api.model
     def move_line_get (self, invoice_id):
         res = super (AccountInvoiceLine, self).move_line_get (invoice_id)
+        for i in res:
+            if 'tax_amount' in i.keys () and i['tax_amount'] != 0:
+                i['tax_amount'] = i['price'] 
         return res
     
     @api.multi
