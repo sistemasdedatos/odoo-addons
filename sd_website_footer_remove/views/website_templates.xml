@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<template id="sd_remove_footer" inherit_id="website.footer_custom" name="Footer" priority="60">
+		    <xpath expr="//div[@id='footer']" position="replace"/>
+		</template>
+		<template id="sd_layout_footer_copyright" inherit_id="website.layout_footer_copyright" name="Footer Copyright" priority="60">
+		    <xpath expr="//footer" position="replace">
+		    	<div></div>
+		    </xpath>
+		</template>
+    </data>
+</openerp>
