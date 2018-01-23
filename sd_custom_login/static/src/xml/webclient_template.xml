@@ -32,7 +32,11 @@
                 <t t-set="disable_database_manager" t-value="1"/>
             </xpath>
         </template>
-	
+        <template id="sd_menu_secondary" inherit_id="web.menu_secondary">
+        	<xpath expr="//div[@class='oe_footer']" position="inside">
+        		 <br>Soportado por <a href="http://www.sdatos.com" target="_blank"><span>Sistemas de Datos SL</span></a></br>
+        	</xpath>
+        </template>
     </data>
 </openerp>
 
