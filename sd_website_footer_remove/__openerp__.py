@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Footer Remove',
-    'version' : '0.2',
+    'version' : '0.3',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
