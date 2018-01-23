@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-		<!-- <template id="sd_remove_footer" inherit_id="website.footer_custom" name="Footer" priority="60">
-		    <xpath expr="//div[@id='footer']" position="replace"/>
-		</template>-->
+		<template id="sd_remove_footer" inherit_id="website.footer_custom" name="Footer" priority="60">
+		    <xpath expr="//div[@id='footer']/section/div/div[@class='row']" position="replace"/>
+		</template>
 		<template id="sd_layout_footer_copyright" inherit_id="website.layout_footer_copyright" name="Footer Copyright" priority="60">
 		    <xpath expr="//footer/div[@class='container mt16 mb8']" position="replace">
 		    	<div style="text-align:center">
