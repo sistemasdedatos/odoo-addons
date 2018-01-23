@@ -7,7 +7,7 @@
 		<template id="sd_layout_footer_copyright" inherit_id="website.layout_footer_copyright" name="Footer Copyright" priority="60">
 		    <xpath expr="//footer/div[@class='container mt16 mb8']" position="replace">
 		    	<div>
-		    		<img src="/sd_custom_login/static/src/img/logo.png" style="margin:0 40%"/>
+		    		<img src="/sd_custom_login/static/src/img/logo.png" style="margin:0 33%"/>
 		    	</div>
 		    </xpath>
 		</template>
