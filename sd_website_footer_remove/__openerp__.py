@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Footer Remove',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',
@@ -33,7 +33,8 @@ Module that modifies the website view to hide the footer in signin
 """,
     'website': 'http://www.sdatos.com',
     # End General Data
-    'depends' : ['website'],
+    'depends' : ['website', 
+                 'sd_custom_login'],
     'data': ['views/website_templates.xml'],
     'installable': False,
     'auto_install': False,
