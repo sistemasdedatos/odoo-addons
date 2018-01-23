@@ -36,7 +36,7 @@ Module that modifies the website view to hide the footer in signin
     'depends' : ['website', 
                  'sd_custom_login'],
     'data': ['views/website_templates.xml'],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
