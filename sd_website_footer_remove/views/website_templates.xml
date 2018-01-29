@@ -11,7 +11,7 @@
 						        	<h4>Connect with us</h4>
 						          	<ul class="list-unstyled">
 						            	<li>
-						              	<a style="color:#C6BDFF" href="http://www.sdatos.com">Contact us</a>
+						              	<a style="color:#C6BDFF" href="http://www.sdatos.com/nosotros/contactar/">Contact us</a>
 						            	</li>
 						          	</ul>
 						          	<ul class="list-unstyled">
@@ -24,7 +24,7 @@
 						              		<a style="color:#C6BDFF" href="sdatos@sdatos.es"><span>sdatos@sdatos.es</span></a>
 						            	</li>
 						          	</ul>
-						          	<a href="www.sdatos.com"><img src="/sd_custom_login/static/src/img/nologo.png" style="max-height: 100px;"/></a>
+						          	<a href="http://www.sdatos.com"><img src="/sd_custom_login/static/src/img/nologo.png" style="max-height: 135px;"/></a>
 						        </div>
 						        <div class="col-md-8" style="color:#FFFFFF">
 						        	<div>
