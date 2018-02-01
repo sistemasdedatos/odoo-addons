@@ -175,3 +175,219 @@ msgstr "Actualizar sin validar"
 #: view:wizard.update.invoice.supplierinfo:account_invoice_supplierinfo_update_on_validate.view_wizard_update_invoice_supplierinfo_form
 msgid "Validate without updating"
 msgstr "Validar sin actualizar"
+
+#. module: password_security
+#: help:res.company,password_minimum:0
+msgid "Amount of hours until a user may change password again"
+msgstr "Cantidad de horas hasta que un usuario pueda cambiar la contraseña nuevamnete."
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:145
+#, python-format
+msgid "Cannot use the most recent %d passwords"
+msgstr "No se puede usar las %d contraseñas más recientes"
+
+#. module: password_security
+#: field:res.company,password_length:0
+msgid "Characters"
+msgstr "Caracteres"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: password_security
+#: field:res.users.pass.history,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: password_security
+#: field:res.users.pass.history,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: password_security
+#: field:res.users.pass.history,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: password_security
+#: field:res.company,password_expiration:0
+msgid "Days"
+msgstr "Días"
+
+#. module: password_security
+#: help:res.company,password_history:0
+msgid ""
+"Disallow reuse of this many previous passwords - use negative number for "
+"infinite, or 0 to disable"
+msgstr ""
+"Desactivar la reutilización de algunas contraseñas previas - usar un número negativo para "
+"infinito, o 0 para deshabilitarlo"
+
+#. module: password_security
+#: field:res.users.pass.history,display_name:0
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: password_security
+#: field:res.users.pass.history,password_crypt:0
+msgid "Encrypted Password"
+msgstr "Contraseña encriptada"
+
+#. module: password_security
+#: view:res.company:password_security.view_company_form
+msgid "Extra"
+msgstr "Extra"
+
+#. module: password_security
+#: field:res.company,password_history:0
+msgid "History"
+msgstr "Historial"
+
+#. module: password_security
+#: help:res.company,password_expiration:0
+msgid "How many days until passwords expire"
+msgstr "Cuantos días antes de que la contraseña expire"
+
+#. module: password_security
+#: field:res.users.pass.history,id:0
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: password_security
+#: field:res.users.pass.history,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: password_security
+#: field:res.users.pass.history,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: password_security
+#: field:res.users.pass.history,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: password_security
+#: field:res.users,password_write_date:0
+msgid "Last password update"
+msgstr "Última actualización de contraseña"
+
+#. module: password_security
+#: field:res.company,password_lower:0
+msgid "Lowercase"
+msgstr "Minúscula"
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:51
+#, python-format
+msgid "Lowercase letter"
+msgstr "Letra en minúsucla"
+
+#. module: password_security
+#: field:res.company,password_minimum:0
+msgid "Minimum Hours"
+msgstr "Mínimo de horas"
+
+#. module: password_security
+#: help:res.company,password_length:0
+msgid "Minimum number of characters"
+msgstr "Número mínimo de caracteres"
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:59
+#, python-format
+msgid "Must contain the following:"
+msgstr ""
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:55
+#, python-format
+msgid "Numeric digit"
+msgstr "Número"
+
+#. module: password_security
+#: field:res.users,password_history_ids:0
+msgid "Password History"
+msgstr "Historial de contraseñas"
+
+#. module: password_security
+#: view:res.company:password_security.view_company_form
+msgid "Password Policy"
+msgstr "Política de contraseñas"
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:62
+#, python-format
+msgid "Password must be %d characters or more."
+msgstr "La contraseña debe contener %d caracteres o más"
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:121
+#, python-format
+msgid ""
+"Passwords can only be reset every %d hour(s). Please contact an "
+"administrator for assistance."
+msgstr ""
+"La contraseña solo se puede reestablecer cada %d hora(s). Por favor "
+"contacte con el administrador."
+
+#. module: password_security
+#: help:res.company,password_lower:0
+msgid "Require lowercase letters"
+msgstr "Requerida letra en minúscula"
+
+#. module: password_security
+#: help:res.company,password_numeric:0
+msgid "Require numeric digits"
+msgstr "Requerido algún número"
+
+#. module: password_security
+#: help:res.company,password_special:0
+msgid "Require special characters"
+msgstr "Requerido símbolo"
+
+#. module: password_security
+#: help:res.company,password_upper:0
+msgid "Require uppercase letters"
+msgstr "Requeridas letras en mayúscula"
+
+#. module: password_security
+#: view:res.company:password_security.view_company_form
+msgid "Required Characters"
+msgstr "Caracteres requeridos"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_users_pass_history
+msgid "Res Users Password History"
+msgstr "Historial de contraseñas"
+
+#. module: password_security
+#: field:res.company,password_special:0
+msgid "Special"
+msgstr "Especial"
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:57
+#, python-format
+msgid "Special character"
+msgstr "Símbolo"
+
+#. module: password_security
+#: view:res.company:password_security.view_company_form
+msgid "Timings"
+msgstr "Tiempo"
+
+#. module: password_security
+#: field:res.company,password_upper:0
+msgid "Uppercase"
+msgstr "Mayúscula"
+
+#. module: password_security
+#: code:addons/password_security/models/res_users.py:53
+#, python-format
+msgid "Uppercase letter"
+msgstr "Letra mayúscula"

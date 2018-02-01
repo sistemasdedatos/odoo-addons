@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+    
+    <!-- TYPES -->
+    	<!-- Configuration -->
+	    <record id="sd_config_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Configuration</field>
+	        <field name="description">Vide tutorials to configurate company and user access</field>
+	        <field eval="5" name="sequence"/>
+	    </record>
+	    <!-- INTERFACE -->
+	    <record id="sd_interface_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Interface</field>
+	        <field name="description">Vide tutorials to understand the user interface</field>
+	        <field eval="10" name="sequence"/>
+	    </record>
+	    <!-- MASTERS -->
+	    <record id="sd_masters_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Masters</field>
+	        <field name="description">Vide tutorials to create the masters (customers, suppliers, products and else)</field>
+	        <field eval="15" name="sequence"/>
+	    </record>
+	    <!-- CRM -->
+	    <record id="sd_crm_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">CRM</field>
+	        <field name="description">Vide tutorials to understand CRM use</field>
+	        <field eval="20" name="sequence"/>
+	    </record>
+	    <!-- SALE -->
+	    <record id="sd_sale_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Sale</field>
+	        <field name="description">Vide tutorials to understand sale management</field>
+	        <field eval="25" name="sequence"/>
+	    </record>
+	    <!-- PURCHASE -->
+	    <record id="sd_purchase_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Purchase</field>
+	        <field name="description">Vide tutorials to understand purchase management</field>
+	        <field eval="30" name="sequence"/>
+	    </record>
+	    <!-- PAYMENTS -->
+	    <record id="sd_payments_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Payments</field>
+	        <field name="description">Vide tutorials to understand payments management</field>
+	        <field eval="35" name="sequence"/>
+	    </record>
+	    <!-- ACCOUNT -->
+	    <record id="sd_account_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Account</field>
+	        <field name="description">Vide tutorials to understand account management</field>
+	        <field eval="40" name="sequence"/>
+	    </record>
+	    <!-- REPORTS -->
+	    <record id="sd_reports_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Reports</field>
+	        <field name="description">Vide tutorials to understand and create personal reports</field>
+	        <field eval="45" name="sequence"/>
+	    </record>
+	
+	<!-- TUTORIALS -->
+		<record id="sd_welcome_tutorial_0" model="sd.tutorial">
+	        <field name="name">Welcome</field>
+	        <field name="description">Welcome to the plataform</field>
+	        <field eval="5" name="sequence"/>
+	        <field name="url">https://www.youtube.com/watch?v=t_opde4sVnc</field>
+	        <field name="type_id" ref="sd_config_tutorial_data"/>
+	    </record>
+	</data>
+</openerp>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    	<record id="view_sd_tutorial_form" model="ir.ui.view">
+			<field name="name">sd.tutorial.form</field>
+			<field name="model">sd.tutorial</field>
+			<field name="arch" type="xml">
+				<form string="Tutorial">
+					<sheet>
+						<field name="iframe" widget="html" options="{'style-inline': false}" nolabel="1" readonly="1" class="oe_read_only"/>
+						<group>
+							<group>
+								<field name="name" class="oe_edit_only"/>
+								<field name="description" class="oe_edit_only"/>
+							</group>
+							<group>
+								<field name="type_id" class="oe_edit_only" widget="selection"/>
+                    			<field name="url" class="oe_edit_only"/>
+								<field name="sequence" class="oe_edit_only"/>
+		                    </group>
+	                    </group>
+                    </sheet>
+                </form>
+			</field>
+		</record>
+    	
+    	<record model="ir.ui.view" id="view_sd_tutorial_tree">
+            <field name="name">sd.tutorial.tree</field>
+            <field name="model">sd.tutorial</field>
+            <field name="arch" type="xml">
+                <tree string="Tutorials">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="sequence" invisible="1"/>
+                    <field name="type_id" invisible="1"/>
+                    <field name="url" invisible="1"/>
+                    <field name="iframe" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+    	
+    	<record id="sd_action_view_tutorial_0" model="ir.actions.act_window">
+            <field name="name">All tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by':'type_id'}</field>
+        </record>
+       <!--  <record id="sd_action_view_tutorial_1" model="ir.actions.act_window">
+            <field name="name">Interface tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_interface_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_2" model="ir.actions.act_window">
+            <field name="name">Master tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_masters_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_3" model="ir.actions.act_window">
+            <field name="name">CRM tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_crm_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_4" model="ir.actions.act_window">
+            <field name="name">Sale tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_sale_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_5" model="ir.actions.act_window">
+            <field name="name">Purchase tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_purchase_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_6" model="ir.actions.act_window">
+            <field name="name">Payment tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_payments_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_7" model="ir.actions.act_window">
+            <field name="name">Account tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_account_tutorial_data'))]"/>
+        </record>
+        <record id="sd_action_view_tutorial_8" model="ir.actions.act_window">
+            <field name="name">Report tutorials</field>
+            <field name="res_model">sd.tutorial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" eval="[('type_id', '=', ref('sd_odoo_tutorial.sd_reports_tutorial_data'))]"/>
+        </record> -->
+		<menuitem name="Tutorials" id="menu_tutorials" parent="mail.mail_feeds_main" sequence="15"/>	
+		<menuitem name="Tutorials" id="menu_tutorial_all" parent="menu_tutorials" sequence="5" action="sd_action_view_tutorial_0"/>
+    	<!-- <menuitem name="Interface tutorials" id="menu_tutorial_interface" parent="menu_tutorials" sequence="10" action="sd_action_view_tutorial_1"/>
+    	<menuitem name="Master tutorials" id="menu_tutorial_master" parent="menu_tutorials" sequence="15" action="sd_action_view_tutorial_2"/>
+    	<menuitem name="CRM tutorials" id="menu_tutorial_crm" parent="menu_tutorials" sequence="20" action="sd_action_view_tutorial_3"/>
+    	<menuitem name="Sale tutorials" id="menu_tutorial_sale" parent="menu_tutorials" sequence="25" action="sd_action_view_tutorial_4"/>
+    	<menuitem name="Purchase tutorials" id="menu_tutorial_purchase" parent="menu_tutorials" sequence="30" action="sd_action_view_tutorial_5"/>
+    	<menuitem name="Payments tutorials" id="menu_tutorial_payments" parent="menu_tutorials" sequence="35" action="sd_action_view_tutorial_6"/>
+    	<menuitem name="Account tutorials" id="menu_tutorial_account" parent="menu_tutorials" sequence="40" action="sd_action_view_tutorial_7"/>
+    	<menuitem name="Report tutorials" id="menu_tutorial_report" parent="menu_tutorials" sequence="45" action="sd_action_view_tutorial_8"/> -->
+    	
+    	<record id="view_sd_tutorial_types_form" model="ir.ui.view">
+			<field name="name">sd.tutorial.types.form</field>
+			<field name="model">sd.tutorial.types</field>
+			<field name="arch" type="xml">
+				<form string="Type of tutorials">
+					<sheet>
+						<div class="oe_title">
+                        	<h1>
+                        		<label string="Type of tutorials configuration"/>
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description"/>
+							</group>
+							<group>
+								<field name="sequence"/>
+		                    </group>
+	                    </group>
+                    </sheet>
+                </form>
+			</field>
+		</record>
+    	
+    	<record model="ir.ui.view" id="view_sd_tutorial_types_tree">
+            <field name="name">sd.tutorial.types.tree</field>
+            <field name="model">sd.tutorial.types</field>
+            <field name="arch" type="xml">
+                <tree string="Tutorial types">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="sequence" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+    	
+    	<record id="sd_action_view_types_tutorial" model="ir.actions.act_window">
+            <field name="name">Tutorials type</field>
+            <field name="res_model">sd.tutorial.types</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    	
+    	<menuitem name="Tutorials types" id="menu_type_tutorials" parent="base.menu_config" sequence="95" action="sd_action_view_types_tutorial"/>	
+    </data>
+</openerp>

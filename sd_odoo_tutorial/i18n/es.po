@@ -1,0 +1,233 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sd_odoo_tutorial
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-31 11:49+0000\n"
+"PO-Revision-Date: 2018-01-31 11:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_account_tutorial_data
+msgid "Account"
+msgstr "Contabilidad"
+
+#. module: sd_odoo_tutorial
+#: model:ir.actions.act_window,name:sd_odoo_tutorial.sd_action_view_tutorial_0
+msgid "All tutorials"
+msgstr "Todos los tutoriales"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_crm_tutorial_data
+msgid "CRM"
+msgstr "CRM"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_config_tutorial_data
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,create_uid:0
+#: field:sd.tutorial.types,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,create_date:0
+#: field:sd.tutorial.types,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,description:0
+#: field:sd.tutorial.types,description:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,display_name:0
+#: field:sd.tutorial.types,display_name:0
+msgid "Display Name"
+msgstr "Mostrar nombre"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,id:0
+#: field:sd.tutorial.types,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_interface_tutorial_data
+msgid "Interface"
+msgstr "Interfaz"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,__last_update:0
+#: field:sd.tutorial.types,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,write_uid:0
+#: field:sd.tutorial.types,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,write_date:0
+#: field:sd.tutorial.types,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,url:0
+msgid "Link"
+msgstr "Enlace"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_masters_tutorial_data
+msgid "Masters"
+msgstr "Maestros"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_payments_tutorial_data
+msgid "Payments"
+msgstr "Tesorería"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_purchase_tutorial_data
+msgid "Purchase"
+msgstr "Compras"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_reports_tutorial_data
+msgid "Reports"
+msgstr "Informes"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_sale_tutorial_data
+msgid "Sale"
+msgstr "Ventas"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,sequence:0
+#: field:sd.tutorial.types,sequence:0
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: sd_odoo_tutorial
+#: view:sd.tutorial:sd_odoo_tutorial.view_sd_tutorial_form
+msgid "Tutorial"
+msgstr "Tutorial"
+
+#. module: sd_odoo_tutorial
+#: view:sd.tutorial.types:sd_odoo_tutorial.view_sd_tutorial_types_tree
+msgid "Tutorial types"
+msgstr "Tipos de tutoriales"
+
+#. module: sd_odoo_tutorial
+#: model:ir.ui.menu,name:sd_odoo_tutorial.menu_tutorial_all
+#: model:ir.ui.menu,name:sd_odoo_tutorial.menu_tutorials
+#: view:sd.tutorial:sd_odoo_tutorial.view_sd_tutorial_tree
+msgid "Tutorials"
+msgstr "Tutoriales"
+
+#. module: sd_odoo_tutorial
+#: model:ir.actions.act_window,name:sd_odoo_tutorial.sd_action_view_types_tutorial
+msgid "Tutorials type"
+msgstr "Tipos de tutoriales"
+
+#. module: sd_odoo_tutorial
+#: model:ir.ui.menu,name:sd_odoo_tutorial.menu_type_tutorials
+msgid "Tutorials types"
+msgstr "Tipos de tutoriales"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,type_id:0
+#: field:sd.tutorial.types,name:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: sd_odoo_tutorial
+#: view:sd.tutorial.types:sd_odoo_tutorial.view_sd_tutorial_types_form
+msgid "Type of tutorials"
+msgstr "Tipos de tutoriales"
+
+#. module: sd_odoo_tutorial
+#: view:sd.tutorial.types:sd_odoo_tutorial.view_sd_tutorial_types_form
+msgid "Type of tutorials configuration"
+msgstr "Configuración de los tipos de tutoriales"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_config_tutorial_data
+msgid "Vide tutorials to configurate company and user access"
+msgstr "Vídeo tutoriales para configurar la empresa y los datos de usuario"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_masters_tutorial_data
+msgid "Vide tutorials to create the masters (customers, suppliers, products and else)"
+msgstr "Vídeo tutoriales para crear los maestros (clientes, proveedores, productos y demás)"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_crm_tutorial_data
+msgid "Vide tutorials to understand CRM use"
+msgstr "Vídeo tutoriales para entender el uso del CRM"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_account_tutorial_data
+msgid "Vide tutorials to understand account management"
+msgstr "Vídeo tutoriales para entender la gestión de contabilidad"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_reports_tutorial_data
+msgid "Vide tutorials to understand and create personal reports"
+msgstr "Vídeo tutoriales para entender y crear informes personalizados"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_payments_tutorial_data
+msgid "Vide tutorials to understand payments management"
+msgstr "Vídeo tutoriales para entender la gestión de tesorería (cobros, pagos, facturación...)"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_purchase_tutorial_data
+msgid "Vide tutorials to understand purchase management"
+msgstr "Vídeo tutoriales para entender la gestión de compras"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_sale_tutorial_data
+msgid "Vide tutorials to understand sale management"
+msgstr "Vídeo tutoriales para entender la gestión de ventas"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_interface_tutorial_data
+msgid "Vide tutorials to understand the user interface"
+msgstr "Vídeo tutoriales para entender la interfaz de usuario"
+
+#. module: sd_odoo_tutorial
+#: field:sd.tutorial,iframe:0
+msgid "Video Link"
+msgstr "Video Link"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial,name:sd_odoo_tutorial.sd_welcome_tutorial_0
+msgid "Welcome"
+msgstr "Bienvenida"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial,description:sd_odoo_tutorial.sd_welcome_tutorial_0
+msgid "Welcome to the plataform"
+msgstr "Bienvenido a la plataforma"

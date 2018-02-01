@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2016 Sistemas de Datos (<http://www.sdatos.com>).
+#    Copyright (C) 2018 Sistemas de Datos (<http://www.sdatos.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,29 +18,24 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 {
-    'name' : 'Custom Translations',
-    'version' : '0.3',
+    'name' : 'SDatos Odoo Tutorials',
+    'version' : '0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
-    'category' : 'Interface',
-#     'sequence': 3,                
-    'summary': 'Custom reports for clients',
+    'category' : 'Tools',
+    'summary': 'User tutorials for clients',
     'description' : """
-Custom Translations
-===================
-
-This module edit the translations in buttons and repair errors
---------------------------------------------------------------
-    """,
+Odoo Tutorials
+===============
+""",
     'website': 'http://www.sdatos.com',
     # End General Data
-    'depends':['base',
-               'sale',
-		       'account'],            
-    'data':['views/inherit_res_partner.xml'],
-    'installable': True,        
-    'auto_install': False,        
+    'depends' : ['mail'],
+    'data': ['data/sd_tutorials_data.xml',
+             'views/sd_tutorial_view.xml',
+             'security/ir.model.access.csv'],
+    'installable': True,
+    'auto_install': False,
     'application': False,
 }
