@@ -4,6 +4,11 @@
     
     <!-- TYPES -->
     	<!-- Configuration -->
+    	<record id="sd_welcome_tutorial_data" model="sd.tutorial.types">
+	        <field name="name">Welcome</field>
+	        <field name="description">Welcome</field>
+	        <field eval="1" name="sequence"/>
+	    </record>
 	    <record id="sd_config_tutorial_data" model="sd.tutorial.types">
 	        <field name="name">Configuration</field>
 	        <field name="description">Vide tutorials to configurate company and user access</field>
@@ -64,14 +69,21 @@
 	        <field name="description">Welcome to the plataform</field>
 	        <field eval="5" name="sequence"/>
 	        <field name="url">https://www.youtube.com/watch?v=t_opde4sVnc</field>
-	        <field name="type_id" ref="sd_config_tutorial_data"/>
+	        <field name="type_id" ref="sd_welcome_tutorial_data"/>
 	    </record>
 	    <record id="sd_config_tutorial_1" model="sd.tutorial">
 	        <field name="name">Initial configuration</field>
 	        <field name="description">Users and company onfiguration</field>
-	        <field eval="5" name="sequence"/>
+	        <field eval="7" name="sequence"/>
 	        <field name="url">https://www.youtube.com/watch?v=2-ktRTFIbDw</field>
 	        <field name="type_id" ref="sd_config_tutorial_data"/>
+	    </record>
+	    <record id="sd_interface_tutorial_1" model="sd.tutorial">
+	        <field name="name">Navigability</field>
+	        <field name="description">Navegability</field>
+	        <field eval="5" name="sequence"/>
+	        <field name="url">https://www.youtube.com/watch?v=QZHEqnoC3pA</field>
+	        <field name="type_id" ref="sd_interface_tutorial_data"/>
 	    </record>
 	</data>
 </openerp>

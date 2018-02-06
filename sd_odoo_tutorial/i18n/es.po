@@ -218,6 +218,12 @@ msgid "Vide tutorials to understand the user interface"
 msgstr "Vídeo tutoriales para entender la interfaz de usuario"
 
 #. module: sd_odoo_tutorial
+#: model:sd.tutorial.types,name:sd_odoo_tutorial.sd_welcome_tutorial_data
+#: model:sd.tutorial.types,description:sd_odoo_tutorial.sd_welcome_tutorial_data
+msgid "Welcome"
+msgstr "Bienvenida"
+
+#. module: sd_odoo_tutorial
 #: field:sd.tutorial,iframe:0
 msgid "Video Link"
 msgstr "Video Link"
@@ -241,3 +247,9 @@ msgstr "Configuración inical"
 #: model:sd.tutorial,description:sd_odoo_tutorial.sd_config_tutorial_1
 msgid "Users and company onfiguration"
 msgstr "Configuración de los usuarios y la empresa"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial,name:sd_odoo_tutorial.sd_interface_tutorial_1
+#: model:sd.tutorial,description:sd_odoo_tutorial.sd_interface_tutorial_1
+msgid "Navigability"
+msgstr "Navegabilidad"
