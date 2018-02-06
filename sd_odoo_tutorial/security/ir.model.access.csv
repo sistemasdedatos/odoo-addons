@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sd_tutorial_types_u,sd_tutorial_types user,model_sd_tutorial_types,base.group_user,1,0,0,0
 sd_tutorial_types_m,sd_tutorial_types manager,model_sd_tutorial_types,base.group_system,1,1,1,1
 sd_tutorial_m,sd_tutorial manager,model_sd_tutorial,base.group_user,1,1,1,1

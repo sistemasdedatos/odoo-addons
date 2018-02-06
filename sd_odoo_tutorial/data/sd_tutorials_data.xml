@@ -58,12 +58,19 @@
 	        <field eval="45" name="sequence"/>
 	    </record>
 	
-	<!-- TUTORIALS -->
+	<!-- TUTORIALS CONFIG-->
 		<record id="sd_welcome_tutorial_0" model="sd.tutorial">
 	        <field name="name">Welcome</field>
 	        <field name="description">Welcome to the plataform</field>
 	        <field eval="5" name="sequence"/>
 	        <field name="url">https://www.youtube.com/watch?v=t_opde4sVnc</field>
+	        <field name="type_id" ref="sd_config_tutorial_data"/>
+	    </record>
+	    <record id="sd_config_tutorial_1" model="sd.tutorial">
+	        <field name="name">Initial configuration</field>
+	        <field name="description">Users and company onfiguration</field>
+	        <field eval="5" name="sequence"/>
+	        <field name="url">https://www.youtube.com/watch?v=2-ktRTFIbDw</field>
 	        <field name="type_id" ref="sd_config_tutorial_data"/>
 	    </record>
 	</data>

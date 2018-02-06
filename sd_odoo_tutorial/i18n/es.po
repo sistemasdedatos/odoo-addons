@@ -231,3 +231,13 @@ msgstr "Bienvenida"
 #: model:sd.tutorial,description:sd_odoo_tutorial.sd_welcome_tutorial_0
 msgid "Welcome to the plataform"
 msgstr "Bienvenido a la plataforma"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial,name:sd_odoo_tutorial.sd_config_tutorial_1
+msgid "Initial configuration"
+msgstr "Configuración inical"
+
+#. module: sd_odoo_tutorial
+#: model:sd.tutorial,description:sd_odoo_tutorial.sd_config_tutorial_1
+msgid "Users and company onfiguration"
+msgstr "Configuración de los usuarios y la empresa"
