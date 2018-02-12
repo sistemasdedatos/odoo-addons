@@ -1,9 +1,0 @@
-<openerp>
-	<data>
-		<template id="sd_inherit_digital_sign" inherit_id="sd_digital_sign.sale_order_backend">
-			<xpath expr="//link[@href='/sd_digital_sign/static/src/css/jquery.signature.css']" position="replace">
-				<link rel="stylesheet" href="/sd_sdatos_module/static/src/css/sd_inherit_digital_sign.css"/>
-			</xpath>
-		</template>
-	</data>
-</openerp>

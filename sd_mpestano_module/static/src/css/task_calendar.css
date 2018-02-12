@@ -1,8 +1,0 @@
-@media print {
-	.oe_calendar_sidebar_container {
-		display: none;
-	}
-	td.fc-header-right {
-		display: none;
-	}
-}

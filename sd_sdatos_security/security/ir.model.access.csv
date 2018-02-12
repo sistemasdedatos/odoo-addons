@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-project.access_project_project_sale_user,project.project salesman,project.model_project_project,base.group_sale_salesman,0,0,0,0
-project.access_project_task,project.task,project.model_project_task,project.group_project_user,1,0,0,0
-project.access_project_task_sale_user,project.task salesman,project.model_project_task,base.group_sale_salesman,1,0,0,0
-access_task_on_development,project.task on development,project.model_project_task,sd_sdatos_security.sd_development_group,1,1,0,0
-access_project_task_work_development,project.task.work devel,project.model_project_task_work,sd_sdatos_security.sd_development_group,1,1,1,1
