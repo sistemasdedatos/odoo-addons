@@ -1,10 +1,6 @@
 Módulos desarrollados por Sistemas de Datos
 ===========================================
 
-Available addons
-----------------
-addon | version | summary
---- | --- | ---
 Unported addons
 ---------------
 addon | version | summary
