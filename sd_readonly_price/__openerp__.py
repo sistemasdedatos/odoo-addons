@@ -41,7 +41,7 @@ SD READONLY PRICE
                  'sd_sale_margin'],            
     'data': ['data/sd_group_readonly_price.xml',
              'view/modify_view.xml'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
 }
 

@@ -39,7 +39,7 @@ This module allow contract templates
                  'account_analytic_analysis'],
     'data': ['views/inherit_account_analytic_analysis_view.xml',
              'reports/print_contract.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

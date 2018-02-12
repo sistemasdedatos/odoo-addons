@@ -37,7 +37,7 @@ This module add the reference to invoices in the account_move view.
     # End General Data
     'depends' : ['account'],            
     'data': ['views/account_view_inherit.xml'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

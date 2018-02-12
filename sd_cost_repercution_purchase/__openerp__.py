@@ -39,7 +39,7 @@ This module allows to repercute Tax or discount purchase in the product cost
     'data': ['security/sd_cost_repercution_security.xml',
              'views/res_config_view.xml'],
     'images':[],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

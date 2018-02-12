@@ -39,7 +39,7 @@ This module allows define a preferred warehouse for each salesman/user
                  'stock', 
                  'sale_stock'],        
     'data': ['views/user_view.xml'],  
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

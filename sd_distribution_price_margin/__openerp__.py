@@ -38,7 +38,7 @@ This module allows introduce benefits margin in distribution cost of purchases
                  'purchase_landed_cost'],
     'data': ['views/sd_purchase_cost_distribution_view.xml'],
     'images':[],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

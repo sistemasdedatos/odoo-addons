@@ -35,7 +35,7 @@ SDatos EAN 13 Generator
     'depends' : ['product'],
     'data': ['views/inherit_product.xml'],
     'images':[],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

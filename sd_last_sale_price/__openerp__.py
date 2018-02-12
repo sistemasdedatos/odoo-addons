@@ -37,7 +37,7 @@ Last Sale Price
     'data': ['sd_sale_order_view.xml',
              'security/sd_last_sale_price_security.xml',
              'security/ir.model.access.csv'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

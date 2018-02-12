@@ -41,7 +41,7 @@ This module modifies the existing reports for invoices, sales, purchases...
              'report/footer_report.xml',
              'report/invoice_report.xml',
              'report/saleorder_report.xml'],
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

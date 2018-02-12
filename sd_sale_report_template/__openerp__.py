@@ -40,7 +40,7 @@ This module allow reports sales templates
     'data': ['security/ir.model.access.csv',
              'views/view_sale_template.xml',
              'views/inherit_sale_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

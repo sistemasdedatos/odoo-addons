@@ -46,7 +46,7 @@ TO-DO Permitir importar mas tipos de datos como:
                  ],        
     'data': ['sd_excel_import_view.xml',
              'security/ir.model.access.csv'],  
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

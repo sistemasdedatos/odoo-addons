@@ -42,7 +42,7 @@ Modulo para realizar el arqueo de caja
     'data': ['views/sd_cash_count_view.xml',
              'reports/sd_cash_count_report.xml',
              'security/ir.model.access.csv'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

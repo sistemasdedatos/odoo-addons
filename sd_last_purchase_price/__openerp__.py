@@ -37,7 +37,7 @@ This module allowed fast view to last product purchase on this supplier
     'data': ['sd_purchase_order_view.xml',
              'security/sd_last_purchase_price_security.xml',
              'security/ir.model.access.csv'],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,       
     'application': False,
 }

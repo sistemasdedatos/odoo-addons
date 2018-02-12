@@ -41,7 +41,7 @@ It is necessary have the APPLI program installed to interpret the result file
                  'custom_download_file'],
     'data': ['wizard/wizard_print_labels_view.xml'],
     'images':[],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

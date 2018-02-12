@@ -38,7 +38,7 @@ Prueba de sobrescribir el css para que no imprima el chat en los formularios ni 
     'depends' : ['web'],           
     'data': ['sd_template_css.xml'],
     'images':[], 
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

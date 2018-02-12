@@ -38,7 +38,7 @@ This module provides the functionality to store digital signature image for a re
     ],
     'website': 'http://www.sdatos.com',
     'qweb': ['static/src/xml/digital_sign.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
 

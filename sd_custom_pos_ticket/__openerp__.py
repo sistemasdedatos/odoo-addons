@@ -16,7 +16,7 @@ Custom pos ticket
                 'l10n_es_pos'],
     'data': ['inherit_pos.xml',
              'invoice_report.xml'],
-    'installable': True,
+    'installable': False,
     'application': False,
     'qweb': [],
     'website': 'https://www.odoo.com/page/point-of-sale',

@@ -45,7 +45,7 @@ This module allows print work done or task in project (Contract).
             'security/sd_print_project_work_security.xml',
             'security/ir.model.access.csv'], 
     'images':['static/src/img/trabajo.png'], 
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

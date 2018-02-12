@@ -38,7 +38,7 @@ Module that automatical sync Office 365 calendar with Odoo calendar
     'depends' : ['calendar',
                  'sd_office_sincronize'],
     'data': ['views/inherit_sync_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

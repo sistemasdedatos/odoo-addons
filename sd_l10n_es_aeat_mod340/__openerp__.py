@@ -38,7 +38,7 @@ SD mod340 MODULE
     'depends' : ['l10n_es_aeat_mod340',
                  'sd_l10n_es_igic'],
     'data': ['data/tax_codes_common_igic.xml'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
 }
 

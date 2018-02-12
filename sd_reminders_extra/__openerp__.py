@@ -41,5 +41,5 @@ This module have use reminder_base, module development by IT-Projects LLC, Ivan 
     'data': [
         'views.xml',
         ],
-    'installable': True,
+    'installable': False,
 }

@@ -35,7 +35,7 @@ Module inherit from purchase_landed_cost for allow landed cost in product varian
     'depends' : ['purchase_landed_cost',
                  'product_variant_cost'],
     'data': [],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,       
     'application': False,
 }

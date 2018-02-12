@@ -46,7 +46,7 @@ Instalation:
     'data': ['account_account_common_igic.xml',
              'tax_codes_common_igic.xml',
              'taxes_common_igic.xml'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
 }
 

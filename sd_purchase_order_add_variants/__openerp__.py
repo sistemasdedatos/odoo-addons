@@ -47,5 +47,5 @@ Adding this variants to sale order with the quantities selected
         'view/purchase_view.xml',
         'view/res_config_view.xml'
     ],
-    'installable': True,
+    'installable': False,
 }

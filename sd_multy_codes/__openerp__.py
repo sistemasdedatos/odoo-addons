@@ -40,7 +40,7 @@ This module allows save many codes in product template.
     'data': ['views/sd_product_inherit.xml',
              'security/ir.model.access.csv',
              'security/sd_multy_codes_security.xml'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

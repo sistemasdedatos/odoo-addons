@@ -37,7 +37,7 @@ This module allows import or edit product from Excel catalog Ferrobox.
     # End General Data
     'depends' : ['sd_excel_import'],        
     'data': ['views/sd_inherit_excel_import_view.xml'],  
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

@@ -35,7 +35,7 @@ Recurrent Task
                  'project',
                  'subscription'],            
     'data': ['data/sd_recurrent_task.xml'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

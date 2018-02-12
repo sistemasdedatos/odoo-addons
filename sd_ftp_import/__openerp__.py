@@ -52,7 +52,7 @@ a minimo 3 digitos
              'wizard/ftp_import_view.xml',
              'security/sd_ftp_security.xml',
              'security/ir.model.access.csv'],                
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
     'application': False,
 }

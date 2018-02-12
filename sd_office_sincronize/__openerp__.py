@@ -43,7 +43,7 @@ Module that sync Office 365 calendar with Odoo calendar
              'security/ir.model.access.csv',
              'views/sd_config_view.xml',
              'views/sd_sync_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }
