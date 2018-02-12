@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_task_on_development,project.task on development,model_project_task,sd_sdatos_module.sd_development_group,1,0,0,0
-access_project_task_work_development,project.task.work devel,model_project_task_work,sd_sdatos_module.sd_development_group,1,0,0,0
