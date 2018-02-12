@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Alan Canarias',
-    'version' : '2.8',
+    'version' : '3.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Interface',

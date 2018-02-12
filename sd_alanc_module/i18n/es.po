@@ -227,3 +227,7 @@ msgstr "Listado de facturas generados por este pedido de venta. El mismo pedido 
 msgid "Sales"
 msgstr "Pedidos de venta"
 
+#. module: sd_alanc_module
+#: view:website:account.report_invoice_document
+msgid "Supplier invoice code:"
+msgstr "Código factura proveedor:"

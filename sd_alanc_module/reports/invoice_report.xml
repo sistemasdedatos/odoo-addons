@@ -36,6 +36,10 @@
 								Description:
 								<span t-field="o.name" />
 							</div>
+							<div t-if="o.reference and (o.type == 'in_refund' or o.type ==  'in_invoice')">
+								Supplier invoice code:
+								<span t-field="o.reference" />
+							</div>
 						</strong>
 					</div>
 					<div class="col-xs-pull-11">
