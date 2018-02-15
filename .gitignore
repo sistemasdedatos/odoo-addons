@@ -1,5 +1,9 @@
+/*.pyc
 /*/*.pyc
 /*/*/*.pyc
+/*~
+/*/*~
+/*/*/*~
 .settings
 .settings/*
 .project
