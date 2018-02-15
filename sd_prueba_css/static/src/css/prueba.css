@@ -1,8 +1,0 @@
-@media print {
-	.openerp .oe_searchview_drawer_container {
-		display: none;
-	}
-	.openerp .oe_chatter {
-		display: none;
-	}
-}
