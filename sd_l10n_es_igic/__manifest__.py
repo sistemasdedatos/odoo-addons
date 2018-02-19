@@ -22,7 +22,7 @@
 
 {
     'name' : 'Sistemas de Datos IGIC Module',
-    'version' : '1.3',
+    'version' : '0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Localisation/Account Charts',
@@ -36,16 +36,14 @@ Add the accounts and taxes for the Canary Legislation of IGIC.
 Instalation:
 
 * Install the l10n_es.
-* Install the account_chart_update.
 * Install this module.
-* Execute the account_chart_update to set the default taxes.
 
     """,
     'website': 'http://www.sdatos.com',
-    'depends' : ['l10n_es', 'account_chart_update'],            
-    'data': ['data/account_account_common_igic.xml',
-             'data/tax_codes_common_igic.xml',
-             'data/taxes_common_igic.xml'],                
+    'depends' : ['l10n_es'],            
+    'data': ['data/account_account_common_igic.xml'],
+             #'data/tax_codes_common_igic.xml',
+             #'data/taxes_common_igic.xml'],                
     'installable': False,        
     'auto_install': False,        
 }

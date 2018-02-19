@@ -9,18 +9,120 @@
         
         <!--Modelo 420-->
 
-        <record id="igic_base" model="account.tax.code.template">
+        <record id="account_tax_code_template_420" model="account.tax.code.template">
             <field name="parent_id" ref="l10n_es.account_tax_code_template_root"/>
             <field name="code">420</field>
             <field name="name">&lt;Mod. 420&gt; Impuesto General Indirecto Canario</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- ==================== -->
+        <!-- IGIC DEVENGADO CUOTA -->
+        <!-- ==================== --> 
+        
+        <!-- Régimen General -->
+        
+        <!-- <record id="igic_dev_21" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_TDC" model="account.tax.code.template">
+            <field name="name">[15] IGIC total devengado. Cuota</field>
+            <field name="code">IGIC_TDC</field>
+            <field name="sign">1.0</field>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
+        </record>
+        
+        <!-- <record id="igic_dev_07" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_RGDC00" model="account.tax.code.template">
+            <field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[07] Régimen general IGIC devengado. Cuota (0%)</field>
+            <field name="code">IGIC_RGDC00</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_08" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_RGDC30" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[08] Régimen general IGIC devengado. Cuota (3%)</field>
+            <field name="code">IGIC_RGDC30</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_09" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_RGDC70" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[09] Régimen general IGIC devengado. Cuota (7%)</field>
+            <field name="code">IGIC_RGDC70</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_10" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_RGDC95" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[10] Régimen general IGIC devengado. Cuota (9,5%)</field>
+            <field name="code">IGIC_RGDC95</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_11" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_RGDC135" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[11] Régimen general IGIC devengado. Cuota (13,5%)</field>
+            <field name="code">IGIC_rGDC135</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_12" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_RGDC20" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[12] Régimen general IGIC devengado. Cuota (20%)</field>
+            <field name="code">IGIC_RGDC20</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_50" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_REC03" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[08] IGIC Recargo equivalencia. Cuota (0.3%)</field>
+            <field name="code">IGIC_REC03</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_51" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_REC07" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[09] IGIC Recargo equivalencia. Cuota (0.7%)</field>
+            <field name="code">IGIC_REC07</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_52" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_REC095" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[10] IGIC Recargo equivalencia. Cuota (0.95%)</field>
+            <field name="code">IGIC_REC095</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_53" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_REC135" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[11] IGIC Recargo equivalencia. Cuota (1.35%)</field>
+            <field name="code">IGIC_REC135</field>
+            <field name="sign">1.0</field>
+        </record>
+        
+        <!-- <record id="igic_dev_54" model="account.tax.code.template"> -->
+        <record id="account_tax_code_template_IGIC_REC200" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_IGIC_TDC"/>
+            <field name="name">[12] IGIC Recargo equivalencia. Cuota (2%)</field>
+            <field name="code">IGIC_REC200</field>
             <field name="sign">1.0</field>
         </record>
 
         <!--Base imponible-->
         
         <record id="igic_dev_base" model="account.tax.code.template">
+        	<field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="name">IGIC devengado. Base imponible</field>
-            <field name="parent_id" ref="igic_base"/>
             <field name="code">IGIC_IDBI</field>
             <field name="sign">1.0</field>
         </record>
@@ -28,14 +130,14 @@
         <!-- Exentas IGIC -->
         <record id="igic_base_sop_ex" model="account.tax.code.template">
             <field name="name">IGIC Base adquisiciones exentas</field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="code">IGIC_IBAE</field>
             <field name="sign">1.0</field>
         </record>
         <record id="igic_base_rep_ex" model="account.tax.code.template">
             <field name="name">IGIC Base ventas exentas</field>
             <field name="code">IGIC_IBVE</field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="sign">1.0</field>
         </record>
         
@@ -117,87 +219,6 @@
             <field name="sign">1.0</field>
         </record>   
         
-        <!-- ==================== -->
-        <!-- IGIC DEVENGADO CUOTA -->
-        <!-- ==================== --> 
-        
-        <!-- Régimen General -->
-        
-        <record id="igic_dev_21" model="account.tax.code.template">
-            <field name="name">[15] IGIC cuota total devengada</field>
-            <field name="code">IGIC_ICTD</field>
-            <field name="sign">1.0</field>
-            <field name="parent_id" ref="igic_base"/>
-        </record>    
-        
-        <record id="igic_dev_07" model="account.tax.code.template">
-            <field name="name">[07] Régimen general IGIC devengado. Cuota 0%</field>
-            <field name="code">IGIC_IRGDC00</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_08" model="account.tax.code.template">
-            <field name="name">[08] Régimen general IGIC devengado. Cuota 3%</field>
-            <field name="code">IGIC_IRGDC30</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_09" model="account.tax.code.template">
-            <field name="name">[09] Régimen general IGIC devengado. Cuota 7%</field>
-            <field name="code">IGIC_IRGDC70</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_10" model="account.tax.code.template">
-            <field name="name">[10] Régimen general IGIC devengado. Cuota 9,5%</field>
-            <field name="code">IGIC_IRGDC95</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_11" model="account.tax.code.template">
-            <field name="name">[11] Régimen general IGIC devengado. Cuota 13,5%</field>
-            <field name="code">IGIC_IRGDC135</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_12" model="account.tax.code.template">
-            <field name="name">[12] Régimen general IGIC devengado. Cuota 20%</field>
-            <field name="code">IGIC_IRGDC20</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        
-        <record id="igic_dev_50" model="account.tax.code.template">
-            <field name="name">[08] IGIC Recargo equivalencia. Cuota 0.3%</field>
-            <field name="code">IGIC_IREC03</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_51" model="account.tax.code.template">
-            <field name="name">[09] IGIC Recargo equivalencia. Cuota 0.7%</field>
-            <field name="code">IGIC_IREC07</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_52" model="account.tax.code.template">
-            <field name="name">[10] IGIC Recargo equivalencia. Cuota 0.95%</field>
-            <field name="code">IGIC_IREC095</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_53" model="account.tax.code.template">
-            <field name="name">[11] IGIC Recargo equivalencia. Cuota 1.35%</field>
-            <field name="code">IGIC_IREC135</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        <record id="igic_dev_54" model="account.tax.code.template">
-            <field name="name">[12] IGIC Recargo equivalencia. Cuota 2%</field>
-            <field name="code">IGIC_IREC200</field>
-            <field name="parent_id" ref="igic_dev_21"/>
-            <field name="sign">1.0</field>
-        </record>
-        
         <!-- Adquisiciones Intracomunitarias -->
         
         <record id="igic_dev_20" model="account.tax.code.template">
@@ -217,7 +238,7 @@
             <field name="name">IGIC deducible. Base imponible</field>
             <field name="code">IGIC_IDeBI</field>
             <field name="sign">1.0</field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
         </record>
         
         <record id="igic_ded_base_total_16" model="account.tax.code.template">
@@ -550,7 +571,7 @@
         <record id="igic_ded_cuota_total" model="account.tax.code.template">
             <field name="name">[22] IGIC deducible (Cuota) - Total a deducir</field>
             <field name="code">IGIC_IDCTD</field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="sign">1.0</field>
         </record>
         
@@ -849,19 +870,19 @@
         <record id="igic_base_intra_42" model="account.tax.code.template">
             <field name="name">IGIC Entregas intracomunitarias</field>
             <field name="code">IGIC_IEI </field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="sign">1.0</field>
         </record>
         <record id="igic_base_extra_43" model="account.tax.code.template">
             <field name="name">IGIC Exportaciones y operaciones asimiladas</field>
             <field name="code">IGIC_IEOA </field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="sign">1.0</field>
         </record>
         <record id="igic_base_extra_44" model="account.tax.code.template">
             <field name="name">[13] IGIC Inversión del sujeto pasivo</field>
             <field name="code">IGIC_IIDSP </field>
-            <field name="parent_id" ref="igic_base"/>
+            <field name="parent_id" ref="account_tax_code_template_420"/>
             <field name="sign">1.0</field>
         </record>
 
