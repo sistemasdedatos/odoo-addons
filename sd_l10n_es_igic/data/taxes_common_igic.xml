@@ -295,6 +295,7 @@
     	<field name="name">IGIC 0% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="amount_type">percent</field>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP0_1'), ref('account_tax_template_igic_ISP0_2')])]"/>
     </record>
     <record id="account_tax_template_igic_ISP3_1" model="account.tax.template">
@@ -322,6 +323,7 @@
     	<field name="type_tax_use">purchase</field>
     	<field name="name">IGIC 3% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount_type">percent</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP3_1'), ref('account_tax_template_igic_ISP3_2')])]"/>
     </record>
@@ -350,6 +352,7 @@
     	<field name="type_tax_use">purchase</field>
     	<field name="name">IGIC 7% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount_type">percent</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP7_1'), ref('account_tax_template_igic_ISP7_2')])]"/>
     </record>
@@ -378,6 +381,7 @@
     	<field name="type_tax_use">purchase</field>
     	<field name="name">IGIC 9,5% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount_type">percent</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP95_1'), ref('account_tax_template_igic_ISP95_2')])]"/>
     </record>
@@ -406,6 +410,7 @@
     	<field name="type_tax_use">purchase</field>
     	<field name="name">IGIC 13,5% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount_type">percent</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP135_1'), ref('account_tax_template_igic_ISP135_2')])]"/>
     </record>
@@ -434,6 +439,7 @@
     	<field name="type_tax_use">purchase</field>
     	<field name="name">IGIC 20% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount_type">percent</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP200_1'), ref('account_tax_template_igic_ISP200_2')])]"/>
     </record>
@@ -445,7 +451,7 @@
         <field name="account_id" ref="pgc_4727_child"/>
         <field name="name">IGIC 0,30% Compras (Recargo equivalencia)</field>
         <field name="refund_account_id" ref="pgc_4727_child"/>
-        <field name="chart_template_id" ref="account_chart_template_common"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount" eval="0.3"/>
         <field name="amount_type">percent</field>
     </record>    
@@ -455,7 +461,7 @@
         <field name="account_id" ref="pgc_4727_child"/>
         <field name="name">IGIC 0,70% Compras (Recargo equivalencia)</field>
         <field name="refund_account_id" ref="pgc_4727_child"/>
-        <field name="chart_template_id" ref="account_chart_template_common"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount" eval="0.7"/>
         <field name="amount_type">percent</field>
     </record>
@@ -465,7 +471,7 @@
         <field name="account_id" ref="pgc_4727_child"/>
         <field name="name">IGIC 0,95% Compras (Recargo equivalencia)</field>
         <field name="refund_account_id" ref="pgc_4727_child"/>
-        <field name="chart_template_id" ref="account_chart_template_common"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount" eval="0.95"/>
         <field name="amount_type">percent</field>
     </record>
@@ -475,7 +481,7 @@
         <field name="account_id" ref="pgc_4727_child"/>
         <field name="name">IGIC 0,135% Compras (Recargo equivalencia)</field>
         <field name="refund_account_id" ref="pgc_4727_child"/>
-        <field name="chart_template_id" ref="account_chart_template_common"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount" eval="0.135"/>
         <field name="amount_type">percent</field>
     </record>
@@ -485,7 +491,7 @@
         <field name="account_id" ref="pgc_4727_child"/>
         <field name="name">IGIC 2% Compras (Recargo equivalencia)</field>
         <field name="refund_account_id" ref="pgc_4727_child"/>
-        <field name="chart_template_id" ref="account_chart_template_common"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount" eval="2"/>
         <field name="amount_type">percent</field>
     </record>
