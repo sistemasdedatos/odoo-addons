@@ -143,12 +143,12 @@
     <!-- ======================== -->
     <!-- IGIC SOPORTADO (COMPRAS) -->
     <!-- ======================== -->
-    <!-- Bienes corrientes -->
+    <!-- Operaciones corrientes -->
     <record id="account_tax_template_igic_sop_0" model="account.tax.template">
     	<field name="description">P_IGIC_BC0</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 0% Soportado (Bienes corrientes)</field>
+    	<field name="name">IGIC 0% Soportado (Operaciones corrientes)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="0" name="amount"/>
@@ -158,7 +158,7 @@
     	<field name="description">P_IGIC_BC3</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 3% Soportado (Bienes corrientes)</field>
+    	<field name="name">IGIC 3% Soportado (Operaciones corrientes)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="3" name="amount"/>
@@ -169,7 +169,7 @@
     	<field name="description">P_IGIC_BC7</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 7% Soportado (Bienes corrientes)</field>
+    	<field name="name">IGIC 7% Soportado (Operaciones corrientes)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="7" name="amount"/>
@@ -179,7 +179,7 @@
     	<field name="description">P_IGIC_BC95</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 9,5% Soportado (Bienes corrientes)</field>
+    	<field name="name">IGIC 9,5% Soportado (Operaciones corrientes)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="9.50" name="amount"/>
@@ -189,7 +189,7 @@
     	<field name="description">P_IGIC_BC135</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 13,5% Soportado (Bienes corrientes)</field>
+    	<field name="name">IGIC 13,5% Soportado (Operaciones corrientes)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="13.50" name="amount"/>
@@ -199,19 +199,19 @@
     	<field name="description">P_IGIC_BC200</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 20% Soportado (Bienes corrientes)</field>
+    	<field name="name">IGIC 20% Soportado (Operaciones corrientes)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="20" name="amount"/>
         <field name="amount_type">percent</field>
     </record>
     
-    <!-- Bienes inversion -->
+    <!-- Operaciones inversion -->
     <record id="account_tax_template_igic_sop_0_inv" model="account.tax.template">
     	<field name="description">P_IGIC_BI0</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 0% Soportado (Bienes de inversión)</field>
+    	<field name="name">IGIC 0% Soportado (Operaciones de inversión)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="0" name="amount"/>
@@ -221,7 +221,7 @@
     	<field name="description">P_IGIC_BI3</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 3% Soportado (Bienes de inversión)</field>
+    	<field name="name">IGIC 3% Soportado (Operaciones de inversión)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="3" name="amount"/>
@@ -231,7 +231,7 @@
     	<field name="description">P_IGIC_BI7</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 7% Soportado (Bienes de inversión)</field>
+    	<field name="name">IGIC 7% Soportado (Operaciones de inversión)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="7" name="amount"/>
@@ -241,7 +241,7 @@
 		<field name="description">P_IGIC_BI95</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 9,5% Soportado (Bienes de inversión)</field>
+    	<field name="name">IGIC 9,5% Soportado (Operaciones de inversión)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="9.5" name="amount"/>
@@ -251,7 +251,7 @@
     	<field name="description">P_IGIC_BI135</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 13,5% Soportado (Bienes de inversión)</field>
+    	<field name="name">IGIC 13,5% Soportado (Operaciones de inversión)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="13.5" name="amount"/>
@@ -261,7 +261,131 @@
     	<field name="description">P_IGIC_BI200</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 20% Soportado (Bienes de inversión)</field>
+    	<field name="name">IGIC 20% Soportado (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="20" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    
+    <!-- Importaciones Operaciones corrientes -->
+    <record id="account_tax_template_igic_sop_i_0" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC0</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 0% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="0" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_3" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC3</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 3% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="3" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_7" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC7</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 7% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="7" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_9_5" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC95</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 9,5% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="9.50" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_13_5" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC135</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 13,5% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="13.50" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_200" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC200</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 20% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="20" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    
+    <!-- Importaciones Operaciones inversion -->
+    <record id="account_tax_template_igic_sop_i_0_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_IBI0</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 0% Importaciones (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="0" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_3_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_IBI3</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 3% Importaciones (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="3" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+    <record id="account_tax_template_igic_sop_i_7_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_IBI7</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 7% Importaciones (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="7" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>
+	<record id="account_tax_template_igic_sop_i_9_5_inv" model="account.tax.template">
+		<field name="description">P_IGIC_IBI95</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 9,5% Importaciones (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="9.5" name="amount"/>
+        <field name="amount_type">percent</field>
+	</record>
+    <record id="account_tax_template_igic_sop_i_13_5_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_IBI135</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 13,5% Importaciones (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="13.5" name="amount"/>
+        <field name="amount_type">percent</field>
+    </record>    
+    <record id="account_tax_template_igic_sop_i_200_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_IBI200</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 20% Importaciones (Operaciones de inversión)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="20" name="amount"/>

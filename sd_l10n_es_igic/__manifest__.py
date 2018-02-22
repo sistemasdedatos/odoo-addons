@@ -21,29 +21,17 @@
 ##############################################################################
 
 {
-    'name' : 'Sistemas de Datos IGIC Module',
+    'name' : 'Planes de cuentas españoles (según PGCE 2008) ampliado para IGIC',
     'version' : '0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Localisation/Account Charts',
     'sequence': 3,
-    'description' : """
-SD IGIC MODULE
-==============
-
-Add the accounts and taxes for the Canary Legislation of IGIC.
-
-Instalation:
-
-* Install the l10n_es.
-* Install this module.
-
-    """,
     'website': 'http://www.sdatos.com',
     'depends' : ['l10n_es'],            
     'data': ['data/account_account_common_igic.xml',
-             'data/taxes_common_igic.xml'],   
-             #'data/tax_codes_common_igic.xml',             
+             'data/taxes_common_igic.xml',   
+             'data/fiscal_position_common_igic.xml'],             
     'installable': True,        
     'auto_install': False,        
 }
