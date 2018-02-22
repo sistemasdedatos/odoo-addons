@@ -1,6 +1,12 @@
 Módulos desarrollados por Sistemas de Datos
 ===========================================
 
+Available addons
+---------------
+addon | version | summary
+--- | --- | ---
+[sd_l10n_es_igic](sd_l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
+
 Unported addons
 ---------------
 addon | version | summary
@@ -29,7 +35,6 @@ addon | version | summary
 [sd_invoice_report_template](sd_invoice_report_template/) | 10.0.0.0 (unported) | This module allow reports invoice templates
 [sd_l10n_es_aeat_mod340](sd_l10n_es_aeat_mod340/) | 10.0.0.0 (unported) | Modification the module l10n_es_aeat_mod340 to able to account for import
 [sd_l10n_es_facturae_igic](sd_l10n_es_faacturae_igic/) | 10.0.0.0 (unported) | Add the taxes for the Canary Legislation of IGIC for FactureE module.
-[sd_l10n_es_igic](sd_l10n_es_igic/) | 10.0.0.0 (unported) | Add the accounts and taxes for the Canary Legislation of IGIC.
 [sd_landed_cost_with_variants](sd_landed_cost_with_variant/) | 10.0.0.0 (unported) | Purchase cost distribution with variants
 [sd_last_purchase_price](sd_last_purchase_price/) | 10.0.0.0 (unported) | View the last purchase price in sale order
 [sd_last_sale_price](sd_last_sale_price/) | 10.0.0.0 (unported) | View the last sale price in sale order
