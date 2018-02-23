@@ -418,7 +418,7 @@
     	<field name="type_tax_use">purchase</field>
     	<field name="name">IGIC 0% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
-        <field name="amount_type">percent</field>
+        <field name="amount_type">group</field>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP0_1'), ref('account_tax_template_igic_ISP0_2')])]"/>
     </record>
@@ -448,7 +448,7 @@
     	<field name="name">IGIC 3% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
-        <field name="amount_type">percent</field>
+        <field name="amount_type">group</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP3_1'), ref('account_tax_template_igic_ISP3_2')])]"/>
     </record>
     <record id="account_tax_template_igic_ISP7_1" model="account.tax.template">
@@ -477,7 +477,7 @@
     	<field name="name">IGIC 7% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
-        <field name="amount_type">percent</field>
+        <field name="amount_type">group</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP7_1'), ref('account_tax_template_igic_ISP7_2')])]"/>
     </record>
     <record id="account_tax_template_igic_ISP95_1" model="account.tax.template">
@@ -506,7 +506,7 @@
     	<field name="name">IGIC 9,5% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
-        <field name="amount_type">percent</field>
+        <field name="amount_type">group</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP95_1'), ref('account_tax_template_igic_ISP95_2')])]"/>
     </record>
     <record id="account_tax_template_igic_ISP135_1" model="account.tax.template">
@@ -535,7 +535,7 @@
     	<field name="name">IGIC 13,5% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
-        <field name="amount_type">percent</field>
+        <field name="amount_type">group</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP135_1'), ref('account_tax_template_igic_ISP135_2')])]"/>
     </record>
     <record id="account_tax_template_igic_ISP200_1" model="account.tax.template">
@@ -564,7 +564,7 @@
     	<field name="name">IGIC 20% Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
-        <field name="amount_type">percent</field>
+        <field name="amount_type">group</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP200_1'), ref('account_tax_template_igic_ISP200_2')])]"/>
     </record>
    
