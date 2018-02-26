@@ -125,7 +125,7 @@
     	<field name="description">P_IGIC_ISP0_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 0% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 0% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="0" name="amount"/>
@@ -135,7 +135,7 @@
     	<field name="description">P_IGIC_ISP0_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 0% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 0% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="0" name="amount"/>
@@ -154,7 +154,7 @@
     	<field name="description">P_IGIC_ISP3_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 3% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 3% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="3" name="amount"/>
@@ -164,7 +164,7 @@
     	<field name="description">P_IGIC_ISP3_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 3% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 3% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-3" name="amount"/>
@@ -183,7 +183,7 @@
     	<field name="description">P_IGIC_ISP7_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 7% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 7% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="7" name="amount"/>
@@ -193,7 +193,7 @@
     	<field name="description">P_IGIC_ISP7_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 7% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 7% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-7" name="amount"/>
@@ -212,7 +212,7 @@
     	<field name="description">P_IGIC_ISP95_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 9,5% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 9,5% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="9.5" name="amount"/>
@@ -222,7 +222,7 @@
     	<field name="description">P_IGIC_ISP95_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 9,5% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 9,5% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-9.5" name="amount"/>
@@ -241,7 +241,7 @@
     	<field name="description">P_IGIC_ISP135_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 13,5% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 13,5% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="13.5" name="amount"/>
@@ -251,7 +251,7 @@
     	<field name="description">P_IGIC_ISP135_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 13,5% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 13,5% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-13.5" name="amount"/>
@@ -270,7 +270,7 @@
     	<field name="description">P_IGIC_ISP200_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 20% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 20% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="20" name="amount"/>
@@ -280,7 +280,7 @@
     	<field name="description">P_IGIC_ISP200_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 20% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 20% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-20" name="amount"/>
@@ -573,7 +573,7 @@
     	<field name="description">P_IGIC_ISP0_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 0% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 0% Compra con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="0" name="amount"/>
@@ -583,7 +583,7 @@
     	<field name="description">P_IGIC_ISP0_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 0% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 0% Compra con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="0" name="amount"/>
@@ -602,7 +602,7 @@
     	<field name="description">P_IGIC_ISP3_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 3% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 3% Compra con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="3" name="amount"/>
@@ -612,7 +612,7 @@
     	<field name="description">P_IGIC_ISP3_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 3% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 3% Compra con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-3" name="amount"/>
@@ -631,7 +631,7 @@
     	<field name="description">P_IGIC_ISP7_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 7% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 7% Compra con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="7" name="amount"/>
@@ -641,7 +641,7 @@
     	<field name="description">P_IGIC_ISP7_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 7% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 7% Compra con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-7" name="amount"/>
@@ -650,7 +650,7 @@
     <record id="account_tax_template_igic_ISP7" model="account.tax.template">
     	<field name="description">P_IGIC_ISP7</field>
     	<field name="type_tax_use">purchase</field>
-    	<field name="name">IGIC 7% Compra con Inversión del Sujeto Pasivo</field>
+    	<field name="name">IGIC 7% Compra con Compra con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="amount_type">group</field>
@@ -660,7 +660,7 @@
     	<field name="description">P_IGIC_ISP95_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 9,5% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 9,5% Compra con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="9.5" name="amount"/>
@@ -670,7 +670,7 @@
     	<field name="description">P_IGIC_ISP95_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 9,5% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 9,5% Compra con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-9.5" name="amount"/>
@@ -689,7 +689,7 @@
     	<field name="description">P_IGIC_ISP135_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 13,5% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 13,5% Compra con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="13.5" name="amount"/>
@@ -699,7 +699,7 @@
     	<field name="description">P_IGIC_ISP135_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 13,5% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 13,5% Compra con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-13.5" name="amount"/>
@@ -718,7 +718,7 @@
     	<field name="description">P_IGIC_ISP200_1</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4727_child"/>
-    	<field name="name">IGIC 20% Inversión del Sujeto Pasivo (1)</field>
+    	<field name="name">IGIC 20% Compra con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="20" name="amount"/>
@@ -728,7 +728,7 @@
     	<field name="description">P_IGIC_ISP200_2</field>
     	<field name="type_tax_use">purchase</field>
     	<field name="account_id" ref="pgc_4777_child"/>
-    	<field name="name">IGIC 20% Inversión del Sujeto Pasivo (2)</field>
+    	<field name="name">IGIC 20% Compra con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field eval="-20" name="amount"/>
