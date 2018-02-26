@@ -122,8 +122,8 @@
     
     <!-- Inversión del Sujeto Pasivo -->
     <record id="account_tax_template_igic_s_ISP0_1" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP0_1</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP0_1</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4727_child"/>
     	<field name="name">IGIC 0% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
@@ -132,8 +132,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP0_2" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP0_2</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP0_2</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4777_child"/>
     	<field name="name">IGIC 0% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
@@ -142,8 +142,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP0" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP0</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP0</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="name">IGIC 0% Venta con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="amount_type">group</field>
@@ -151,8 +151,8 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP0_1'), ref('account_tax_template_igic_s_ISP0_2')])]"/>
     </record>
     <record id="account_tax_template_igic_s_ISP3_1" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP3_1</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP3_1</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4727_child"/>
     	<field name="name">IGIC 3% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
@@ -161,8 +161,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP3_2" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP3_2</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP3_2</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4777_child"/>
     	<field name="name">IGIC 3% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
@@ -171,8 +171,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP3" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP3</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP3</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="name">IGIC 3% Venta con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -180,8 +180,8 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP3_1'), ref('account_tax_template_igic_s_ISP3_2')])]"/>
     </record>
     <record id="account_tax_template_igic_s_ISP7_1" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP7_1</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP7_1</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4727_child"/>
     	<field name="name">IGIC 7% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
@@ -190,8 +190,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP7_2" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP7_2</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP7_2</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4777_child"/>
     	<field name="name">IGIC 7% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
@@ -200,8 +200,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP7" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP7</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP7</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="name">IGIC 7% Venta con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -209,8 +209,8 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP7_1'), ref('account_tax_template_igic_s_ISP7_2')])]"/>
     </record>
     <record id="account_tax_template_igic_s_ISP95_1" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP95_1</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP95_1</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4727_child"/>
     	<field name="name">IGIC 9,5% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
@@ -219,8 +219,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP95_2" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP95_2</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP95_2</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4777_child"/>
     	<field name="name">IGIC 9,5% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
@@ -229,8 +229,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP95" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP95</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP95</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="name">IGIC 9,5% Venta con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -238,8 +238,8 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP95_1'), ref('account_tax_template_igic_s_ISP95_2')])]"/>
     </record>
     <record id="account_tax_template_igic_s_ISP135_1" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP135_1</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP135_1</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4727_child"/>
     	<field name="name">IGIC 13,5% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
@@ -248,8 +248,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP135_2" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP135_2</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP135_2</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4777_child"/>
     	<field name="name">IGIC 13,5% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
@@ -258,8 +258,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP135" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP135</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP135</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="name">IGIC 13,5% Venta con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -267,8 +267,8 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP135_1'), ref('account_tax_template_igic_s_ISP135_2')])]"/>
     </record>
     <record id="account_tax_template_igic_s_ISP200_1" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP200_1</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP200_1</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4727_child"/>
     	<field name="name">IGIC 20% Venta con Inversión del Sujeto Pasivo (1)</field>
     	<field name="refund_account_id" ref="pgc_4727_child"/>
@@ -277,8 +277,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP200_2" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP200_2</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP200_2</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="account_id" ref="pgc_4777_child"/>
     	<field name="name">IGIC 20% Venta con Inversión del Sujeto Pasivo (2)</field>
     	<field name="refund_account_id" ref="pgc_4777_child"/>
@@ -287,8 +287,8 @@
         <field name="amount_type">percent</field>
     </record>
     <record id="account_tax_template_igic_s_ISP200" model="account.tax.template">
-    	<field name="description">P_IGIC_ISP200</field>
-    	<field name="type_tax_use">purchase</field>
+    	<field name="description">S_IGIC_ISP200</field>
+    	<field name="type_tax_use">sale</field>
     	<field name="name">IGIC 20% Venta con Inversión del Sujeto Pasivo</field>
         <field eval="100" name="amount"/>
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>

@@ -2957,4 +2957,73 @@
         <field name="tax_src_id" ref="account_tax_template_igic_r_200"/>
         <field name="tax_dest_id" ref="account_tax_template_igic_re_ex"/>
     </record>
+    <!-- =========================== -->
+	<!-- IGIC Comerciante minoristas -->
+	<!-- =========================== -->
+	<record id="igic_fp_minorista" model="account.fiscal.position.template">
+        <field name="name">IGIC Proveedor minorista</field>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+    </record>
+     <!--Soportado Operaciones corrientes -->
+	<record id="igic_fp_minorista_0" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_0"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_3" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_3"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_7" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_7"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_9_5" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_9_5"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_13_5" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_13_5"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_200" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_200"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <!--Soportado Operaciones de inversion -->
+    <record id="igic_fp_minorista_0_inv" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_0_inv"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_3_inv" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_3_inv"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_7_inv" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_7_inv"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_9_5_inv" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_9_5_inv"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_13_5_inv" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_13_5_inv"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
+    <record id="igic_fp_minorista_200_inv" model="account.fiscal.position.tax.template">
+        <field name="position_id" ref="igic_fp_minorista"/>
+        <field name="tax_src_id" ref="account_tax_template_igic_sop_200_inv"/>
+        <field name="tax_dest_id" eval="0"/>
+    </record>
 </odoo>
