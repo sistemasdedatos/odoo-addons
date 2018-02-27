@@ -6,6 +6,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [sd_l10n_es_igic](sd_l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
+[sd_l10n_es_aeat_mod420](sd_l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>
 
 Unported addons
 ---------------
