@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'SDatos Distribution Price Margin',
-    'version' : '0.1',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Purchases',
@@ -36,7 +36,7 @@ This module allows introduce benefits margin in distribution cost of purchases
     # End General Data
     'depends' : ['sale',
                  'purchase_landed_cost'],
-    'data': ['views/sd_purchase_cost_distribution_view.xml'],
+    'data': ['views/purchase_cost_distribution_view.xml'],
     'images':[],                
     'installable': False,
     'auto_install': False,        

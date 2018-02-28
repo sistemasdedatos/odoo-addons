@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   	<record id="inherit_purchase_cost_distribution_form" model="ir.ui.view">
+		<field name="name">inherit.purchase.cost.distribution.form</field>
+		<field name="model">purchase.cost.distribution</field>
+		<field name="inherit_id" ref="purchase_landed_cost.purchase_cost_distribution_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='currency_id']" position="after">
+				<field name="benefit_margin"/>
+				<button colspan="2" name="set_margin" type="object" string="Set Margin"
+                           attrs="{'invisible': [('state', 'in', ['done', 'error'])]}" class="oe_link oe_edit_only"
+                           help="Set global margin in all lines"/>
+			</xpath>
+   			<xpath expr="//field[@name='standard_price_new']" position="after">
+   				<field name="benefit_margin"/>
+   				<field name="prev_pvp" string="PVP previo"/>
+   				<field name="benefit_price"/>
+   			</xpath>
+   			<xpath expr="//field[@name='move_id']" position="before">
+               	<field name="partner"/>
+               </xpath>
+               <xpath expr="//field[@name='move_id']" position="attributes">
+               	<attribute name="invisible">1</attribute>
+               </xpath>
+   		</field>
+   	</record>
+   	<record id="inherit_view_purchase_cost_distribution_line_form" model="ir.ui.view">
+		<field name="name">inherit.purchase.cost.distribution.line.form</field>
+		<field name="model">purchase.cost.distribution.line</field>
+		<field name="inherit_id" ref="purchase_landed_cost.view_purchase_cost_distribution_line_form"/>
+		<field name="arch" type="xml">
+   			<xpath expr="//field[@name='product_price_unit']" position="after">
+   	        	<field name="benefit_margin" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
+   	        	<field name="prev_pvp" string="PVP previo"/>
+                   <field name="benefit_price" readonly="1"/>
+                   <field name="state" invisible="1"/>
+               </xpath>
+           </field>
+       </record>
+</odoo>
+		
