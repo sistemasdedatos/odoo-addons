@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 14:27+0000\n"
-"PO-Revision-Date: 2016-10-18 14:27+0000\n"
+"POT-Creation-Date: 2018-03-01 09:53+0000\n"
+"PO-Revision-Date: 2018-03-01 09:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,21 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sd_distribution_price_margin
-#: model:ir.model,name:sd_distribution_price_margin.model_purchase_cost_distribution_line
-msgid "Purchase cost distribution Line"
-msgstr "Línea de distribución de costes de compras"
+#: model:ir.model.fields,help:sd_distribution_price_margin.field_purchase_cost_distribution_benefit_margin
+msgid "If the margin is less than 0, it does not apply"
+msgstr "Si el margen es menor que 0, no se modificará el precio de venta"
 
 #. module: sd_distribution_price_margin
-#: model:ir.model,name:sd_distribution_price_margin.model_purchase_cost_distribution
-msgid "Purchase landed costs distribution"
-msgstr "Distribución de costes de compra"
-
-#. module: sd_distribution_price_margin
-#: field:purchase.cost.distribution,benefit_margin:0
-#: field:purchase.cost.distribution.line,benefit_margin:0
+#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_benefit_margin
+#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_benefit_margin
 msgid "Margin %"
-msgstr "Margen de beneficio (%)"
+msgstr "Margen %"
+
+#. module: sd_distribution_price_margin
+#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_purchase_cost_distribution_form
+#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_view_purchase_cost_distribution_line_form
+msgid "Old sale price"
+msgstr "PVP previo"
 
 #. module: sd_distribution_price_margin
 #: model:ir.model,name:sd_distribution_price_margin.model_purchase_cost_distribution_line
@@ -42,12 +43,76 @@ msgid "Purchase landed costs distribution"
 msgstr "Distribución de costes de compra"
 
 #. module: sd_distribution_price_margin
-#: field:purchase.cost.distribution.line,benefit_price:0
+#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_benefit_price
+#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
 msgid "Sale Price"
 msgstr "Precio de venta"
 
 #. module: sd_distribution_price_margin
-#: field:purchase.cost.distribution.line,state:0
+#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_purchase_cost_distribution_form
+msgid "Set Margin"
+msgstr "Establecer margen"
+
+#. module: sd_distribution_price_margin
+#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_purchase_cost_distribution_form
+msgid "Set the global margin in every lines"
+msgstr "Establecer el margen global a cada línea"
+
+#. module: sd_distribution_price_margin
+#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_state
 msgid "Status"
 msgstr "Estado"
 
+#. module: sd_distribution_price_margin
+#: model:ir.model.fields,help:sd_distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
+msgid "The sale price is managed from the product template. Click on the 'Variant Prices' button to set the extra attribute prices."
+msgstr "El precio de venta se gestiona desde la plantilla del producto. Haga clic en el botón 'Precios variantes' para establecer los precios adicionales de los atributos."
+
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_expense_amount
+msgid "Cost amount"
+msgstr "Importe de coste"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_standard_price_new
+msgid "New cost"
+msgstr "Nuevo coste"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_standard_price_old
+msgid "Previous cost"
+msgstr "Coste previo"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_import_invoice_line_wizard_supplier
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_picking_import_wizard_supplier
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_partner
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_total_expense
+msgid "Total expenses"
+msgstr "Gstos totales"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_total_purchase
+msgid "Total purchase"
+msgstr "Total compra"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_total_uom_qty
+msgid "Total quantity"
+msgstr "Cantidad total"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_cost_ratio
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_expense_cost_ratio
+msgid "Unit cost"
+msgstr "Coste unitario"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_product_price_unit
+msgid "Unit price"
+msgstr "Precio unitario"

@@ -7,7 +7,8 @@ class PurchaseCostDistribution(models.Model):
     
     cost_lines = fields.One2many(readonly=True, states={'draft': [('readonly', False)], 'calculated': [('readonly', False)]})
     benefit_margin = fields.Float (string = 'Margin %', readonly=True,
-                                   states = {'draft': [('readonly', False)], 'calculated': [('readonly', False)]}, default = -1)
+                                   states = {'draft': [('readonly', False)], 'calculated': [('readonly', False)]}, default = -1,
+                                   help = "If the margin is less than 0, it does not apply")
     
     @api.multi
     def action_calculate (self):
@@ -37,4 +38,4 @@ class PurchaseCostDistributionLine(models.Model):
     state = fields.Selection (readonly = True, related = "distribution.state")
     benefit_margin = fields.Float (string = 'Margin %', readonly = False, default = -1)
     benefit_price = fields.Float (string = 'Sale Price', readonly = True)
-    prev_pvp = fields.Float (related="product_id.lst_price", readonly = True)
+    old_sale_price = fields.Float (related="product_id.lst_price", readonly = True)

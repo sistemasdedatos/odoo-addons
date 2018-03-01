@@ -7,6 +7,7 @@ addon | version | summary
 --- | --- | ---
 [sd_l10n_es_igic](sd_l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
 [sd_l10n_es_aeat_mod420](sd_l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>
+[sd_distribution_price_margin](sd_distriburion_price_margin/) | 10.0.0.1 | This module allows introduce benefits margin in distribution cost of purchases
 
 Unported addons
 ---------------
@@ -24,7 +25,6 @@ addon | version | summary
 [sd_custom_por_ticket](sd_custom_pos_ticket/) | 10.0.0.0 (unported) |
 [sd_custom_translated](sd_custom_translated/) | 10.0.0.0 (unported) | This module edit the translations in buttons
 [sd_digital_sign](sd_digital_sign/) | 10.0.0.0 (unported) | This module provides the functionality to store digital signature image for a record.
-[sd_distribution_price_margin](sd_distriburion_price_margin/) | 10.0.0.0 (unported) | This module allows introduce benefits margin in distribution cost of purchases
 [sd_download_backup](sd_download_backup/) | 10.0.0.0 (unported) | Easy download backups for clients
 [sd_ean13_generator](sd_ean13_generator/) | 10.0.0.0 (unported) | Gen EAN13 for product variants
 [sd_employee_report](sd_employee_report/) | 10.0.0.0 (unported) | This module allows print employee spending in tasks with a period.
