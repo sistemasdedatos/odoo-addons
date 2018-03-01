@@ -7,6 +7,7 @@
 .settings
 .settings/*
 .project
+.pydevproject
 te-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
