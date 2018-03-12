@@ -21,7 +21,6 @@ addon | version | summary
 [sd_cost_repercution_purchase](sd_cost_repercurion_purchase/) | 10.0.0.0 (unported) | This module allows to repercute Tax or discount purchase in the product cost
 [sd_crm_lead_sale_link](sd_crm_lead_sale_link/) | 10.0.0.0 (unported) | This module fix functionality from parent module, now we can see the real SO from each leads using origin field as filter
 [sd_crm_prevision](sd_crm_prevision/) | 10.0.0.0 (unported) | Module to modify function of sale forecast. With this modification, sale forecast is edit with opportunities values.
-[sd_custom_login](sd_custom_login/) | 10.0.0.0 (unported) | This module cutomize the login page
 [sd_custom_por_ticket](sd_custom_pos_ticket/) | 10.0.0.0 (unported) |
 [sd_custom_translated](sd_custom_translated/) | 10.0.0.0 (unported) | This module edit the translations in buttons
 [sd_digital_sign](sd_digital_sign/) | 10.0.0.0 (unported) | This module provides the functionality to store digital signature image for a record.
