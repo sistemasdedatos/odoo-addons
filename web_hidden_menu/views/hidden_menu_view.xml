@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	    <record model="ir.ui.view" id="view_hidden_template_form">
+	        <field name="name">hidden.menu.form</field>
+	        <field name="model">hidden.menu</field>
+	        <field name="arch" type="xml">
+	            <form string="Hidden Menu">
+	                <sheet>
+	                    <group name="hidden-template-help">
+	                        <p>Select a menu that you want to hide.</p>
+	                   </group>
+                   		<group>
+                   			<group>
+	                        	<field name="name"/>
+	                        </group>
+	                        <group>
+	                        	<field name="active"/>
+	                        </group>
+	                    </group>
+	                    <group>
+	                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                            <field name="users" widget="many2many_tags"/>
+                            <field name="groups" widget="many2many_tags"/>
+                        </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+	
+	    <record model="ir.ui.view" id="view_hidden_menu_tree">
+	        <field name="name">hidden.menu.tree</field>
+	        <field name="model">hidden.menu</field>
+	        <field name="arch" type="xml">
+	            <tree string="Hidden Menu">
+	                 <field name="name"/>
+	                 <field name="company_id" groups="base.group_multi_company"/>
+	                 <field name="active"/>
+	                 <field name="users"/>
+	                 <field name="groups"/>
+	            </tree>
+	        </field>
+	    </record>
+	
+	    <record model="ir.actions.act_window" id="action_hidden_menus_form">
+	        <field name="name">Hidden Menus</field>
+	        <field name="res_model">hidden.menu</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="view_id" ref="view_hidden_menu_tree"/>
+	        <field name="help" type="html">
+	          <p class="oe_view_nocontent_create">
+	            Click to add a menu to hidde.
+	          </p>
+	        </field>
+	    </record>
+	
+	    <menuitem id="menu_hidden_view" action="action_hidden_menus_form"
+	        parent="base.next_id_2"/>
+	</data>
+</openerp>

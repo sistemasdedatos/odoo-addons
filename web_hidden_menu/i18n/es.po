@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* web_hidden_menu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-09 11:35+0000\n"
+"PO-Revision-Date: 2018-03-09 11:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_hidden_menu
+#: model:ir.actions.act_window,help:web_hidden_menu.action_hidden_menus_form
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"	            Click to add a menu to hidde.\n"
+"	          </p>\n"
+"	        "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"	            Click para añadir un menú a ocultar.\n"
+"	          </p>\n"
+"	        "
+
+#. module: web_hidden_menu
+#: field:hidden.menu,active:0
+msgid "Active"
+msgstr "Activo"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,groups:0
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: web_hidden_menu
+#: view:hidden.menu:web_hidden_menu.view_hidden_menu_tree
+#: view:hidden.menu:web_hidden_menu.view_hidden_template_form
+msgid "Hidden Menu"
+msgstr "Menú oculto"
+
+#. module: web_hidden_menu
+#: model:ir.actions.act_window,name:web_hidden_menu.action_hidden_menus_form
+#: model:ir.ui.menu,name:web_hidden_menu.menu_hidden_view
+msgid "Hidden Menus"
+msgstr "Menus ocultos"
+
+#. module: web_hidden_menu
+#: model:ir.model,name:web_hidden_menu.model_hidden_menu
+msgid "Hidden menu"
+msgstr "Menú oculto"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: web_hidden_menu
+#: field:hidden.menu,name:0
+msgid "Menu"
+msgstr "Menú"
+
+#. module: web_hidden_menu
+#: view:hidden.menu:web_hidden_menu.view_hidden_template_form
+msgid "Select a menu that you want to hide."
+msgstr "Elija el menú que desea ocultar."
+
+#. module: web_hidden_menu
+#: field:hidden.menu,users:0
+msgid "Users"
+msgstr "Usuarios"
+
