@@ -51,3 +51,4 @@ addon | version | summary
 [sd_task_link_sale](sd_task_link_sale/) | 8.0.0.1 | Link between sale and tasks
 [sd_telegram_extension](sd_telegram_extension/) | 8.0.0.1 | Module that add commands for telegram api
 [sd_user_warehouse](sd_user_warehouse/) | 8.0.1.6 | This module allows define a preferred warehouse for each salesman/user
+[web_hidden_menu](web_hidden_menu/) | 8.0.0.1 | This module allows to hide menu items for some users and/or groups, without interfering with access rules
