@@ -18,10 +18,7 @@
                                 <field name="product_id"/>
                                 <field name="product_uom_qty"/>
                                 <field name="product_uom" groups="product.group_uom"/>
-<<<<<<< HEAD
                                 <field name="price_unit"/>
-=======
->>>>>>> 0fab2cf... Modulo sd_purchase_order_add_variant para cargar las variantes desde la
                             </tree>
                         </field>
                     </group>

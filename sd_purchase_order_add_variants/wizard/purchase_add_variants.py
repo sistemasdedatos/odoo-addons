@@ -42,13 +42,8 @@ class purchaseAddVariants(models.TransientModel):
                 variant_lines.append([0, 0, {
                     'product_id': variant.id,
                     'product_uom_qty': 0,
-<<<<<<< HEAD
                     'product_uom': variant.uom_id.id,
                     'price_unit': 0.0
-=======
-                    'product_uom': variant.uom_id.id
->>>>>>> 0fab2cf... Modulo sd_purchase_order_add_variant para cargar las variantes desde la
-                    
                 }])
             self.variant_line_ids = variant_lines
 
@@ -59,29 +54,17 @@ class purchaseAddVariants(models.TransientModel):
         for line in self.variant_line_ids:
             if not line.product_uom_qty:
                 continue
-<<<<<<< HEAD
-=======
-            print line.product_uom_qty
->>>>>>> 0fab2cf... Modulo sd_purchase_order_add_variant para cargar las variantes desde la
             line_values = {
                 'product_id': line.product_id.id,
                 'product_qty': line.product_uom_qty,
                 'product_uom': line.product_uom.id,
                 'order_id': purchase_order.id,
-<<<<<<< HEAD
                 'price_unit': line.price_unit,
                 'name': line.product_id.display_name,
                 'date_planned': purchase_order.date_order,
             }
             l = purchase_order.order_line.create(line_values)
             l.onchange_item_id ()
-=======
-                'price_unit': line.product_id.cost_price,
-                'name': line.product_id.display_name,
-                'date_planned': purchase_order.date_order,
-            }
-            purchase_order.order_line.create(line_values)
->>>>>>> 0fab2cf... Modulo sd_purchase_order_add_variant para cargar las variantes desde la
 
     @api.multi
     def add_to_order_continue(self):
@@ -113,8 +96,5 @@ class purchaseAddVariantsLine(models.TransientModel):
         string="Quantity", digits_compute=dp.get_precision('Product UoS'))
     product_uom = fields.Many2one('product.uom', string='Unit of Measure ',
                                   required=True)
-<<<<<<< HEAD
     price_unit = fields.Float(
         string="Price", digits_compute=dp.get_precision('Product Price'))
-=======
->>>>>>> 0fab2cf... Modulo sd_purchase_order_add_variant para cargar las variantes desde la

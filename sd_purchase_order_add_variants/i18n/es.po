@@ -91,14 +91,11 @@ msgid "Last Updated on"
 msgstr "Last Updated on"
 
 #. module: sd_purchase_order_add_variants
-<<<<<<< HEAD
 #: field:purchase.add.variants.line,price_unit:0
 msgid "Price"
 msgstr "Precio"
 
 #. module: sd_purchase_order_add_variants
-=======
->>>>>>> 0fab2cf... Modulo sd_purchase_order_add_variant para cargar las variantes desde la
 #: field:purchase.add.variants.line,product_uom_qty:0
 msgid "Quantity"
 msgstr "Cantidad"
