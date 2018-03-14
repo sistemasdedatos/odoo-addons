@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 #    Copyright 2018 Sistemas de Datos - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
-from openerp import models, fields
+from openerp import models, fields, api
 
 class hidden_menu(models.Model):
     _name = 'hidden.menu'
@@ -23,3 +23,13 @@ class hidden_menu(models.Model):
     company_id = fields.Many2one(
         comodel_name='res.company', string='Company', index=True,
         required=True, default=_default_company)
+    
+    @api.model
+    def create(self, vals):
+        self.env['ir.model.access'].call_cache_clearing_methods()
+        return super(hidden_menu, self).create(vals)
+    
+    @api.multi
+    def write (self, vals):
+        self.env['ir.model.access'].call_cache_clearing_methods()
+        return super(hidden_menu, self).write(vals)
