@@ -10,14 +10,18 @@ class ir_ui_menu(models.Model):
 
     @api.multi
     def _check_hidden_model(self, menus):
-        hidden_menus = self.env['hidden.menu'].search([('name', 'in', list(map(lambda x: x.id, menus))),
+        hidden_menus = self.env['hidden.menu'].search([('menus', 'in', list(map(lambda x: x.id, menus))),
                                                        ('company_id', '=', self.env.user.company_id.id),
                                                        ('active', '=', True),'|',
                                                        ('users', 'child_of', self.env.user.id),
                                                        ('groups', 'in', list(map(lambda x: x.id, self.env.user.groups_id)))])
-        list(map(lambda x: x.name.id, hidden_menus))
-        return self.browse(map(lambda x: x.name.id, hidden_menus))
-    
+        res = []
+        for m in map(lambda x: map(lambda y: y.id, x.menus), hidden_menus):
+            for i in m:
+                if i not in res:
+                    res.append(i)
+        return self.browse(res)
+     
     @api.multi
     @api.returns('self')
     def _filter_visible_menus(self):

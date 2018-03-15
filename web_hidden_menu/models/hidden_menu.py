@@ -10,8 +10,10 @@ class hidden_menu(models.Model):
     def _default_company(self):
         return self.env['res.company']._company_default_get('hidden.template')
 
-    name = fields.Many2one(
-        comodel_name='ir.ui.menu', string='Menu', required=True)
+    name = fields.Char(string='Description', required=True)
+    menus = fields.Many2many(
+        comodel_name='ir.ui.menu', string='Menus', relation='hidden_menu_menu',
+        column1='hidden_menu', column2='menu', required=True)
     users = fields.Many2many(
         comodel_name='res.users', string='Users', relation='hidden_menu_user',
         column1='hidden_menu', column2='hidden_user')

@@ -95,8 +95,8 @@ msgstr "Last Updated on"
 
 #. module: web_hidden_menu
 #: field:hidden.menu,name:0
-msgid "Menu"
-msgstr "Menú"
+msgid "Description"
+msgstr "Descripción"
 
 #. module: web_hidden_menu
 #: view:hidden.menu:web_hidden_menu.view_hidden_template_form

@@ -20,7 +20,8 @@
 	                    </group>
 	                    <group>
 	                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-                            <field name="users" widget="many2many_tags"/>
+	                        <field name="menus" widget="many2many_tags" options="{'no_create': True}"/>
+                            <field name="users" widget="many2many_tags" options="{'no_create': True}"/>
                             <field name="groups" widget="many2many_tags"/>
                         </group>
 	                </sheet>
@@ -36,6 +37,7 @@
 	                 <field name="name"/>
 	                 <field name="company_id" groups="base.group_multi_company"/>
 	                 <field name="active"/>
+	                 <field name="menus"/>
 	                 <field name="users"/>
 	                 <field name="groups"/>
 	            </tree>
