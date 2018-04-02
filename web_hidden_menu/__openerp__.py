@@ -3,7 +3,7 @@
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
 {
     'name' : 'Web Hidden Menu',
-    'version' : '1.0',
+    'version' : '1.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Web',

@@ -27,6 +27,7 @@ class ir_ui_menu(models.Model):
     def _filter_visible_menus(self):
         with self._menu_cache_lock:
             res = super(ir_ui_menu,self)._filter_visible_menus()
-            to_hidde = self._check_hidden_model(res)
-            res = res - to_hidde
+            if self.env.user.id != 1:                           #No se aplica para el usuario administrador, caso contrario, error /usr/lib/python2.7/threading.py(212)release() - self._note("%s.release(): non-final release", self)
+                to_hidde = self._check_hidden_model(res)
+                res = res - to_hidde
             return res
