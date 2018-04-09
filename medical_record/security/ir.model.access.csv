@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_record_user,medical.record.user,model_medical_record,group_medical_user,1,0,0,0
+access_medical_record_progress_user,medical.record.progress.user,model_medical_record_progress,group_medical_user,1,0,0,0
+access_medical_record_test_user,medical.record.test.user,model_medical_record_test,group_medical_user,1,0,0,0
+access_medical_record_manager,medical.record.manager,model_medical_record,group_medical_manager,1,1,1,1
+access_medical_record_progress_manager,medical.record.progress.manager,model_medical_record_progress,group_medical_manager,1,1,1,1
+access_medical_record_test_manager,medical.record.test.manager,model_medical_record_test,group_medical_manager,1,1,1,1

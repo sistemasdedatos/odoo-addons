@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="medical_record_progress_form_view">
+		<field name="name">medical.record.progress.form</field>
+		<field name="model">medical.record.progress</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Progress">
+				<sheet>
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="medical_record_id"/>
+						</group>
+						<group>
+							<field name="date"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record id="view_medical_record_progress_tree" model="ir.ui.view">
+		<field name="name">medical.record.progress.tree</field>
+		<field name="model">medical.record.progress</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Progress">
+				<field name="name"/>
+				<field name="date"/>
+				<field name="medical_record_id" invisible="True"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record model="ir.ui.view" id="medical_record_test_form_view">
+		<field name="name">medical.record.test.form</field>
+		<field name="model">medical.record.test</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Test">
+				<sheet>
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="medical_record_id"/>
+						</group>
+						<group>
+							<field name="date"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record id="view_medical_record_test_tree" model="ir.ui.view">
+		<field name="name">medical.record.test.tree</field>
+		<field name="model">medical.record.test</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Test">
+				<field name="name"/>
+				<field name="date"/>
+				<field name="medical_record_id" invisible="True"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="view_medical_record_tree" model="ir.ui.view">
+		<field name="name">medical.record.tree</field>
+		<field name="model">medical.record</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Medical Records">
+				<field name="name" />
+				<field name="date" />
+				<field name="partner_id" />
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="medical_record_form_view">
+		<field name="name">medical.record.form</field>
+		<field name="model">medical.record</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<field name="partner_id" invisible="True"/>
+					<div class="oe_title">
+						<h1>
+							<label for="name" class="oe_edit_only"/>
+							<field name="name"/>
+						</h1>
+						<label for="date" class="oe_edit_only"/>
+						<field name="date"/>
+					</div>
+					<group string="Consultation reason">
+						<field name="consultation_reason" nolabel="1"/>
+					</group>
+    				<group string="Personal antecedents">
+						<field name="personal_antecedents" nolabel="1"/>
+					</group>
+					<group string="Family antecedents">
+						<field name="family_antecedents" nolabel="1"/>
+					</group>
+					<group string="Allergies">
+						<field name="allergies" nolabel="1" placeholder="Allergies, including medications..."/>
+					</group>
+					<group string="Medicines">
+						<field name="medicines" nolabel="1" placeholder="Medications currently taken by the patient..."/>
+					</group>
+					<group string="Anamnesis">
+						<field name="anamnesis" nolabel="1"/>
+					</group>
+					<group string="Phisical exploration">
+						<field name="phisical_exploration" nolabel="1"/>
+					</group>
+					<group string="BMI">
+						<field name="bmi" nolabel="1" placeholder="Body mass index..."/>
+					</group>
+					<group string="Additional tests">
+						<field name="additional_test_ids" nolabel="1" context="{'default_medical_record_id': active_id}"/>
+					</group>
+					<group string="Diagnostic guidance">
+						<field name="diagnostic_guidance" nolabel="1"/>
+					</group>
+					<group string="Therapeutic indication">
+						<field name="therapeutic_indication" nolabel="1"/>
+					</group>
+					<group string="Preoperative">
+						<field name="preoperative" nolabel="1"/>
+					</group>
+					<group string="Operating room date">
+						<group>
+							<field name="operating_room_date" nolabel="1"/>
+						</group>
+					</group>
+					<group string="Progress">
+						<field name="progress_ids" nolabel="1" context="{'default_medical_record_id': active_id}"/>
+					</group>
+					<group string="Comments">
+						<field name="comments" nolabel="1"/>
+					</group>
+				</sheet>
+				<div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+			</form>
+		</field>
+	</record>
+	
+</odoo>

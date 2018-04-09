@@ -1,0 +1,452 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_record
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-09 08:42+0000\n"
+"PO-Revision-Date: 2018-04-09 08:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<b>Patient information:</b>"
+msgstr "<b>Información del paciente:</b>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Additional tests</strong>"
+msgstr "<strong>Pruebas complementarias</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Address:</strong>"
+msgstr "<strong>Dirección:</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Allergies</strong>"
+msgstr "<strong>Alergias</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Anamnesis</strong>"
+msgstr "<strong>Anamnesis</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>BMI</strong>"
+msgstr "<strong>IMC</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Comments</strong>"
+msgstr "<strong>Observaciones</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Consultation reason</strong>"
+msgstr "<strong>Motivo de la consulta</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Diagnostic guidance</strong>"
+msgstr "<strong>Orientación diagnóstica</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Family antecedents</strong>"
+msgstr "<strong>Antecedentes familiares</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Medicines</strong>"
+msgstr "<strong>Fármacos que toma en la actualidad el paciente</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Mobile:</strong>"
+msgstr "<strong>Móvil:</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Name:</strong>"
+msgstr "<strong>Nombre:</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Operating room date</strong>"
+msgstr "<strong>Fecha quirófano</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Personal antecedents</strong>"
+msgstr "<strong>Antecedentes personales</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Phisical exploration</strong>"
+msgstr "<strong>Exploración física</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>Teléfono:</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Postoperative</strong>"
+msgstr "<strong>Postoperatorio</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Preoperative</strong>"
+msgstr "<strong>Preoperatorio</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Progress</strong>"
+msgstr "<strong>Evolución</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>TIN:</strong>"
+msgstr "<strong>NIF:</strong>"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "<strong>Therapeutic indication</strong>"
+msgstr "<strong>Indicación terapéutica</strong>"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_additional_test_ids
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Additional tests"
+msgstr "Pruebas adicionales"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_allergies
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Allergies"
+msgstr "Alergias"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Allergies, including medications..."
+msgstr "Alergias, incluídas las medicamentosas..."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_anamnesis
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Anamnesis"
+msgstr "Anamnesis"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_bmi
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "BMI"
+msgstr "IMC"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_bmi
+msgid "Body mass index"
+msgstr "Índice de masa corporal"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Body mass index..."
+msgstr "Índice de masa corporal..."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_comments
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_consultation_reason
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Consultation reason"
+msgstr "Motivo de la consulta"
+
+#. module: medical_record
+#: model:ir.actions.act_window,help:medical_record.act_res_partner_2_medical_record
+msgid "Create a new Medical Record."
+msgstr "Crear nueva instancia de historia clínica."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_date
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "Date"
+msgstr "Fecha"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_name
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_diagnostic_guidance
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Diagnostic guidance"
+msgstr "Orientación diagnóstica"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_family_antecedents
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Family antecedents"
+msgstr "Antecedentes familiares"
+
+#. module: medical_record
+#: model:ir.actions.report.xml,name:medical_record.report_full_medical_record
+msgid "Full Medical record"
+msgstr "Historia clínica completa"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_allergies
+msgid "Including medications"
+msgstr "Incluídas medicamentosas"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record___last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress___last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "Medical Record"
+msgstr "Historia Clínica"
+
+#. module: medical_record
+#: model:res.groups,name:medical_record.group_medical_manager
+msgid "Medical Record Manager"
+msgstr "Administrador de Historial Médico"
+
+#. module: medical_record
+#: model:res.groups,name:medical_record.group_medical_user
+msgid "Medical Record User"
+msgstr "Usuario de Historial Médico"
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.act_res_partner_2_medical_record
+#: model:ir.ui.view,arch_db:medical_record.res_partner_view_medical_button
+#: model:ir.ui.view,arch_db:medical_record.view_medical_record_tree
+msgid "Medical Records"
+msgstr "Historial Médico"
+
+#. module: medical_record
+#: model:ir.actions.report.xml,name:medical_record.report_medical_record
+#: model:ir.model,name:medical_record.model_medical_record
+msgid "Medical record"
+msgstr "Historial Médico"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_medical_record_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_medical_record_id
+msgid "Medical record id"
+msgstr "Medical record id"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_progress
+msgid "Medical record progress"
+msgstr "Medical record progress"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_test
+msgid "Medical record test"
+msgstr "Medical record test"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_res_partner_medical_record_ids
+#: model:ir.model.fields,field_description:medical_record.field_res_users_medical_record_ids
+msgid "Medical records"
+msgstr "Historial Médico"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_res_partner_medical_record_count
+#: model:ir.model.fields,field_description:medical_record.field_res_users_medical_record_count
+msgid "Medical records count"
+msgstr "Medical records count"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_medicines
+msgid "Medications currently taken by the patient"
+msgstr "Fármacos que toma actualmente el paciente"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Medications currently taken by the patient..."
+msgstr "Fármacos que toma actualmente el paciente..."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_medicines
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Medicines"
+msgstr "Medicinas"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_operating_room_date
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Operating room date"
+msgstr "Fecha de reserva de quirófano"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_res_partner
+msgid "Partner"
+msgstr "Paciente"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_partner_id
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_personal_antecedents
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Personal antecedents"
+msgstr "Antecedentes personales"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_phisical_exploration
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Phisical exploration"
+msgstr "Exploración física"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_postoperative
+msgid "Postoperative"
+msgstr "Postoperatorio"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_preoperative
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Preoperative"
+msgstr "Preoperatorio"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_ids
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#: model:ir.ui.view,arch_db:medical_record.medical_record_progress_form_view
+#: model:ir.ui.view,arch_db:medical_record.view_medical_record_progress_tree
+msgid "Progress"
+msgstr "Evolución"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_progress_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_test_name
+#: model:ir.ui.view,arch_db:medical_record.medical_record_test_form_view
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+#: model:ir.ui.view,arch_db:medical_record.view_medical_record_test_tree
+msgid "Test"
+msgstr "Prueba"
+
+#. module: medical_record
+#: model:res.groups,comment:medical_record.group_medical_user
+msgid "The user will be able to view a patient's medical history, but not edit it."
+msgstr "El usuario podrá ver el historial médico del paciente, pero no editarlo."
+
+#. module: medical_record
+#: model:res.groups,comment:medical_record.group_medical_manager
+msgid "The user will be able to view and edit a patient's medical history."
+msgstr "El usuario podrá ver y editar el historial médico de un paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_therapeutic_indication
+#: model:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Therapeutic indication"
+msgstr "Indicaciones terapéuticas"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "Visit:"
+msgstr "Visita:"
+
+#. module: medical_record
+#: model:ir.ui.view,arch_db:medical_record.report_medical_document
+#: model:ir.ui.view,arch_db:medical_record.report_medical_full_document
+msgid "With date:"
+msgstr "Con fecha:"

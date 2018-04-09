@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="group_medical_user" model="res.groups">
+        <field name="name">Medical Record User</field>
+        <field name="category_id" ref="base.module_category_extra"/>
+        <field name="comment">The user will be able to view a patient's medical history, but not edit it.</field>
+    </record>
+    <record id="group_medical_manager" model="res.groups">
+        <field name="name">Medical Record Manager</field>
+        <field name="category_id" ref="base.module_category_extra"/>
+        <field name="implied_ids" eval="[(4, ref('medical_record.group_medical_user'))]"/>
+        <field name="comment">The user will be able to view and edit a patient's medical history.</field>
+    </record>
+</odoo>

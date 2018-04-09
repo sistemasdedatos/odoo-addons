@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="report_medical_full_document">
+		<t t-call="report.external_layout">
+			<t t-set="doc" t-value="doc.with_context({'lang':doc.lang})" />
+			<div class="page">
+				<h1 style="text-align:center">Medical Record</h1>
+				<div id="information">
+					<h4><b>Patient information:</b></h4>
+					<div>
+						<span>
+							<strong>Name:</strong>
+							<span t-field="doc.name"/>
+						</span>
+						<span t-if="doc.vat">
+							<strong>TIN:</strong>
+							<span t-field="doc.vat"/>
+						</span>
+					</div>
+				    <div id="address">
+				    	<span>
+				    		<strong>Address:</strong>
+					    	<span t-field="doc.street"/>
+					    	<span t-field="doc.street2"/>
+					    	<span t-field="doc.zip"/>
+					    	<span t-field="doc.city"/>
+					    	<span t-field="doc.state_id.name"/>
+					    	<span t-field="doc.country_id.name"/>
+					    </span>				    
+                    </div>
+                    <div>
+                    	<span t-if="doc.phone">
+                    		<strong>Phone:</strong>
+                    		<span t-field="doc.phone"/>
+                    	</span>
+                    	<span t-if="doc.mobile">
+                    		<strong>Mobile:</strong>
+                    		<span t-field="doc.mobile"/>
+                    	</span>
+                    </div>
+                    <div t-if="doc.email">
+                    	<span t-field="doc.email"/>
+                    </div>
+				</div>
+				<div t-foreach="doc.medical_record_ids" t-as="o">
+					<h3>
+						<div>
+							Visit: 
+							<span t-field="o.name"/>
+						</div>
+						<div>
+							With date:
+							<span t-field="o.date"/>
+						</div>
+					</h3>
+					<div t-if="o.consultation_reason">
+						<strong>Consultation reason</strong>
+						<p t-field="o.consultation_reason"/>
+					</div>
+					<div t-if="o.personal_antecedents">
+						<strong>Personal antecedents</strong>
+						<p t-field="o.personal_antecedents"/>
+					</div>
+					<div t-if="o.family_antecedents">
+						<strong>Family antecedents</strong>
+						<p t-field="o.family_antecedents"/>
+					</div>
+					<div t-if="o.allergies">
+						<strong>Allergies</strong>
+						<p t-field="o.allergies"/>
+					</div>
+					<div t-if="o.medicines">
+						<strong>Medicines</strong>
+						<p t-field="o.medicines"/>
+					</div>
+					<div t-if="o.anamnesis">
+						<strong>Anamnesis</strong>
+						<p t-field="o.anamnesis"/>
+					</div>
+					<div t-if="o.phisical_exploration">
+						<strong>Phisical exploration</strong>
+						<p t-field="o.phisical_exploration"/>
+					</div>
+					<div t-if="o.bmi">
+						<strong>BMI</strong>
+						<p t-field="o.bmi"/>
+					</div>
+					<div t-if="o.additional_test_ids">
+						<strong>Additional tests</strong>
+						 <table class="table table-condensed">
+		                    <thead>
+		                        <tr>
+		                            <th>Test</th>
+		                            <th class="text-right">Date</th>
+		                        </tr>
+	                        </thead>
+	                        <tbody class="sale_tbody">
+	                        	<t  t-foreach="o.additional_test_ids" t-as="l">
+                                	<tr>
+                                    	<td><span t-field="l.name"/></td>
+                                    	<td class="text-right"><span t-field="l.date"/></td>
+                                   	</tr>
+                               	</t>
+                           	</tbody>
+                       	</table>
+					</div>
+					<div t-if="o.diagnostic_guidance">
+						<strong>Diagnostic guidance</strong>
+						<p t-field="o.diagnostic_guidance"/>
+					</div>
+					<div t-if="o.therapeutic_indication">
+						<strong>Therapeutic indication</strong>
+						<p t-field="o.therapeutic_indication"/>
+					</div>
+					<div t-if="o.preoperative">
+						<strong>Preoperative</strong>
+						<p t-field="o.preoperative"/>
+					</div>
+					<div t-if="o.operating_room_date">
+						<strong>Operating room date</strong>
+						<p t-field="o.operating_room_date"/>
+					</div>
+					<div t-if="o.postoperative">
+						<strong>Postoperative</strong>
+						<p t-field="o.postoperative"/>
+					</div>
+					<div t-if="o.progress_ids">
+						<strong>Progress</strong>
+						 <table class="table table-condensed">
+		                    <thead>
+		                        <tr>
+		                            <th>Description</th>
+		                            <th class="text-right">Date</th>
+		                        </tr>
+	                        </thead>
+	                        <tbody class="sale_tbody">
+	                        	<t  t-foreach="o.progress_ids" t-as="l">
+                                	<tr>
+                                    	<td><span t-field="l.name"/></td>
+                                    	<td class="text-right"><span t-field="l.date"/></td>
+                                   	</tr>
+                               	</t>
+                           	</tbody>
+                       	</table>
+					</div>
+					<div t-if="o.comments">
+						<strong>Comments</strong>
+						<p t-field="o.comments"/>
+					</div>
+				</div>
+			</div>
+			
+		</t>
+	</template>
+	<template id="report_medical_full">
+		<t t-call="report.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="medical_record.report_medical_full_document" t-lang="doc.lang" />
+			</t>
+		</t>
+	</template>
+	<report id="report_full_medical_record" 
+			string="Full Medical record" 
+			model="res.partner"
+			report_type="qweb-pdf" 
+			file="medical_record.report_medical_full" 
+			name="medical_record.report_medical_full"
+			groups="medical_record.group_medical_user"/>
+</odoo>
