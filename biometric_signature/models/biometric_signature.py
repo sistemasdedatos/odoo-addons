@@ -1,13 +1,9 @@
 # -*- encoding: utf-8 -*-
 #    Copyright 2018 Sistemas de Datos - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
-from openerp import api, fields, models, tools, _, http
+from openerp import api, fields, models, _
 from openerp.exceptions import Warning, ValidationError
-import requests, httplib2
-from openerp.http import request, serialize_exception as _serialize_exception
-import werkzeug.utils
-import werkzeug.wrappers
-import json, flask
+import requests
 
 class BiometricConfig(models.Model):
     _name = 'biometric.config'
@@ -47,7 +43,6 @@ class BiometricConfig(models.Model):
                           500: lambda msj: _('Internal server error')}
         data = {'usuario': self.user, 
                 'clave': self.passwd}
-#         resp = requests.post(self.url+'/'+self.web_service, data)
         try:
             resp = requests.post(self.url+'/'+self.web_service, data)
             res = [resp.status_code, response_codes[resp.status_code](resp)]
