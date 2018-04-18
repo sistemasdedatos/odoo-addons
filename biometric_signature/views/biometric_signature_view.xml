@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_biometric_signature_tree" model="ir.ui.view">
+			<field name="name">biometric.signature.tree</field>
+			<field name="model">biometric.signature</field>
+			<field name="arch" type="xml">
+				<tree string="Biometric Signature">
+					<field name="model_id" />
+					<field name="biometric_config_id" />
+					<field name="field_id" invisible="True"/>
+				</tree>
+			</field>
+		</record>
+		<record id="view_biometric_signature_form" model="ir.ui.view">
+			<field name="name">biometric.signature.form</field>
+			<field name="model">biometric.signature</field>
+			<field name="arch" type="xml">
+				<form string="Biometric Signature">
+					<sheet>
+						<group>
+							<field name="model_id" />
+							<field name="biometric_config_id" />
+							<field name="field_id" invisible="True"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="action_biometric_signature" model="ir.actions.act_window">
+			<field name="name">Biometric Signature</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">biometric.signature</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<!-- <field name="search_view_id" ref="sale_order_view_search_inherit_sale" /> -->
+		</record>
+		<menuitem id="menu_biometric_signature" name="Biometric Signature"
+			parent="base.next_id_6" sequence="20" action="action_biometric_signature"/>
+	</data>
+</openerp>

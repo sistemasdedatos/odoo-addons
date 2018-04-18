@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_biometric_config_tree" model="ir.ui.view">
+			<field name="name">biometric.config.tree</field>
+			<field name="model">biometric.config</field>
+			<field name="arch" type="xml">
+				<tree string="Biometric Signature Configuration">
+					<field name="user_id" />
+					<field name="user" />
+					<field name="url" />
+					<field name="passwd" invisible="1" />
+				</tree>
+			</field>
+		</record>
+		<record id="view_biometric_config_form" model="ir.ui.view">
+			<field name="name">biometric.config.form</field>
+			<field name="model">biometric.config</field>
+			<field name="arch" type="xml">
+				<form string="Biometric Signature Configuration">
+					<sheet>
+						<group>
+							<group>
+								<field name="user" />
+								<field name="passwd" password="True" />
+								
+							</group>
+							<group>
+								<field name="url" />
+								<field name="web_service" />
+							</group>
+							<field name="user_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="action_biometric_config" model="ir.actions.act_window">
+			<field name="name">Biometric Signature Configuration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">biometric.config</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<!-- <field name="search_view_id" ref="sale_order_view_search_inherit_sale" /> -->
+		</record>
+		<menuitem id="menu_biometric_signature_config" name="Biometric Signature Config"
+			parent="base.menu_ir_property" sequence="20" action="action_biometric_config"/>
+	</data>
+</openerp>
