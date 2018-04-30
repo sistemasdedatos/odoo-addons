@@ -1,0 +1,292 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_loyalty_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-30 13:57+0000\n"
+"PO-Revision-Date: 2018-04-30 13:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_loyalty_extend
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.inherit_loyalty_program_form_view
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.partner_view_buttons_points
+msgid "<span class=\"o_stat_text\">Current points</span>"
+msgstr "<span class=\"o_stat_text\">Puntos actuales</span>"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,refund_point_rule:0
+msgid "All points"
+msgstr "Todos los puntos"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_available_points
+msgid "Available Points"
+msgstr "Puntos disponibles"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,point_expired_type:0
+msgid "Based on dates"
+msgstr "Basado en fecha"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,point_expired_type:0
+msgid "Based on points"
+msgstr "Basado en puntos"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_date_end
+msgid "Date disactivation"
+msgstr "Fecha de desactivación"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_date_add
+msgid "Date generation"
+msgstr "Fecha de generación"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,exp_type_points_type_rec:0
+msgid "Days"
+msgstr "Días"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,point_expired_type:0
+msgid "Do not expire"
+msgstr "No expiran"
+
+#. module: pos_loyalty_extend
+#: code:addons/pos_loyalty_extend/models/loyalty_program.py:91
+#, python-format
+msgid "Error when desactivating the points."
+msgstr "Error mientras se desactivaban los puntos."
+
+#. module: pos_loyalty_extend
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.inherit_loyalty_program_form_view
+msgid "Expiration and refund point rules"
+msgstr "Reglas de vencimiento y devolución de puntos"
+
+#. module: pos_loyalty_extend
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.inherit_loyalty_program_form_view
+msgid "Frequency"
+msgstr "Frecuencia"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_ir_cron_id
+msgid "Ir cron id"
+msgstr "Acción automatizada"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_points
+msgid "Loyalty Points"
+msgstr "Puntos de fidelidad"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_loyalty_program_id
+msgid "Loyalty Program"
+msgstr "Programa de fidelización"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,exp_type_points_type_rec:0
+msgid "Months"
+msgstr "Meses"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_exp_type_date
+msgid "Next Expiration date"
+msgstr "Siguiente fecha de vencimiento"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,refund_point_rule:0
+msgid "Not refund"
+msgstr "No devolver"
+
+#. module: pos_loyalty_extend
+#: model:ir.model,name:pos_loyalty_extend.model_res_partner
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: pos_loyalty_extend
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.loyalty_point_form_view
+msgid "Point"
+msgstr "Punto"
+
+#. module: pos_loyalty_extend
+#: model:ir.model,name:pos_loyalty_extend.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos del TPV"
+
+#. module: pos_loyalty_extend
+#: model:ir.actions.act_window,name:pos_loyalty_extend.act_partner_2_points
+#: model:ir.actions.act_window,name:pos_loyalty_extend.act_program_2_points
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.view_loyalty_points_tree
+msgid "Points"
+msgstr "Puntos"
+
+#. module: pos_loyalty_extend
+#: code:addons/pos_loyalty_extend/models/loyalty_program.py:30
+#: model:ir.model.fields,help:pos_loyalty_extend.field_loyalty_program_point_expired_type
+#, python-format
+msgid "Points Expiration Mode\n"
+"-Based on points: Each point has a validity period.\n"
+"-Based on dates: A specific date is set and all points are discounted.\n"
+"-Do not expire: Points do not expire."
+msgstr "Modo de vencimiento de puntos\n"
+"-Basada en puntos: Cada punto tiene un periodo de validez.\n"
+"-Basada en fecha: Se establece una fecha específica y se dan de baja todos los puntos.\n"
+"-No expiran: Los puntos no vencen nunca."
+
+#. module: pos_loyalty_extend
+#: model:ir.ui.view,arch_db:pos_loyalty_extend.view_loyalty_points_tree
+msgid "Points available"
+msgstr "Puntos disponibles"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_points_ids
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_res_partner_points_ids
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_res_users_points_ids
+msgid "Points ids"
+msgstr "Points ids"
+
+#. module: pos_loyalty_extend
+#: code:addons/pos_loyalty_extend/models/loyalty_program.py:43
+#: model:ir.model.fields,help:pos_loyalty_extend.field_loyalty_program_refund_point_rule
+#, python-format
+msgid "Policy to be used to discount points for returns:\n"
+"-All points: The discount points will be passed on to all points (stored and future), in this case, a customer may have negative balances of points.\n"
+"-Previous points: Points will be deducted from orders dated prior to or equal to the order being returned. If there are no points, nothing will be deducted.\n"
+"-Not refund: Returns do not discount points"
+msgstr "Política de descuento de puntos en las devoluciones:\n"
+"-Todos los puntos: El descuento de puntos se realizará para todas las órdenes (realizadas y futuras), en este caso, el cliente podría tener un balance de puntos negativo.\n"
+"-Puntos previos: Los puntos serán deducidos de las órdenes con fecha anterior o igual que la orden que se está abonando. Si no hay puntos acumulados, no se descuenta nada.\n"
+"-No devolver: Los abonos no descuentan puntos"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_point_pos_id
+msgid "Pos Order"
+msgstr "Ticket"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,refund_point_rule:0
+msgid "Previous points"
+msgstr "Puntos anteriores"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_exp_type_points_type_rec
+msgid "Recurrence type"
+msgstr "Tipo de recurrencia"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_exp_type_points_value_rec
+msgid "Recurrence value"
+msgstr "Valor de la recurrecia"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_refund_point_rule
+msgid "Refund rule"
+msgstr "Regla de devolución"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_rounding_type
+msgid "Rounding Type"
+msgstr "Tipo de redondeo"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,rounding_type:0
+msgid "Symmetrical"
+msgstr "Simétrico"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,help:pos_loyalty_extend.field_loyalty_point_points
+msgid "The loyalty points the user won as part of a Loyalty Program"
+msgstr "Los puntos de fidelidad que el usuario ganó como parte de un Programa de Fidelización"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,rounding_type:0
+msgid "Truncated"
+msgstr "Truncado"
+
+#. module: pos_loyalty_extend
+#: model:ir.model.fields,field_description:pos_loyalty_extend.field_loyalty_program_point_expired_type
+msgid "Type of expiration"
+msgstr "Tipo de vencimiento"
+
+#. module: pos_loyalty_extend
+#: code:addons/pos_loyalty_extend/models/loyalty_program.py:24
+#: model:ir.model.fields,help:pos_loyalty_extend.field_loyalty_program_rounding_type
+#, python-format
+msgid "Type of rounding to be applied to point of sale tickets\n"
+"-Symmetrical: Conventional rounding, between 0 and 4 is left as is and between 5 and 9 is added 1\n"
+"-Truncated: Values that we do not want are despised"
+msgstr "Tipo de redondeo que se aplicará en los tickets del punto de venta\n"
+"-Simétrico: Redondeo convencional, entre 0 y 4 se deja como está y entre 5 y 9 se añade 1\n"
+"-Truncado: Los valores que no queremos son despreciados"
+
+#. module: pos_loyalty_extend
+#: selection:loyalty.program,exp_type_points_type_rec:0
+msgid "Weeks"
+msgstr "Semanas"
+
+#. module: pos_loyalty_extend
+#: code:addons/pos_loyalty_extend/models/loyalty_point.py:29
+#, python-format
+msgid "You cannot have more points available than those generated in the purchase: %s"
+msgstr "No se puede tener más puntos disponibles que los generados en la compra: %s"
+
+#. module: pos_loyalty_extend
+#: model:ir.model,name:pos_loyalty_extend.model_loyalty_point
+msgid "loyalty.point"
+msgstr "Modelo puntos"
+
+#. module: pos_loyalty_extend
+#: model:ir.model,name:pos_loyalty_extend.model_loyalty_program
+msgid "loyalty.program"
+msgstr "Programa de fidelización"
+

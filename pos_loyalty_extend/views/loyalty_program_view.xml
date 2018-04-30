@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="inherit_loyalty_program_form_view" model="ir.ui.view">
+        <field name="name">inherit.loyalty.program.form</field>
+        <field name="model">loyalty.program</field>
+        <field name="inherit_id" ref="pos_loyalty.loyalty_program_form_view"/>
+        <field name="arch" type="xml">
+        	<field name="name" position="before">
+	        	<div name="button_box" class="oe_button_box">
+		            <button type="action"
+		                class="oe_stat_button"
+		                id="points_button"
+		                icon="fa-gift"
+		                name="%(act_program_2_points)d"
+		                context="{'group_by': 'partner_id'}">
+		                <div class="o_form_field o_stat_info">
+		                    <span class="o_stat_text">Current points</span>
+		                </div>
+		            </button>
+	            </div>
+	        </field>
+        	<field name="rounding" position="after">
+        		<field name="rounding_type"/>
+        	</field>
+        	<field name="reward_ids" position="after">
+				<group string="Expiration and refund point rules" colspan="4">
+					<group>
+						<field name="point_expired_type"/>
+						<field name="refund_point_rule"/>
+					</group>
+					<group>
+						<label for="exp_type_points_value_rec" string="Frequency" attrs="{'invisible': [('point_expired_type','=','no')]}"/>
+						<div attrs="{'invisible': [('point_expired_type','=','no')]}">
+		                    <field name="exp_type_points_value_rec" class="oe_inline" attrs="{'required': [('point_expired_type','!=','no')]}"/>
+		                    <label for="exp_type_points_type_rec" string=" "/>
+		                    <field name="exp_type_points_type_rec" class="oe_inline" attrs="{'required': [('point_expired_type','!=','no')]}"/>
+		                </div>
+		                <field name="exp_type_date" attrs="{'invisible': [('point_expired_type','!=','date')], 
+		                									'required': [('point_expired_type','=','date')]}" />
+		            </group>
+                </group>
+        	</field>
+        </field>
+    </record>
+</odoo>

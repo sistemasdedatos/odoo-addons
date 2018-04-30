@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="loyalty_point_form_view">
+		<field name="name">loyalty.points.form</field>
+		<field name="model">loyalty.point</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Point" create="false" edit="false">
+				<sheet>
+					<group>
+						<group>
+							<field name="pos_id"/>
+							<field name="date_add"/>
+							<field name="partner_id"/>
+						</group>
+						<group>
+							<field name="active"/>
+							<field name="date_end"/>
+							<field name="loyalty_program_id"/>
+						</group>
+					</group>
+					<group>
+						<group>
+							<field name="points"/>
+						</group>
+						<group>
+							<field name="available_points"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="view_loyalty_points_tree" model="ir.ui.view">
+		<field name="name">loyalty.points.tree</field>
+		<field name="model">loyalty.point</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Points" create="false">
+				<field name="partner_id"/>
+				<field name="date_add"/>
+				<field name="points" sum="Points"/>
+				<field name="available_points" sum="Points available"/>
+				<field name="active"/>
+				<field name="date_end" invisible="True"/>
+				<field name="loyalty_program_id" invisible="True"/>
+				<field name="pos_id" invisible="True"/>
+			</tree>
+		</field>
+	</record>
+	<record model="ir.ui.view" id="manage_loyalty_point_form_view">
+		<field name="name">manage.loyalty.points.form</field>
+		<field name="model">loyalty.point</field>
+		<field name="type">form</field>
+		<field name="inherit_id" eval="loyalty_point_form_view"/>
+		<field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_manager'))]"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form" position="attributes">
+				<attribute name="create">true</attribute>
+				<attribute name="edit">true</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="manage_view_loyalty_points_tree" model="ir.ui.view">
+		<field name="name">manage.loyalty.points.tree</field>
+		<field name="model">loyalty.point</field>
+		<field name="type">tree</field>
+		<field name="inherit_id" eval="view_loyalty_points_tree"/>
+		<field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_manager'))]"/>
+		<field name="arch" type="xml">
+			<xpath expr="//tree" position="attributes">
+				<attribute name="create">true</attribute>
+			</xpath>
+		</field>
+	</record>
+    <record id="act_program_2_points" model="ir.actions.act_window">
+		<field name="name">Points</field>
+		<field name="res_model">loyalty.point</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="context">{'active': 1}</field>
+		<field name="domain">[('loyalty_program_id', '=', active_id)]</field>
+		<field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_manager'))]" />
+	</record>
+</odoo>

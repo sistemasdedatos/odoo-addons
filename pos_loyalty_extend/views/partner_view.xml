@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="act_partner_2_points" model="ir.actions.act_window">
+		<field name="name">Points</field>
+		<field name="res_model">loyalty.point</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="context">{'active': 1}</field>
+		<field name="domain">[('partner_id','=',active_id)]</field>
+		<field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_user'))]" />
+	</record>
+	<record id="inherit_partner_property_form_view" model="ir.ui.view">
+        <field name="name">inherit.partner.property.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="pos_loyalty.partner_property_form_view"/>
+        <field name="arch" type="xml">
+            <group name="loyalty" position="replace"/>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="partner_view_buttons_points">
+        <field name="name">partner.view.buttons.points</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons" />
+        <field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button type="action"
+                    class="oe_stat_button"
+                    id="points_button"
+                    icon="fa-gift"
+                    name="%(act_partner_2_points)d"
+                    attrs="{'invisible': [('customer', '=', False)]}"
+                    context="{'group_by': 'loyalty_program_id'}">
+                    <div class="o_form_field o_stat_info">
+                    	<span class="o_stat_value"><field name="loyalty_points"/></span>
+                        <span class="o_stat_text">Current points</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>
