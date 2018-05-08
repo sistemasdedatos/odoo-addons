@@ -5,9 +5,9 @@ Available addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[sd_distribution_price_margin](sd_distriburion_price_margin/) | 10.0.0.1 | This module allows introduce benefits margin in distribution cost of purchases.
-[sd_l10n_es_aeat_mod420](sd_l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>.
-[sd_l10n_es_igic](sd_l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
+[distribution_price_margin](distriburion_price_margin/) | 10.0.0.1 | This module allows introduce benefits margin in distribution cost of purchases.
+[l10n_es_aeat_mod420](l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>.
+[l10n_es_igic](l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
 [pos_loyalty_extend](pos_loyalty_extend/) | 10.0.1.0 | Extension of the pos_loyalty module available in OCA/pos <https://github.com/OCA/pos>.
 [web_hidden_menu](web_hidden_menu/) | 10.0.1.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
 
