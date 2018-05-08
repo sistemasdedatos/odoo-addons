@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* sd_distribution_price_margin
+#	* distribution_price_margin
 #
 msgid ""
 msgstr ""
@@ -15,56 +15,56 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model.fields,help:sd_distribution_price_margin.field_purchase_cost_distribution_benefit_margin
+#. module: distribution_price_margin
+#: model:ir.model.fields,help:distribution_price_margin.field_purchase_cost_distribution_benefit_margin
 msgid "If the margin is less than 0, it does not apply"
 msgstr "Si el margen es menor que 0, no se modificará el precio de venta"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_benefit_margin
-#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_benefit_margin
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_benefit_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line_benefit_margin
 msgid "Margin %"
 msgstr "Margen %"
 
-#. module: sd_distribution_price_margin
-#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_purchase_cost_distribution_form
-#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_view_purchase_cost_distribution_line_form
+#. module: distribution_price_margin
+#: model:ir.ui.view,arch_db:distribution_price_margin.inherit_purchase_cost_distribution_form
+#: model:ir.ui.view,arch_db:distribution_price_margin.inherit_view_purchase_cost_distribution_line_form
 msgid "Old sale price"
 msgstr "PVP previo"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model,name:sd_distribution_price_margin.model_purchase_cost_distribution_line
+#. module: distribution_price_margin
+#: model:ir.model,name:distribution_price_margin.model_purchase_cost_distribution_line
 msgid "Purchase cost distribution Line"
 msgstr "Línea de distribución de costes de compras"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model,name:sd_distribution_price_margin.model_purchase_cost_distribution
+#. module: distribution_price_margin
+#: model:ir.model,name:distribution_price_margin.model_purchase_cost_distribution
 msgid "Purchase landed costs distribution"
 msgstr "Distribución de costes de compra"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_benefit_price
-#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line_benefit_price
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
 msgid "Sale Price"
 msgstr "Precio de venta"
 
-#. module: sd_distribution_price_margin
-#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_purchase_cost_distribution_form
+#. module: distribution_price_margin
+#: model:ir.ui.view,arch_db:distribution_price_margin.inherit_purchase_cost_distribution_form
 msgid "Set Margin"
 msgstr "Establecer margen"
 
-#. module: sd_distribution_price_margin
-#: model:ir.ui.view,arch_db:sd_distribution_price_margin.inherit_purchase_cost_distribution_form
+#. module: distribution_price_margin
+#: model:ir.ui.view,arch_db:distribution_price_margin.inherit_purchase_cost_distribution_form
 msgid "Set the global margin in every lines"
 msgstr "Establecer el margen global a cada línea"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model.fields,field_description:sd_distribution_price_margin.field_purchase_cost_distribution_line_state
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line_state
 msgid "Status"
 msgstr "Estado"
 
-#. module: sd_distribution_price_margin
-#: model:ir.model.fields,help:sd_distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
+#. module: distribution_price_margin
+#: model:ir.model.fields,help:distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
 msgid "The sale price is managed from the product template. Click on the 'Variant Prices' button to set the extra attribute prices."
 msgstr "El precio de venta se gestiona desde la plantilla del producto. Haga clic en el botón 'Precios variantes' para establecer los precios adicionales de los atributos."
 
