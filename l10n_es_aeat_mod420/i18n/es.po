@@ -1,0 +1,244 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_es_aeat_mod420
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-26 11:55+0000\n"
+"PO-Revision-Date: 2018-02-26 11:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model,name:l10n_es_aeat_mod420.model_l10n_es_aeat_mod420_report
+msgid "AEAT 420 Report"
+msgstr "Modelo ATC 420"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.ui.menu,name:l10n_es_aeat_mod420.menu_aeat_mod420_report
+msgid "AEAT 420 model"
+msgstr "Modelo 420"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.ui.view,arch_db:l10n_es_aeat_mod420.view_l10n_es_aeat_mod420_report_tree
+msgid "AEAT 420 reports"
+msgstr "Modelo ATC 420"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.actions.act_window,name:l10n_es_aeat_mod420.action_l10n_es_aeat_mod420_report
+msgid "AEAT model 420"
+msgstr "Modelo ATC 420"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_allow_posting
+msgid "Allow posting"
+msgstr "Permitir generar asiento"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_bank_account_id
+msgid "Bank account"
+msgstr "Cuenta bancaria"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_casilla_18
+msgid "Compensations of the special regime of agriculture and livestock"
+msgstr "Compensaciones del régimen especial de la agricultura y ganadería"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_counterpart_account_id
+msgid "Counterpart account"
+msgstr "Cuenta contrapartida"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.actions.act_window,help:l10n_es_aeat_mod420.action_l10n_es_aeat_mod420_report
+msgid "Create and query AEAT Model 420 reports"
+msgstr "Crea y consulta declaración ATC del modelo 420"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_diferencia
+msgid "Difference between payable and receivable"
+msgstr "Diferencia (15 - 22)"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_a_deducir
+msgid "Exclusively in complementary cases"
+msgstr "Exclusivamente en caso de autoliquidación complementaria"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_cuota_compensar
+msgid "Fee to compensate for prior periods, in which his statement was to return and compensation back option was chosen"
+msgstr "Cuota a compensar de periodos anteriores, en los que su declaración fue a devolver y se escogió la opción de compensación posterior"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_casilla_20
+msgid "Fees returned as travelers"
+msgstr "Cuotas devueltas en régimen de viajeros"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_es_aeat_mod420
+#: selection:l10n.es.aeat.mod420.report,result_type:0
+msgid "No activity/Zero result"
+msgstr "Sin actividad"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_company_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_rectificacion_soportada
+msgid "Rectifications of deducted supported installments"
+msgstr "Rectificación de cuotas soportadas deducidas"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_rectificacion_repercutida
+msgid "Rectifications of tax rates passed on"
+msgstr "Rectificación de cuotas impositivas repercutidas"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_casilla_19
+msgid "Regularization of investments or fees paid before the start of the activity"
+msgstr "Regularización de inversiones o por cuotas soportadas antes del inicio de la actividad"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_result_type
+msgid "Result type"
+msgstr "Tipo de resultado"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.ui.view,arch_db:l10n_es_aeat_mod420.view_l10n_es_aeat_mod420_report_form
+msgid "Resultado"
+msgstr "Resultado"
+
+#. module: l10n_es_aeat_mod420
+#: code:addons/l10n_es_aeat_mod420/models/mod420.py:148
+#, python-format
+msgid "Select an account for making the charge"
+msgstr "Seleccione una cuenta para hacer el ingreso"
+
+#. module: l10n_es_aeat_mod420
+#: code:addons/l10n_es_aeat_mod420/models/mod420.py:150
+#, python-format
+msgid "Select an account for receiving the money"
+msgstr "Seleccione una cuenta para recibir el dinero"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.ui.view,arch_db:l10n_es_aeat_mod420.view_l10n_es_aeat_mod420_report_form
+msgid "Tax lines"
+msgstr "Líneas de impuestos"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,help:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_counterpart_account_id
+msgid "This account will be the counterpart for all the journal items that are regularized when posting the report."
+msgstr "Esta cuenta será la contrapartida para todos los elementos del diario que están regularizados al contabilizar el informe."
+
+#. module: l10n_es_aeat_mod420
+#: selection:l10n.es.aeat.mod420.report,result_type:0
+msgid "To compensate"
+msgstr "A compensar o sin actividad"
+
+#. module: l10n_es_aeat_mod420
+#: selection:l10n.es.aeat.mod420.report,result_type:0
+msgid "To enter"
+msgstr "A ingresar"
+
+#. module: l10n_es_aeat_mod420
+#: selection:l10n.es.aeat.mod420.report,result_type:0
+msgid "To return"
+msgstr "A devolver"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_rectificacion_repercutida
+msgid "[14] Rectifications to compensate"
+msgstr "[14] Rectificación de cuotas impositivas repercutidas"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_total_devengado
+msgid "[15] VAT payable"
+msgstr "[15] Total cuotas devengadas"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_casilla_18
+msgid "[18] Agriculture and Livestock"
+msgstr "[18] Agricultura y ganadería"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_casilla_19
+msgid "[19] Before the beginning"
+msgstr "[19] Regularización de inversiones o por cuotas soportadas antes del inicio de la actividad"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_casilla_20
+msgid "[20] Travellers"
+msgstr "[20] Cuotas devueltas en régimen de viajeros"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_rectificacion_soportada
+msgid "[21] Rectification supported"
+msgstr "[21] Rectificación de cuotas soportadas deducidas"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_total_deducir
+msgid "[22] VAT receivable"
+msgstr "[22] Total cuotas deducibles"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_diferencia
+msgid "[23] Difference"
+msgstr "[23] Diferencia (15 - 22)"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_cuota_compensar
+msgid "[24] Fees to compensate"
+msgstr "[24] Cuotas a compensar de períodos anteriores"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_a_deducir
+msgid "[25] To deduct"
+msgstr "[25] A deducir"
+
+#. module: l10n_es_aeat_mod420
+#: model:ir.model.fields,field_description:l10n_es_aeat_mod420.field_l10n_es_aeat_mod420_report_resultado_liquidacion
+msgid "[26] Settlement result"
+msgstr "[26] Resultado de la autoliquidación"
+

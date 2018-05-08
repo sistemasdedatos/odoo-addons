@@ -10,7 +10,7 @@
     'category' : 'Localisation/Account Charts',
     'website': 'http://www.sdatos.com',
     'license': "AGPL-3",
-    'depends' : ['sd_l10n_es_igic',
+    'depends' : ['l10n_es_igic',
                  'l10n_es_aeat'],            
     'data': ['data/tax_code_map_mod420_data.xml',
              'views/mod420_view.xml',

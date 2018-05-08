@@ -7,7 +7,7 @@
 					<div class="row">
 						<div class="col-xs-4" style="border:1px solid black;">
 							<div>
-								<img class="img img-responsive" src="/sd_l10n_es_aeat_mod420/static/src/img/ATC.png" style="width:245px;height:88px"/>
+								<img class="img img-responsive" src="/l10n_es_aeat_mod420/static/src/img/ATC.png" style="width:245px;height:88px"/>
 							</div>
 						</div>
 						<div class="col-xs-6">
@@ -228,14 +228,14 @@
 		<template id="report_aeat_mod420">
 		    <t t-call="report.html_container">
 		        <t t-foreach="docs" t-as="o">
-		            <t t-call="sd_l10n_es_aeat_mod420.report_aeat_mod420_document" t-lang="o.partner_id.lang"/>
+		            <t t-call="l10n_es_aeat_mod420.report_aeat_mod420_document" t-lang="o.partner_id.lang"/>
 		        </t>
 		    </t>
 		</template>
 		
 		<report id="aeat_mod420" model="l10n.es.aeat.mod420.report"
-			name="sd_l10n_es_aeat_mod420.report_aeat_mod420" string="Model ATC 420"
-			file="sd_l10n_es_aeat_mod420.report_aeat_mod420" report_type="qweb-pdf"
+			name="l10n_es_aeat_mod420.report_aeat_mod420" string="Model ATC 420"
+			file="l10n_es_aeat_mod420.report_aeat_mod420" report_type="qweb-pdf"
 			attachment_use="False"/>
 	</data>
 </odoo>
