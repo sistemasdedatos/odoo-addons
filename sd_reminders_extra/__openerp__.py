@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': "Sdatos Reminders Extra",
-    'version': '1.0.0',
+    'version': '1.0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category': 'Reminders and Agenda',
@@ -39,7 +39,7 @@ This module have use reminder_base, module development by IT-Projects LLC, Ivan 
     'depends': ['reminder_base', 
                 'note'],
     'data': [
-        'views.xml',
+        'views/note_views.xml',
         ],
     'installable': True,
 }
