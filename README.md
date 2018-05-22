@@ -10,7 +10,7 @@ addon | version | summary
 [l10n_es_igic](l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
 [pos_loyalty_extend](pos_loyalty_extend/) | 10.0.1.0 | Extension of the pos_loyalty module available in OCA/pos <https://github.com/OCA/pos>.
 [web_hidden_menu](web_hidden_menu/) | 10.0.1.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
-[cost_repercution_purchase](cost_repercurion_purchase/) | 10.0.0.1 | This module allows to repercute Tax or discount purchase in the product cost
+[cost_repercution_purchase](cost_repercution_purchase/) | 10.0.0.1 | This module allows to repercute Tax or discount purchase in the product cost
 
 Unported addons
 ---------------
