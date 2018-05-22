@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_purchases_config_purchase_repercute_cost" model="ir.ui.view">
+	    <field name="name">purchase.settings.repercute.cost</field>
+	    <field name="model">purchase.config.settings</field>
+	    <field name="inherit_id" ref="purchase.view_purchase_configuration"/>
+	    <field name="arch" type="xml">
+	        <xpath expr="//field[@name='group_costing_method']" position="after">
+	            <label string="Repercution in cost"></label>
+	            <div>
+		            <div>
+		            	<field name="group_repercute_tax"/>
+		            	<label for="group_repercute_tax"/>
+		            </div>
+		            <div>
+		        		<field name="group_repercute_discount"/>
+		        		<label for="group_repercute_discount"/>
+		        	</div>
+	        	</div>
+	        </xpath>
+	    </field>
+	</record>
+</odoo>

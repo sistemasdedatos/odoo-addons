@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
+    <data noupdate="1">
         <record id="group_repercute_tax" model="res.groups">
             <field name="name">Allow to repercute purchase tax in product cost</field>
             <field name="category_id" ref="base.module_category_hidden"/>
@@ -9,5 +9,8 @@
             <field name="name">Allow to repercute purchase discount in product cost</field>
             <field name="category_id" ref="base.module_category_hidden"/>
         </record>
+        <record id="base.group_user" model="res.groups">
+    		<field name="implied_ids" eval="[(4, ref('group_repercute_discount'))]"/>
+    	</record>
     </data>
-</openerp>
+</odoo>

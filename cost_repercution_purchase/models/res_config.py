@@ -18,28 +18,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{
-    'name' : 'SDatos Cost Repercution Purchase',
-    'version' : '0.1',
-    'author' : 'Sistemas de Datos',
-    'maintainer': 'Sistemas de Datos',
-    'category' : 'Purchases',
-    'summary': 'Add option to repercute Tax or purchase discount in product cost',
-    'description' : """
-Cost Repercution Purchase
-=========================
+from odoo import models, fields
 
-This module allows to repercute Tax or discount purchase in the product cost
-----------------------------------------------------------------------------
-    """,
-    'website': 'http://www.sdatos.com',
-    # End General Data
-    'depends' : ['purchase',
-                 'purchase_discount'],
-    'data': ['security/sd_cost_repercution_security.xml',
-             'views/res_config_view.xml'],
-    'images':[],                
-    'installable': False,
-    'auto_install': False,        
-    'application': False,
-}
+
+class PurchaseConfiguration(models.TransientModel):
+    _inherit = 'purchase.config.settings'
+
+    group_repercute_tax = fields.Boolean(
+        string='Allow to repercute purchase tax in product cost',
+        implied_group='cost_repercution_purchase.group_repercute_tax')
+    group_repercute_discount = fields.Boolean(
+        string='Allow to repercute purchase discount in product cost',
+        implied_group='cost_repercution_purchase.group_repercute_discount')
