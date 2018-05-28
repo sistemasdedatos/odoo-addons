@@ -1,12 +1,13 @@
-from openerp import models, fields, api
-from openerp.exceptions import Warning 
-from openerp.tools.translate import _
-import time
-import datetime
-import openerp.addons.decimal_precision as dp
+# -*- encoding: utf-8 -*-
+#    Copyright 2018 Sistemas de Datos - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
+#    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
+from odoo import models, fields, api
+import odoo.addons.decimal_precision as dp
+import datetime, time
 
-class sd_cash_count (models.TransientModel):
-    _name = "sd.cash.count"
+
+class cash_count (models.TransientModel):
+    _name = "cash.count"
      
     @api.multi
     def set_user_id (self):
@@ -15,11 +16,7 @@ class sd_cash_count (models.TransientModel):
     @api.multi
     def set_date_init (self):
         return time.strftime('%Y-%m-01')
-    
-    @api.multi
-    def set_pos_config_id (self):
-        return self.env['res.users'].browse ([self._uid]).pos_config.id
-    
+        
     @api.multi
     def set_date_end (self):
         def last_day_of_month (any_day):
@@ -30,15 +27,15 @@ class sd_cash_count (models.TransientModel):
     date_init = fields.Date (string = "Date since", default = set_date_init, required = True)
     date_end = fields.Date (string = "Date to", default = set_date_end, required = True)
     user_id = fields.Many2one ('res.users', string = "Salesman", default = set_user_id)
-    pos_config_id = fields.Many2one ('pos.config', string = "Terminal", default = set_pos_config_id, required = True)
-    sd_cash_count_lines_ids = fields.One2many ('sd.cash.count.lines', 'sd_cash_count_id', string = 'Cash count lines')
+    pos_config_id = fields.Many2one ('pos.config', string = "Terminal", required = True)
+    cash_count_lines_ids = fields.One2many ('cash.count.lines', 'cash_count_id', string = 'Cash count lines')
     
     @api.depends ('date_init', 'date_end', 'user_id', 'pos_config_id')
     @api.multi
     def write_sd_cash_count_lines (self):
         session_ids = self.env['pos.session'].search ([('stop_at', '>=', self.date_init), ('stop_at', '<=', self.date_end), ('user_id', '=', self.user_id.id), ('config_id', '=', self.pos_config_id.id)])
         for session in session_ids:
-            line = self.sd_cash_count_lines_ids.create ({'sd_cash_count_id': self.id,
+            line = self.cash_count_lines_ids.create ({'cash_count_id': self.id,
                                                          'name': session.name,
                                                          'date_start': session.start_at,
                                                          'date_close': session.stop_at,
@@ -71,11 +68,13 @@ class sd_cash_count (models.TransientModel):
     @api.multi
     def print_report (self):
         self.write_sd_cash_count_lines ()
-        return self.pool['report'].get_action (self._cr, self._uid, self._ids, 'sd_pos_cash_count.sd_cash_count_report', data=None, context=self._context)    
+        data = {}
+        data.update(self.read(['date_init', 'date_end', 'user_id', 'pos_config_id', 'cash_count_lines_ids'])[0])
+        return self.env['report'].get_action (self, 'pos_cash_count.cash_count_report', data)    
 
  
-class sd_cash_count_lines (models.TransientModel):
-    _name = "sd.cash.count.lines"
+class cash_count_lines (models.TransientModel):
+    _name = "cash.count.lines"
      
     name = fields.Char (string = "Session")                                                                     #nombre sesion
     date_start = fields.Datetime (string = "Opened")                                                            #fecha apertura
@@ -89,24 +88,5 @@ class sd_cash_count_lines (models.TransientModel):
     take_out = fields.Float (string = "Take Out", digits=dp.get_precision('Account'))                           #Retirada
     teorical_amount = fields.Float (string = "Teorical Amount", digits=dp.get_precision('Account'))             #Saldo teorico de cierre
     real_amount = fields.Float (string = "Real Amount", digits=dp.get_precision('Account'))                     #Saldo real al cierre
-    sd_cash_count_id = fields.Many2one ('sd.cash.count', string = 'Cash count', ondelete='cascade', readonly = True)
+    cash_count_id = fields.Many2one ('cash.count', string = 'Cash count', ondelete='cascade', readonly = True)
     
-    
-class sd_pos_report_cash_count (models.AbstractModel):
-    _name = 'report.sd_pos_cash_count.sd_cash_count_report'
-   
-    @api.multi
-    def render_html(self, data=None):
-         
-        report_obj = self.env['report']
-         
-        report = report_obj._get_report_from_name('sd_pos_cash_count.sd_cash_count_report')
-        docargs = {
-             'doc_ids': self._ids,
-             'doc_model': report.model,
-             'docs': self,
-        }
-        res = report_obj.render('sd_pos_cash_count.sd_cash_count_report', docargs)
-        return res
-     
-sd_pos_report_cash_count ()

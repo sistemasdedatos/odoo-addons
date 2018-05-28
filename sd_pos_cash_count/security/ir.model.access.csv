@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-sd_cash_count_access_m,sd_cash_count manager,model_sd_cash_count,point_of_sale.group_pos_manager,1,1,1,1
-sd_cash_count_access_settings_m,sd_cash_count manager,model_sd_cash_count,point_of_sale.group_pos_manager,1,1,1,1
-sd_cash_count_lines_access_m,sd_cash_count_lines manager,model_sd_cash_count_lines,point_of_sale.group_pos_manager,1,1,1,1
-sd_cash_count_lines_access_settings_m,sd_cash_count_lines manager,model_sd_cash_count_lines,point_of_sale.group_pos_manager,1,1,1,1

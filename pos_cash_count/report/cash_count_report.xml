@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   	<template id="cash_count_report">
+   		<t t-call="report.html_container">
+        	<t t-foreach="docs" t-as="o">
+            	<t t-call="report.external_layout">
+					<div class="page">
+						<h3 class="text-center">
+							Report for 
+							<span t-field="o.pos_config_id.name" />
+						</h3>
+						<h5 class="text-center">
+							From
+							<span t-field="o.date_init" />
+							To
+							<span t-field="o.date_end" />
+						</h5>
+						<div t-foreach="o.cash_count_lines_ids" t-as="l">
+							<table class="table table-condensed" style="font-size:10px">
+								<thead>
+									<tr>
+										<th>Session: <span t-field="l.name"/></th>
+										<th>Opened: <span t-field="l.date_start"/></th>
+										<th>Closed: <span t-field="l.date_close"/></th>
+									</tr>
+								</thead>
+								<tbody class="invoice_tbody">
+									<tr>
+										<td>Initial Amount: <span t-field="l.open_amount"/>€</td>
+										<td>Cash Sales: <span t-field="l.cash_sales"/>€</td>
+										<td>Cash + Initial: <span t-field="l.total_cash_sales"/>€</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>Card Sales: <span t-field="l.card_sales"/>€</td>
+										<td>Total Sales: <span t-field="l.total_sales"/>€</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>Entry: <t t-if="l.entry"><span t-field="l.entry"/>€</t></td>
+										<td>Take out: <t t-if="l.take_out"><span t-field="l.take_out"/>€</t></td>
+									</tr>
+									<tr>
+										<th></th>
+										<th>Teorical Amount: <span t-field="l.teorical_amount"/>€</th>
+										<th>Real Amount: <span t-field="l.real_amount"/>€</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+   
+<!--    	<template id="cash_count_report">
+		<t t-call="report.html_container">
+			<t t-foreach="doc_ids" t-as="doc_id">
+				<t
+					t-raw="translate_doc(doc_id, doc_model, 'user_id.lang', 'pos_cash_count.cash_count_report_document')" />
+			</t>
+		</t>
+	</template> -->
+	
+   	<report
+           id="pos_cash_count"
+           model="cash.count"        
+           name="pos_cash_count.cash_count_report"
+           string="Print Summary Pos Cash Count"
+           file="pos_cash_count.cash_count_report"
+           report_type="qweb-pdf"
+           attachment_use="False"
+           menu="True"
+       />
+</odoo>

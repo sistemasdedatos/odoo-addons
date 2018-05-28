@@ -19,12 +19,12 @@
 #
 ##############################################################################
 {
-    'name' : 'SDatos POS Cash Count',
+    'name' : 'POS Cash Count',
     'version' : '0.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
-    'summary': 'Spanish Cash count in point of sale',
+    'summary': 'Custom Cash count in point of sale',
     'description' : """
 POS Cash Count
 ==============
@@ -39,10 +39,10 @@ Modulo para realizar el arqueo de caja
     # End General Data
     'depends' : ['point_of_sale',
                  'l10n_es_pos'],
-    'data': ['views/sd_cash_count_view.xml',
-             'reports/sd_cash_count_report.xml',
+    'data': ['views/cash_count_view.xml',
+             'report/cash_count_report.xml',
              'security/ir.model.access.csv'],
-    'installable': False,
+    'installable': True,
     'auto_install': False,        
     'application': False,
 }

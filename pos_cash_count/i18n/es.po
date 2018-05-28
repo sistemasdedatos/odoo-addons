@@ -1,0 +1,290 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_cash_count
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-25 15:15+0000\n"
+"PO-Revision-Date: 2018-05-25 15:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Card Sales:"
+msgstr "Ventas de Tarjeta:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_card_sales
+msgid "Card sales"
+msgstr "Ventas de tarjeta"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Cash + Initial:"
+msgstr "Efectivo + Saldo inicial:"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Cash Sales:"
+msgstr "Ventas de Efectivo:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_cash_count_id
+msgid "Cash count"
+msgstr "Arqueo"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_cash_count_lines_ids
+msgid "Cash count lines"
+msgstr "Líneas de arqueo"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_cash_sales
+msgid "Cash sales"
+msgstr "Ventas de efectivo"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_total_cash_sales
+msgid "Cash sales + open"
+msgstr "Efectivo + saldo inicial"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_date_close
+msgid "Closed"
+msgstr "Cierre"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Closed:"
+msgstr "Fecha de cierre:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_create_uid
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_create_date
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_date_init
+msgid "Date since"
+msgstr "Desde fecha"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_date_end
+msgid "Date to"
+msgstr "Hasta fecha"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_display_name
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_display_name
+#: model:ir.model.fields,field_description:pos_cash_count.field_report_pos_cash_count_cash_count_report_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_entry
+msgid "Entry"
+msgstr "Asiento"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Entry:"
+msgstr "Ingresos:"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
+msgid "Filter by salesman and month"
+msgstr "Filtro por vendedor y mes"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
+msgid "Filter date"
+msgstr "Fecha de filtro"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "From"
+msgstr "Desde"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_id
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_id
+#: model:ir.model.fields,field_description:pos_cash_count.field_report_pos_cash_count_cash_count_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Initial Amount:"
+msgstr "Saldo inicial:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count___last_update
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines___last_update
+#: model:ir.model.fields,field_description:pos_cash_count.field_report_pos_cash_count_cash_count_report___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_write_uid
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_write_date
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_open_amount
+msgid "Open amount"
+msgstr "Saldo inicial"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_date_start
+msgid "Opened"
+msgstr "Fecha de apertura"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Opened:"
+msgstr "Fecha de apertura:"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: pos_cash_count
+#: model:ir.ui.menu,name:pos_cash_count.cash_count_menu
+msgid "Print Summary Cash Count"
+msgstr "Imprimir resúmen de arqueo de caja"
+
+#. module: pos_cash_count
+#: model:ir.actions.report.xml,name:pos_cash_count.pos_cash_count
+msgid "Print Summary Pos Cash Count"
+msgstr "Imprimir resumen de arqueo de caja"
+
+#. module: pos_cash_count
+#: model:ir.actions.act_window,name:pos_cash_count.open_view_print_cash_count
+msgid "Print report summary cash count"
+msgstr "Imprimir resumen de arqueo de caja"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_real_amount
+msgid "Real Amount"
+msgstr "Saldo real"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Real Amount:"
+msgstr "Saldo real:"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Report for"
+msgstr "Informe para"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_user_id
+msgid "Salesman"
+msgstr "Cajer@"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_name
+msgid "Session"
+msgstr "Sesión"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Session:"
+msgstr "Sesión:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_take_out
+msgid "Take Out"
+msgstr "Retirada"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Take out:"
+msgstr "Retirada:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_teorical_amount
+msgid "Teorical Amount"
+msgstr "Saldo teórico"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Teorical Amount:"
+msgstr "Saldo teórico:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_pos_config_id
+msgid "Terminal"
+msgstr "Terminal"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "To"
+msgstr "Hasta"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
+msgid "To print a particular month we select, from 01 to 31/30 of that\n"
+"					month\n"
+"					<br/>"
+msgstr "Para imprimir un mes en particular, debemos seleccionar desde el 01 hasta el 31/30 de el\n"
+"					mes\n"
+"					<br/>"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+msgid "Total Sales:"
+msgstr "Total vendido:"
+
+#. module: pos_cash_count
+#: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_total_sales
+msgid "Total sales"
+msgstr "Total vendido"
+
+#. module: pos_cash_count
+#: model:ir.model,name:pos_cash_count.model_cash_count
+msgid "cash.count"
+msgstr "cash.count"
+
+#. module: pos_cash_count
+#: model:ir.model,name:pos_cash_count.model_cash_count_lines
+msgid "cash.count.lines"
+msgstr "cash.count.lines"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
+msgid "or"
+msgstr "o"
+
+#. module: pos_cash_count
+#: model:ir.model,name:pos_cash_count.model_report_pos_cash_count_cash_count_report
+msgid "report.pos_cash_count.cash_count_report"
+msgstr "report.pos_cash_count.cash_count_report"
