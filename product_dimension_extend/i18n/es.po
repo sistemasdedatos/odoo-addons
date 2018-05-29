@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_dimension_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-29 14:43+0000\n"
+"PO-Revision-Date: 2018-05-29 14:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_dimension_extend
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:53
+#, python-format
+msgid "%s: %s%s x %s%s, %s units"
+msgstr "%s: %s%s x %s%s, %s unidades"
+
+#. module: product_dimension_extend
+#: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: product_dimension_extend
+#: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
+msgid "Dimension set wizard"
+msgstr "Dimension set wizard"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_dimensional_uom_id
+msgid "Dimensional UoM"
+msgstr "Unidad de medida"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_length
+msgid "Length"
+msgstr "Largo"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_product_tmpl_id
+msgid "Product tmpl id"
+msgstr "Plantilla de producto"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: product_dimension_extend
+#: model:ir.model,name:product_dimension_extend.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: product_dimension_extend
+#: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
+msgid "Save"
+msgstr "Guardar"
+
+#. module: product_dimension_extend
+#: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
+msgid "Save and new"
+msgstr "Guardar y nuevo"
+
+#. module: product_dimension_extend
+#: model:ir.actions.act_window,name:product_dimension_extend.action_dimension_wizard
+msgid "Set product dimensions"
+msgstr "Cargar productos con dimensión"
+
+#. module: product_dimension_extend
+#: model:ir.ui.view,arch_db:product_dimension_extend.view_order_form
+msgid "Set products with dimension"
+msgstr "Cargar productos con dimensión"
+
+#. module: product_dimension_extend
+#: model:product.uom.categ,name:product_dimension_extend.product_uom_categ_surface_area
+msgid "Surface"
+msgstr "Área"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_units
+msgid "Units"
+msgstr "Unidades"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,help:product_dimension_extend.field_wizard_dimension_dimensional_uom_id
+msgid "UoM for length and width"
+msgstr "Unidad de medida para el largo y el ancho"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_width
+msgid "Width"
+msgstr "Ancho"
+
+#. module: product_dimension_extend
+#: model:ir.model,name:product_dimension_extend.model_wizard_dimension
+msgid "Wizard to set the dimension product"
+msgstr "Wizard para establecer las dimensiones del producto"
+
+#. module: product_dimension_extend
+#: model:product.uom,name:product_dimension_extend.product_uom_cm2
+msgid "cm2"
+msgstr "cm2"
+
+#. module: product_dimension_extend
+#: model:product.uom,name:product_dimension_extend.product_uom_m2
+msgid "m2"
+msgstr "m2"
+
+#. module: product_dimension_extend
+#: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
+msgid "or"
+msgstr "o"
+

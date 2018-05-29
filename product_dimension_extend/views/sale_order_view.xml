@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="view_order_form" model="ir.ui.view">
+    	<field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+        	<xpath expr="//notebook" position="before">
+        		<button name="%(action_dimension_wizard)d"
+                        string="Set products with dimension"
+                        states="draft,sent,sale" type="action"
+                        class="oe_highlight"/>
+        	</xpath>
+        </field>
+    </record>
+</odoo>

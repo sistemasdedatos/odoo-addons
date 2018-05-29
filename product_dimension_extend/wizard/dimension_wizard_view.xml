@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="wizard_dimension_view">
+        <field name="name">wizard.dimension.form</field>
+        <field name="model">wizard.dimension</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Dimension set wizard">
+                <group>
+                	<field name="product_tmpl_id"/>
+                	<field name="dimensional_uom_id"/>
+                    <field name="length"/>
+                    <field name="width"/>
+                    <field name="units"/>
+                    <field name="quantity"/>
+                </group>
+                <footer>
+                    <button string="Save"
+                            name="action_set_order_line"
+                            type="object"
+                            class="oe_highlight"
+                            context="{'open_window': 0}"/>
+                    <button string="Save and new"
+                            name="action_set_order_line"
+                            type="object"
+                            class="oe_highlight"
+                            context="{'open_window': 1}"/>
+                    or
+                    <button string="Cancel"
+                            class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_dimension_wizard" model="ir.actions.act_window">
+        <field name="name">Set product dimensions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.dimension</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
