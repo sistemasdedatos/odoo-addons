@@ -5,12 +5,14 @@ Available addons
 ---------------
 addon | version | summary
 --- | --- | ---
+[cost_repercution_purchase](cost_repercution_purchase/) | 10.0.0.1 | This module allows to repercute Tax or discount purchase in the product cost
 [distribution_price_margin](distriburion_price_margin/) | 10.0.0.1 | This module allows introduce benefits margin in distribution cost of purchases.
 [l10n_es_aeat_mod420](l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>.
 [l10n_es_igic](l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
+[pos_cash_count](pos_cash_count/) | 10.0.0.1 | Module to make a summary of cash counts.
 [pos_loyalty_extend](pos_loyalty_extend/) | 10.0.1.0 | Extension of the pos_loyalty module available in OCA/pos <https://github.com/OCA/pos>.
+[product_dimension_extend](product_dimension_extend/) | 10.0.0.1 | Product dimensions in sale orders. Extension but not dependent of the product_dimension module available in OCA/product-attribute <https://github.com/OCA/product-attribute>.
 [web_hidden_menu](web_hidden_menu/) | 10.0.1.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
-[cost_repercution_purchase](cost_repercution_purchase/) | 10.0.0.1 | This module allows to repercute Tax or discount purchase in the product cost
 
 Unported addons
 ---------------
@@ -40,7 +42,6 @@ addon | version | summary
 [sd_odoo_tutorial](sd_odoo_tutorial/) | 10.0.0.0 (unported) | Odoo Tutorials
 [sd_office_auto_sync](sd_office_auto_sync/) | 10.0.0.0 (unported) | Module that automatical sync Office 365 calendar with Odoo calendar
 [sd_office_sincronize](sd_office_sincronize/) | 10.0.0.0 (unported) | Module that sync Office 365 calendar with Odoo calendar
-[sd_pos_cash_count](sd_pos_cash_count/) | 10.0.0.0 (unported) | Module that sync Office 365 calendar with Odoo calendar
 [sd_print_prject_work](sd_print_project_work/) | 10.0.0.0 (unported) | Print work done in project
 [sd_purchase_order_add_varinats](sd_purchase_order_add_variants/) | 10.0.0.0 (unported) | Add variants in purchase orders
 [sd_recurrent_task](sd_recurrent_task/) | 10.0.0.0 (unported) | Recurrent Task
