@@ -21,6 +21,17 @@ msgid "If the margin is less than 0, it does not apply"
 msgstr "Si el margen es menor que 0, no se modificará el precio de venta"
 
 #. module: distribution_price_margin
+#: model:ir.model.fields,help:distribution_price_margin.field_purchase_cost_distribution_line_benefit_margin
+msgid "If the value is 0 or negative, the sale price is not changed"
+msgstr "Si el valor es 0 o negativo, el precio de venta no será modificado"
+
+#. module: distribution_price_margin
+#: code:addons/distribution_price_margin/models/purchase_cost_distribution.py:42
+#, python-format
+msgid "If the value is 0 or negative, the sale price is not changed"
+msgstr "Si el valor es 0 o negativo, el precio de venta no será modificado"
+
+#. module: distribution_price_margin
 #: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_benefit_margin
 #: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line_benefit_margin
 msgid "Margin %"
@@ -116,3 +127,18 @@ msgstr "Coste unitario"
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_product_price_unit
 msgid "Unit price"
 msgstr "Precio unitario"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_product_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: purchase_landed_cost
+#: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_total_amount
+msgid "Amount line"
+msgstr "Precio"

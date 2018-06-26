@@ -10,7 +10,7 @@
 
 {
     'name' : 'SDatos Distribution Price Margin',
-    'version' : '0.1',
+    'version' : '1.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Purchases',

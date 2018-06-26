@@ -37,7 +37,7 @@
 			<field name="product_price_unit" position="after">
    	        	<field name="benefit_margin" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
    	        	<field name="old_sale_price" string="Old sale price"/>
-                <field name="benefit_price" readonly="1"/>
+                <field name="benefit_price" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
                 <field name="state" invisible="1"/>
             </field>
         </field>
