@@ -30,19 +30,23 @@ class WizardDimension(models.TransientModel):
         return dimensional_uom._compute_quantity(measure, uom_meters)
     
     @api.model
+    def _get_dimension_leng_domain(self):
+        return [('type', '=', 'service'), ('uom_id.category_id', '=', self.env.ref('product.uom_categ_length').id)]
+    
+    @api.model
     def _get_dimension_uom_domain(self):
         return [('category_id', '=', self.env.ref('product.uom_categ_length').id)]
     
     @api.model
     def _get_product_with_dimension(self):
-        return [('uom_id', 'in', [self.env.ref('product_dimension_extend.product_uom_m2').id, 
-                                  self.env.ref('product_dimension_extend.product_uom_cm2').id])]
+        return [('uom_id', 'in', [self.env.ref('product_dimension_and_edge.product_uom_m2').id, 
+                                  self.env.ref('product_dimension_and_edge.product_uom_cm2').id])]
         
     def _set_default_uom(self):
         return self.env.ref('product.product_uom_cm').id
       
     product_tmpl_id = fields.Many2one ('product.template', domain = _get_product_with_dimension, required = True)
-    service_cant_id = fields.Many2one ('product.template', domain = [('type', '=', 'service')])
+    service_cant_id = fields.Many2one ('product.template', domain = _get_dimension_leng_domain)
     length = fields.Float (string = 'Length')
     width = fields.Float (string = 'Width')
     units = fields.Float (string = 'Units', default = 1)
@@ -51,8 +55,6 @@ class WizardDimension(models.TransientModel):
     quantity = fields.Float (string = 'Quantity', readonly = True, compute = onchange_calculate_quantity)
     length_to_edged = fields.Float (string = 'Length', default = 0)
     width_to_edged = fields.Float (string = 'Width', default = 0)
-#     edged_length = fields.Float (string = 'Width', default = 0)
-#     edged_width = fields.Float (string = 'Width', default = 0)
     total_edged = fields.Float (string = 'Total to edged (m)', default = 0, readonly = True, compute = onchange_calculate_total_edged)
     
     @api.model

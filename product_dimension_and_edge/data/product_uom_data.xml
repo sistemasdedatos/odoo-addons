@@ -6,12 +6,12 @@
 	    </record>
 	    <record id="product_uom_m2" model="product.uom">
 	    	<field name="name">m2</field>
-	    	<field name="category_id" ref="product_dimension_extend.product_uom_categ_surface_area"/>
+	    	<field name="category_id" ref="product_dimension_and_edge.product_uom_categ_surface_area"/>
 	    	<field name="factor" eval="1.0"/>
 	    </record>
 	    <record id="product_uom_cm2" model="product.uom">
 	    	<field name="name">cm2</field>
-	    	<field name="category_id" ref="product_dimension_extend.product_uom_categ_surface_area"/>
+	    	<field name="category_id" ref="product_dimension_and_edge.product_uom_categ_surface_area"/>
 	    	<field name="factor" eval="1000"/>
             <field name="uom_type">smaller</field>
 	    </record>
