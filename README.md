@@ -11,7 +11,7 @@ addon | version | summary
 [l10n_es_igic](l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
 [pos_cash_count](pos_cash_count/) | 10.0.0.1 | Module to make a summary of cash counts.
 [pos_loyalty_extend](pos_loyalty_extend/) | 10.0.1.0 | Extension of the pos_loyalty module available in OCA/pos <https://github.com/OCA/pos>.
-[product_dimension_extend](product_dimension_extend/) | 10.0.0.1 | Product dimensions in sale orders. Extension but not dependent of the product_dimension module available in OCA/product-attribute <https://github.com/OCA/product-attribute>.
+[product_dimension_and_edge](product_dimension_and_edge/) | 10.0.0.2 | Product dimensions in sale orders and you can use edged managment. Extension but not dependent of the product_dimension module available in OCA/product-attribute <https://github.com/OCA/product-attribute>.
 [web_hidden_menu](web_hidden_menu/) | 10.0.1.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
 
 Unported addons
