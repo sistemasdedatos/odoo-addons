@@ -6,13 +6,28 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Dimension set wizard">
-                <group>
-                	<field name="product_tmpl_id"/>
-                	<field name="dimensional_uom_id"/>
-                    <field name="length"/>
-                    <field name="width"/>
-                    <field name="units"/>
-                    <field name="quantity"/>
+                <group col="1">
+                	<group col="4">
+                		<field name="product_tmpl_id"/>
+                		<field name="dimensional_uom_id"/>
+                	</group>
+                	<group col="8">
+                    	<field name="length"/>
+                    	<field name="width"/>
+                    	<field name="units"/>
+                    	<field name="quantity"/>
+                    </group>
+                </group>
+                <group col="1">
+                	<group col="12">
+                		<field name="to_edged"/>
+                		<field name="service_cant_id" attrs="{'required': [('to_edged', '=', True)], 'invisible': [('to_edged', '=', False)]}" colspan="10"/>
+                	</group>
+                	<group attrs="{'invisible': [('to_edged', '=', False)]}" col="6">
+                		<field name="length_to_edged"/>
+                		<field name="width_to_edged"/>
+                		<field name="total_edged"/>
+                	</group>
                 </group>
                 <footer>
                     <button string="Save"

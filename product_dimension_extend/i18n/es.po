@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-29 14:43+0000\n"
-"PO-Revision-Date: 2018-05-29 14:43+0000\n"
+"POT-Creation-Date: 2018-07-05 12:32+0000\n"
+"PO-Revision-Date: 2018-07-05 12:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_dimension_extend
-#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:53
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:68
 #, python-format
 msgid "%s: %s%s x %s%s, %s units"
 msgstr "%s: %s%s x %s%s, %s unidades"
@@ -52,6 +52,29 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: product_dimension_extend
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:79
+#, python-format
+msgid "ERROR: To add product"
+msgstr "ERROR: Al añadir el producto"
+
+#. module: product_dimension_extend
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:94
+#, python-format
+msgid "ERROR: To add service"
+msgstr "ERROR: Al añadir el servicio"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_to_edged
+msgid "Edged"
+msgstr "Cantear"
+
+#. module: product_dimension_extend
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:81
+#, python-format
+msgid "Edged %s: %s x %s%s and  %s x %s%s"
+msgstr "Canteado para %s: %s x %s%s y  %s x %s%s"
+
+#. module: product_dimension_extend
 #: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_id
 msgid "ID"
 msgstr "ID"
@@ -73,23 +96,19 @@ msgstr "Última actualización el"
 
 #. module: product_dimension_extend
 #: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_length
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_length_to_edged
 msgid "Length"
 msgstr "Largo"
 
 #. module: product_dimension_extend
 #: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_product_tmpl_id
 msgid "Product tmpl id"
-msgstr "Plantilla de producto"
+msgstr "Producto"
 
 #. module: product_dimension_extend
 #: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_quantity
 msgid "Quantity"
 msgstr "Cantidad"
-
-#. module: product_dimension_extend
-#: model:ir.model,name:product_dimension_extend.model_sale_order_line
-msgid "Sales Order Line"
-msgstr "Línea de pedido de venta"
 
 #. module: product_dimension_extend
 #: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
@@ -100,6 +119,11 @@ msgstr "Guardar"
 #: model:ir.ui.view,arch_db:product_dimension_extend.wizard_dimension_view
 msgid "Save and new"
 msgstr "Guardar y nuevo"
+
+#. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_service_cant_id
+msgid "Service cant id"
+msgstr "Servicio de canteado"
 
 #. module: product_dimension_extend
 #: model:ir.actions.act_window,name:product_dimension_extend.action_dimension_wizard
@@ -117,6 +141,11 @@ msgid "Surface"
 msgstr "Área"
 
 #. module: product_dimension_extend
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_total_edged
+msgid "Total to edged (m)"
+msgstr "Total a cantear (m)"
+
+#. module: product_dimension_extend
 #: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_units
 msgid "Units"
 msgstr "Unidades"
@@ -128,6 +157,7 @@ msgstr "Unidad de medida para el largo y el ancho"
 
 #. module: product_dimension_extend
 #: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_width
+#: model:ir.model.fields,field_description:product_dimension_extend.field_wizard_dimension_width_to_edged
 msgid "Width"
 msgstr "Ancho"
 
@@ -135,6 +165,13 @@ msgstr "Ancho"
 #: model:ir.model,name:product_dimension_extend.model_wizard_dimension
 msgid "Wizard to set the dimension product"
 msgstr "Wizard para establecer las dimensiones del producto"
+
+#. module: product_dimension_extend
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:63
+#: code:addons/product_dimension_extend/wizard/dimension_wizard.py:113
+#, python-format
+msgid "You can't edge more sides than there are."
+msgstr "No puede cantear más lados de los que hay."
 
 #. module: product_dimension_extend
 #: model:product.uom,name:product_dimension_extend.product_uom_cm2
