@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="gdpr_external_layout_footer" inherit_id="report.external_layout_footer">
+		<xpath expr="//div[@class='footer']/div[@class='text-center']" position="before">
+			<div class="text-center" style="text-align: justify">
+	        	<t t-if="company.gdpr_terms">
+	                <span t-raw="company.gdpr_terms"/>
+	            </t>
+	        </div>
+		</xpath>
+	</template>
+</odoo>
