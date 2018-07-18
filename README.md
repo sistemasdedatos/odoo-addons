@@ -7,6 +7,7 @@ addon | version | summary
 --- | --- | ---
 [cost_repercution_purchase](cost_repercution_purchase/) | 10.0.0.1 | This module allows to repercute Tax or discount purchase in the product cost
 [distribution_price_margin](distriburion_price_margin/) | 10.0.0.1 | This module allows introduce benefits margin in distribution cost of purchases.
+[gdpr_terms](gdpr_terms/) | 10.0.0.1 | Edit external footer view to show the gdpr terms, this terms should be written in res_company form.
 [l10n_es_aeat_mod420](l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>.
 [l10n_es_igic](l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
 [pos_cash_count](pos_cash_count/) | 10.0.0.1 | Module to make a summary of cash counts.
