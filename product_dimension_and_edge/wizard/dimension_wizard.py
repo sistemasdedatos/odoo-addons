@@ -93,8 +93,8 @@ class WizardDimension(models.TransientModel):
                       'product_uom_qty': res.total_edged,
                       'product_uom': res.service_cant_id.uom_id.id}
             line = order.order_line.create(service_value)
-        if not line:
-            raise exceptions.ValidationError(_("ERROR: To add service"))
+            if not line:
+                raise exceptions.ValidationError(_("ERROR: To add service"))
         return res
     
     @api.multi
