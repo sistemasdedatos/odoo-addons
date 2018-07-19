@@ -79,19 +79,20 @@ class WizardDimension(models.TransientModel):
         line = order.order_line.create(product_value)
         if not line:
             raise exceptions.ValidationError(_("ERROR: To add product"))
-        service_value = {'order_id': order.id,
-                  'name': _('Edged %s: %s x %s%s and  %s x %s%s') % (res.product_tmpl_id.name,
-                                                                     res.length_to_edged,
-                                                                     res.length, 
-                                                                     res.dimensional_uom_id.name,
-                                                                     res.width_to_edged, 
-                                                                     res.width, 
-                                                                     res.dimensional_uom_id.name),
-                  
-                  'product_id': res.service_cant_id.id,
-                  'product_uom_qty': res.total_edged,
-                  'product_uom': res.service_cant_id.uom_id.id}
-        line = order.order_line.create(service_value)
+        if res.to_edged:
+            service_value = {'order_id': order.id,
+                      'name': _('Edged %s: Lenght %s x %s%s and Width %s x %s%s') % (res.product_tmpl_id.name,
+                                                                         res.length_to_edged,
+                                                                         res.length, 
+                                                                         res.dimensional_uom_id.name,
+                                                                         res.width_to_edged, 
+                                                                         res.width, 
+                                                                         res.dimensional_uom_id.name),
+                      
+                      'product_id': res.service_cant_id.id,
+                      'product_uom_qty': res.total_edged,
+                      'product_uom': res.service_cant_id.uom_id.id}
+            line = order.order_line.create(service_value)
         if not line:
             raise exceptions.ValidationError(_("ERROR: To add service"))
         return res

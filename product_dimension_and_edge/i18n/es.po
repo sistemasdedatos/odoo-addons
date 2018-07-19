@@ -71,8 +71,8 @@ msgstr "Cantear"
 #. module: product_dimension_and_edge
 #: code:addons/product_dimension_and_edge/wizard/dimension_wizard.py:81
 #, python-format
-msgid "Edged %s: %s x %s%s and  %s x %s%s"
-msgstr "Canteado para %s: %s x %s%s y  %s x %s%s"
+msgid "Edged %s: Lenght %s x %s%s and Width %s x %s%s"
+msgstr "Canteado para %s: Largo %s x %s%s y Ancho %s x %s%s"
 
 #. module: product_dimension_and_edge
 #: model:ir.model.fields,field_description:product_dimension_and_edge.field_wizard_dimension_id

@@ -3,7 +3,7 @@
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
 {
     'name' : 'Product Dimension And Edge',
-    'version' : '0.2',
+    'version' : '0.3',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Product',
