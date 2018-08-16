@@ -29,8 +29,8 @@ class ir_ui_menu(models.Model):
             res = super(ir_ui_menu,self)._filter_visible_menus()
             groups = list(x.id for x in self.env.user.groups_id)
             if (self.env.user.id != 1 and #No se aplica para el usuario administrador, caso contrario, error /usr/lib/python2.7/threading.py(212)release() - self._note("%s.release(): non-final release", self)
-                self.env.ref('base.group_erp_manager').id in groups and #No se aplica para usuarios del portal
-                self.env.ref('share.group_shared').id in groups): #No se aplica para grupos de comparticion
+                self.env.ref('base.group_portal').id not in groups and #No se aplica para usuarios del portal
+                self.env.ref('share.group_shared').id not in groups): #No se aplica para grupos de comparticion
                 to_hidde = self._check_hidden_model(res)
                 res = res - to_hidde
             return res
