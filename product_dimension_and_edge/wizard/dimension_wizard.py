@@ -10,7 +10,7 @@ class WizardDimension(models.TransientModel):
     
     @api.onchange('length', 'width', 'units', 'dimensional_uom_id')
     def onchange_calculate_quantity(self):
-        if not self.dimensional_uom_id or not self.product_tmpl_id:
+        if not self.dimensional_uom_id or not self.product_id:
             return False
         
         l = 1 if not self.length else self.length
@@ -45,8 +45,8 @@ class WizardDimension(models.TransientModel):
     def _set_default_uom(self):
         return self.env.ref('product.product_uom_cm').id
       
-    product_tmpl_id = fields.Many2one ('product.template', domain = _get_product_with_dimension, required = True)
-    service_cant_id = fields.Many2one ('product.template', domain = _get_dimension_leng_domain)
+    product_id = fields.Many2one ('product.product', domain = _get_product_with_dimension, required = True)
+    service_cant_id = fields.Many2one ('product.product', domain = _get_dimension_leng_domain)
     length = fields.Float (string = 'Length')
     width = fields.Float (string = 'Width')
     units = fields.Float (string = 'Units', default = 1)
@@ -67,21 +67,21 @@ class WizardDimension(models.TransientModel):
         ctx = self.env.context
         order = self.env[ctx['active_model']].browse(ctx['active_id'])
         product_value = {'order_id': order.id,
-                  'name': _('%s: %s%s x %s%s, %s units') % (res.product_tmpl_id.display_name, 
+                  'name': _('%s: %s%s x %s%s, %s units') % (res.product_id.display_name, 
                                                             res.length, 
                                                             res.dimensional_uom_id.name, 
                                                             res.width, 
                                                             res.dimensional_uom_id.name, 
                                                             res.units),
-                  'product_id': res.product_tmpl_id.id,
+                  'product_id': res.product_id.id,
                   'product_uom_qty': res.quantity,
-                  'product_uom': res.product_tmpl_id.uom_id.id}
+                  'product_uom': res.product_id.uom_id.id}
         line = order.order_line.create(product_value)
         if not line:
             raise exceptions.ValidationError(_("ERROR: To add product"))
         if res.to_edged:
             service_value = {'order_id': order.id,
-                      'name': _('Edged %s: Lenght %s x %s%s and Width %s x %s%s') % (res.product_tmpl_id.name,
+                      'name': _('Edged %s: Lenght %s x %s%s and Width %s x %s%s') % (res.product_id.name,
                                                                          res.length_to_edged,
                                                                          res.length, 
                                                                          res.dimensional_uom_id.name,
