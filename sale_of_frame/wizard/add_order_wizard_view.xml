@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.ui.view" id="wizard_add_order_view">
+        <field name="name">wizard.add.order.form</field>
+        <field name="model">wizard.add.order</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Add order wizard">
+                <group>
+                	<group>
+                		<field name="order_id" domain="([('state','!=','done'),('partner_id','=',context.get('partner_id'))])"/>
+                	</group>
+                </group>
+                <footer>
+                    <button string="Add to order"
+                            name="action_set_order_line"
+                            type="object"
+                            class="oe_highlight"/>
+                    or
+                    <button string="Cancel"
+                            class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_add_order_wizard" model="ir.actions.act_window">
+        <field name="name">Add order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.add.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

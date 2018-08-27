@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="frame_view_order_form" model="ir.ui.view">
+		<field name="name">frame.sale.order.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="groups_id" eval="[(4, ref('sale_of_frame.group_sale_frame_manager'))]"/>
+		<field name="arch" type="xml">
+			<div class="oe_button_box" name="button_box" position="inside">
+				<button name="%(action_frames)d"
+				    type="action"
+				    class="oe_stat_button"
+				    icon="fa-pencil-square-o"
+				    attrs="{'invisible': [('frames_count', '=', 0)]}"
+				    context="{'search_default_order_id': active_id}">
+				    <field name="frames_count" widget="statinfo" string="Sale frames"/>
+				</button>
+			</div>
+		</field>
+	</record>
+</odoo>

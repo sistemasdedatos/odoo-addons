@@ -1,0 +1,316 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_of_frame
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-27 10:38+0000\n"
+"PO-Revision-Date: 2018-08-27 10:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_order_frames_count
+msgid "# of Frames"
+msgstr "# marcos"
+
+#. module: sale_of_frame
+#: code:addons/sale_of_frame/models/sale_frame.py:71
+#: code:addons/sale_of_frame/models/sale_frame.py:82
+#, python-format
+msgid "%s: %s%s x %s%s, %s units"
+msgstr "%s: %s%s x %s%s, %s unidades"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_form
+msgid "Add Order/Quotation"
+msgstr "Añadir a Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.actions.act_window,name:sale_of_frame.action_add_order_wizard
+msgid "Add order"
+msgstr "Añadir a Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.wizard_add_order_view
+msgid "Add order wizard"
+msgstr "Wizard para añadir a Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: code:addons/sale_of_frame/models/sale_frame.py:132
+#: model:ir.ui.view,arch_db:sale_of_frame.wizard_add_order_view
+#, python-format
+msgid "Add to order"
+msgstr "Añadir a Pedido/Presupuesto
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.wizard_add_order_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_form
+msgid "Create Order/Quotation"
+msgstr "Crear Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.actions.act_window,help:sale_of_frame.action_frames
+msgid "Create a Sale of frame."
+msgstr "Crear enmarcado."
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_create_uid
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_create_date
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_partner_id
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+#: selection:sale.frame,state:0
+msgid "Definitive"
+msgstr "Definitivo"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_uom_id
+msgid "Dimensional UoM"
+msgstr "Unidad de medida"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_display_name
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+#: selection:sale.frame,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: sale_of_frame
+#: code:addons/sale_of_frame/models/sale_frame.py:105
+#, python-format
+msgid "ERROR: To add lines in sale order"
+msgstr "ERROR: al añadir líneas al Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: code:addons/sale_of_frame/models/sale_frame.py:126
+#, python-format
+msgid "ERROR: To create sale order"
+msgstr "ERROR: al crear el Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_id
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame___last_update
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_write_uid
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_write_date
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_product_product_left_over
+#: model:ir.model.fields,field_description:sale_of_frame.field_product_template_left_over
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_left_over
+msgid "Left Over"
+msgstr "Merma"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_length
+msgid "Length"
+msgstr "Largo"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "My Sale Frames"
+msgstr "Mis Enmarcados"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_name
+msgid "Number"
+msgstr "Número"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_tree
+msgid "Order Number"
+msgstr "Número de pedido"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_form
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "Order/Quotation"
+msgstr "Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.model,name:sale_of_frame.model_product_product
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: sale_of_frame
+#: model:ir.model,name:sale_of_frame.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_product_ids
+msgid "Products"
+msgstr "Productos"
+
+#. module: sale_of_frame
+#: model:res.groups,name:sale_of_frame.group_sale_frame_manager
+msgid "Sale Frame Manager"
+msgstr "Administrador de enmarcado"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_tree
+msgid "Sale Frames"
+msgstr "Marcos"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.frame_view_order_form
+msgid "Sale frames"
+msgstr "Marcos"
+
+#. module: sale_of_frame
+#: model:ir.model,name:sale_of_frame.model_sale_frame
+msgid "Sale of frames"
+msgstr "Enmarcados"
+
+#. module: sale_of_frame
+#: code:addons/sale_of_frame/models/sale_frame.py:110
+#, python-format
+msgid "Sale order"
+msgstr "Pedido de venta"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_order_id
+#: model:ir.model.fields,field_description:sale_of_frame.field_wizard_add_order_order_id
+msgid "Sale/Quotation"
+msgstr "Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_form
+msgid "Sales Frame"
+msgstr "Marco"
+
+#. module: sale_of_frame
+#: model:ir.actions.act_window,name:sale_of_frame.action_frames
+#: model:ir.ui.menu,name:sale_of_frame.menu_sale_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "Sales Frames"
+msgstr "Enmarcado"
+
+#. module: sale_of_frame
+#: model:ir.model,name:sale_of_frame.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "Search Sales Frame"
+msgstr "Buscar enmarcado"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "State"
+msgstr "Estado"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: sale_of_frame
+#: model:res.groups,comment:sale_of_frame.group_sale_frame_manager
+msgid "The user will be able to create Sales of Frames."
+msgstr "El usuario podrá crear enmarcados."
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_lineal_meters
+msgid "Total lineal meters"
+msgstr "Total metros lineales"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_square_metres
+msgid "Total m2/u"
+msgstr "Total m2/u"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_units
+msgid "Units"
+msgstr "Unidades"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,help:sale_of_frame.field_sale_frame_uom_id
+msgid "UoM for length, width and left over"
+msgstr "Unidad de medida para el largo, ancho y merma"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_sales_frame_filter
+msgid "User"
+msgstr "Usuario"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.view_frame_form
+msgid "View Order/Quotation"
+msgstr "Ver Pedido/Presupuesto"
+
+#. module: sale_of_frame
+#: model:ir.model.fields,field_description:sale_of_frame.field_sale_frame_width
+msgid "Width"
+msgstr "Ancho"
+
+#. module: sale_of_frame
+#: model:ir.model,name:sale_of_frame.model_wizard_add_order
+msgid "Wizard to set sale frame in sale order"
+msgstr "Wizard para establecer líneas de enmarcado en pedido de venta"
+
+#. module: sale_of_frame
+#: model:ir.ui.view,arch_db:sale_of_frame.wizard_add_order_view
+msgid "or"
+msgstr "o"
+
