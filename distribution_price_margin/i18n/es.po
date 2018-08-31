@@ -83,7 +83,7 @@ msgstr "El precio de venta se gestiona desde la plantilla del producto. Haga cli
 #. module: purchase_landed_cost
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_expense_amount
 msgid "Cost amount"
-msgstr "Importe de coste"
+msgstr "Importe de gasto"
 
 #. module: purchase_landed_cost
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_standard_price_new
@@ -121,7 +121,7 @@ msgstr "Cantidad total"
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_cost_ratio
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_expense_cost_ratio
 msgid "Unit cost"
-msgstr "Coste unitario"
+msgstr "Gasto unitario"
 
 #. module: purchase_landed_cost
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_product_price_unit
@@ -141,4 +141,4 @@ msgstr "Producto"
 #. module: purchase_landed_cost
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_cost_distribution_line_total_amount
 msgid "Amount line"
-msgstr "Precio"
+msgstr "Precio de línea"
