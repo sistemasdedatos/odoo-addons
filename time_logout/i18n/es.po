@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* time_logout
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-30 12:13+0000\n"
+"PO-Revision-Date: 2018-08-30 12:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: time_logout
+#: model:ir.model.fields,field_description:time_logout.field_res_users_context_session_alert_time
+msgid "Alert for Timeout"
+msgstr "Alerta de timeout"
+
+#. module: time_logout
+#: model:ir.model.fields,field_description:time_logout.field_res_users_context_not_in_edition
+msgid "Not end in edition"
+msgstr "No cerrar en edición"
+
+#. module: time_logout
+#: model:ir.model.fields,field_description:time_logout.field_res_users_context_session_timeout
+msgid "Session Timeout"
+msgstr "Timeout de sesión"
+
+#. module: time_logout
+#: model:ir.ui.view,arch_db:time_logout.time_view_users_form
+msgid "Session customization"
+msgstr "Personalización de sesión"
+
+#. module: time_logout
+#: model:ir.model.fields,help:time_logout.field_res_users_context_not_in_edition
+msgid "Set on true if the session don't expire in edition mode, in the other case if you are editing it will be save (if it is possible) and after it will be close"
+msgstr "Establecer a verdadero si no queremos que la sesión expire en modo edicion, en otro caso, si estamos editando, se guardará el documento (si es posible) y después se cerrará la sesión"
+
+#. module: time_logout
+#: code:addons/time_logout/models/res_users.py:26
+#, python-format
+msgid "The minmum value must be %d if you set %d as session_timeout value"
+msgstr "El valor mínimo debe ser %d si ha establecido %d como timeout de sesion"
+
+#. module: time_logout
+#: code:addons/time_logout/models/res_users.py:24
+#, python-format
+msgid "The minumum value must be 30 or 0 if the timeout don't afect to this user"
+msgstr "El tiempo mínimo de expiración debe ser 30 o 0 en caso de que no queramos que afecte el timeaut a este usuario"
+
+#. module: time_logout
+#: model:ir.model.fields,help:time_logout.field_res_users_context_session_alert_time
+msgid "Time in seconds before timeout to show the expire message (max 15s before)"
+msgstr "Tiempo en segundos, antes del cierre, para mostrar el mensaje de cierre (como máximo 15s antes)"
+
+#. module: time_logout
+#: model:ir.model.fields,help:time_logout.field_res_users_context_session_timeout
+msgid "Inactivity time in seconds to expire session"
+msgstr "Tiempo de inactividad en segundos para que expire la sesión"
+
+#. module: time_logout
+#: model:ir.model,name:time_logout.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: time_logout
+#. openerp-web
+#: code:addons/time_logout/static/src/js/logout.js:26
+#, python-format
+msgid "Your session will expire, move mouse to avoid it"
+msgstr "Su sesión expirará, mueva el ratón para evitarlo"
+
