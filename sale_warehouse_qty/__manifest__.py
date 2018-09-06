@@ -7,7 +7,7 @@
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Sale',
-    'summary': 'Available product quamtity by warehouse y sale order line',
+    'summary': 'Available product quantity by warehouse y sale order line',
     'description' : """
 Sale Warehouse Quantity
 =======================

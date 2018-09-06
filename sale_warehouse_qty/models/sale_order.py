@@ -50,7 +50,7 @@ class SaleOrderLine(models.Model):
                             (self.product_uom_qty, self.product_uom.name, warehouse_qty.get(warehouse_id, 0), self.product_id.uom_id.name, self.product_id.virtual_available, self.product_id.uom_id.name)
                             }
                     for w in warehouse_qty:
-                        warning_mess['message'] += _('In %s there are %s %s.\n' % (w.name, warehouse_qty.get(w, 0), self.product_id.uom_id.name))
+                        warning_mess['message'] += _('In %s there are %s %s.\n') % (w.name, warehouse_qty.get(w, 0), self.product_id.uom_id.name)
                     return {'warning': warning_mess}
         
         return super(SaleOrderLine, self)._onchange_product_id_check_availability()
