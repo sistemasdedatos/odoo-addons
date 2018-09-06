@@ -10,10 +10,12 @@ addon | version | summary
 [gdpr_terms](gdpr_terms/) | 10.0.0.1 | Edit external footer view to show the gdpr terms, this terms should be written in res_company form.
 [l10n_es_aeat_mod420](l10n_es_aeat_mod420/) | 10.0.0.1 | Generacion del modelo ATC 420 siguiendo de ejemplo el modelo AEAT 303 disponible en <https://github.com/OCA/l10n-spain>.
 [l10n_es_igic](l10n_es_igic/) | 10.0.0.1 | Add the accounts and taxes for the Canary Legislation of IGIC.
+[medical_record](medical_record/) | 10.0.0.1 | Module to store medical data for the partner or patient.
 [pos_cash_count](pos_cash_count/) | 10.0.0.1 | Module to make a summary of cash counts.
 [pos_loyalty_extend](pos_loyalty_extend/) | 10.0.1.0 | Extension of the pos_loyalty module available in OCA/pos <https://github.com/OCA/pos>.
 [product_dimension_and_edge](product_dimension_and_edge/) | 10.0.0.4 | Product dimensions in sale orders and you can use edged managment. Extension but not dependent of the product_dimension module available in OCA/product-attribute <https://github.com/OCA/product-attribute>.
 [sale_of_frame](sale_of_frame/) | 10.0.0.1 | Utility to sale frames. Dimensions are managed and added to the sales order by converting the corresponding units.
+[sale_warehouse_qty](sale_warehouse_qty/) | 10.0.0.1 | Available product quantity by warehouse y sale order line.
 [time_logout](time_logout/) | 10.0.0.1 | Session inactivity control. JS implementation.
 [web_hidden_menu](web_hidden_menu/) | 10.0.1.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
 
@@ -26,7 +28,6 @@ addon | version | summary
 [sd_balance_report](sd_balance_report/) | 10.0.0.0 (unported) | This module repair error to print balance with too many accounts
 [sd_calendar_attendee](sd_calendar_attendee/) | 10.0.0.0 (unported) | Module that allows to decide if to send mail to the guests of the meetings.
 [sd_contract_template](sd_contract_template/) | 10.0.0.0 (unported) | This module allow contract templates
-[sd_cost_repercution_purchase](sd_cost_repercurion_purchase/) | 10.0.0.0 (unported) | This module allows to repercute Tax or discount purchase in the product cost
 [sd_crm_lead_sale_link](sd_crm_lead_sale_link/) | 10.0.0.0 (unported) | This module fix functionality from parent module, now we can see the real SO from each leads using origin field as filter
 [sd_crm_prevision](sd_crm_prevision/) | 10.0.0.0 (unported) | Module to modify function of sale forecast. With this modification, sale forecast is edit with opportunities values.
 [sd_custom_translated](sd_custom_translated/) | 10.0.0.0 (unported) | This module edit the translations in buttons
