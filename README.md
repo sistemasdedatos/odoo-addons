@@ -17,7 +17,7 @@ addon | version | summary
 [sale_of_frame](sale_of_frame/) | 10.0.0.1 | Utility to sale frames. Dimensions are managed and added to the sales order by converting the corresponding units.
 [sale_warehouse_qty](sale_warehouse_qty/) | 10.0.0.1 | Available product quantity by warehouse y sale order line.
 [time_logout](time_logout/) | 10.0.0.1 | Session inactivity control. JS implementation.
-[web_hidden_menu](web_hidden_menu/) | 10.0.1.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
+[web_hidden_menu](web_hidden_menu/) | 10.0.1.1 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
 
 Unported addons
 ---------------
