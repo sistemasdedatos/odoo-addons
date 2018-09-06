@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_warehouse_qty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-06 07:44+0000\n"
+"PO-Revision-Date: 2018-09-06 07:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_warehouse_qty
+#: selection:sale.config.settings,group_stock_search:0
+msgid "All company stock"
+msgstr "Stock en toda la compañía"
+
+#. module: sale_warehouse_qty
+#: code:addons/sale_warehouse_qty/models/sale_order.py:53
+#, python-format
+msgid "In %s there are %s %s.\n"
+""
+msgstr "En %s hay %s %s.\n"
+""
+
+#. module: sale_warehouse_qty
+#: code:addons/sale_warehouse_qty/models/sale_order.py:47
+#, python-format
+msgid "Not enough inventory!"
+msgstr "¡No hay suficiente inventario!"
+
+#. module: sale_warehouse_qty
+#: model:ir.model,name:sale_warehouse_qty.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sale_warehouse_qty
+#: model:ir.model,name:sale_warehouse_qty.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: sale_warehouse_qty
+#: model:ir.ui.view,arch_db:sale_warehouse_qty.view_sales_config_inherit_sale_warehouse_qty
+msgid "Stock"
+msgstr "Stock"
+
+#. module: sale_warehouse_qty
+#: model:res.groups,name:sale_warehouse_qty.group_stock_by_warehouse
+#: selection:sale.config.settings,group_stock_search:0
+msgid "Stock by warehouse"
+msgstr "Stock por almacén"
+
+#. module: sale_warehouse_qty
+#: model:ir.model.fields,field_description:sale_warehouse_qty.field_sale_config_settings_group_stock_search
+msgid "Stock warehouse"
+msgstr "Stock por almacén"
+
+#. module: sale_warehouse_qty
+#: code:addons/sale_warehouse_qty/models/sale_config_settings.py:12
+#: model:ir.model.fields,help:sale_warehouse_qty.field_sale_config_settings_group_stock_search
+#, python-format
+msgid "The stock alert in sale order lines depends on the sale order warehouse"
+msgstr "La alerta de stock en las líneas de pedidos de ventas depende del stock del almacén del pedido"
+
+#. module: sale_warehouse_qty
+#: code:addons/sale_warehouse_qty/models/sale_order.py:48
+#, python-format
+msgid "You plan to sell %s %s but you have %s %s available in this warehouse!\n"
+"The stock on hand is %s %s for all the company.\n"
+""
+msgstr "Usted planea vender %s %s pero solo tiene %s %s disponible en este almacén!\n"
+"El stock disponible es %s %s para toda la compañía.\n"
+""
+
+#. module: sale_warehouse_qty
+#: model:ir.model,name:sale_warehouse_qty.model_sale_config_settings
+msgid "sale.config.settings"
+msgstr "sale.config.settings"
+

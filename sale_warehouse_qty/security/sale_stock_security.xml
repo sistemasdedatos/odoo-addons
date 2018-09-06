@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">    
+        <record id="group_stock_by_warehouse" model="res.groups">
+            <field name="name">Stock by warehouse</field>
+            <field name="help">The stock alert in sale order lines depends on the sale order warehouse</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
+</odoo>
