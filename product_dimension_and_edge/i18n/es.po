@@ -18,8 +18,8 @@ msgstr ""
 #. module: product_dimension_and_edge
 #: code:addons/product_dimension_and_edge/wizard/dimension_wizard.py:68
 #, python-format
-msgid "%s: %s%s x %s%s, %s units"
-msgstr "%s: %s%s x %s%s, %s unidades"
+msgid "%s:\n---> %s%s x %s%s, %s units"
+msgstr "%s:\n---> %s%s x %s%s, %s unidades"
 
 #. module: product_dimension_and_edge
 #: model:ir.ui.view,arch_db:product_dimension_and_edge.wizard_dimension_view
@@ -71,8 +71,8 @@ msgstr "Cantear"
 #. module: product_dimension_and_edge
 #: code:addons/product_dimension_and_edge/wizard/dimension_wizard.py:81
 #, python-format
-msgid "Edged %s: Lenght %s x %s%s and Width %s x %s%s"
-msgstr "Canteado para %s: Largo %s x %s%s y Ancho %s x %s%s"
+msgid "Edged %s:\n---> Lenght %s%s x %s and Width %s%s x %s"
+msgstr "Canteado para %s:\n---> Largo %s%s x %s y Ancho %s%s x %s"
 
 #. module: product_dimension_and_edge
 #: model:ir.model.fields,field_description:product_dimension_and_edge.field_wizard_dimension_id
