@@ -68,7 +68,7 @@ class SaleFrame(models.Model):
         lines_vals = []
         lines_vals.append({'order_id': order,
                            'product_id': self.product_id.id,
-                           'name': _('%s: %s%s x %s%s, %s units') % (self.product_id.display_name, 
+                           'name': _('%s:\n--> %s%s x %s%s, %s units') % (self.product_id.display_name, 
                                                                      self.length, 
                                                                      self.uom_id.name, 
                                                                      self.width, 
@@ -79,7 +79,7 @@ class SaleFrame(models.Model):
         for line in self.product_ids:
             lines_vals.append({'order_id': order,
                                'product_id': line.id,
-                               'name': _('%s: %s%s x %s%s, %s units') % (line.display_name, 
+                               'name': _('%s:\n--> %s%s x %s%s, %s units') % (line.display_name, 
                                                                          self.length, 
                                                                          self.uom_id.name, 
                                                                          self.width, 

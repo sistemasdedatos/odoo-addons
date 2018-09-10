@@ -24,8 +24,8 @@ msgstr "# marcos"
 #: code:addons/sale_of_frame/models/sale_frame.py:71
 #: code:addons/sale_of_frame/models/sale_frame.py:82
 #, python-format
-msgid "%s: %s%s x %s%s, %s units"
-msgstr "%s: %s%s x %s%s, %s unidades"
+msgid "%s:\n--> %s%s x %s%s, %s units"
+msgstr "%s:\n--> %s%s x %s%s, %s unidades"
 
 #. module: sale_of_frame
 #: model:ir.ui.view,arch_db:sale_of_frame.view_frame_form
