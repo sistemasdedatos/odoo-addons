@@ -1,0 +1,121 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_session_pay_invoice_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-13 15:30+0000\n"
+"PO-Revision-Date: 2018-09-13 15:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.model.fields,field_description:pos_session_pay_invoice_extend.field_cash_invoice_in_active_model
+#: model:ir.model.fields,field_description:pos_session_pay_invoice_extend.field_cash_invoice_out_active_model
+msgid "Active model"
+msgstr "Modelo activo"
+
+#. module: pos_session_pay_invoice_extend
+#: code:addons/pos_session_pay_invoice_extend/wizard/cash_invoice_in.py:54
+#: code:addons/pos_session_pay_invoice_extend/wizard/cash_invoice_out.py:54
+#, python-format
+msgid "Bank Statement was not found"
+msgstr "No se ha encontrado extracto bancario"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.actions.act_window,name:pos_session_pay_invoice_extend.action_collect_in_pos
+msgid "Collect payment"
+msgstr "Recoger pago"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.actions.act_window,name:pos_session_pay_invoice_extend.action_pay_in_pos
+#: model:ir.actions.act_window,name:account_cash_invoice.action_cash_invoice_in_from_statement
+#: model:ir.ui.view,arch_db:account_cash_invoice.cash_invoice_in_form
+#: model:ir.actions.act_window,name:pos_session_pay_invoice.action_pos_invoice_in
+#: model:ir.actions.act_window,name:pos_session_pay_invoice.action_pos_invoice_out
+msgid "Pay invoice"
+msgstr "Pagar factura"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.model.fields,field_description:pos_session_pay_invoice_extend.field_cash_invoice_in_pos_session_id
+#: model:ir.model.fields,field_description:pos_session_pay_invoice_extend.field_cash_invoice_out_pos_session_id
+msgid "Pos Session"
+msgstr "Sesión TPV"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.ui.view,arch_db:pos_session_pay_invoice_extend.pos_pay_invoice_form
+#: model:ir.ui.view,arch_db:pos_session_pay_invoice_extend.pos_pay_invoice_supplier_form
+msgid "Register payment in POS"
+msgstr "Registrar pago en TPV"
+
+#. module: pos_session_pay_invoice_extend
+#: code:addons/pos_session_pay_invoice_extend/wizard/cash_invoice_in.py:34
+#: code:addons/pos_session_pay_invoice_extend/wizard/cash_invoice_out.py:34
+#, python-format
+msgid "There is not pos session opened for yourself"
+msgstr "Usted no tiene una sesión de TPV abierta"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.model,name:pos_session_pay_invoice_extend.model_cash_invoice_in
+msgid "cash.invoice.in"
+msgstr "cash.invoice.in"
+
+#. module: pos_session_pay_invoice_extend
+#: model:ir.model,name:pos_session_pay_invoice_extend.model_cash_invoice_out
+msgid "cash.invoice.out"
+msgstr "cash.invoice.out"
+
+#. module: account_cash_invoice
+#: model:ir.actions.act_window,name:account_cash_invoice.action_cash_invoice_out_from_statement
+msgid "Collect Payment from Invoice"
+msgstr "Recoger pago de factura"
+
+#. module: account_cash_invoice
+#: model:ir.ui.view,arch_db:account_cash_invoice.cash_invoice_out_form
+msgid "Collect payment from customer invoice or supplier refund"
+msgstr "Recoger pago de factura de venta o factura rectificativa de compra"
+
+#. module: account_cash_invoice
+#: model:ir.ui.view,arch_db:account_cash_invoice.cash_invoice_in_form
+msgid "Pay supplier invoice or customer refund"
+msgstr "Pagar factura de compra o factura rectificativa de venta"
+
+#. module: pos_session_pay_invoice
+#: model:ir.ui.view,arch_db:pos_session_pay_invoice.view_pos_session_form
+msgid ""
+"<span class=\"o_stat_text\">Collect Payment</span>\n"
+"                        <span class=\"o_stat_text\">from Invoice</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Recoger pago</span>\n"
+"                        <span class=\"o_stat_text\">de factura</span>"
+
+#. module: pos_session_pay_invoice
+#: model:ir.ui.view,arch_db:pos_session_pay_invoice.view_pos_session_form
+msgid ""
+"<span class=\"o_stat_text\">Pay</span>\n"
+"                        <span class=\"o_stat_text\">Invoice</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Pagar</span>\n"
+"                        <span class=\"o_stat_text\">factura</span>"
+
+#. module: pos_session_pay_invoice
+#: code:addons/pos_session_pay_invoice/wizard/cash_invoice_in.py:24
+#, python-format
+msgid "There is no cash register for this Pos session"
+msgstr "No hay registro de caja para esta sesión de TPV"
+
+#. module: point_of_sale
+#: model:ir.ui.view,arch_db:point_of_sale.view_pos_session_form
+msgid "<span class=\"o_stat_text\">Set Closing Balance</span>"
+msgstr "<span class=\"o_stat_text\">Balance de cierre</span>"
+
+#. module: point_of_sale
+#: model:ir.ui.view,arch_db:point_of_sale.view_pos_session_form
+msgid "<span class=\"o_stat_text\">Set Opening Balance</span>"
+msgstr "<span class=\"o_stat_text\">Balance de Apertura</span>"

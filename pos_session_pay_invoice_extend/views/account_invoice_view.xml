@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pos_pay_invoice_form" model="ir.ui.view">
+	    <field name="name">pos.pay.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+			<button name="%(account.action_account_invoice_payment)d" position="after">
+            	<button class="oe_highlight" name="%(action_collect_in_pos)d" type="action" string="Register payment in POS" 
+            			attrs="{'invisible':['|',('type', 'not in', ['out_invoice', 'in_refund']),('state','!=','open')]}"/>
+                <button class="oe_highlight" name="%(action_pay_in_pos)d" type="action" string="Register payment in POS" 
+                		attrs="{'invisible':['|',('type', 'in', ['out_invoice', 'in_refund']),('state','!=','open')]}"/>
+            </button>
+        </field>
+    </record>
+    <record id="pos_pay_invoice_supplier_form" model="ir.ui.view">
+	    <field name="name">pos.pay.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+			<button name="%(account.action_account_invoice_payment)d" position="after">
+            	<button class="oe_highlight" name="%(action_pay_in_pos)d" type="action" string="Register payment in POS" 
+            			attrs="{'invisible':['|',('type', 'in', ['out_invoice', 'in_refund']),('state','!=','open')]}"/>
+                <button class="oe_highlight" name="%(action_collect_in_pos)d" type="action" string="Register payment in POS" 
+                		attrs="{'invisible':['|',('type', 'not in', ['out_invoice', 'in_refund']),('state','!=','open')]}"/>
+            </button>
+        </field>
+    </record>    
+</odoo>

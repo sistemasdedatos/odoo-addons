@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="inherit_cash_invoice_in_form" model="ir.ui.view">
+	    <field name="name">inherit.cash_invoice_in_form</field>
+        <field name="model">cash.invoice.in</field>
+        <field name="inherit_id" ref="account_cash_invoice.cash_invoice_in_form"/>
+        <field name="arch" type="xml">
+        	<field name="company_id" position="before">
+        		<field name="active_model" invisible="1"/>
+        		<field name="pos_session_id" invisible="1"/> 
+        	</field>
+        	<field name="invoice_id" position="attributes">
+        		<attribute name="attrs">{'invisible':[('active_model','=','account.invoice')]}</attribute>
+        	</field>
+        </field>
+    </record>
+	<act_window
+            id="action_pay_in_pos"
+            name="Pay invoice"
+            res_model="cash.invoice.in"
+            src_model="account.invoice"
+            view_mode="form"
+            target="new"
+        />
+</odoo>
+
+    
