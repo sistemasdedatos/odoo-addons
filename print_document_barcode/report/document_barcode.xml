@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   	<template id="document_barcode_report">
+   		<t t-call="report.html_container">
+        	<t t-foreach="docs" t-as="doc">
+				<div class="page">
+					<t t-foreach="doc.name" t-as="o">
+						<h3 class="text-center">
+							<span t-field="o.name"/>
+							<div id="barcode">
+								<img t-att-src="'/report/barcode/Code128/%s' % o.name" style="height:22mm;width:55mm"/>
+							</div>
+						</h3>
+					</t>
+				</div>
+			</t>
+		</t>
+	</template>
+	<report
+           id="document_barcode"
+           model="wizard.barcode"        
+           name="print_document_barcode.document_barcode_report"
+           string="Print Document Barcode"
+           file="print_document_barcode.document_barcode_report"
+           report_type="qweb-pdf"
+           attachment_use="False"
+       />
+</odoo>

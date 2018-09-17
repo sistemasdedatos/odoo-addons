@@ -1,0 +1,160 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* print_document_barcode
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-17 10:55+0000\n"
+"PO-Revision-Date: 2018-09-17 10:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_action_server_id
+msgid "Action to print barcode"
+msgstr "Acción para imprimir código de barras"
+
+#. module: print_document_barcode
+#: code:addons/print_document_barcode/models/model_barcode_config.py:30
+#, python-format
+msgid "Barcode %s print"
+msgstr "Imprimir %s en código de barra"
+
+#. module: print_document_barcode
+#: model:ir.actions.act_window,name:print_document_barcode.action_barcode_config
+#: model:ir.ui.menu,name:print_document_barcode.menu_barcode_config
+msgid "Barcode Config"
+msgstr "Configuración de código de barras"
+
+#. module: print_document_barcode
+#: model:ir.model,name:print_document_barcode.model_model_barcode_config
+msgid "Config model to print name in barcode"
+msgstr "Configurar modelo para imprimir el nombre en código de barras"
+
+#. module: print_document_barcode
+#: model:ir.actions.act_window,help:print_document_barcode.action_barcode_config
+msgid "Create a barcode model config to print the name of document in barcode format."
+msgstr "Cree una configuración de modelo para código de barras, de este modo podrá imprimir el nombre del documento en formato barcode 128."
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_create_uid
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_create_uid
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_create_date
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_create_date
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_display_name
+#: model:ir.model.fields,field_description:print_document_barcode.field_report_print_document_barcode_document_barcode_report_display_name
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_display_name
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: print_document_barcode
+#: code:addons/print_document_barcode/models/model_barcode_config.py:38
+#, python-format
+msgid "Error on create action"
+msgstr "Error al crear la acción"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_id
+#: model:ir.model.fields,field_description:print_document_barcode.field_report_print_document_barcode_document_barcode_report_id
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_id
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_id
+msgid "ID"
+msgstr "ID"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config___last_update
+#: model:ir.model.fields,field_description:print_document_barcode.field_report_print_document_barcode_document_barcode_report___last_update
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode___last_update
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_write_uid
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_write_uid
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_write_date
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_write_date
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_model
+msgid "Model"
+msgstr "Modelo"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_model_id
+msgid "Model to print"
+msgstr "Modelo a imprimir"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_model_barcode_config_name
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_name
+msgid "Names"
+msgstr "Nombres"
+
+#. module: print_document_barcode
+#: code:addons/print_document_barcode/wizard/wizard_barcode.py:18
+#, python-format
+msgid "One or more documents do not have name"
+msgstr "Uno o más documentos no tinene nombre"
+
+#. module: print_document_barcode
+#: model:ir.actions.report.xml,name:print_document_barcode.document_barcode
+msgid "Print Document Barcode"
+msgstr "Imprimir código de barras para documento"
+
+#. module: print_document_barcode
+#: code:addons/print_document_barcode/models/model_barcode_config.py:18
+#, python-format
+msgid "Print barcode in %s"
+msgstr "Imprimir código de barras en %s"
+
+#. module: print_document_barcode
+#: model:ir.model.fields,field_description:print_document_barcode.field_wizard_barcode_names_wizard_barcode_id
+msgid "Wizard barcode id"
+msgstr "Wizard barcode id"
+
+#. module: print_document_barcode
+#: model:ir.model,name:print_document_barcode.model_report_print_document_barcode_document_barcode_report
+msgid "report.print_document_barcode.document_barcode_report"
+msgstr "report.print_document_barcode.document_barcode_report"
+
+#. module: print_document_barcode
+#: model:ir.model,name:print_document_barcode.model_wizard_barcode
+msgid "wizard.barcode"
+msgstr "wizard.barcode"
+
+#. module: print_document_barcode
+#: model:ir.model,name:print_document_barcode.model_wizard_barcode_names
+msgid "wizard.barcode.names"
+msgstr "wizard.barcode.names"
+

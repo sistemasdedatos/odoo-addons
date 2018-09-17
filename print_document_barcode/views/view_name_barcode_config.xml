@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="model_barcode_config_tree" model="ir.ui.view">
+		<field name="name">model.barcode.config.tree</field>
+		<field name="model">model.barcode.config</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="model_id" invisible="1"/>		
+			</tree>
+		</field>
+	</record>
+	<record id="model_barcode_config_form" model="ir.ui.view">
+		<field name="name">model.barcode.config.form</field>
+		<field name="model">model.barcode.config</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <div class="oe_title">
+                        <group>
+                        	<h1>
+	                            <field name="name"/>
+	                        </h1>
+	                    </group>
+	                    <group>
+	                    	<field name="model_id"/>
+	                    	<field name="action_server_id"/>
+	                    </group>
+	                </div>
+	            </sheet>
+			</form>
+		</field>
+	</record>
+	<record id="action_barcode_config" model="ir.actions.act_window">
+	    <field name="name">Barcode Config</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="res_model">model.barcode.config</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="context">{}</field>
+	    <field name="help" type="html">
+	        <p class="oe_view_nocontent_create">
+	            Create a barcode model config to print the name of document in barcode format.
+	        </p>
+	    </field>
+	</record>
+	<menuitem action="action_barcode_config"
+            id="menu_barcode_config" parent="report.reporting_menuitem"
+            sequence="10"/>
+</odoo>
