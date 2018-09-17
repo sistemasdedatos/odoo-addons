@@ -14,6 +14,7 @@ addon | version | summary
 [pos_cash_count](pos_cash_count/) | 10.0.0.1 | Module to make a summary of cash counts.
 [pos_loyalty_extend](pos_loyalty_extend/) | 10.0.1.0 | Extension of the pos_loyalty module available in OCA/pos <https://github.com/OCA/pos>.
 [pos_session_pay_invoice_extend](pos_session_pay_invoice_extend/) | 10.0.0.1 | Extension of the pos_session_pay_invoice module available in OCA/pos <https://github.com/OCA/pos>.
+[print_document_barcode](print_document_barcode/) | 10.0.0.1 | This module allows you to configure which document name you like to print in barcode format, for easy searching.
 [product_dimension_and_edge](product_dimension_and_edge/) | 10.0.0.5 | Product dimensions in sale orders and you can use edged managment. Extension but not dependent of the product_dimension module available in OCA/product-attribute <https://github.com/OCA/product-attribute>.
 [sale_of_frame](sale_of_frame/) | 10.0.0.2 | Utility to sale frames. Dimensions are managed and added to the sales order by converting the corresponding units.
 [sale_warehouse_qty](sale_warehouse_qty/) | 10.0.0.1 | Available product quantity by warehouse y sale order line.
