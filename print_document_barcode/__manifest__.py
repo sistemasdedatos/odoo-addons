@@ -3,7 +3,7 @@
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
 {
     'name' : 'Print Document barcode',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
@@ -18,6 +18,7 @@ This module allows you to configure which document name you like to print in bar
     # End General Data
     'depends' : ['report'],
     'data': ['security/ir.model.access.csv',
+             'report/paper_format.xml',
              'report/document_barcode.xml',
              'views/view_name_barcode_config.xml',
              ],

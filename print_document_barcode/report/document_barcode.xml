@@ -25,4 +25,7 @@
            report_type="qweb-pdf"
            attachment_use="False"
        />
+    <record id="print_document_barcode.document_barcode" model="ir.actions.report.xml">
+	    <field name="paperformat_id" ref="print_document_barcode.paperformat_ticket_barcode"/>
+	</record>
 </odoo>
