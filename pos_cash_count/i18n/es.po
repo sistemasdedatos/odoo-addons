@@ -43,7 +43,7 @@ msgstr "Importe"
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "CASH"
-msgstr "CASH"
+msgstr "CONTADO"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
