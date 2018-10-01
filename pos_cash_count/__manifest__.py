@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name' : 'POS Cash Count',
-    'version' : '0.1',
+    'version' : '1.1',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Tools',
@@ -41,7 +41,7 @@ Modulo para realizar el arqueo de caja
                  'l10n_es_pos'],
     'data': ['views/cash_count_view.xml',
              'report/cash_count_report.xml',
-             'security/ir.model.access.csv'],
+             'report/pos_session_report.xml'],
     'installable': True,
     'auto_install': False,        
     'application': False,

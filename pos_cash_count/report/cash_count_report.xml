@@ -27,13 +27,13 @@
 								<tbody class="invoice_tbody">
 									<tr>
 										<td>Initial Amount: <span t-field="l.open_amount"/>€</td>
-										<td>Cash Sales: <span t-field="l.cash_sales"/>€</td>
+										<td>Cash Movements: <span t-field="l.cash_sales"/>€</td>
 										<td>Cash + Initial: <span t-field="l.total_cash_sales"/>€</td>
 									</tr>
 									<tr>
 										<td></td>
-										<td>Card Sales: <span t-field="l.card_sales"/>€</td>
-										<td>Total Sales: <span t-field="l.total_sales"/>€</td>
+										<td>Card Movements: <span t-field="l.card_sales"/>€</td>
+										<td>Total Movements: <span t-field="l.total_sales"/>€</td>
 									</tr>
 									<tr>
 										<td></td>

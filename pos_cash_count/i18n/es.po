@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-25 15:15+0000\n"
-"PO-Revision-Date: 2018-05-25 15:15+0000\n"
+"POT-Creation-Date: 2018-10-01 14:18+0000\n"
+"PO-Revision-Date: 2018-10-01 14:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,29 +16,62 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "<span>Pos Session report:</span>"
+msgstr "<span>Informe de sesión:</span>"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "<span>Status:</span>"
+msgstr "<span>Estado:</span>"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "<span>User:</span>"
+msgstr "<span>Usuario:</span>"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Amount"
+msgstr "Importe"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "CASH"
+msgstr "CASH"
+
+#. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
-msgid "Card Sales:"
-msgstr "Ventas de Tarjeta:"
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Card Movements:"
+msgstr "Movimientos de Tarjeta:"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_card_sales
-msgid "Card sales"
-msgstr "Ventas de tarjeta"
+msgid "Card movements"
+msgstr "Card movements"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Cash + Initial:"
 msgstr "Efectivo + Saldo inicial:"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
-msgid "Cash Sales:"
-msgstr "Ventas de Efectivo:"
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Cash Movements:"
+msgstr "Movimientos de Efectivo:"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_cash_count_id
@@ -52,12 +85,12 @@ msgstr "Líneas de arqueo"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_cash_sales
-msgid "Cash sales"
-msgstr "Ventas de efectivo"
+msgid "Cash movements"
+msgstr "Movimientos de efectivo"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_total_cash_sales
-msgid "Cash sales + open"
+msgid "Cash movements + open"
 msgstr "Efectivo + saldo inicial"
 
 #. module: pos_cash_count
@@ -67,8 +100,14 @@ msgstr "Cierre"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Closed:"
 msgstr "Fecha de cierre:"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Concept"
+msgstr "Concepto"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_create_uid
@@ -81,6 +120,11 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_create_date
 msgid "Created on"
 msgstr "Creado el"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Customer"
+msgstr "Cliente"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_date_init
@@ -106,6 +150,7 @@ msgstr "Asiento"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Entry:"
 msgstr "Ingresos:"
 
@@ -133,6 +178,7 @@ msgstr "ID"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Initial Amount:"
 msgstr "Saldo inicial:"
 
@@ -167,8 +213,14 @@ msgstr "Fecha de apertura"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Opened:"
 msgstr "Fecha de apertura:"
+
+#. module: pos_cash_count
+#: model:ir.actions.report.xml,name:pos_cash_count.pos_session_report
+msgid "Pos Session Report"
+msgstr "Informe de sesión"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.view_cash_count_form
@@ -197,6 +249,7 @@ msgstr "Saldo real"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Real Amount:"
 msgstr "Saldo real:"
 
@@ -208,7 +261,7 @@ msgstr "Informe para"
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_user_id
 msgid "Salesman"
-msgstr "Cajer@"
+msgstr "Comercial"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_name
@@ -217,8 +270,14 @@ msgstr "Sesión"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Session:"
 msgstr "Sesión:"
+
+#. module: pos_cash_count
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Summary"
+msgstr "Resumen"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_take_out
@@ -227,6 +286,7 @@ msgstr "Retirada"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Take out:"
 msgstr "Retirada:"
 
@@ -237,6 +297,7 @@ msgstr "Saldo teórico"
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
 msgid "Teorical Amount:"
 msgstr "Saldo teórico:"
 
@@ -261,13 +322,14 @@ msgstr "Para imprimir un mes en particular, debemos seleccionar desde el 01 hast
 
 #. module: pos_cash_count
 #: model:ir.ui.view,arch_db:pos_cash_count.cash_count_report
-msgid "Total Sales:"
-msgstr "Total vendido:"
+#: model:ir.ui.view,arch_db:pos_cash_count.report_pos_session_document
+msgid "Total Movements:"
+msgstr "Movimientos Totales:"
 
 #. module: pos_cash_count
 #: model:ir.model.fields,field_description:pos_cash_count.field_cash_count_lines_total_sales
-msgid "Total sales"
-msgstr "Total vendido"
+msgid "Total movements"
+msgstr "Movimientos totales"
 
 #. module: pos_cash_count
 #: model:ir.model,name:pos_cash_count.model_cash_count

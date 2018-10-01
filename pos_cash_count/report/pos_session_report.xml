@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="report_pos_session_document">
+		    <t t-call="report.external_layout">
+		        <t t-set="o" t-value="o.with_context({'lang':o.user_id.partner_id.lang})" />
+		        <div class="page">
+		        	<h1 class="text-center">
+		        		<span>Pos Session report:</span>
+		        		<span t-field="o.config_id.name"/>
+		        	</h1>
+		        	<h5>
+		        		<div>
+		        			<span>Status:</span>
+		        			<span t-field="o.state"/>
+		        		</div>
+		        		<div>
+		        			<span>User:</span>
+		        			<span t-field="o.user_id"/>
+		        		</div>
+		        	</h5>
+		        	
+		        	<t t-set="card_movements" t-value="0"/>
+		        	<t t-set="t_movements" t-value="0"/>
+		        	<t t-set="t_entrys" t-value="0"/>
+		        	<t t-set="t_take_out" t-value="0"/>
+		        	
+		        	<div t-foreach="o.statement_ids" t-as="s">
+		        		<t t-set="t_movements" t-value="t_movements+s.total_entry_encoding"/>
+		        		<t t-if="s.journal_id.type == 'bank'">
+		        			<t t-set="card_movements" t-value="card_movements + s.total_entry_encoding"/>
+		        		</t>
+		        		<h4 class="text-center">
+		        			<div t-field="s.journal_id"/>
+		        		</h4>
+		        		<table class="table table-condensed" style="font-size:11px">
+		                    <thead>
+		                        <tr>
+		                            <th>Concept</th>
+		                            <th>Customer</th>
+		                            <th class="text-right">Amount</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+                        		<t t-foreach="s.line_ids" t-as="l">
+                        			<t t-if="not l.invoice_id and not l.pos_statement_id and l.amount&gt;0">
+                        				<t t-set="t_entrys" t-value="t_entrys+l.amount"/>
+                        			</t>
+                        			<t t-if="not l.invoice_id and not l.pos_statement_id and l.amount&lt;0">
+                        				<t t-set="t_take_out" t-value="t_take_out+l.amount"/>
+                        			</t>
+                        			<tr>
+                        				<td>
+                        					<span t-field="l.name"/>
+                        				</td>
+                        				<td>
+                        					<span t-if="l.partner_id" t-field="l.partner_id"/>
+                        					<span t-if="not l.partner_id">CASH</span>
+                        				</td>
+                        				<td class="text-right">
+                        					<span t-field="l.amount" t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/>
+                        				</td>
+                        			</tr>
+                        		</t>
+                        	</tbody>
+                        </table>
+                        <div class="row" name="journal_total">
+                        	<div class="col-xs-4 pull-right">
+			                    <table class="table table-condensed">
+			                        <tr class="border-black">
+			                            <td><strong>Total</strong></td>
+			                            <td class="text-right">
+			                                <span t-field="s.total_entry_encoding"
+			                                    t-options='{"widget": "monetary", "display_currency": o.config_id.currency_id}'/>
+			                            </td>
+			                        </tr>
+			                    </table>
+			                </div>
+                        </div>
+		        	</div>
+		        	<div name="session_summary">
+		        		<h4 class="text-center">
+		        			Summary
+		        		</h4>
+		        		<table class="table table-condensed" style="font-size:10px">
+							<thead>
+								<tr>
+									<th>Session: <span t-field="o.name"/></th>
+									<th>Opened: <span t-field="o.start_at"/></th>
+									<th>Closed: <span t-field="o.stop_at"/></th>
+								</tr>
+							</thead>
+							<tbody class="invoice_tbody">
+								<tr>
+									<td t-if="o.cash_control">Initial Amount: <span t-field="o.cash_register_balance_start" 
+															  						t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+									<td>Cash Movements: <span t-field="o.cash_register_total_entry_encoding" 
+															  t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+									<td>Cash + Initial: <span t-field="o.cash_register_balance_end" 
+															  t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+								</tr>
+								<!-- <t t-set="card_movements" t-value="sum(l.total_entry_encoding if l.journal_id.type == 'bank' else 0 for l in o.statement_ids)"/> -->
+								<!-- <t t-set="t_movements" t-value="sum(l.total_entry_encoding for l in o.statement_ids)"/> -->
+								<!-- <t t-set="t_entrys" t-value="sum(l.amount if l.invoice_id and l.pos_statement_id and l.amount>0 else 0 for l in s.line_ids for s in o.statement_ids)"/> -->
+								<tr>
+									<td></td>
+									<td>Card Movements: <span t-esc="card_movements"
+															  t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+									<td>Total Movements: <span t-esc="t_movements"
+															   t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>Entry: <span t-if="t_entrys != 0" t-esc="t_entrys"
+													 t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+									<td>Take out: <span t-if="t_take_out != 0" t-esc="abs(t_take_out)" 
+														t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></td>
+								</tr>
+								<tr>
+									<th></th>
+									<th>Teorical Amount: <span t-field="o.cash_register_balance_end" 
+															   t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></th>
+									<th>Real Amount: <span t-field="o.cash_register_balance_end_real" 
+														   t-options="{'widget': 'monetary', 'display_currency': o.config_id.currency_id}"/></th>
+								</tr>
+							</tbody>
+						</table>
+		        	</div>
+		        </div>
+		    </t>
+	    </template>
+		<template id="report_pos_session">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="o">
+		            <t t-call="pos_cash_count.report_pos_session_document" t-lang="o.user_id.partner_id.lang"/>
+		        </t>
+		    </t>
+		</template>
+		<report 
+            id="pos_session_report"
+            string="Pos Session Report"
+            model="pos.session" 
+            report_type="qweb-pdf"
+            file="pos_cash_count.report_pos_session" 
+            name="pos_cash_count.report_pos_session" 
+        />
+	</data>
+</odoo>

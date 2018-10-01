@@ -80,10 +80,10 @@ class cash_count_lines (models.TransientModel):
     date_start = fields.Datetime (string = "Opened")                                                            #fecha apertura
     date_close = fields.Datetime (string = "Closed")                                                            #fecha cierre
     open_amount = fields.Float (string = "Open amount", digits=dp.get_precision('Account'))                     #Saldo de apertura
-    cash_sales = fields.Float (string = "Cash sales", digits=dp.get_precision('Account'))                       #Ventas en efectivo
-    total_cash_sales = fields.Float (string = "Cash sales + open", digits=dp.get_precision('Account'))          #Ventas en efectivo + apertura
-    card_sales = fields.Float (string = "Card sales", digits=dp.get_precision('Account'))                       #Ventas con tarjeta
-    total_sales = fields.Float (string = "Total sales", digits=dp.get_precision('Account'))                     #Ventas en efectivo + tarjeta
+    cash_sales = fields.Float (string = "Cash movements", digits=dp.get_precision('Account'))                       #Ventas en efectivo
+    total_cash_sales = fields.Float (string = "Cash movements + open", digits=dp.get_precision('Account'))          #Ventas en efectivo + apertura
+    card_sales = fields.Float (string = "Card movements", digits=dp.get_precision('Account'))                       #Ventas con tarjeta
+    total_sales = fields.Float (string = "Total movements", digits=dp.get_precision('Account'))                     #Ventas en efectivo + tarjeta
     entry = fields.Float (string = "Entry", digits=dp.get_precision('Account'))                                 #Ingresos
     take_out = fields.Float (string = "Take Out", digits=dp.get_precision('Account'))                           #Retirada
     teorical_amount = fields.Float (string = "Teorical Amount", digits=dp.get_precision('Account'))             #Saldo teorico de cierre
