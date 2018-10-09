@@ -29,10 +29,11 @@ class ResUsers(models.Model):
     @api.multi
     def write(self, vals):
         res = super(ResUsers, self).write(vals)
-        min_context_session_timeout = 30
-        min_context_session_alert_time = self.context_session_timeout - 15
-        if self.context_session_timeout < min_context_session_timeout and self.context_session_timeout != 0:
-            raise exceptions.ValidationError(_("The minumum value must be 30 or 0 if the timeout don't afect to this user"))
-        if self.context_session_alert_time < min_context_session_alert_time:
-            raise exceptions.ValidationError(_("The minmum value must be %d if you set %d as session_timeout value" % (min_context_session_alert_time, self.context_session_timeout)))
+        for s in self:
+            min_context_session_timeout = 30
+            min_context_session_alert_time = s.context_session_timeout - 15
+            if s.context_session_timeout < min_context_session_timeout and s.context_session_timeout != 0:
+                raise exceptions.ValidationError(_("The minumum value must be 30 or 0 if the timeout don't afect to this user"))
+            if s.context_session_alert_time < min_context_session_alert_time:
+                raise exceptions.ValidationError(_("The minmum value must be %d if you set %d as session_timeout value" % (min_context_session_alert_time, s.context_session_timeout)))
         return res
