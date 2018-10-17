@@ -9,6 +9,10 @@ class PurchaseCostDistribution(models.Model):
     benefit_margin = fields.Float (string = 'Margin %', readonly=True,
                                    states = {'draft': [('readonly', False)], 'calculated': [('readonly', False)]}, default = -1,
                                    help = "If the margin is less than 0, it does not apply")
+    """TODO Set calculation method
+        1 -> Sale = cost / (1 - %margin)
+        2 -> Sale = cost + (cost * %margin)
+    """
     
     @api.multi
     def action_calculate (self):
