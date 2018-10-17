@@ -10,7 +10,7 @@
 
 {
     'name' : 'SDatos Distribution Price Margin',
-    'version' : '1.1',
+    'version' : '1.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Purchases',
@@ -21,6 +21,10 @@ Sale Price Margin in Distribution Cost
 
 This module allows introduce benefits margin in distribution cost of purchases
 ------------------------------------------------------------------------------
+
+The method used to calculate the sale price is as follows: Sale = Cost / (1 - %margin)\n
+Reference: https://manueldelgado.com/como-calcular-el-precio-de-venta-coste-margen/
+
     """,
     'website': 'http://www.sdatos.com',
     # End General Data

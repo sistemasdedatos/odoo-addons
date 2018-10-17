@@ -16,7 +16,7 @@ class PurchaseCostDistribution(models.Model):
         for distribution in self:
             for line in distribution.cost_lines:
                 if line.benefit_margin >= 0:
-                    line.benefit_price = line.standard_price_new + (line.standard_price_new * (line.benefit_margin / 100))
+                    line.benefit_price = line.standard_price_new / (1 - (line.benefit_margin / 100))
                 else:
                     line.benefit_price = 0
         return True
