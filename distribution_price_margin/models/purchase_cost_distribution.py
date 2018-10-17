@@ -45,14 +45,20 @@ class PurchaseCostDistributionLine(models.Model):
     @api.onchange('benefit_price')
     def onchange_benefit_price(self):
         if self.benefit_price >= 0:
-            self.benefit_margin = (1 - (self.standard_price_new / self.benefit_price)) * 100
+            try:
+                self.benefit_margin = (1 - (self.standard_price_new / self.benefit_price)) * 100
+            except:
+                self.benefit_margin = -1
         else:
             self.benefit_margin = -1
     
     @api.onchange('benefit_margin')
     def onchange_benefit_margin(self):
         if self.benefit_margin >= 0:
-            self.benefit_price = self.standard_price_new / (1 - (self.benefit_margin / 100))
+            try:
+                self.benefit_price = self.standard_price_new / (1 - (self.benefit_margin / 100))
+            except:
+                self.benefit_price = 0
         else:
             self.benefit_price = 0
 
