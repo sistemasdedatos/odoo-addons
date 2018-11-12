@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Rodrigo Colombo - Sistemas de Datos S.L. <rcolombo@sdatos.es>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data noupdate="1">
+        <record id="atc_sii_map_1_0" model="aeat.sii.map">
+            <field name="name">SII ATC 1.0 (Canarias)</field>
+            <field name="version">1.0</field>
+            <field name="date_from">2019-01-01</field>
+            <field name="state" ref="base.state_es_tf"/>
+        </record>
+        <!-- SII Tax Map Lines -->
+        <record id="atc_sii_map_1_0_line_SFE" model="aeat.sii.map.lines">
+            <field name="code">SFESB</field>
+            <field name="taxes" eval="[(6, 0, [
+                ref('l10n_es_igic.account_tax_template_igic_r_0'),
+                ref('l10n_es_igic.account_tax_template_igic_r_3'),
+                ref('l10n_es_igic.account_tax_template_igic_r_7'),
+                ref('l10n_es_igic.account_tax_template_igic_r_9_5'),
+                ref('l10n_es_igic.account_tax_template_igic_r_13_5'),
+                ref('l10n_es_igic.account_tax_template_igic_r_200')
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFactEmitidas</field>
+        </record>
+        <record id="atc_sii_map_1_0_line_SFEISP" model="aeat.sii.map.lines">
+            <field name="code">SFESISP</field>
+            <field name="taxes" eval="[(6, 0, [
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP0'),
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP3'),
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP7'),
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP95'),
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP135'),
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP200')
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFactEmitidas ISP</field>
+        </record>
+        <record id="atc_sii_map_1_0_line_SFEE" model="aeat.sii.map.lines">
+            <field name="code">SFESSE</field>
+            <field name="taxes" eval="[(6, 0, [
+                ref('l10n_es_igic.account_tax_template_igic_re_ex')
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFactEmitidas Exentas</field>
+        </record>
+        <record id="atc_sii_map_1_0_line_SFR" model="aeat.sii.map.lines">
+            <field name="code">SFRS</field>
+            <field name="taxes" eval="[(6, 0, [
+            	ref('l10n_es_igic.account_tax_template_igic_p_ex'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_0'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_3'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_7'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_9_5'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_13_5'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_200'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_0'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_3'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_7'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_9_5'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_13_5'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_200'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_0_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_3_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_7_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_9_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_13_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_200_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_0_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_3_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_7_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_9_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_13_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_200_inv')
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFactRecibidas</field>
+        </record>
+        <record id="atc_sii_map_1_0_line_SFRISP" model="aeat.sii.map.lines">
+            <field name="code">SFRISP</field>
+            <field name="taxes" eval="[(6, 0, [
+                ref('l10n_es_igic.account_tax_template_igic_ISP0'),
+                ref('l10n_es_igic.account_tax_template_igic_ISP3'),
+                ref('l10n_es_igic.account_tax_template_igic_ISP7'),
+                ref('l10n_es_igic.account_tax_template_igic_ISP95'),
+                ref('l10n_es_igic.account_tax_template_igic_ISP135'),
+                ref('l10n_es_igic.account_tax_template_igic_ISP200'),
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFactRecibidas ISP</field>
+        </record>
+        <record id="atc_sii_map_10_line_SFRBI" model="aeat.sii.map.lines">
+            <field name="code">SFRBI</field>
+            <field name="taxes" eval="[(6, 0, [
+                ref('l10n_es_igic.account_tax_template_igic_sop_0_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_3_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_7_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_9_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_13_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_200_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_0_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_3_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_7_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_9_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_13_5_inv'),
+                ref('l10n_es_igic.account_tax_template_igic_sop_i_200_inv')
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFactRecibidas Bienes de Inversión</field>
+        </record>
+        <record id="atc_sii_map_1_0_line_RE" model="aeat.sii.map.lines">
+            <field name="code">RE</field>
+            <field name="taxes" eval="[(6, 0, [
+                ref('l10n_es_igic.account_tax_template_igic_p_re03'),
+                ref('l10n_es_igic.account_tax_template_igic_p_re07'),
+                ref('l10n_es_igic.account_tax_template_igic_p_re95'),
+                ref('l10n_es_igic.account_tax_template_igic_p_re135'),
+                ref('l10n_es_igic.account_tax_template_igic_p_re20'),
+                ref('l10n_es_igic.account_tax_template_igic_re_03'),
+                ref('l10n_es_igic.account_tax_template_igic_re_07'),
+                ref('l10n_es_igic.account_tax_template_igic_re_095'),
+                ref('l10n_es_igic.account_tax_template_igic_re_13_5'),
+                ref('l10n_es_igic.account_tax_template_igic_re_20')
+            ])]"/>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+            <field name="name">SuministroFact Recargo Equivalencia</field>
+        </record>
+        <!-- SII WSDL Urls -->
+        <record id="wsdl_atc_out_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroFactEmitidas</field>
+            <field name="key">wsdl_out</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroFactEmitidas.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+        <record id="wsdl_atc_in_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroFactRecibidas</field>
+            <field name="key">wsdl_in</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroFactRecibidas.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+        <record id="wsdl_atc_pi_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroBienesInversion</field>
+            <field name="key">wsdl_pi</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroBienesInversion.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+        <record id="wsdl_atc_inmv_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroInmueblesAdicionales</field>
+            <field name="key">wsdl_inmv</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroInmueblesAdicionales.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+        <record id="wsdl_atc_pr_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroCobrosEmitidas</field>
+            <field name="key">wsdl_pr</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroCobrosEmitidas.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+        <record id="wsdl_atc_ott_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroOpTrascendTribu</field>
+            <field name="key">wsdl_ott</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroOpTrascendTribu.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+        <record id="wsdl_atc_ps_1_0" model="aeat.sii.wsdl">
+            <field name="name">SuministroPagosRecibidas</field>
+            <field name="key">wsdl_ps</field>
+            <field name="wsdl">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/igic/ws/SuministroPagosRecibidas.wsdl</field>
+            <field name="sii_map_id" ref="atc_sii_map_1_0"/>
+        </record>
+    </data>
+</odoo>
