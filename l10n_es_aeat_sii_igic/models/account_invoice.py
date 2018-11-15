@@ -7,6 +7,8 @@ import json
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
+    #TODO: error al borrar del SII _drop_invoice
+
     def _iva_to_igic(self, dict):
         if self.company_id.state_id.code in ['TF', 'GC']:
             dict = json.loads(json.dumps(dict).replace("DetalleIVA","DetalleIGIC"))
@@ -19,6 +21,7 @@ class AccountInvoice(models.Model):
     def _send_soap(self, wsdl, port_name, operation, param1, param2):
         self.ensure_one()
         param2 = self._iva_to_igic(param2)
+        #TODO: comprobar que cumple bien con los requisitos
         #Compras comerciante minorista
         if self.company_id.state_id.code in ['TF', 'GC'] and \
             operation == 'SuministroLRFacturasRecibidas' and \

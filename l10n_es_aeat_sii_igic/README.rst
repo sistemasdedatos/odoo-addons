@@ -6,7 +6,7 @@
 SII PARA IPUESTO GENERAL INDIRECTO CANARIO
 ==========================================
 
-Módulo para el SII en IGIC
+Módulo para el SII en IGIC http://www.gobiernodecanarias.org/tributos/portal/jsf/publico/asistenciaContribuyente/sii/inicio.jsp
 
 Instalación:
 ------------
