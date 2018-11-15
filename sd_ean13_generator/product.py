@@ -4,7 +4,7 @@ from openerp.tools.translate import _
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 import psycopg2
 import openerp.addons.product.product
-import re
+import re, random
 import openerp.addons.decimal_precision as dp
 from openerp.tools.float_utils import float_round, float_compare
 
@@ -62,11 +62,11 @@ class product_product(models.Model):
                 d_code = ''.join(d_code)
                 ean = d_code[0]
                 ean += str ('%.2d' % abs (s.lst_price)).split ('.')[0] + '7' + str ('%.2d' % int (float (str('%.2f' % abs (s.lst_price)).split ('.')[1])))
-                ean += d_code[1:len(d_code)]
+                ean += d_code[len(d_code) - 3 if len(d_code) > 3 else 1:len(d_code)]
             else:
                 ean = str (s.id)[0]
                 ean += str ('%.2d' % abs (s.lst_price)).split ('.')[0] + '7' + str ('%.2d' % int (float (str('%.2f' % abs (s.lst_price)).split ('.')[1])))
-                ean += str (s.id)[1:len (str (s.id))]    
+                ean += str (s.id)[1:len (str (s.id))]
             if len (ean) >= 12:
                 if len (str (count)) > 1:
                     ean = ean[:10] + str (count) + ean[10:]
@@ -77,6 +77,6 @@ class product_product(models.Model):
             ean = openerp.addons.product.product.sanitize_ean13 (ean)
             if not s.env['product.product'].search ([('ean13', '=', ean)]):  #, ('active', '=', True)
                 s.ean13 = ean
-            else:    
-                ean = s.generate_ean13 (count + 50)
+            else:
+                ean = s.generate_ean13 (count+1)
             count = count + 1
