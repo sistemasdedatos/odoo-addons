@@ -16,22 +16,17 @@ class AccountInvoice(models.Model):
         return dict
 
     @api.multi
-    def _get_sii_out_taxes(self):
-        res = super(AccountInvoice, self)._get_sii_out_taxes()
-        res = self._iva_to_igic(res)
-        return res
-
-    @api.multi
-    def _get_sii_in_taxes(self):
-        res = super(AccountInvoice, self)._get_sii_in_taxes()
-        res = self._iva_to_igic(res)
-        return res
-
-    @api.multi
-    def _get_invoices(self):
-        res = super(AccountInvoice, self)._get_invoices()
-        res = self._iva_to_igic(res)
-        return res
+    def _send_soap(self, wsdl, port_name, operation, param1, param2):
+        self.ensure_one()
+        param2 = self._iva_to_igic(param2)
+        #Compras comerciante minorista
+        if self.company_id.state_id.code in ['TF', 'GC'] and \
+            operation == 'SuministroLRFacturasRecibidas' and \
+            self.registration_key.code == '15' and \
+            self.registration_key.type == 'purchase':
+            for p in param2['FacturaRecibida']['DesgloseFactura']['DesgloseIGIC']['DetalleIGIC']:
+                p.pop('CuotaSoportada')
+        return super(AccountInvoice, self)._send_soap(wsdl, port_name, operation, param1, param2)
 
     @api.multi
     def _get_sii_map(self):
