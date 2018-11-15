@@ -109,4 +109,4 @@ ENV/
 
 # mypy
 .mypy_cache/.pydevproject
-
+.idea
