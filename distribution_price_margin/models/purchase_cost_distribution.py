@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from openerp import models, fields, exceptions, api, _
 import openerp.addons.decimal_precision as dp
 
@@ -9,18 +10,17 @@ class PurchaseCostDistribution(models.Model):
     benefit_margin = fields.Float (string = 'Margin %', readonly=True,
                                    states = {'draft': [('readonly', False)], 'calculated': [('readonly', False)]}, default = -1,
                                    help = "If the margin is less than 0, it does not apply")
-    """TODO Set calculation method
-        1 -> Sale = cost / (1 - %margin)
-        2 -> Sale = cost + (cost * %margin)
-    """
-    
+
     @api.multi
     def action_calculate (self):
         super (PurchaseCostDistribution, self).action_calculate ()
         for distribution in self:
             for line in distribution.cost_lines:
                 if line.benefit_margin >= 0:
-                    line.benefit_price = line.standard_price_new / (1 - (line.benefit_margin / 100))
+                    if self.env.ref('distribution_price_margin.group_margin_calculation_type') in self.env['res.users'].browse([self._uid]).groups_id:
+                        line.benefit_price = line.standard_price_new / (1 - (line.benefit_margin / 100))
+                    else:
+                        line.benefit_price = line.standard_price_new + (line.standard_price_new * (line.benefit_margin / 100))
                 else:
                     line.benefit_price = 0
         return True
@@ -50,7 +50,11 @@ class PurchaseCostDistributionLine(models.Model):
     def onchange_benefit_price(self):
         if self.benefit_price >= 0:
             try:
-                self.benefit_margin = (1 - (self.standard_price_new / self.benefit_price)) * 100
+                if self.env.ref('distribution_price_margin.group_margin_calculation_type') in self.env[
+                    'res.users'].browse([self._uid]).groups_id:
+                    self.benefit_margin = (1 - (self.standard_price_new / self.benefit_price)) * 100
+                else:
+                    self.benefit_margin = ((self.benefit_price - self.standard_price_new) / self.standard_price_new) * 100
             except:
                 self.benefit_margin = -1
         else:
@@ -60,7 +64,11 @@ class PurchaseCostDistributionLine(models.Model):
     def onchange_benefit_margin(self):
         if self.benefit_margin >= 0:
             try:
-                self.benefit_price = self.standard_price_new / (1 - (self.benefit_margin / 100))
+                if self.env.ref('distribution_price_margin.group_margin_calculation_type') in self.env[
+                    'res.users'].browse([self._uid]).groups_id:
+                    self.benefit_price = self.standard_price_new / (1 - (self.benefit_margin / 100))
+                else:
+                    self.benefit_price = self.standard_price_new + (self.standard_price_new * (self.benefit_margin / 100))
             except:
                 self.benefit_price = 0
         else:

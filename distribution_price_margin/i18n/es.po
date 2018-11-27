@@ -38,6 +38,42 @@ msgid "Margin %"
 msgstr "Margen %"
 
 #. module: distribution_price_margin
+#: model:ir.model.fields,help:distribution_price_margin.field_account_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_base_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_mrp_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_pos_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_purchase_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_res_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_sale_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,help:distribution_price_margin.field_stock_config_settings_group_margin_calculation_method
+msgid "Method to calculate sale price in distribution cost."
+msgstr "Método para calcular el precio de venta en la distribución de costes."
+
+#. module: distribution_price_margin
+#: selection:account.config.settings,group_margin_calculation_method:0
+#: selection:base.config.settings,group_margin_calculation_method:0
+#: selection:mrp.config.settings,group_margin_calculation_method:0
+#: selection:pos.config.settings,group_margin_calculation_method:0
+#: selection:purchase.config.settings,group_margin_calculation_method:0
+#: selection:res.config.settings,group_margin_calculation_method:0
+#: selection:sale.config.settings,group_margin_calculation_method:0
+#: selection:stock.config.settings,group_margin_calculation_method:0
+msgid "Method: 'Sale = cost + (cost * %margin)'"
+msgstr "Método: 'Precio de venta = coste + (coste * %margen)'"
+
+#. module: distribution_price_margin
+#: selection:account.config.settings,group_margin_calculation_method:0
+#: selection:base.config.settings,group_margin_calculation_method:0
+#: selection:mrp.config.settings,group_margin_calculation_method:0
+#: selection:pos.config.settings,group_margin_calculation_method:0
+#: selection:purchase.config.settings,group_margin_calculation_method:0
+#: selection:res.config.settings,group_margin_calculation_method:0
+#: selection:sale.config.settings,group_margin_calculation_method:0
+#: selection:stock.config.settings,group_margin_calculation_method:0
+msgid "Method: 'Sale = cost / (1 - %margin)'"
+msgstr "Método: 'Precio de venta = coste / (1 - %margen)'"
+
+#. module: distribution_price_margin
 #: model:ir.ui.view,arch_db:distribution_price_margin.inherit_purchase_cost_distribution_form
 #: model:ir.ui.view,arch_db:distribution_price_margin.inherit_view_purchase_cost_distribution_line_form
 msgid "Old sale price"
@@ -58,6 +94,23 @@ msgstr "Distribución de costes de compra"
 #: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line_old_sale_price
 msgid "Sale Price"
 msgstr "Precio de venta"
+
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_account_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_base_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_mrp_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_pos_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_res_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_sale_config_settings_group_margin_calculation_method
+#: model:ir.model.fields,field_description:distribution_price_margin.field_stock_config_settings_group_margin_calculation_method
+msgid "Sale price in distribution cost"
+msgstr "Precio de venta en distribución de costes"
+
+#. module: distribution_price_margin
+#: model:res.groups,name:distribution_price_margin.group_margin_calculation_type
+msgid "Select calculation method to product sale price"
+msgstr "Seleccionar método para calcular el precio de venta del producto"
 
 #. module: distribution_price_margin
 #: model:ir.ui.view,arch_db:distribution_price_margin.inherit_purchase_cost_distribution_form
