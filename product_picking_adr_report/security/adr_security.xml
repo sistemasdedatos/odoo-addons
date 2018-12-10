@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_adr_user" model="res.groups">
+        <field name="name">ADR User</field>
+        <field name="implied_ids" eval="[(4, ref('stock.group_stock_user'))]"/>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+    <record id="group_adr_manager" model="res.groups">
+        <field name="name">ADR Manager</field>
+        <field name="implied_ids" eval="[(4, ref('group_adr_user'))]"/>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+</odoo>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_adr_root" name="ADR (Dangerous Substances)" parent="stock.menu_stock_root" sequence="5" groups="group_adr_user"/>
+    <record id="adr_product_action" model="ir.actions.act_window">
+        <field name="name">Products with ADR</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_type">form</field>
+        <field name="domain">[('adr_id', '!=', False)]</field>
+    </record>
+    <record id="view_adr_template_tree" model="ir.ui.view">
+        <field name="name">adr.template.tree</field>
+        <field name="model">adr.template</field>
+        <field name="arch" type="xml">
+            <tree string="ADR template">
+                <field name="name"/>
+                <field name="onu_code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_adr_template_form" model="ir.ui.view">
+        <field name="name">adr.template.form</field>
+        <field name="model">adr.template</field>
+        <field name="arch" type="xml">
+            <form string="ADR Template">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+                        <!--<button class="oe_stat_button"-->
+                                <!--name="%(adr_product_action)d"-->
+                                <!--icon="fa-th-list"-->
+                                <!--type="action"-->
+                                <!--context="{'adr_id': active_id, 'default_adr_id': active_id}">-->
+                            <!--<div class="o_form_field o_stat_info">-->
+                                <!--<span class="o_stat_value"><field name="product_count"/></span>-->
+                                <!--<span class="o_stat_text"> Products</span>-->
+                            <!--</div>-->
+                        <!--</button>-->
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="adr_config_id"/>
+                        </group>
+                        <group>
+                            <field name="onu_code"/>
+                        </group>
+                    </group>
+                    <group string="Description">
+                        <field name="description" nolabel="1" placeholder="Description for ADR"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="adr_template_action" model="ir.actions.act_window">
+        <field name="name">ADR Templates</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">adr.template</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_adr_template_tree"/>
+        <!--<field name="search_view_id" ref="view_adr_template_filter"/>-->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to add an ADR template.
+            </p>
+        </field>
+    </record>
+    <menuitem action="adr_template_action" id="menu_adr" name="ADR templates" parent="menu_adr_root" sequence="10"/>
+    <menuitem action="adr_product_action" id="menu_product_adr" name="Products with ADR" parent="menu_adr_root" sequence="20"/>
+
+    <record id="view_adr_config_tree" model="ir.ui.view">
+        <field name="name">adr.config.tree</field>
+        <field name="model">adr.config</field>
+        <field name="arch" type="xml">
+            <tree string="ADR Config">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_adr_config_form" model="ir.ui.view">
+        <field name="name">adr.config.form</field>
+        <field name="model">adr.config</field>
+        <field name="arch" type="xml">
+            <form string="ADR Config">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="max_weight"/>
+                        </group>
+                    </group>
+                    <group string="Package">
+                        <field name="package" nolabel="1" placeholder="Package types..."/>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1" placeholder="Notes..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="adr_config_action" model="ir.actions.act_window">
+        <field name="name">ADR Config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">adr.config</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_adr_config_tree"/>
+        <!--<field name="search_view_id" ref="view_adr_template_filter"/>-->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to add an ADR Config.
+            </p>
+        </field>
+    </record>
+    <menuitem action="adr_config_action" id="menu_adr_config" name="ADR Config" parent="stock.menu_stock_config_settings" sequence="10"/>
+</odoo>

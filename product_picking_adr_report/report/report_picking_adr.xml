@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_picking_adr">
+            <t t-call="report.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <t t-set="ADR" t-value="any([l.product_id.product_tmpl_id.adr_id for l in o.pack_operation_product_ids])"/>
+                        <t t-if="ADR">
+                            <h1 class="text-center">Dangerous Goods Freight Charter</h1>
+                            <h5>
+                                <strong>Picking: </strong>
+                                <span t-field="o.name" class="mt0"/>
+                            </h5>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <span><strong>Consignor data:</strong></span>
+                                    <div t-if="o.picking_type_id.code != 'incoming' and o.picking_type_id.warehouse_id.partner_id">
+                                        <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
+                                    </div>
+                                    <div t-if="o.picking_type_id.code == 'incoming' and o.partner_id">
+                                        <div t-field="o.partner_id"
+                                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5 col-xs-offset-1">
+                                    <span><strong>Destination data:</strong></span>
+                                    <div t-if="o.picking_type_id.code == 'outgoing' and o.partner_id">
+                                        <div t-field="o.partner_id"
+                                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
+                                    </div>
+                                    <div t-if="o.picking_type_id.code == 'incoming' and o.picking_type_id.warehouse_id.partner_id">
+                                        <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
+                                    </div>
+                                    <div t-if="o.picking_type_id.code == 'internal'">
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <table class="table table-condensed" t-if="o.pack_operation_ids">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">
+                                            <strong>Packages</strong>
+                                        </th>
+                                        <th class="text-center">
+                                            <strong>ADR</strong>
+                                        </th>
+                                        <th class="text-right">
+                                            <strong>Weight</strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.pack_operation_ids" t-as="pack_operation">
+                                        <t t-if="pack_operation.product_id.adr_id and pack_operation.qty_done">
+                                            <td class="text-left">
+                                                <span t-field="pack_operation.qty_done"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-field="pack_operation.product_id.adr_id.onu_code"/>,
+                                                <span t-field="pack_operation.product_id.adr_id.description"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="pack_operation.product_id.adr_uom_equal"/>
+                                                <span t-field="pack_operation.product_id.adr_uom_id"/>
+                                            </td>
+                                        </t>
+                                     </tr>
+                                </tbody>
+                            </table>
+                            <t t-set="CONFIGS" t-value="o._get_adr_config()"/>
+                            <div t-foreach="range(CONFIGS['lines'])" t-as="l">
+                                <div class="col-xs-4">
+                                    <table class="table table-condensed">
+                                        <tr class="border-black">
+                                            <td><strong>Total Packaging</strong></td>
+                                            <td><span t-raw="CONFIGS[l]['packaging']"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-4 pull-right">
+                                    <table class="table table-condensed">
+                                        <tr class="border-black">
+                                            <td>
+                                                <strong>Total Weight</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="CONFIGS[l]['weight']"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br/>
+                                <h5>
+                                    <div class="col-xs-12 text-center" t-raw="CONFIGS[l]['onu']"/>
+                                </h5>
+                                <br/>
+                                <div>Packages</div>
+                                <div class="col-xs-12 text-center" t-raw="CONFIGS[l]['package']"/>
+                                <br/>
+                                <div t-if="CONFIGS[l]['notes']" class="col-xs-12 text-center">
+                                    <h5> Note</h5>
+                                    <div t-raw="CONFIGS[l]['notes']"/>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <h1 class="text-center">NO ADR</h1>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report
+            string="ADR Repport"
+            id="action_report_picking_adr"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="product_picking_adr_report.report_picking_adr"
+            file="product_picking_adr_report.report_picking_operations_adr"
+        />
+    </data>
+</odoo>
