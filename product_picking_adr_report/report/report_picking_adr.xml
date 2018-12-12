@@ -15,8 +15,8 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <span><strong>Consignor data:</strong></span>
-                                    <div t-if="o.picking_type_id.code != 'incoming' and o.picking_type_id.warehouse_id.partner_id">
-                                        <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                    <div t-if="o.picking_type_id.code != 'incoming' and o.location_id.get_warehouse().partner_id">
+                                        <div t-field="o.location_id.get_warehouse().partner_id"
                                             t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
                                     </div>
                                     <div t-if="o.picking_type_id.code == 'incoming' and o.partner_id">
@@ -30,11 +30,9 @@
                                         <div t-field="o.partner_id"
                                             t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
                                     </div>
-                                    <div t-if="o.picking_type_id.code == 'incoming' and o.picking_type_id.warehouse_id.partner_id">
-                                        <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                    <div t-if="o.picking_type_id.code != 'outgoing' and o.location_dest_id.get_warehouse().partner_id">
+                                        <div t-field="o.location_dest_id.get_warehouse().partner_id"
                                             t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'/>
-                                    </div>
-                                    <div t-if="o.picking_type_id.code == 'internal'">
                                     </div>
                                 </div>
                             </div>
