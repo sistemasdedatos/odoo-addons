@@ -32,6 +32,8 @@ class Picking(models.Model):
                         'package': cfg.package}
             if cfg.max_weight > w:
                 res[cnt]['notes'] = cfg.notes
+            else:
+                res[cnt]['notes'] = False
             cnt = cnt + 1
         res['lines'] = cnt
         return res
