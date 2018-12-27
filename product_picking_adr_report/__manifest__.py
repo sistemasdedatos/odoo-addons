@@ -3,7 +3,7 @@
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
 {
     'name' : 'Product ADR Report',
-    'version' : '0.1',
+    'version' : '0.2',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Product',
@@ -22,6 +22,7 @@ This module allow to set adr type in product to print a report in stock picking
              'security/ir.model.access.csv',
              'views/adr_view.xml',
              'views/product_template_view.xml',
+             'views/stock_picking_views.xml',
              'report/report_picking_adr.xml'],
     'installable': True,
     'auto_install': False,

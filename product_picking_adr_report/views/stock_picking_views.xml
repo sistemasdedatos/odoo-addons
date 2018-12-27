@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="adr_view_picking_type_form">
+        <field name="name">ADR Message</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h1[@class='hidden-xs']" position="before">
+                <field name="with_adr" invisible="True"/>
+                <div style="color:Red;text-align:center" attrs="{'invisible':[('with_adr','=',False)]}">
+                    This picking have ADR, do not forget print it!
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="adr_view_picking_internal_search" model="ir.ui.view">
+        <field name="name">adr.stock.picking.internal.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <filter name="backorder" position="after">
+                <separator/>
+                <filter name="adr" string="With ADR" domain="[('product_id.adr_id', '!=', False)]"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

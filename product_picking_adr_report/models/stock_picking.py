@@ -8,6 +8,9 @@ from collections import defaultdict
 class Picking(models.Model):
     _inherit = "stock.picking"
 
+    with_adr = fields.Boolean(string="Picking with ADR", compute='_get_adr_config', invisible=True)
+                              #states={'done': [('invisible', True)], 'cancel': [('invisible', True)]})
+
     @api.multi
     def _get_adr_config(self):
         self.ensure_one()
@@ -29,11 +32,14 @@ class Picking(models.Model):
             res[cnt] = {'weight': str(w) + ' ' + line.product_id.adr_uom_id.name,
                         'packaging': p,
                         'onu': onu,
-                        'package': cfg.package}
-            if cfg.max_weight > w:
-                res[cnt]['notes'] = cfg.notes
-            else:
+                        'package': cfg.package,
+                        'notes': cfg.notes}
+            if cfg.max_weight <= w:
                 res[cnt]['notes'] = False
             cnt = cnt + 1
         res['lines'] = cnt
+        print "aqui"
+        print res
+        if cnt > 0:
+            self.with_adr = True
         return res

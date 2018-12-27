@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_adr_user,adr user,product_picking_adr_report.model_adr_template,product_picking_adr_report.group_adr_user,1,0,0,0
 access_adr_manager,adr manager,product_picking_adr_report.model_adr_template,product_picking_adr_report.group_adr_manager,1,1,1,1
+access_adr_config_user,adr config user,product_picking_adr_report.model_adr_config,product_picking_adr_report.group_adr_user,1,0,0,0
 access_adr_config_manager,adr config manager,product_picking_adr_report.model_adr_config,product_picking_adr_report.group_adr_manager,1,1,1,1

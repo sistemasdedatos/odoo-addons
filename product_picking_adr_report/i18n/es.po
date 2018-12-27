@@ -290,6 +290,11 @@ msgid "Products with ADR"
 msgstr "Productos con ADR"
 
 #. module: product_picking_adr_report
+#: model:ir.ui.view,arch_db:product_picking_adr_report.adr_view_picking_type_form
+msgid "This picking have ADR, do not forget print it!"
+msgstr "Este albarán está sujeto a ADR, no olvide imprimirlo!"
+
+#. module: product_picking_adr_report
 #: model:ir.model.fields,help:product_picking_adr_report.field_adr_template_product_count
 msgid "The number of products under this category (Does not consider the children categories)"
 msgstr "El número de productos bajo esta categoría (No considera las categorías de hijas)"
@@ -312,3 +317,13 @@ msgstr "Unidad de medida para informe ADR"
 #: model:ir.model.fields,field_description:product_picking_adr_report.field_product_template_adr_uom_id
 msgid "Unit of mesure"
 msgstr "Unidad de medida"
+
+#. module: product_picking_adr_report
+#: model:ir.model.fields,field_description:product_picking_adr_report.field_stock_picking_with_adr
+msgid "Picking with ADR"
+msgstr "Albarán sujeto a ADR"
+
+#. module: product_picking_adr_report
+#: model:ir.ui.view,arch_db:product_picking_adr_report.adr_view_picking_internal_search
+msgid "With ADR"
+msgstr "Sujeto a ADR"
