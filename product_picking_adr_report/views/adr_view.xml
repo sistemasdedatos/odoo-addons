@@ -30,6 +30,7 @@
                             <field name="active" widget="boolean_button"
                                 options='{"terminology": "archive"}'/>
                         </button>
+                        <!-- TODO: Buton to filter product with this adr-->
                         <!--<button class="oe_stat_button"-->
                                 <!--name="%(adr_product_action)d"-->
                                 <!--icon="fa-th-list"-->

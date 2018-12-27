@@ -38,8 +38,6 @@ class Picking(models.Model):
                 res[cnt]['notes'] = False
             cnt = cnt + 1
         res['lines'] = cnt
-        print "aqui"
-        print res
         if cnt > 0:
             self.with_adr = True
         return res

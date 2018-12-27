@@ -35,6 +35,7 @@ class AdrTemplate(models.Model):
 
     _sql_constraints = [('adr_template_name_unique', 'unique(name)', 'ADR Template name already exists.')]
 
+    #TODO: count product with this adr
     # def _compute_product_count(self):
     #     for s in self:
     #         s.product_count = 10
