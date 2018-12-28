@@ -10,7 +10,7 @@ Módulo para el SII en IGIC - Terminal Punto de Venta
 
 Instalación:
 ------------
-Se tiene como dependencia principal el módulo l10n_es_aeat_sii_pos de acysos, lo podemos encontrar en: https://github.com/acysos/odoo-addons
+Se tiene como dependencia principal el módulo l10n_es_aeat_sii_pos de Acysos, lo podemos encontrar en: https://github.com/acysos/odoo-addons
 
 Pasos para instalar:
 
