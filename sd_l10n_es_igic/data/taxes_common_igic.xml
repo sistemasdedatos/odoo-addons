@@ -119,6 +119,43 @@
         <field eval="-1.0" name="ref_base_sign"/>
         <field name="type_tax_use">purchase</field>
     </record>
+        <record id="igic_sop_6_5" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">6,5% IGIC Soportado (operaciones corrientes)</field>
+        <field name="name">IGIC 6,5% BC</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_22_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_22_7"/>
+        <field name="tax_code_id" ref="igic_ded_23_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_23_7"/>
+        <field eval="1.0" name="tax_sign"/>
+        <field eval="1.0" name="base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">purchase</field>
+        <field name="sequence" eval="0"/>
+    </record>
+    <record id="igic_sop_6_5_inv" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">6,5% IGIC Soportado (bienes de inversión)</field>
+        <field name="name">IGIC 6,5% BI</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_24_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_24_7"/>
+        <field name="tax_code_id" ref="igic_ded_25_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_25_7"/>
+        <field eval="1.0" name="tax_sign"/>
+        <field eval="1.0" name="base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
     
     <record id="igic_sop_9_5" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -312,6 +349,34 @@
         <field name="description">IGIC 7% Importaciones bienes de inversión</field>
         <field name="name">IGIC 7 % IBI</field>
         <field eval="0.07" name="amount"/>
+        <field name="type">percent</field>
+        <field name="base_code_id" ref="igic_ded_28_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_28_7"/>
+        <field name="tax_code_id" ref="igic_ded_29_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_29_7"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+        <record id="igic_X6_5_compras_bc" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Importaciones bienes corrientes</field>
+        <field name="name">IGIC 6,5% IBC</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="base_code_id" ref="igic_ded_26_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_26_7"/>
+        <field name="tax_code_id" ref="igic_ded_27_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_27_7"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_X6_5_compras_bi" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Importaciones bienes de inversión</field>
+        <field name="name">IGIC 6,5% IBI</field>
+        <field eval="0.065" name="amount"/>
         <field name="type">percent</field>
         <field name="base_code_id" ref="igic_ded_28_7"/>
         <field name="ref_base_code_id" ref="igic_ded_28_7"/>
@@ -624,7 +689,73 @@
         <field name="ref_tax_sign" eval="-1.0"/>
         <field name="ref_base_sign" eval="-1.0"/>
         <field name="type_tax_use">purchase</field>
-    </record>    
+    </record>
+    <record id="igic_ISP_compras_6_5" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Inversión del sujeto pasivo</field>
+        <field name="name">IGIC 6,5% SP</field>
+        <field name="amount" eval="1.00"/>
+        <field name="type">percent</field>
+        <field name="child_depend" eval="1"/>
+        <field name="base_sign" eval="1.0"/>
+        <field name="tax_sign" eval="1.0"/>
+        <field name="ref_base_sign" eval="-1.0"/>
+        <field name="ref_tax_sign" eval="-1.0"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_ISP_compras_6_5_1" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Inversión del sujeto pasivo (1)</field>
+        <field name="name">IGIC 6,5% SP_1</field>
+        <field name="parent_id" ref="igic_ISP_compras_6_5"/>
+        <field name="amount" eval="0.00"/>
+        <field name="type">percent</field>
+        <field name="base_code_id" ref="igic_base_extra_44"/>
+        <field name="ref_base_code_id" ref="igic_base_extra_44"/>
+        <field name="base_sign" eval="1.0"/>
+        <field name="tax_sign" eval="1.0"/>
+        <field name="ref_base_sign" eval="-1.0"/>
+        <field name="ref_tax_sign" eval="-1.0"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_ISP_compras_6_5_2" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Inversión del sujeto pasivo (2)</field>
+        <field name="name">IGIC 6,5% SP_2</field>
+        <field name="parent_id" ref="igic_ISP_compras_6_5"/>
+        <field name="amount" eval="-0.065"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4777_child"/>
+        <field name="account_paid_id" ref="pgc_4777_child"/>
+        <field name="base_code_id" ref="igic_dev_03"/>
+        <field name="ref_base_code_id" ref="igic_dev_03"/>
+        <field name="tax_code_id" ref="igic_dev_09"/>
+        <field name="ref_tax_code_id" ref="igic_dev_09"/>
+        <field name="tax_sign" eval="-1.0"/>
+        <field name="base_sign" eval="1.0"/>
+        <field name="ref_tax_sign" eval="1.0"/>
+        <field name="ref_base_sign" eval="-1.0"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_ISP_compras_6_5_3" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Inversión del sujeto pasivo (3)</field>
+        <field name="name">IGIC 6,5% SP_3</field>
+        <field name="parent_id" ref="igic_ISP_compras_6_5"/>
+        <field name="amount" eval="0.065"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_22_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_22_7"/>
+        <field name="tax_code_id" ref="igic_ded_23_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_23_7"/>
+        <field name="tax_sign" eval="1.0"/>
+        <field name="base_sign" eval="1.0"/>
+        <field name="ref_tax_sign" eval="-1.0"/>
+        <field name="ref_base_sign" eval="-1.0"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
     
     <record id="igic_ISP_compras_9_5" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -888,6 +1019,25 @@
         <field name="type_tax_use">sale</field>
         <field eval="0" name="sequence"/>        
     </record>
+    <record id="igic_rep_6_5" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5%</field>
+        <field name="name">IGIC 6,5%</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4777_child"/>
+        <field name="account_paid_id" ref="pgc_4777_child"/>
+        <field name="base_code_id" ref="igic_dev_03"/>
+        <field name="ref_base_code_id" ref="igic_dev_03"/>
+        <field name="tax_code_id" ref="igic_dev_09"/>
+        <field name="ref_tax_code_id" ref="igic_dev_09"/>
+        <field eval="1.0" name="tax_sign"/>
+        <field eval="1.0" name="base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">sale</field>
+        <field eval="0" name="sequence"/>
+    </record>
     
     <record id="igic_rep_9_5" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -984,6 +1134,24 @@
         <field eval="-1.0" name="ref_base_sign"/>
         <field name="type_tax_use">sale</field>
     </record>
+    <record id="igic_re_065" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">0,65% Recargo Equivalencia IGIC Ventas</field>
+        <field name="name">S_REQ0.65</field>
+        <field eval="0.0065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4777_child"/>
+        <field name="account_paid_id" ref="pgc_4777_child"/>
+        <field name="base_code_id" ref="igic_dev_14"/>
+        <field name="ref_base_code_id" ref="igic_dev_14"/>
+        <field name="tax_code_id" ref="igic_dev_51"/>
+        <field name="ref_tax_code_id" ref="igic_dev_51"/>
+        <field eval="1.0" name="tax_sign"/>
+        <field eval="1.0" name="base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">sale</field>
+    </record>
     <record id="igic_re_09_5" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="description">0,95% Recargo Equivalencia IGIC Ventas</field>
@@ -1062,6 +1230,24 @@
         <field name="description">0,70% Recargo Equivalencia IGIC Compras</field>
         <field name="name">P_REQ0.7</field>
         <field eval="0.007" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_911"/>
+        <field name="ref_base_code_id" ref="igic_ded_911"/>
+        <field name="tax_code_id" ref="igic_ded_46"/>
+        <field name="ref_tax_code_id" ref="igic_ded_46"/>
+        <field eval="1.0" name="tax_sign"/>
+        <field eval="1.0" name="base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_re_buy_065" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">0,65% Recargo Equivalencia IGIC Compras</field>
+        <field name="name">P_REQ0.65</field>
+        <field eval="0.0065" name="amount"/>
         <field name="type">percent</field>
         <field name="account_collected_id" ref="pgc_4727_child"/>
         <field name="account_paid_id" ref="pgc_4727_child"/>
@@ -1285,7 +1471,50 @@
         <field eval="1.0" name="ref_tax_sign"/>
         <field name="type_tax_use">purchase</field>
     </record>
-        
+    <record id="igic_IC_compras_6_5_bc" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Bienes corrientes</field>
+        <field name="name">IGIC 6,5% IC_BC</field>
+        <field eval="1.00" name="amount"/>
+        <field name="type">percent</field>
+        <field eval="1" name="child_depend"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_IC_compras_6_5_bc_1" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="parent_id" ref="igic_IC_compras_6_5_bc"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Bienes corrientes (1)</field>
+        <field name="name">IGIC 6,5% IC_BC_1</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_30_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_30_7"/>
+        <field name="tax_code_id" ref="igic_ded_31_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_31_7"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_IC_compras_6_5_bc_2" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="parent_id" ref="igic_IC_compras_6_5_bc"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Bienes corrientes (2)</field>
+        <field name="name">IGIC 6,5% IC_BC_2</field>
+        <field eval="-0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_paid_id" ref="pgc_4777_child"/>
+        <field name="account_collected_id" ref="pgc_4777_child"/>
+        <field name="base_code_id" ref="igic_dev_19"/>
+        <field name="ref_base_code_id" ref="igic_dev_19"/>
+        <field name="tax_code_id" ref="igic_dev_20"/>
+        <field name="ref_tax_code_id" ref="igic_dev_20"/>
+        <field eval="-1.0" name="tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field eval="1.0" name="ref_tax_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
     <record id="igic_IC_compras_9_5_bc" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
         <field name="description">IGIC 9,5% Intracomunitario. Bienes corrientes</field>
@@ -1555,6 +1784,50 @@
         <field eval="1.0" name="ref_tax_sign"/>
         <field name="type_tax_use">purchase</field>
     </record>
+    <record id="igic_IC_compras_6_5_bi" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Bienes de inversión</field>
+        <field name="name">IGIC 6,5% IC_BI</field>
+        <field eval="1.00" name="amount"/>
+        <field name="type">percent</field>
+        <field eval="1" name="child_depend"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_IC_compras_6_5_bi_1" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="parent_id" ref="igic_IC_compras_6_5_bi"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Bienes de inversión (1)</field>
+        <field name="name">IGIC 6,5% BI_1</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_32_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_32_7"/>
+        <field name="tax_code_id" ref="igic_ded_33_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_33_7"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_IC_compras_6_5_bi_2" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="parent_id" ref="igic_IC_compras_6_5_bi"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Bienes de inversión (2)</field>
+        <field name="name">IGIC 6,5% BI_2</field>
+        <field eval="-0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_paid_id" ref="pgc_4777_child"/>
+        <field name="account_collected_id" ref="pgc_4777_child"/>
+        <field name="base_code_id" ref="igic_dev_19"/>
+        <field name="ref_base_code_id" ref="igic_dev_19"/>
+        <field name="tax_code_id" ref="igic_dev_20"/>
+        <field name="ref_tax_code_id" ref="igic_dev_20"/>
+        <field eval="-1.0" name="tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field eval="1.0" name="ref_tax_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
         
     <record id="igic_IC_compras_9_5_bi" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
@@ -1735,7 +2008,50 @@
         <field eval="1.0" name="ref_tax_sign"/>
         <field name="type_tax_use">purchase</field>
     </record> 
-
+    <record id="igic_IC_compras_6_5_sv" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Servicios</field>
+        <field name="name">IGIC 6,5% IC_SV</field>
+        <field eval="1.00" name="amount"/>
+        <field name="type">percent</field>
+        <field eval="1" name="child_depend"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_IC_compras_6_5_sv_1" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="parent_id" ref="igic_IC_compras_6_5_sv"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Servicios (1)</field>
+        <field name="name">IGIC 6,5% IC_SV_1</field>
+        <field eval="0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_paid_id" ref="pgc_4727_child"/>
+        <field name="account_collected_id" ref="pgc_4727_child"/>
+        <field name="base_code_id" ref="igic_ded_30_7"/>
+        <field name="ref_base_code_id" ref="igic_ded_30_7"/>
+        <field name="tax_code_id" ref="igic_dev_20"/>
+        <field name="ref_tax_code_id" ref="igic_dev_20"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field eval="-1.0" name="ref_tax_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
+    <record id="igic_IC_compras_6_5_sv_2" model="account.tax.template">
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="parent_id" ref="igic_IC_compras_6_5_sv"/>
+        <field name="description">IGIC 6,5% Intracomunitario. Servicios (2)</field>
+        <field name="name">IGIC 6,5% IC_SV_2</field>
+        <field eval="-0.065" name="amount"/>
+        <field name="type">percent</field>
+        <field name="account_paid_id" ref="pgc_4777_child"/>
+        <field name="account_collected_id" ref="pgc_4777_child"/>
+        <field name="base_code_id" ref="igic_dev_19"/>
+        <field name="ref_base_code_id" ref="igic_dev_19"/>
+        <field name="tax_code_id" ref="igic_ded_31_7"/>
+        <field name="ref_tax_code_id" ref="igic_ded_31_7"/>
+        <field eval="-1.0" name="tax_sign"/>
+        <field eval="-1.0" name="ref_base_sign"/>
+        <field eval="1.0" name="ref_tax_sign"/>
+        <field name="type_tax_use">purchase</field>
+    </record>
     <!-- =================== -->
     <!-- OPERACIONES EXENTAS -->
     <!-- =================== -->

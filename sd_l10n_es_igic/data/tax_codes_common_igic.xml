@@ -53,7 +53,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_dev_03" model="account.tax.code.template">
-            <field name="name">[03] Régimen general IGIC devengado. Base imponible 7%</field>
+            <field name="name">[03] Régimen general IGIC devengado. Base imponible 6,5%</field>
             <field name="code">IGIC_IRGDBI70</field>
             <field name="parent_id" ref="igic_dev_base"/>
             <field name="sign">1.0</field>
@@ -84,7 +84,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_dev_14" model="account.tax.code.template">
-            <field name="name">[03] Recargo equivalencia IGIC base imponible 0,7%</field>
+            <field name="name">[03] Recargo equivalencia IGIC base imponible 0,65%</field>
             <field name="code">IGIC_IREBI07</field>
             <field name="parent_id" ref="igic_dev_base"/>
             <field name="sign">1.0</field>
@@ -143,7 +143,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_dev_09" model="account.tax.code.template">
-            <field name="name">[09] Régimen general IGIC devengado. Cuota 7%</field>
+            <field name="name">[09] Régimen general IGIC devengado. Cuota 6,5%</field>
             <field name="code">IGIC_IRGDC70</field>
             <field name="parent_id" ref="igic_dev_21"/>
             <field name="sign">1.0</field>
@@ -174,7 +174,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_dev_51" model="account.tax.code.template">
-            <field name="name">[09] IGIC Recargo equivalencia. Cuota 0.7%</field>
+            <field name="name">[09] IGIC Recargo equivalencia. Cuota 0.65%</field>
             <field name="code">IGIC_IREC07</field>
             <field name="parent_id" ref="igic_dev_21"/>
             <field name="sign">1.0</field>
@@ -257,7 +257,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_22_7" model="account.tax.code.template">
-            <field name="name">[16BI] Base operaciones interiores corrientes IGIC (7%)</field>
+            <field name="name">[16BI] Base operaciones interiores corrientes IGIC (6,5%)</field>
             <field name="code">IGIC_IBOIC70</field>
             <field name="parent_id" ref="igic_ded_22"/>
             <field name="sign">1.0</field>
@@ -303,7 +303,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_24_7" model="account.tax.code.template">
-            <field name="name">[16BI] Base operaciones interiores bienes inversión IGIC (7%)</field>
+            <field name="name">[16BI] Base operaciones interiores bienes inversión IGIC (6,5%)</field>
             <field name="code">IGIC_IBOIBI70</field>
             <field name="parent_id" ref="igic_ded_24"/>
             <field name="sign">1.0</field>
@@ -348,7 +348,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_26_7" model="account.tax.code.template">
-            <field name="name">[17BI] Base importaciones bienes y servicios corrientes IGIC (7%)</field>
+            <field name="name">[17BI] Base importaciones bienes y servicios corrientes IGIC (6,5%)</field>
             <field name="code">IGIC_IBIBSC70</field>
             <field name="parent_id" ref="igic_ded_26"/>
             <field name="sign">1.0</field>
@@ -394,7 +394,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_28_7" model="account.tax.code.template">
-            <field name="name">[17BI] Base importaciones bienes inversión IGIC (7%)</field>
+            <field name="name">[17BI] Base importaciones bienes inversión IGIC (6,5%)</field>
             <field name="code">IGIC_IBIBI70</field>
             <field name="parent_id" ref="igic_ded_28"/>
             <field name="sign">1.0</field>
@@ -440,7 +440,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_30_7" model="account.tax.code.template">
-            <field name="name">[17BI] Base adquisiciones intra. bienes y serv. corr. IGIC (7%)</field>
+            <field name="name">[17BI] Base adquisiciones intra. bienes y serv. corr. IGIC (6,5%)</field>
             <field name="code">IGIC_IBAIBSC70</field>
             <field name="parent_id" ref="igic_ded_30"/>
             <field name="sign">1.0</field>
@@ -486,7 +486,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_32_7" model="account.tax.code.template">
-            <field name="name">[17BI] Base adquisiciones intracomunitarias bienes inver. IGIC (7%)</field>
+            <field name="name">[17BI] Base adquisiciones intracomunitarias bienes inver. IGIC (6,5%)</field>
             <field name="code">IGIC_IBAIBI70</field>
             <field name="parent_id" ref="igic_ded_32"/>
             <field name="sign">1.0</field>
@@ -519,7 +519,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_911" model="account.tax.code.template">
-            <field name="name">[16BI] IGIC Recargo equivalencia ded. Base imponible 0,7%</field>
+            <field name="name">[16BI] IGIC Recargo equivalencia ded. Base imponible 0,65%</field>
             <field name="code">IGIC_IREDBI07</field>
             <field name="parent_id" ref="igic_ded_base_total_16"/>
             <field name="sign">1.0</field>
@@ -590,7 +590,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_23_7" model="account.tax.code.template">
-            <field name="name">[16] Cuotas soportadas operaciones interiores corrientes IGIC (7%)</field>
+            <field name="name">[16] Cuotas soportadas operaciones interiores corrientes IGIC (6,5%)</field>
             <field name="code">IGIC_ICSOIC70</field>
             <field name="parent_id" ref="igic_ded_23"/>
             <field name="sign">1.0</field>
@@ -636,7 +636,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_25_7" model="account.tax.code.template">
-            <field name="name">[16] Cuotas soportadas op. interiores bienes inversión IGIC (7%)</field>
+            <field name="name">[16] Cuotas soportadas op. interiores bienes inversión IGIC (6,5%)</field>
             <field name="code">IGIC_ICSOIBI70</field>
             <field name="parent_id" ref="igic_ded_25"/>
             <field name="sign">1.0</field>
@@ -682,7 +682,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_27_7" model="account.tax.code.template">
-            <field name="name">[17] Cuotas devengadas importaciones bienes y serv.corr. IGIC (7%)</field>
+            <field name="name">[17] Cuotas devengadas importaciones bienes y serv.corr. IGIC (6,5%)</field>
             <field name="code">IGIC_ICDIBSC70</field>
             <field name="parent_id" ref="igic_ded_27"/>
             <field name="sign">1.0</field>
@@ -728,7 +728,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_29_7" model="account.tax.code.template">
-            <field name="name">[17] Cuotas devengadas importaciones bienes inversión IGIC (7%)</field>
+            <field name="name">[17] Cuotas devengadas importaciones bienes inversión IGIC (6,5%)</field>
             <field name="code">IGIC_ICDIBI70</field>
             <field name="parent_id" ref="igic_ded_29"/>
             <field name="sign">1.0</field>
@@ -774,7 +774,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_31_7" model="account.tax.code.template">
-            <field name="name">[17] En adquisiciones intracomuni. bienes y serv. corr. IGIC (7%)</field>
+            <field name="name">[17] En adquisiciones intracomuni. bienes y serv. corr. IGIC (6,5%)</field>
             <field name="code">IGIC_IAIBSC70</field>
             <field name="parent_id" ref="igic_ded_31"/>
             <field name="sign">1.0</field>
@@ -820,7 +820,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_33_7" model="account.tax.code.template">
-            <field name="name">[17] En adquisiciones intracomunitarias bienes inversión IGIC (7%)</field>
+            <field name="name">[17] En adquisiciones intracomunitarias bienes inversión IGIC (6,5%)</field>
             <field name="code">IGIC_IAIBIN70</field>
             <field name="parent_id" ref="igic_ded_33"/>
             <field name="sign">1.0</field>
@@ -874,7 +874,7 @@
             <field name="sign">1.0</field>
         </record>
         <record id="igic_ded_46" model="account.tax.code.template">
-            <field name="name">[16] IGIC Recargo equivalencia ded. Cuota 0,7%</field>
+            <field name="name">[16] IGIC Recargo equivalencia ded. Cuota 0,65%</field>
             <field name="code">IGIC_IREDC070</field>
             <field name="parent_id" ref="igic_ded_cuota_total_16"/>
             <field name="sign">1.0</field>
