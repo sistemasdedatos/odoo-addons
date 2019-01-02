@@ -30,6 +30,7 @@
                 ref('l10n_es_igic.account_tax_template_igic_s_ISP0'),
                 ref('l10n_es_igic.account_tax_template_igic_s_ISP3'),
                 ref('l10n_es_igic.account_tax_template_igic_s_ISP7'),
+                ref('l10n_es_igic.account_tax_template_igic_s_ISP65'),
                 ref('l10n_es_igic.account_tax_template_igic_s_ISP95'),
                 ref('l10n_es_igic.account_tax_template_igic_s_ISP135'),
                 ref('l10n_es_igic.account_tax_template_igic_s_ISP200')
@@ -86,6 +87,7 @@
             <field name="taxes" eval="[(6, 0, [
                 ref('l10n_es_igic.account_tax_template_igic_ISP0'),
                 ref('l10n_es_igic.account_tax_template_igic_ISP3'),
+                ref('l10n_es_igic.account_tax_template_igic_ISP7'),
                 ref('l10n_es_igic.account_tax_template_igic_ISP6_5'),
                 ref('l10n_es_igic.account_tax_template_igic_ISP95'),
                 ref('l10n_es_igic.account_tax_template_igic_ISP135'),
@@ -119,11 +121,13 @@
             <field name="code">RE</field>
             <field name="taxes" eval="[(6, 0, [
                 ref('l10n_es_igic.account_tax_template_igic_p_re03'),
-                ref('l10n_es_igic.account_tax_template_igic_p_re065'),
+                ref('l10n_es_igic.account_tax_template_igic_p_re07'),
+                ref('l10n_es_igic.account_tax_template_igic_p_re065')
                 ref('l10n_es_igic.account_tax_template_igic_p_re95'),
                 ref('l10n_es_igic.account_tax_template_igic_p_re135'),
                 ref('l10n_es_igic.account_tax_template_igic_p_re20'),
                 ref('l10n_es_igic.account_tax_template_igic_re_03'),
+                ref('l10n_es_igic.account_tax_template_igic_re_07'),
                 ref('l10n_es_igic.account_tax_template_igic_re_065'),
                 ref('l10n_es_igic.account_tax_template_igic_re_095'),
                 ref('l10n_es_igic.account_tax_template_igic_re_13_5'),
