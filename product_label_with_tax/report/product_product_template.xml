@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="tax_report_simple_label" inherit_id="product.report_simple_label">
+        <xpath expr="//strong[@t-field='product.list_price']" position="replace">
+            <strong t-field="product.list_price_tax"/>
+        </xpath>
+    </template>
+</odoo>

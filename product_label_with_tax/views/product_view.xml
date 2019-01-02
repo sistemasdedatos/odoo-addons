@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="tax_product_template_tree_view" model="ir.ui.view">
+        <field name="name">tax.product.template.product.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="list_price" position="after">
+                <field name="list_price_tax"/>
+            </field>
+        </field>
+    </record>
+    <record id="tax_product_template_form_view" model="ir.ui.view">
+        <field name="name">tax.product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="list_price" position="after">
+                <field name="list_price_tax" widget="monetary"/>
+            </field>
+        </field>
+    </record>
+    <record id="tax_product_template_kanban_view" model="ir.ui.view">
+        <field name="name">Tax.Product.template.product.kanban</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view"/>
+        <field name="arch" type="xml">
+            <field name="lst_price" position="after">
+                <field name="list_price_tax"/>
+            </field>
+            <xpath expr="//ul/li" position="after">
+                <li>Price with tax: <field name="list_price_tax" widget="monetary"/></li>
+            </xpath>
+        </field>
+    </record>
+</odoo>

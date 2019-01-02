@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_label_with_tax
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-02 13:20+0000\n"
+"PO-Revision-Date: 2019-01-02 13:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_label_with_tax
+#: model:ir.model.fields,help:product_label_with_tax.field_product_product_list_price_tax
+#: model:ir.model.fields,help:product_label_with_tax.field_product_template_list_price_tax
+msgid "Base price with tax."
+msgstr "Precio base con impuesto."
+
+#. module: product_label_with_tax
+#: model:ir.ui.view,arch_db:product_label_with_tax.tax_product_template_kanban_view
+msgid "Price with tax:"
+msgstr "Precio con impuesto:"
+
+#. module: product_label_with_tax
+#: model:ir.model,name:product_label_with_tax.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: product_label_with_tax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_product_list_price_tax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_template_list_price_tax
+msgid "Sale Price with tax"
+msgstr "Precio de venta con impuesto"
