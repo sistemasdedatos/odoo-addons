@@ -4,7 +4,7 @@
 
 {
     'name' : 'AEAT modelo 420',
-    'version' : '0.1',
+    'version' : '2.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Localisation/Account Charts',
