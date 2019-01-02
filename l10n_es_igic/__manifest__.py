@@ -10,7 +10,7 @@
 
 {
     'name' : 'Planes de cuentas españoles (según PGCE 2008) ampliado para IGIC',
-    'version' : '1.0',
+    'version' : '2.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Localisation/Account Charts',
