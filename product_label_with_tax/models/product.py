@@ -14,7 +14,7 @@ class ProductTemplate(models.Model):
             amount = 0.0
             for t in taxes:
                 amount = amount * (t.amount/100) if amount > 0 and t.amount > 0 else t.amount/100
-            product.list_price_tax = product.list_price + (product.list_price * amount) if amount > 0 else t.list_price
+            product.list_price_tax = product.list_price + (product.list_price * amount) if amount > 0 else product.list_price
 
     list_price_tax = fields.Float(
         'Sale Price with tax', compute=_compute_price_tax,
