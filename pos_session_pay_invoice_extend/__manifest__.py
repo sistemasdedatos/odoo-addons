@@ -27,7 +27,7 @@ This module depends on https://github.com/OCA/pos/tree/10.0/pos_session_pay_invo
              'wizard/cash_invoice_out.xml',
              'views/account_invoice_view.xml',
              'views/account_bank_statement_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

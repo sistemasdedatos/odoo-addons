@@ -20,7 +20,7 @@ Edit external footer view to show the gdpr terms, this terms should be written i
                  'report'],
     'data': ['views/res_view.xml',
              'report/layout_templates.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

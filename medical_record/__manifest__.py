@@ -25,7 +25,7 @@ This module adds a model to store medical data for the partner or patient.
              'views/res_partner_view.xml',
              'report/report_partner_medical_record.xml',
              'report/report_medical_record.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

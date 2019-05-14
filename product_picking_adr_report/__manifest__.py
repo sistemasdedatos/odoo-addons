@@ -24,7 +24,7 @@ This module allow to set adr type in product to print a report in stock picking
              'views/product_template_view.xml',
              'views/stock_picking_views.xml',
              'report/report_picking_adr.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

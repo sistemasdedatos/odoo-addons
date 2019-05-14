@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-sd_print_project_access_u,sd_print_project_work user,model_sd_custom_report_filter,project.group_project_user,1,1,1,0
-sd_print_project_access_m,sd_print_project_work manager,model_sd_custom_report_filter,project.group_project_manager,1,1,1,1
-sd_print_project_access_access_settings_u,sd_print_project_work user,model_sd_custom_report_filter,project.group_project_user,1,1,1,0
-sd_print_project_access_access_settingsm,sd_print_project_work manager,model_sd_custom_report_filter,project.group_project_manager,1,1,1,1

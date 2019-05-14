@@ -16,7 +16,7 @@
              'views/mod420_view.xml',
              'reports/mod420_report.xml',
              'security/ir.model.access.csv'],             
-    'installable': True,        
+    'installable': False,        
     'auto_install': False, 
 }
 

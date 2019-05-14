@@ -29,7 +29,7 @@ No tested with website modules.
     'depends' : [],
     'data': ['views/templates.xml',
              'views/res_users_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

@@ -21,7 +21,7 @@
              'data/account_tax_group_data.xml',
              'data/taxes_common_igic.xml',   
              'data/fiscal_position_common_igic.xml'],
-    'installable': True,        
+    'installable': False,        
     'auto_install': False,        
 }
 

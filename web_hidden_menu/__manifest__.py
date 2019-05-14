@@ -19,7 +19,7 @@ This module allow hide menus to all users or groups, or to a specific user or gr
     'depends' : ["base"],
     'data': ['views/hidden_menu_view.xml',
              'security/ir.model.access.csv'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

@@ -25,7 +25,7 @@ TODO: allow many programs for each customer
              'views/loyalty_point_view.xml',
              'views/loyalty_program_view.xml',
              'views/partner_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

@@ -27,7 +27,7 @@ Management for sale of frames
              'views/sale_order_view.xml',
              'wizard/add_order_wizard_view.xml',
              'data/ir_sequence_data.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

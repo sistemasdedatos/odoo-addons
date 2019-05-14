@@ -20,7 +20,7 @@ This module allow to set if we wont see product quantity by warehouse or by tota
                  'sale_stock'],
     'data': ['security/sale_stock_security.xml',
              'views/sale_setting_config_views.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

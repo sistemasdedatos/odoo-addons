@@ -13,7 +13,7 @@
     'depends': ['l10n_es_aeat_sii_pos',
                 'l10n_es_aeat_sii_igic'],
     'data': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
 

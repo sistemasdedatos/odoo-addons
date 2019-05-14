@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-sd_last_sale_price_access_u,sd_last_sale_price user,model_sd_last_sale_price,base.group_sale_salesman,1,1,1,0
-sd_last_sale_price_access_m,sd_last_sale_price manager,model_sd_last_sale_price,base.group_sale_manager,1,1,1,1
-sd_last_sale_price_access_settings_u,sd_last_sale_price user,model_sd_last_sale_price,base.group_sale_salesman,1,1,1,0
-sd_last_sale_price_access_settings_m,sd_last_sale_price manager,model_sd_last_sale_price,base.group_sale_manager,1,1,1,1

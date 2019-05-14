@@ -28,7 +28,7 @@ This module add a view to show prices for ecah pricelist
                  'distribution_price_margin'],
     'data': ['views/purchase_cost_distribution_view.xml'],
     'images':[],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

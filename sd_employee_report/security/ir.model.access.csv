@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-sd_report_employee_access_u,sd_employee_report user,model_sd_employee_report,project.group_project_user,1,1,1,0
-sd_report_employee_access_m,sd_employee_report manager,model_sd_employee_report,project.group_project_manager,1,1,1,1
-sd_report_employee_access_access_settings_u,sd_employee_report user,model_sd_employee_report,project.group_project_user,1,1,1,0
-sd_report_employee_access_access_settingsm,sd_employee_report manager,model_sd_employee_report,project.group_project_manager,1,1,1,1

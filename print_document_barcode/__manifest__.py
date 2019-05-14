@@ -22,7 +22,7 @@ This module allows you to configure which document name you like to print in bar
              'report/document_barcode.xml',
              'views/view_name_barcode_config.xml',
              ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

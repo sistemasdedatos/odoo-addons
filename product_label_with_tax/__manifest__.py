@@ -17,7 +17,7 @@
     'data': ['views/product_view.xml',
              'report/product_product_template.xml'
              ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

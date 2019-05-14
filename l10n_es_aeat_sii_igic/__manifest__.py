@@ -15,7 +15,7 @@
     'data': ['data/account_mapping_registration_keys_data.xml',
              'data/account_fiscal_position_data.xml',
              'data/aeat_sii_map_data.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
 

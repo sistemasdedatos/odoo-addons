@@ -1,9 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-sd_excel_toimport_access_u,sd_excel_toimport user,model_sd_excel_toimport,base.group_sale_salesman,1,0,0,0
-sd_excel_toimport_access_m,sd_excel_toimport manager,model_sd_excel_toimport,base.group_sale_manager,1,1,1,1
-sd_excel_toimport_access_settings_u,sd_excel_toimport user,model_sd_excel_toimport,base.group_sale_salesman,1,1,1,0
-sd_excel_toimport_access_settings_m,sd_excel_toimport manager,model_sd_excel_toimport,base.group_sale_manager,1,1,1,1
-sd_excel_line_access_u,sd_excel_line user,model_sd_excel_line,base.group_sale_salesman,1,1,1,0
-sd_excel_line_access_m,sd_excel_line manager,model_sd_excel_line,base.group_sale_manager,1,1,1,1
-sd_excel_line_access_settings_u,sd_excel_line user,model_sd_excel_line,base.group_sale_salesman,1,1,1,0
-sd_excel_line_access_settings_m,sd_excel_line manager,model_sd_excel_line,base.group_sale_manager,1,1,1,1

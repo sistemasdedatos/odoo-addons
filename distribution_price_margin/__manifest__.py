@@ -35,7 +35,7 @@ Reference: https://manueldelgado.com/como-calcular-el-precio-de-venta-coste-marg
              'views/res_config_view.xml',
              'views/purchase_cost_distribution_view.xml'],
     'images':[],                
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

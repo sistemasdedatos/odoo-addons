@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openerp>
-	<data>
-		<menuitem action="subscription.action_subscription_form" id="subscription.sd_menu_action_subscription_form"
-			name="Tareas recurrentes" parent="base.menu_definitions" />
-	</data>
-</openerp>

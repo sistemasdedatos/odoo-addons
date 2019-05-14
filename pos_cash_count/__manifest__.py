@@ -42,7 +42,7 @@ Modulo para realizar el arqueo de caja
     'data': ['views/cash_count_view.xml',
              'report/cash_count_report.xml',
              'report/pos_session_report.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,        
     'application': False,
 }

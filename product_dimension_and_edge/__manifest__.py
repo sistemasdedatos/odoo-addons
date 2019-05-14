@@ -20,7 +20,7 @@ Product Dimension And Edge
     'data': ['data/product_uom_data.xml',
              'wizard/dimension_wizard_view.xml',
              'views/sale_order_view.xml'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }
