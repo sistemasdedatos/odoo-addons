@@ -5,31 +5,35 @@
             <field name="code">4707</field>
             <field name="reconcile" eval="True" />
             <field name="name">Hacienda Pública, deudor por IGIC</field>
-            <field name="user_type_id" ref="account.data_account_type_receivable" />
+            <field name="user_type_id" ref="account.data_account_type_current_assets" />
             <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+			<field name="group_id" ref="account_igic_group_4707"/>
         </record>        
         
 		<record id="pgc_4727_child" model="account.account.template">
 			<field name="code">4727</field>
 			<field name="reconcile" eval="False" />
 			<field name="name">Hacienda Pública. IGIC Soportado</field>
-			<field name="user_type_id" ref="l10n_es.account_type_tax" />
+			<field name="user_type_id" ref="account.data_account_type_current_assets" />
 			<field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+			<field name="group_id" ref="account_igic_group_4727"/>
 		</record>
 		
         <record id="pgc_4757_child" model="account.account.template">
             <field name="code">4757</field>
             <field name="reconcile" eval="True" />
             <field name="name">Hacienda Pública, acreedor por IGIC</field>
-            <field name="user_type_id" ref="account.data_account_type_payable" />
+            <field name="user_type_id" ref="account.data_account_type_current_liabilities" />
             <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+			<field name="group_id" ref="account_igic_group_4757"/>
         </record>                
 
 		<record id="pgc_4777_child" model="account.account.template">
 			<field name="code">4777</field>
 			<field name="reconcile" eval="False" />
 			<field name="name">Hacienda Pública. IGIC Repercutido</field>
-			<field name="user_type_id" ref="l10n_es.account_type_tax" />
+			<field name="user_type_id" ref="account.data_account_type_current_liabilities" />
 			<field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+			<field name="group_id" ref="account_igic_group_4777"/>
 		</record>
 </odoo>

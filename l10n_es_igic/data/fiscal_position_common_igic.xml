@@ -111,9 +111,9 @@
         <field name="tax_src_id" ref="account_tax_template_igic_r_200"/>
         <field name="tax_dest_id" ref="account_tax_template_igic_ex_0"/>
     </record>
-    <!-- ====================== -->
-	<!-- REARGO DE EQUIVALENCIA -->
-	<!-- ====================== -->
+    <!-- ======================= -->
+	<!-- RECARGO DE EQUIVALENCIA -->
+	<!-- ======================= -->
 	<!--Soportado Operaciones corrientes -->
 	<record id="igic_fptt_recargo_buy_3_A" model="account.fiscal.position.tax.template">
         <field name="position_id" ref="l10n_es.fp_recargo"/>
