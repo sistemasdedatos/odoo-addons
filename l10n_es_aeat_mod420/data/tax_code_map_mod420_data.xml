@@ -14,7 +14,7 @@
 	    <field name="field_number">01</field>
 	    <field name="name">I.G.I.C DEVENGADO - Base imponible 0%</field>
 	    <field name="to_regularize" eval="False"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">base</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -25,7 +25,7 @@
 	    <field name="field_number">02</field>
 	    <field name="name">I.G.I.C DEVENGADO - Base imponible 3%</field>
 	    <field name="to_regularize" eval="False"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">base</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -36,7 +36,7 @@
 	    <field name="field_number">03</field>
 	    <field name="name">I.G.I.C DEVENGADO - Base imponible 6,5%</field>
 	    <field name="to_regularize" eval="False"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">base</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -47,7 +47,7 @@
 	    <field name="field_number">04</field>
 	    <field name="name">I.G.I.C DEVENGADO - Base imponible 9,5%</field>
 	    <field name="to_regularize" eval="False"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">base</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -58,7 +58,7 @@
 	    <field name="field_number">05</field>
 	    <field name="name">I.G.I.C DEVENGADO - Base imponible 13,5%</field>
 	    <field name="to_regularize" eval="False"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">base</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -69,7 +69,7 @@
 	    <field name="field_number">06</field>
 	    <field name="name">I.G.I.C DEVENGADO - Base imponible 20%</field>
 	    <field name="to_regularize" eval="False"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">base</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -81,7 +81,7 @@
 	    <field name="field_number">07</field>
 	    <field name="name">I.G.I.C DEVENGADO - Cuota 0%</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -92,7 +92,7 @@
 	    <field name="field_number">08</field>
 	    <field name="name">I.G.I.C DEVENGADO - Cuota 3%</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -103,7 +103,7 @@
 	    <field name="field_number">09</field>
 	    <field name="name">I.G.I.C DEVENGADO - Cuota 6,5%</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -114,7 +114,7 @@
 	    <field name="field_number">10</field>
 	    <field name="name">I.G.I.C DEVENGADO - Cuota 9,5%</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -125,7 +125,7 @@
 	    <field name="field_number">11</field>
 	    <field name="name">I.G.I.C DEVENGADO - Cuota 13,5%</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -136,7 +136,7 @@
 	    <field name="field_number">12</field>
 	    <field name="name">I.G.I.C DEVENGADO - Cuota 20%</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="False"/>
@@ -148,7 +148,7 @@
 	    <field name="field_number">13</field>
 	    <field name="name">Cuota devengada por inversión del sujeto pasivo</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">credit</field>
 	    <field name="inverse" eval="False"/>
@@ -169,7 +169,7 @@
 	    <field name="field_number">16</field>
 	    <field name="name">I.G.I.C deducible en operaciones interiores</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="True"/>
@@ -194,7 +194,7 @@
 	    <field name="field_number">17</field>
 	    <field name="name">I.G.I.C deducible por importaciones</field>
 	    <field name="to_regularize" eval="True"/>
-	    <field name="move_type">regular</field>
+	    <field name="move_type">all</field>
 	    <field name="field_type">amount</field>
 	    <field name="sum_type">both</field>
 	    <field name="inverse" eval="True"/>
