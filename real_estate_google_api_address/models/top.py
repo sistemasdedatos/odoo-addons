@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError, ValidationError
-import googlemaps
+from odoo import models, fields, api, _, exceptions
+import googlemaps, logging
+_logger = logging.getLogger(__name__)
 
 class Top(models.Model):
     _inherit = "real.estate.top"
@@ -13,12 +13,16 @@ class Top(models.Model):
             if self.number:
                 dir += ', ' + self.number
             dir += ', ' + self.city_id.display_name
-            gmaps = googlemaps.Client(key=google_maps_api_key)
-            geocode_result = gmaps.geocode(dir)[0]
-            map = geocode_result.get('geometry', False).get('location', False)
-            if map:
-                self.longitude = map.get('lng')
-                self.latitude = map.get('lat')
+            try:
+                gmaps = googlemaps.Client(key=google_maps_api_key)
+                geocode_result = gmaps.geocode(dir)[0]
+                map = geocode_result.get('geometry', False).get('location', False)
+                if map:
+                    self.longitude = map.get('lng')
+                    self.latitude = map.get('lat')
+            except:
+                _logger.warning("Google API error")
+                pass
         else:
             return 0
 
