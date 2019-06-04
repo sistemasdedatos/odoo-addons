@@ -6,7 +6,6 @@ import googlemaps
 class Top(models.Model):
     _inherit = "real.estate.top"
 
-    @api.depends('city_id', 'address')
     def get_lat_long(self):
         google_maps_api_key = self.env['ir.config_parameter'].get_param('google_maps_api_key', default='')
         if google_maps_api_key != '' and self.city_id and self.address != '/' and not self.longitude and not self.latitude:
