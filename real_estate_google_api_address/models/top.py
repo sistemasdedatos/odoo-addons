@@ -7,7 +7,7 @@ class Top(models.Model):
     _inherit = "real.estate.top"
 
     def get_lat_long(self):
-        google_maps_api_key = self.env['ir.config_parameter'].get_param('google_maps_api_key', default='')
+        google_maps_api_key = self.env['ir.config_parameter'].sudo().get_param('google_maps_api_key', default='')
         if google_maps_api_key != '' and self.city_id and self.address != '/' and not self.longitude and not self.latitude:
             dir = self.address
             if self.number:
