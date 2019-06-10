@@ -12,7 +12,7 @@
 						states="draft,calculated"
 						class="oe_highlight"
 						help="Set the global margin in every lines"/>
-			</button>
+				</button>
 			<field name="currency_id" position="after">
 				<field name="benefit_margin"/>
 			</field>
@@ -33,6 +33,7 @@
 			</field>
    		</field>
    	</record>
+
    	<record id="inherit_view_purchase_cost_distribution_line_form" model="ir.ui.view">
 		<field name="name">inherit.purchase.cost.distribution.line.form</field>
 		<field name="model">purchase.cost.distribution.line</field>
