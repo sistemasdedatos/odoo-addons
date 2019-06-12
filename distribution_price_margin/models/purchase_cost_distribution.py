@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import models, fields, exceptions, api, _
 
 
@@ -10,7 +9,6 @@ class PurchaseCostDistribution(models.Model):
 
     @api.multi
     def action_calculate(self):
-        print(" -- action_calculate")
         super(PurchaseCostDistribution, self).action_calculate()
         for distribution in self:
             for line in distribution.cost_lines:
@@ -25,14 +23,12 @@ class PurchaseCostDistribution(models.Model):
     
     @api.multi
     def set_margin(self):
-        print(" -- set_margin")
         for distribution in self:
             for line in distribution.cost_lines:
                 line.benefit_margin = distribution.benefit_margin
     
     @api.one
     def action_done(self):
-        print(" -- action_done")
         for line in self.cost_lines:
             if line.benefit_price > 0:
                 line.product_id.lst_price = line.benefit_price
@@ -49,7 +45,6 @@ class PurchaseCostDistributionLine(models.Model):
     
     @api.onchange('benefit_price')
     def onchange_benefit_price(self):
-        print(" -- onchange_benefit_price")
         if self.benefit_price >= 0:
             try:
                 if self.env.ref('distribution_price_margin.group_margin_calculation_type') in self.env['res.users'].browse([self._uid]).groups_id:
@@ -63,7 +58,6 @@ class PurchaseCostDistributionLine(models.Model):
     
     @api.onchange('benefit_margin')
     def onchange_benefit_margin(self):
-        print(" -- onchange_benefit_margin")
         if self.benefit_margin >= 0:
             try:
                 if self.env.ref('distribution_price_margin.group_margin_calculation_type') in self.env['res.users'].browse([self._uid]).groups_id:
