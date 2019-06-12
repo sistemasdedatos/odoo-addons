@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Sistemas de Datos, Open Source Management Solution
@@ -11,7 +10,7 @@
 
 {
     'name': 'Distribution Price Margin',
-    'version': '1.0',
+    'version': '12.0.1.0.0',
     'author': 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category': 'Purchases',
