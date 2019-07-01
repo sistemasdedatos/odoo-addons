@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
     <record model="ir.ui.view" id="view_hidden_template_form">
         <field name="name">hidden.menu.form</field>
         <field name="model">hidden.menu</field>
@@ -7,16 +8,17 @@
             <form string="Hidden Menu">
                 <sheet>
                     <group name="hidden-template-help">
-                        <p>Select a menu that you want to hide.</p>
-                   </group>
+                        <p>Select the menu that you want to hide.</p>
+                    </group>
                   		<group>
                   			<group>
-                        	<field name="name"/>
+                                <field name="name"/>
+                            </group>
+
+                            <group>
+                                <field name="active"/>
+                            </group>
                         </group>
-                        <group>
-                        	<field name="active"/>
-                        </group>
-                    </group>
                     <group>
                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         <field name="menus" widget="many2many_tags" options="{'no_create': True}"/>
@@ -51,12 +53,11 @@
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_hidden_menu_tree"/>
         <field name="help" type="html">
-          <p class="oe_view_nocontent_create">
-            Click to add a menu to hidde.
-          </p>
+            <p class="oe_view_nocontent_create">
+                Click on "Create" to add a menu to hide.
+            </p>
         </field>
     </record>
 
-    <menuitem id="menu_hidden_view" action="action_hidden_menus_form"
-        parent="base.next_id_2"/>
+    <menuitem id="menu_hidden_view" action="action_hidden_menus_form" parent="base.next_id_2"/>
 </odoo>
