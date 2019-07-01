@@ -1,7 +1,8 @@
-# -*- encoding: utf-8 -*-
-#    Copyright 2018 Sistemas de Datos - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
+
+
 from odoo import models, fields, api
+
 
 class hidden_menu(models.Model):
     _name = 'hidden.menu'
