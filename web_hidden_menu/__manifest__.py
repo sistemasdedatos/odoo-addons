@@ -1,15 +1,15 @@
-######################################################################################
+#i#############################################################################
 #
 #   Sistemas de datos, Open Source Management Solutions (<http://sdatos.com>)
 #   Copyright (C) 2018 - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
 #   Migrated V12 2019 Sistemas de Datos - Héctor J. Ravelo <hravelo@sdatos.es>
 #   License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
 #
-######################################################################################
+###############################################################################
 
 {
     'name': 'Web Hidden Menu',
-    'version': '12.0.1.0',
+    'version': '12.0.1.0.0',
     'author': 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category': 'Web',
