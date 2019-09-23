@@ -12,6 +12,11 @@
         	<field name="invoice_id" position="attributes">
         		<attribute name="attrs">{'invisible':[('active_model','=','account.invoice')]}</attribute>
         	</field>
+			<!--FIX BUG account_cash_invoice module-->
+			<field name="journal_id" position="attributes">
+        		<attribute name="domain">[('id','in', journal_ids)]</attribute>
+        	</field>
+			<!--END FIX-->
         </field>
     </record>
 	<act_window

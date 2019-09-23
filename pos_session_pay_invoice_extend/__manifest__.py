@@ -1,9 +1,9 @@
-# -*- encoding: utf-8 -*-
-#    Copyright 2018 Sistemas de Datos - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
+#    Copyright 2019 Sistemas de Datos - Rodrigo Colombo Vlaeminch <rcolombo@sdatos.es>
 #    License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0
+
 {
     'name' : 'POS Pay invoice extend',
-    'version' : '0.1',
+    'version' : '12.0.1.0.0',
     'author' : 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category' : 'Point Of Sale',
@@ -27,7 +27,7 @@ This module depends on https://github.com/OCA/pos/tree/10.0/pos_session_pay_invo
              'wizard/cash_invoice_out.xml',
              'views/account_invoice_view.xml',
              'views/account_bank_statement_view.xml'],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
