@@ -10,7 +10,7 @@
 
 {
     'name': 'Distribution Price Margin',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'author': 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category': 'Purchases',
@@ -37,7 +37,8 @@ Reference: https://manueldelgado.com/como-calcular-el-precio-de-venta-coste-marg
     'website': 'http://www.sdatos.com',
     # End General Data
     'depends': ['sale', 'purchase_landed_cost'],
-    'data': ['views/res_config_view.xml',
+    'data': ['security/distribution_security.xml',
+             'views/res_config_view.xml',
              'views/purchase_cost_distribution_view.xml'],
     'images': [],
     'installable': True,

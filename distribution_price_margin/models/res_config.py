@@ -8,4 +8,4 @@ class PurchaseConfigSettings(models.TransientModel):
         (0, "Method: 'Sale = cost + (cost * %margin)'"),
         (1, "Method: 'Sale = cost / (1 - %margin)'")
         ], "Sale price in cost distribution",
-        implied_group='purchase.group_purchase_manager')
+        implied_group='distribution_price_margin.group_margin_calculation_type')
