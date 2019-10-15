@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="tax_report_simple_label" inherit_id="product.report_simple_label">
-        <xpath expr="//strong[@t-field='product.list_price']" position="replace">
-            <strong t-field="product.list_price_tax"/>
+        <xpath expr="//strong[@t-field='product.lst_price']" position="after">
+            <t t-if="product.tax_included">
+                <br>
+                    <strong>Price with tax:</strong>
+                    <strong t-field="product.list_price_tax" t-options="{'widget': 'monetary', 'display_currency': product.company_id.currency_id}"/>
+                </br>
+            </t>
+            <t t-if="not product.tax_included">
+                <br>
+                    <strong>Price without tax:</strong>
+                    <strong t-field="product.list_price_notax" t-options="{'widget': 'monetary', 'display_currency': product.company_id.currency_id}"/>
+                </br>
+            </t>
         </xpath>
     </template>
 </odoo>

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-02 13:20+0000\n"
-"PO-Revision-Date: 2019-01-02 13:20+0000\n"
+"POT-Creation-Date: 2019-10-15 14:09+0000\n"
+"PO-Revision-Date: 2019-10-15 14:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,42 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_label_with_tax
-#: model:ir.model.fields,help:product_label_with_tax.field_product_product_list_price_tax
-#: model:ir.model.fields,help:product_label_with_tax.field_product_template_list_price_tax
-msgid "Base price with tax."
-msgstr "Precio base con impuesto."
+#: model_terms:ir.ui.view,arch_db:product_label_with_tax.tax_report_simple_label
+msgid "<strong>Price with tax:</strong>"
+msgstr "<strong>Precio con impuesto:</strong>"
 
 #. module: product_label_with_tax
-#: model:ir.ui.view,arch_db:product_label_with_tax.tax_product_template_kanban_view
+#: model_terms:ir.ui.view,arch_db:product_label_with_tax.tax_report_simple_label
+msgid "<strong>Price without tax:</strong>"
+msgstr "<strong>Precio sin impuesto:</strong>"
+
+#. module: product_label_with_tax
+#: model:ir.model.fields,help:product_label_with_tax.field_product_product__list_price_tax
+#: model:ir.model.fields,help:product_label_with_tax.field_product_template__list_price_tax
+msgid "Base price with tax."
+msgstr "Precio con impuesto"
+
+#. module: product_label_with_tax
+#: model:ir.model.fields,help:product_label_with_tax.field_product_product__list_price_notax
+#: model:ir.model.fields,help:product_label_with_tax.field_product_template__list_price_notax
+msgid "Base price without tax."
+msgstr "Precio sin impuesto"
+
+#. module: product_label_with_tax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_product__tax_included
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_template__tax_included
+msgid "Price Tax Included"
+msgstr "Precio impuesto incluído"
+
+#. module: product_label_with_tax
+#: model_terms:ir.ui.view,arch_db:product_label_with_tax.tax_product_template_kanban_view
 msgid "Price with tax:"
-msgstr "Precio con impuesto:"
+msgstr "Precio con impuesto"
+
+#. module: product_label_with_tax
+#: model_terms:ir.ui.view,arch_db:product_label_with_tax.tax_product_template_kanban_view
+msgid "Price without tax:"
+msgstr "Precio sin impuesto"
 
 #. module: product_label_with_tax
 #: model:ir.model,name:product_label_with_tax.model_product_template
@@ -32,7 +59,13 @@ msgid "Product Template"
 msgstr "Plantilla de producto"
 
 #. module: product_label_with_tax
-#: model:ir.model.fields,field_description:product_label_with_tax.field_product_product_list_price_tax
-#: model:ir.model.fields,field_description:product_label_with_tax.field_product_template_list_price_tax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_product__list_price_tax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_template__list_price_tax
 msgid "Sale Price with tax"
 msgstr "Precio de venta con impuesto"
+
+#. module: product_label_with_tax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_product__list_price_notax
+#: model:ir.model.fields,field_description:product_label_with_tax.field_product_template__list_price_notax
+msgid "Sale Price without tax"
+msgstr "Precio de venta sin impuesto"
