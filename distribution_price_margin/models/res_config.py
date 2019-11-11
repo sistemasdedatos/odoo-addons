@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, _
 
 
 class PurchaseConfigSettings(models.TransientModel):
@@ -9,3 +9,4 @@ class PurchaseConfigSettings(models.TransientModel):
         (1, "Method: 'Sale = cost / (1 - %margin)'")
         ], "Sale price in cost distribution",
         implied_group='distribution_price_margin.group_margin_calculation_type')
+    last_distribution_years = fields.Integer(related="company_id.last_distribution_years", string="Distribution Years", readonly=False)

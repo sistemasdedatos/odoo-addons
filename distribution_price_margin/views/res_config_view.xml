@@ -19,6 +19,8 @@
 									<field name="group_margin_calculation_method" class="o_light_label" widget="radio"/>
 								</div>
 							</div>
+							<label for="last_distribution_years"/>
+							<field name="last_distribution_years"/>
 						</div>
 					</div>
 				</xpath>

@@ -12,13 +12,16 @@
 						states="draft,calculated"
 						class="oe_highlight"
 						help="Set the global margin in every lines"/>
-				</button>
+			</button>
 			<field name="currency_id" position="after">
 				<field name="benefit_margin"/>
 			</field>
 			<field name="expense_amount" position="replace"/>
 			<field name="cost_ratio" position="after">
 				<field name="expense_amount"/>
+			</field>
+			<field name="standard_price_old" position="before">
+				<field name="last_cost_distribution"/>
 			</field>
 			<field name="standard_price_new" position="after">
 				<field name="benefit_margin"/>
@@ -31,6 +34,16 @@
 			<field name="move_id" position="attributes">
 				<attribute name="invisible">1</attribute>
 			</field>
+			<field name="total_expense" position="after">
+				<field name="expense_percent"/>
+			</field>
+			<sheet position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"
+                           groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </sheet>
    		</field>
    	</record>
 
@@ -45,6 +58,12 @@
                 <field name="benefit_price" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
                 <field name="state" invisible="1"/>
             </field>
+			<field name="standard_price_old" position="before">
+				<field name="last_cost_distribution"/>
+			</field>
+			<field name="standard_price_old" position="after">
+				<field name="standard_price_new"/>
+			</field>
         </field>
     </record>
 </odoo>

@@ -10,7 +10,7 @@
 
 {
     'name': 'Distribution Price Margin',
-    'version': '12.0.1.0.1',
+    'version': '12.0.1.1.0',
     'author': 'Sistemas de Datos',
     'maintainer': 'Sistemas de Datos',
     'category': 'Purchases',
