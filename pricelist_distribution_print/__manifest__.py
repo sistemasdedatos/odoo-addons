@@ -22,9 +22,7 @@ This module add a button to print prices for ecah pricelist
     """,
     'website': 'http://www.sdatos.com',
     # End General Data
-    'depends' : ['sale',
-                 'purchase_landed_cost',
-                 'distribution_price_margin',
+    'depends' : ['purchase_landed_cost',
                  'product_pricelist_direct_print'],
     'data': ['views/purchase_cost_distribution_view.xml'],
     'images':[],                
