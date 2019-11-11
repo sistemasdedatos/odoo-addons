@@ -16,7 +16,7 @@ class PurchaseCostDistribution(models.Model):
     def _compute_expenses_percent(self):
         for record in self:
             try:
-                record.expense_percent = record.total_expense * 100 / record.amount_total
+                record.expense_percent = record.total_expense * 100 / record.total_purchase
             except:
                 record.expense_percent = 0
 

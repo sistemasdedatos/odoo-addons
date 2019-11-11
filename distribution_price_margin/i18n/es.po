@@ -396,3 +396,34 @@ msgstr "Documentación del coste"
 #: model:ir.model.fields,field_description:purchase_landed_cost.field_purchase_expense_type__default_amount
 msgid "Default amount"
 msgstr "Coste por defecto"
+
+#. module: distribution_price_margin
+#: code:addons/distribution_price_margin/models/res_company.py:11
+#: model:ir.model.fields,help:distribution_price_margin.field_res_company__last_distribution_years
+#: model:ir.model.fields,help:distribution_price_margin.field_res_config_settings__last_distribution_years
+#, python-format
+msgid "Years before to compute last distriburion price"
+msgstr "Años antes a mirar para el último precio de distribución"
+
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line__last_cost_distribution
+msgid "Last Cost"
+msgstr "Última distribución"
+
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution__expense_percent
+msgid "Expenses %"
+msgstr "% Gastos"
+
+#. module: distribution_price_margin
+#: code:addons/distribution_price_margin/models/purchase_cost_distribution.py:59
+#: model:ir.model.fields,help:distribution_price_margin.field_purchase_cost_distribution_line__last_cost_distribution
+#, python-format
+msgid "Cost price of the last product entry"
+msgstr "Precio de coste de la última distribución"
+
+#. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_res_company__last_distribution_years
+#: model:ir.model.fields,field_description:distribution_price_margin.field_res_config_settings__last_distribution_years
+msgid "Distribution Years"
+msgstr "Años de distribución"
