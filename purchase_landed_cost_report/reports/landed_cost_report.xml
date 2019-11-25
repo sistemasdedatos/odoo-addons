@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_landed_cost_document">
+            <t t-call="web.basic_layout">
+                <t t-set="company" t-value="res_company"/>
+                <div class="header">
+                    <div>
+                        <span t-field="company.name"/>
+                    </div>
+                    <div t-if="o.date">
+                        <span>Date:</span>
+                        <span t-field="o.date"/>
+                    </div>
+                    <h2 class="text-center">
+                        <span>Cost Distribution</span>
+                        (<span t-field="o.state"/>):
+                        <strong t-field="o.name"/>
+                    </h2>
+                </div>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h4>
+                        Expenses
+                    </h4>
+                    <t t-set="display_invoice" t-value="any([l.invoice_line for l in o.expense_lines])"/>
+                    <t t-set="display_ref" t-value="any([l.ref for l in o.expense_lines])"/>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Method</th>
+                                <th t-if="display_ref">Ref</th>
+                                <th t-if="display_invoice">Invoice</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.expense_lines" t-as="line">
+                                <td>
+                                    <span t-field="line.type"/>
+                                </td>
+                                <td>
+                                    <span t-field="line.calculation_method"/>
+                                </td>
+                                <td t-if="display_ref">
+                                    <span t-field="line.ref"/>
+                                </td>
+                                <td t-if="display_invoice">
+                                    <span t-if="line.invoice_line" t-field="line.invoice_line.invoice_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.expense_amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr class="text-muted">
+                                <th/>
+                                <th t-if="display_ref"/>
+                                <th t-if="display_invoice"/>
+                                <th class="text-right">Total Expenses</th>
+                                <th class="text-right">
+                                    <span t-field="o.total_expense" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                            </tr>
+                         </tbody>
+                    </table>
+                    <h4>
+                        Distribution lines
+                    </h4>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th>Purchase</th>
+                                <th>Product</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">Expense</th>
+                                <th class="text-right">Total Purchase</th>
+                                <th class="text-right">Total Expense</th>
+                                <th class="text-right">Last cost</th>
+                                <th class="text-right">New Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.cost_lines" t-as="line">
+                                <td>
+                                    <span t-field="line.purchase_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="line.product_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_qty"/>
+                                    <span t-field="line.product_uom.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.cost_ratio" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.total_amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.expense_amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.standard_price_old" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.standard_price_new" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr id="sum_totals" class="text-muted">
+                                <th/>
+                                <th/>
+                                <th class="text-right">
+                                    Total:
+                                </th>
+                                <th class="text-right">
+                                    <span t-esc="sum(l.product_price_unit for l in o.cost_lines)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                                <th class="text-right">
+                                    <span t-esc="sum(l.product_qty for l in o.cost_lines)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                                <th class="text-right">
+                                    <span t-field="o.total_purchase" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                                <th class="text-right">
+                                    <span t-field="o.total_expense" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </th>
+                                <th class="text-right"/>
+                                <th class="text-right"/>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="summary">
+                        <div t-if="o.total_uom_qty">
+                            <strong>Total Qty:</strong>
+                            <span t-field="o.total_uom_qty"/>
+                        </div>
+                        <div t-if="o.total_weight">
+                            <strong>Total Weight:</strong>
+                            <span t-field="o.total_weight"/>
+                        </div>
+                        <div t-if="o.total_volume">
+                            <strong>Total Volume:</strong>
+                            <span t-field="o.total_volume"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="text-muted text-center">
+                        Page:
+                        <span class="page"/>
+                        of
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="report_landed_cost">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="purchase_landed_cost_report.report_landed_cost_document"/>
+                </t>
+            </t>
+        </template>
+        <report
+            string="Landed cost"
+            id="action_report_landed_cost"
+            model="purchase.cost.distribution"
+            paperformat="purchase_landed_cost_report.paperformat_euro_landscape"
+            report_type="qweb-pdf"
+            name="purchase_landed_cost_report.report_landed_cost"
+            file="purchase_landed_cost_report.report_landed_cost"/>
+    </data>
+</odoo>

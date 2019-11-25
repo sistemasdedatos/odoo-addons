@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_landed_cost_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-25 15:36+0000\n"
+"PO-Revision-Date: 2019-11-25 15:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "<span>Cost Distribution</span>\n"
+"                        ("
+msgstr "<span>Distribución de costes</span>\n"
+"                        ("
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "<span>Date:</span>"
+msgstr "<span>Fecha:</span>"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "<strong>Total Qty:</strong>"
+msgstr "<strong>Cantidad total:</strong>"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "<strong>Total Volume:</strong>"
+msgstr "<strong>Volumen total:</strong>"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "<strong>Total Weight:</strong>"
+msgstr "<strong>Peso bruto total:</strong>"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Amount"
+msgstr "Importe"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Distribution lines"
+msgstr "Líneas de distribución"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Expense"
+msgstr "Gasto"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: purchase_landed_cost_report
+#: model:ir.actions.report,name:purchase_landed_cost_report.action_report_landed_cost
+msgid "Landed cost"
+msgstr "Distribución de coste"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Last cost"
+msgstr "Último coste"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Method"
+msgstr "Método"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "New Cost"
+msgstr "Nuevo coste"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Page:\n"
+"                        <span class=\"page\"/>\n"
+"                        of\n"
+"                        <span class=\"topage\"/>"
+msgstr "Página:\n"
+"                        <span class=\"page\"/>\n"
+"                        de\n"
+"                        <span class=\"topage\"/>"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Price"
+msgstr "Precio"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Product"
+msgstr "Producto"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Qty"
+msgstr "Cantidad"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Ref"
+msgstr "Ref"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Total Expense"
+msgstr "Total Gastos"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Total Expenses"
+msgstr "Gastos totales"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Total Purchase"
+msgstr "Total Compra"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Total:"
+msgstr "Total"
+
+#. module: purchase_landed_cost_report
+#: model_terms:ir.ui.view,arch_db:purchase_landed_cost_report.report_landed_cost_document
+msgid "Type"
+msgstr "Tipo"
