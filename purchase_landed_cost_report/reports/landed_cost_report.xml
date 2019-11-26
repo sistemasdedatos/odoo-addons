@@ -122,7 +122,7 @@
                                     <span t-esc="sum(l.product_price_unit for l in o.cost_lines)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </th>
                                 <th class="text-right">
-                                    <span t-esc="sum(l.product_qty for l in o.cost_lines)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    <span t-esc="sum(l.cost_ratio for l in o.cost_lines)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </th>
                                 <th class="text-right">
                                     <span t-field="o.total_purchase" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
