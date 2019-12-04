@@ -5,6 +5,11 @@
 	    <field name="model">account.bank.statement.line</field>
 	    <field name="inherit_id" ref="account.view_bank_statement_line_form"/>
 	    <field name="arch" type="xml">
+			<group position="before">
+				<header>
+					<button name="print_report" string="Print" type="object" class="oe_highlight"/>
+				</header>
+			</group>
 	    	<field name="ref" position="after">
 	    		<field name="invoice_id" attrs="{'invisible': [('invoice_id', '=', False)]}"/>
 	    		<field name="pos_statement_id" attrs="{'invisible': [('pos_statement_id', '=', False)]}"/>

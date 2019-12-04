@@ -16,6 +16,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: pos_session_pay_invoice_extend
+#. openerp-web
+#: code:addons/pos_session_pay_invoice_extend/static/src/xml/account_payment.xml:18
+#, python-format
+msgid "Conciliation pending"
+msgstr "Pendiente de conciliar"
+
+#. module: pos_session_pay_invoice_extend
 #: model:ir.model.fields,field_description:pos_session_pay_invoice_extend.field_cash_invoice_in_active_model
 #: model:ir.model.fields,field_description:pos_session_pay_invoice_extend.field_cash_invoice_out_active_model
 msgid "Active model"
@@ -119,3 +126,81 @@ msgstr "<span class=\"o_stat_text\">Balance de cierre</span>"
 #: model:ir.ui.view,arch_db:point_of_sale.view_pos_session_form
 msgid "<span class=\"o_stat_text\">Set Opening Balance</span>"
 msgstr "<span class=\"o_stat_text\">Balance de Apertura</span>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "Source"
+msgstr "Fuente"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.view_invoice_bank_statement_line_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "Invoice data"
+msgstr "Datos de factura"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "Number"
+msgstr "Número"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "Original amount"
+msgstr "Importe original"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "Date"
+msgstr "Fecha"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<span>Payment: </span>"
+msgstr "<span>Pago: </span>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<strong>Amount paid:</strong>"
+msgstr "<strong>Cantidad pagada:</strong>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<strong>Customer (Comercial name):</strong>"
+msgstr "<strong>Cliente (Nombre comercial):</strong>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<strong>Customer (Fiscal name):</strong>"
+msgstr "<strong>Cliente (Nombre fiscal):</strong>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<strong>Payment method:</strong>"
+msgstr "<strong>Método de pago:</strong>"
+
+#. module: pos_session_pay_invoice_extend
+#: model_terms:ir.ui.view,arch_db:pos_session_pay_invoice_extend.report_payment_receipt_document
+msgid "<strong>Payment reference:</strong>"
+msgstr "<strong>Referencia de pago:</strong>"
+
+#. module: pos_session_pay_invoice_extend
+#. openerp-web
+#: code:addons/pos_session_pay_invoice_extend/static/src/xml/account_payment.xml:26
+#: code:addons/pos_session_pay_invoice_extend/static/src/xml/account_payment.xml:27
+#, python-format
+msgid "Paid on"
+msgstr "Pagado el"

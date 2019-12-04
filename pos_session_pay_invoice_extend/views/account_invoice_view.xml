@@ -26,6 +26,7 @@
                 <button class="oe_highlight" name="%(action_collect_in_pos)d" type="action" string="Register payment in POS" 
                 		attrs="{'invisible':['|',('type', 'not in', ['out_invoice', 'in_refund']),('state','!=','open')]}"/>
             </button>
+
         </field>
     </record>    
 </odoo>

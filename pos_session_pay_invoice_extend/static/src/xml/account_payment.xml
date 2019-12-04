@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="PaymentPopOver">
+        <t t-jquery="button.js_open_payment" t-operation="replace">
+            <button class="btn btn-sm btn-secondary js_open_payment float-right"
+                    t-att-payment-id="account_payment_id"
+                    t-att-invoice-id="invoice_id"
+                    t-att-move-id="move_id"
+                    t-att-pos-payment-id="pos_payment_id"
+                    style="margin-top:5px; margin-bottom:5px;">View</button>
+        </t>
+        <t t-jquery="button.js_unreconcile_payment" t-operation="replace">
+                <button t-if="pos_payment_id === undefined" class="btn btn-sm btn-primary js_unreconcile_payment float-left"
+                        t-att-payment-id="payment_id" style="margin-top:5px; margin-bottom:5px;">Unreconcile</button>
+        </t>
+        <t t-jquery="table" t-operation="prepend">
+            <tr t-if="pos_payment_id" class="text-center" style="color: red; font-weight: bold">
+                <td colspan="2">
+                    Conciliation pending
+                </td>
+            </tr>
+        </t>
+    </t>
+    <t t-extend="ShowPaymentInfo">
+        <t t-jquery="i.o_field_widget" t-operation="replace">
+            <i t-if="line.pos_payment_id" style="color:red" class="o_field_widget text-right o_payment_label">Paid on <t t-esc="line.date"></t></i>
+            <i t-else="" class="o_field_widget text-right o_payment_label">Paid on <t t-esc="line.date"></t></i>
+        </t>
+    </t>
+</templates>
