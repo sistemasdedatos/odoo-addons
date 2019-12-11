@@ -36,7 +36,7 @@ class AccountInvoice(models.Model):
                 for line in statement_line:
                     content.append(self._get_payment_from_pos(line))
                 info = {'title': _('Less Payment'), 'outstanding': False, 'content': []}
-                if self.payments_widget:
+                if json.loads(self.payments_widget):
                     for cont in json.loads(self.payments_widget)['content']:
                         content.append(cont)
                 info['content'] = content
