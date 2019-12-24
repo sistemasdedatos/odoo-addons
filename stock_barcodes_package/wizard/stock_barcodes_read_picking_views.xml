@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="package_view_stock_barcodes_read_form" model="ir.ui.view">
+        <field name="name">package.stock.barcodes.read.form</field>
+        <field name="model">wiz.stock.barcodes.read.picking</field>
+        <field name="inherit_id" ref="stock_barcodes.view_stock_barcodes_read_form"/>
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <field name="picking_type_id" invisible="1" force_save="1"/>
+                <field name="stock_package_id" options="{'no_create': True}" attrs="{'readonly': [('manual_entry', '=', False)]}" force_save="1" groups="stock.group_tracking_lot"/>
+            </field>
+        </field>
+    </record>
+    <record id="package_view_stock_barcodes_read_picking_form" model="ir.ui.view">
+        <field name="name">package.stock.barcodes.read.picking.form</field>
+        <field name="model">wiz.stock.barcodes.read.picking</field>
+        <field name="inherit_id" ref="stock_barcodes.view_stock_barcodes_read_picking_form"/>
+        <field name="arch" type="xml">
+            <a name="action_validate_picking" position="before">
+                <a name="put_in_pack" type="object"
+                   attrs="{'invisible': [('state', 'not in', 'assigned')]}"
+                   confirm="Are you sure to validate the picking ?"
+                   context="{'wiz_barcode_id': parent.id, 'picking_id': picking_id}">Put in pack</a>
+            </a>
+        </field>
+    </record>
+</odoo>
