@@ -5,10 +5,13 @@ Available addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[distribution_price_margin](distribution_price_margin/) | 12.0.1.0.1 | This module allows introduce benefits margin in distribution cost of purchases.
-[l10n_es_igic](https://github.com/sistemasdedatos/l10n-spain/tree/12.0-mig-l10n_es_igic/l10n_es_igic/) | 12.0.1.0.0 | Add the accounts and taxes for the Canary Legislation of IGIC.
-[pos_session_pay_invoice_extend](pos_session_pay_invoice_extend/) | 12.0.1.0.0 | Extension of the pos_session_pay_invoice module available in OCA/pos <https://github.com/OCA/pos>.
+[distribution_price_margin](distribution_price_margin/) | 12.0.1.1.0 | This module allows introduce benefits margin in distribution cost of purchases.
+[l10n_es_igic](https://github.com/sistemasdedatos/l10n-spain/tree/12.0-mig-l10n_es_igic/l10n_es_igic/) | 12.0.1.0.0 | Add the accounts and taxes for the Canary Legislation of IGIC. In OCA/l10n-spain <https://github.com/OCA/l10n-spain>
+[pos_session_pay_invoice_extend](pos_session_pay_invoice_extend/) | 12.0.2.0.1 | Extension of the pos_session_pay_invoice module available in OCA/pos <https://github.com/OCA/pos>.
+[pricelist_distribution_print](pricelist_distribution_print/) | 12.0.1.0.0 | This module add a button in purchase landed cost to print prices for ecah pricelist.
 [product_label_with_tax](product_label_with_tax/) | 12.0.1.0.0 | The price field with tax or without tax depending on the configuration is added to the product sheet and the label form.
+[purchase_landed_cost_report](purchase_landed_cost_report/) | 12.0.1.0.0 | Print report in purchase landed cost.
+[stock_barcodes_package](stock_barcodes_package/) | 12.0.1.0.0 | Extension of the stock_barcodes module available in OCA/stock-logistics-barcode <https://github.com/OCA/stock-logistics-barcode> to allow shipping packages.
 [web_hidden_menu](web_hidden_menu/) | 12.0.1.0.0 | This module allows to hide menu items for some users and/or groups, without interfering with access rules.
 
 Unported addons
