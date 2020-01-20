@@ -5,6 +5,7 @@ Available addons
 ---------------
 addon | version | summary
 --- | --- | ---
+[biometric_signature](biometric_signature/) | 12.0.1.0.0 | Module to link Odoo with the biometric signature application developed by Sistemas de Datos.
 [distribution_price_margin](distribution_price_margin/) | 12.0.1.1.0 | This module allows introduce benefits margin in distribution cost of purchases.
 [l10n_es_igic](https://github.com/sistemasdedatos/l10n-spain/tree/12.0-mig-l10n_es_igic/l10n_es_igic/) | 12.0.1.0.0 | Add the accounts and taxes for the Canary Legislation of IGIC. In OCA/l10n-spain <https://github.com/OCA/l10n-spain>
 [pos_session_pay_invoice_extend](pos_session_pay_invoice_extend/) | 12.0.2.0.1 | Extension of the pos_session_pay_invoice module available in OCA/pos <https://github.com/OCA/pos>.
