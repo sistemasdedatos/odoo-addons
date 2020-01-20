@@ -83,7 +83,7 @@ class BiometricSignature(models.Model):
             field = self.env['ir.model.fields'].search([('name', '=', 'x_signed'), ('model_id', '=', res.model_id.id)])
             if not field:
                 new_field = {'name': 'x_signed',
-                             'ttype': 'boolean',
+                             'type': 'boolean',
                              'field_description': _('Document signed'),
                              'model_id': res.model_id.id,
                              'select_level': '0',
