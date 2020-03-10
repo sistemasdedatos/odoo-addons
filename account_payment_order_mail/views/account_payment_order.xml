@@ -15,7 +15,7 @@
             <div class="oe_title" position="before">
                 <div class="oe_button_box" name="button_box">
                     <button class="oe_stat_button" type="action" name="%(account_payment_order_mail.bank_payment_line_action2email)d"
-                        attrs="{'invisible': [('state', '=', ['draft','cancel'])]}" icon="fa-envelope" string="Customer Communication">
+                        attrs="{'invisible': [('state', 'in', ['draft','cancel'])]}" icon="fa-envelope" string="Customer Communication">
                     </button>
                 </div>
             </div>

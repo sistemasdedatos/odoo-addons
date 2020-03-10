@@ -9,7 +9,7 @@
                 <field name="state" invisible="True"/>
                 <div class="oe_button_box" name="button_box">
                     <button class="oe_stat_button" type="object" name="payment_line_send"
-                        attrs="{'invisible': [('state', '=', ['draft','cancel'])]}" icon="fa-envelope" string="Send notification">
+                        attrs="{'invisible': [('state', 'in', ['draft','cancel'])]}" icon="fa-envelope" string="Send notification">
                     </button>
                 </div>
             </group>
