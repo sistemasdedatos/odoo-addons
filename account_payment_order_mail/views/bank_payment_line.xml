@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="communication_button_bank_payment_line_form" model="ir.ui.view">
+        <field name="name">communication.button.bank.payment.line.form</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_form"/>
+        <field name="arch" type="xml">
+            <group name="main" position="before">
+                <field name="state" invisible="True"/>
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" type="object" name="payment_line_send"
+                        attrs="{'invisible': [('state', '=', ['draft','cancel'])]}" icon="fa-envelope" string="Send notification">
+                    </button>
+                </div>
+            </group>
+        </field>
+    </record>
+    <act_window name="Send notifications"
+        res_model="mail.compose.message"
+        src_model="bank.payment.line"
+        view_mode="form" target="new"
+        view_type="form"
+        multi="True"
+        key2="client_action_multi"
+        context="{'default_composition_mode': 'mass_mail',
+                  'default_partner_to': '${object.partner_id.id or \'\'}',
+                  'default_use_template': True,
+                  'default_template_id': ref('account_payment_order_mail.email_template_bank_payment_line'),
+                  'default_no_auto_thread': False,}"
+        id="act_payment_line_email" />
+</odoo>

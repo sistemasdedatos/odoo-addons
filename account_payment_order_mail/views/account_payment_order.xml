@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bank_payment_line_action2email" model="ir.actions.act_window">
+        <field name="name">Prepare Customer Communication</field>
+        <field name="res_model">bank.payment.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('order_id', '=', active_id)]</field>
+        <field name="context">{'bank_payment_line_main_view': True}</field>
+    </record>
+    <record id="communication_button_account_payment_order_form" model="ir.ui.view">
+        <field name="name">communication.button.account.payment.order.form</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field name="arch" type="xml">
+            <div class="oe_title" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" type="action" name="%(account_payment_order_mail.bank_payment_line_action2email)d"
+                        attrs="{'invisible': [('state', '=', ['draft','cancel'])]}" icon="fa-envelope" string="Customer Communication">
+                    </button>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

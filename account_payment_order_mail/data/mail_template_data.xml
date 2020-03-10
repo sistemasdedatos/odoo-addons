@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_bank_payment_line" model="mail.template">
+            <field name="name">Bank Payment Receipt</field>
+            <field name="body_type">jinja2</field>
+            <field name="auto_delete">False</field>
+            <field name="email_to">${object.partner_id.email | safe}</field>
+            <field name="model_id" ref="account_payment_order.model_bank_payment_line" />
+            <field name="subject">Bank Payment Receipt from ${object.company_id.name}</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <h2>Dear ${object.partner_id.name},</h2>
+    <p>
+        A receipt will be charged with the amount of <b>${format_amount(object.amount_currency, object.currency_id)}</b> in your bank account <b> ********************${object.partner_bank_id.acc_number[-4:]}</b>
+    </p>
+    <p>
+        The receipt will have the concept of <b>${object.communication}</b> and will correspond to the following documents:
+    </p>
+    <div name="rTable" style="display: table; width: 100%;" width="100%">
+        <div name="rTable" style="display: table; width: 100%;" width="100%">
+            <div name="rTableHead" style="display: table-cell; padding: 3px 10px; border:1px solid #999999; background-color: #DCDCDC; width: 33.33%;" width="33%">
+                <b>Document</b>
+            </div>
+            <div name="rTableHead" style="display: table-cell; padding: 3px 10px; border:1px solid #999999; background-color: #DCDCDC; width: 33.33%;" width="33%">
+                <b>Date Due</b>
+            </div>
+            <div name="rTableHead" style="display: table-cell; padding: 3px 10px; border:1px solid #999999; background-color: #DCDCDC; width: 33.33%;" width="33%">
+                <b>Amount</b>
+            </div>
+        </div>
+    </div>
+    % for line in object.payment_line_ids:
+    <div name="rTable" style="display: table; width: 100%;" width="100%">
+        <div name="rTableRow" style="display: table-header-group" width="100%">
+            <div name="rTableCell" style="display: table-cell; padding: 3px 10px; border: 1px solid #999999; width: 33.33%;" width="33%">
+                ${line.communication}
+            </div>
+            <div name="rTableCell" style="display: table-cell; padding: 3px 10px; border: 1px solid #999999; width: 33.33%;" width="33%">
+                ${format_tz(line.ml_maturity_date, tz='UTC', format='%d/%m/%Y')}
+            </div>
+            <div name="rTableCell" style="display: table-cell; padding: 3px 10px; border: 1px solid #999999; width: 33.33%;" width="33%">
+                ${format_amount(line.amount_currency, object.currency_id)}
+            </div>
+        </div>
+    </div>
+    % endfor
+    <br/>
+    <p>
+        If you have any questions, do not hesitate to contact us.
+    </p>
+    <p>
+        Thank you.
+    </p>
+</div>
+            </field>
+        </record>
+    </data>
+</odoo>
