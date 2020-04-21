@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_es_account_asset_move_sequence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 12:46+0000\n"
+"PO-Revision-Date: 2020-04-21 12:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_es_account_asset_move_sequence
+#: model:ir.model,name:l10n_es_account_asset_move_sequence.model_account_asset_line
+msgid "Asset depreciation table line"
+msgstr "Línea de amortización del activo"
+
+#. module: l10n_es_account_asset_move_sequence
+#: model:ir.model,name:l10n_es_account_asset_move_sequence.model_account_asset_profile
+msgid "Asset profile"
+msgstr "Categoría de activo"
+
+#. module: l10n_es_account_asset_move_sequence
+#: model:ir.model.fields,help:l10n_es_account_asset_move_sequence.field_account_asset_profile__account_move_sequence
+msgid "Set to true if you want to keep the corresponding journal entry sequence"
+msgstr "Establecer a verdadero si desea mantener el correlativo de la secuencia de asientos del diario contable establecido"
+
+#. module: l10n_es_account_asset_move_sequence
+#: model:ir.model.fields,field_description:l10n_es_account_asset_move_sequence.field_account_asset_profile__account_move_sequence
+msgid "Use account move sequence"
+msgstr "Secuencia de asiento"
+
