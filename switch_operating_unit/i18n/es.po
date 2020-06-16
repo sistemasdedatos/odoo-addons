@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* switch_operating_unit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-12 11:47+0000\n"
+"PO-Revision-Date: 2020-06-12 11:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: switch_operating_unit
+#: model:ir.model.fields,field_description:switch_operating_unit.field_res_users__default_operating_unit_id
+msgid "Default Operating Unit"
+msgstr "Unidad operativa por defecto"
+
+#. module: switch_operating_unit
+#: model:ir.model,name:switch_operating_unit.model_ir_http
+msgid "HTTP Routing"
+msgstr "Ruta HTTP "
+
+#. module: switch_operating_unit
+#: model:ir.model.fields,field_description:switch_operating_unit.field_res_users__operating_unit_swith_ids
+msgid "Operating Units Allowed"
+msgstr "Unidad/es Operativa/s Permitida/s"
+
+#. module: switch_operating_unit
+#: model:ir.model.fields,field_description:switch_operating_unit.field_res_users__operating_unit_ids
+msgid "Operating Units Running"
+msgstr "Unidad/es Operativa/s Activa/s"
+
+#. module: switch_operating_unit
+#: model:res.groups,name:switch_operating_unit.group_switch_operating_unit
+msgid "Switch Operating Unit"
+msgstr "Cambiar de unidad operativa"
+
+#. module: switch_operating_unit
+#: model:ir.model,name:switch_operating_unit.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: web_switch_context_warning
+#. openerp-web
+#: code:addons/web_switch_context_warning/static/src/xml/switch_context_warning.xml:6
+#, python-format
+msgid "Reload"
+msgstr "Recargar"
+
+#. module: web_switch_context_warning
+#. openerp-web
+#: code:addons/web_switch_context_warning/static/src/xml/switch_context_warning.xml:6
+#, python-format
+msgid "to refresh your session"
+msgstr "para refrescar su sesión"
+
+#. module: switch_operating_unit
+#. openerp-web
+#: code:addons/switch_operating_unit/static/src/xml/switch_context_warning.xml:5
+#, python-format
+msgid "You switched to a different user, operating unit, company or database with another tab or window"
+msgstr "En otra pestaña a cambiado a diferente usuario, unidad operativa, compañía o base de datos"

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="operating_unit_view_users_form_simple_modif" model="ir.ui.view">
+        <field name="name">operating.unit.preferences.res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <group name="preferences" position="inside">
+                <field name="default_operating_unit_id" readonly="1"/>
+            </group>
+        </field>
+    </record>
+    <record id="switch_operating_unit_view_users_form_simple_modif" model="ir.ui.view">
+        <field name="name">switch.operating.unit.preferences.res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="switch_operating_unit.operating_unit_view_users_form_simple_modif"/>
+        <field name="groups_id" eval="[(4, ref('switch_operating_unit.group_switch_operating_unit'))]"/>
+        <field name="arch" type="xml">
+            <field name="default_operating_unit_id" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+     <record id="view_users_form" model="ir.ui.view">
+        <field name="name">res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="operating_unit.view_users_form"/>
+        <field name="arch" type="xml">
+            <field name="default_operating_unit_id" position="after">
+                <field name="operating_unit_swith_ids" widget="many2many_tags"/>
+            </field>
+        </field>
+     </record>
+</odoo>

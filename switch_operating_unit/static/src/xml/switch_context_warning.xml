@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-extend="web_switch_context_warning.warningWidget">
+        <t t-jquery="h3" t-operation="replace">
+            <h3>You switched to a different user, operating unit, company or database with another tab or window</h3>
+        </t>
+    </t>
+</template>
