@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ou_view_purchase_cost_distribution_line_expense_tree" model="ir.ui.view">
+        <field name="model">purchase.cost.distribution.line.expense</field>
+        <field name="inherit_id" ref="purchase_landed_cost.view_purchase_cost_distribution_line_expense_tree"/>
+        <field name="arch" type="xml">
+            <tree position="inside">
+                <field name="operating_unit_id" groups="operating_unit.group_multi_operating_unit"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
