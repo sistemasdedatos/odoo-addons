@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="endoser_template_facturae" inherit_id="l10n_es_facturae.template_facturae">
+        <FileHeader position="inside">
+            <FactoringAssignmentData t-if="invoice.payment_mode_id and invoice.payment_mode_id.is_endorser">
+                <t t-set="partner_bank" t-value="invoice.partner_banks_to_show()[:1]"/>
+                <t t-set="bank" t-value="partner_bank.bank_id"/>
+                <Assignee t-if="bank">
+                    <TaxIdentification>
+                        <PersonTypeCode>J</PersonTypeCode>
+                        <ResidenceTypeCode>R</ResidenceTypeCode>
+                        <TaxIdentificationNumber t-minlength="3" t-length="30" t-esc="bank.vat"/>
+                    </TaxIdentification>
+                    <LegalEntity>
+                        <CorporateName t-length="80" t-esc="bank.lname"/>
+                        <AddressInSpain>
+                            <Address t-length="80" t-esc="bank.street"/>
+                            <PostCode t-esc="bank.zip"/>
+                            <Town t-length="50" t-esc="bank.city"/>
+                            <Province t-length="20" t-esc="bank.state.name"/>
+                            <CountryCode t-esc="bank.country.code_alpha3"/>
+                        </AddressInSpain>
+                    </LegalEntity>
+                </Assignee>
+                <PaymentDetails>
+                    <Installment>
+                        <InstallmentDueDate t-esc="invoice.date_due or invoice.date_invoice"/>
+                        <InstallmentAmount t-esc="'%.2f' % (invoice.residual)"/>
+                        <PaymentMeans t-esc="invoice.payment_mode_id.facturae_code"/>
+                        <AccountToBeCredited t-if="invoice.payment_mode_id.facturae_code != '02'">
+                            <IBAN t-minlength="5" t-length="34" t-esc="''.join(partner_bank.acc_number.split())"/>
+                            <BIC t-minlength="11" t-length="11" t-esc="bank.bic" t-if="bank.bic"/>
+                        </AccountToBeCredited>
+                    </Installment>
+                </PaymentDetails>
+                <FactoringAssignmentClauses/>
+			</FactoringAssignmentData>
+        </FileHeader>
+        <xpath expr="//Invoices/Invoice/PaymentDetails" position="attributes">
+            <attribute name="t-if">invoice.payment_mode_id and not invoice.payment_mode_id.is_endorser</attribute>
+        </xpath>
+    </template>
+</odoo>
