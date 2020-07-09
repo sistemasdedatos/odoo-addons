@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_property_view" model="ir.ui.view">
+            <field name="name">ir.property.form</field>
+            <field name="model">ir.property</field>
+            <field name="inherit_id" ref="base.ir_property_view"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="operating_unit_id" groups="operating_unit.group_multi_operating_unit"/>
+                </field>
+            </field>
+        </record>
+        <record id="ir_property_view_tree" model="ir.ui.view">
+            <field name="name">ir.property.tree</field>
+            <field name="model">ir.property</field>
+            <field name="inherit_id" ref="base.ir_property_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="operating_unit_id" groups="operating_unit.group_multi_operating_unit"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
