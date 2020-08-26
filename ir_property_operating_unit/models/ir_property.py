@@ -1,6 +1,5 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
-from odoo import api, fields, models, _
-from odoo.tools import ormcache
+from odoo import api, fields, models
 
 
 TYPE2FIELD = {
@@ -43,45 +42,21 @@ class Property(models.Model):
             res.append(('operating_unit_id', '=', ou_id.id))
         return res
 
-    # @api.multi
-    # def _update_values(self, values):
-    #     print("_update_values")
-    #     return super(Property, self)._update_values(values)
-    #
-    # @api.multi
-    # def write(self, values):
-    #     print("write")
-    #     return super(Property, self).write(values)
-    #
-    # @api.model_create_multi
-    # def create(self, vals_list):
-    #     print("create")
-    #     return super(Property, self).create(vals_list)
-    #
-    # @api.multi
-    # def unlink(self):
-    #     print("unlink")
-    #     return super(Property, self).unlink()
-    #
-    # @api.multi
-    # def get_by_record(self):
-    #     print("get_by_record")
-    #     return super(Property, self).get_by_record()
-    #
-    # @api.model
-    # def get(self, name, model, res_id=False):
-    #     print("get")
-    #     return super(Property, self).get(name, model, res_id)
-    #
-    # COMPANY_KEY = "self.env.context.get('force_company') or self.env['res.company']._company_default_get(model).id"
-    # @ormcache(COMPANY_KEY, 'name', 'model')
-    # def _get_default_property(self, name, model):
-    #     print("_get_default_propery")
-    #     return super(Property, self)._get_default_property(name, model)
-    #
-    # def _get_property(self, name, model, res_id):
-    #     print("_get_property")
-    #     return super(Property, self)._get_property(name, model, res_id)
+    def _get_property(self, name, model, res_id):
+        """ If we do not find the property,
+            we look for it again without operating unit
+        """
+        res = super(Property, self)._get_property(name, model, res_id)
+        if not res:
+            domain = self._get_domain(name, model)
+            if domain is not None:
+                for i in range(0, len(domain)):
+                    if domain[i][0] == 'operating_unit_id':
+                        del domain[i]
+                        break
+                domain = [('res_id', '=', res_id)] + domain
+                return self.search(domain, limit=1, order='company_id')
+        return res
 
     @api.model
     def get_multi(self, name, model, ids):
@@ -184,7 +159,6 @@ class Property(models.Model):
                 ('operating_unit_id', '=', ou_id.id),
                 ('res_id', 'in', list(refs)),
             ])
-
             # modify existing properties
             for prop in props:
                 id = refs.pop(prop.res_id)
@@ -215,7 +189,3 @@ class Property(models.Model):
             self.create(vals_list)
         else:
             super(Property, self).set_multi(name, model, values, default_value)
-
-    # @api.model
-    # def search_multi(self, name, model, operator, value):
-    #     return super(Property, self).search_multi(name, model, operator, value)
