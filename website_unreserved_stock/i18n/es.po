@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_unreserved_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-26 13:53+0000\n"
+"PO-Revision-Date: 2020-10-26 13:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_unreserved_stock
+#: model:ir.model,name:website_unreserved_stock.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: website_unreserved_stock
+#: model:ir.model,name:website_unreserved_stock.model_sale_order
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: website_unreserved_stock
+#: model:ir.model,name:website_unreserved_stock.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: website_unreserved_stock
+#: code:addons/website_unreserved_stock/models/sale_order.py:31
+#, python-format
+msgid "Some products became unavailable and your cart has been updated. We're sorry for the inconvenience."
+msgstr "Algunos productos dejaron de estar disponibles, así que su carro se ha actualizado. Sentimos las molestias."
+
+#. module: website_unreserved_stock
+#: model:ir.model.fields,field_description:website_unreserved_stock.field_sale_order__warning_stock
+#: model:ir.model.fields,field_description:website_unreserved_stock.field_sale_order_line__warning_stock
+msgid "Warning"
+msgstr "Alerta"
+
+#. module: website_unreserved_stock
+#: code:addons/website_unreserved_stock/models/sale_order.py:28
+#, python-format
+msgid "You ask for %s products but only %s is available"
+msgstr "Ha solicitado %s producto(s), pero hay %s disponible(s)."
+
