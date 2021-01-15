@@ -74,6 +74,17 @@
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
     </record>
+    <record id="account_tax_template_igic_r_15" model="account.tax.template">
+    	<field name="description">S_IGIC_R15</field>
+    	<field name="type_tax_use">sale</field>
+    	<field name="account_id" ref="pgc_4777_child"/>
+    	<field name="name">IGIC 15%</field>
+    	<field name="refund_account_id" ref="pgc_4777_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="amount" eval="15"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_r_200" model="account.tax.template">
         <field name="description">S_IGIC_R200</field>
     	<field name="type_tax_use">sale</field>
@@ -141,6 +152,17 @@
         <field eval="1.35" name="amount"/>
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_re_135"/>
+    </record>
+    <record id="account_tax_template_igic_re_15" model="account.tax.template">
+    	<field name="description">S_IGIC_RE15</field>
+    	<field name="type_tax_use">sale</field>
+    	<field name="account_id" ref="pgc_4777_child"/>
+    	<field name="name">IGIC 1,5% (Recargo equivalencia)</field>
+    	<field name="refund_account_id" ref="pgc_4777_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="1.5" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_re_15"/>
     </record>
     <record id="account_tax_template_igic_re_20" model="account.tax.template">
     	<field name="description">S_IGIC_RE20</field>
@@ -347,6 +369,38 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP135_1'), ref('account_tax_template_igic_s_ISP135_2')])]"/>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
     </record>
+        <record id="account_tax_template_igic_s_ISP15_1" model="account.tax.template">
+    	<field name="description">S_IGIC_ISP15_1</field>
+    	<field name="type_tax_use">sale</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 15% Venta con Inversión del Sujeto Pasivo (1)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
+    <record id="account_tax_template_igic_s_ISP15_2" model="account.tax.template">
+    	<field name="description">S_IGIC_ISP15_2</field>
+    	<field name="type_tax_use">sale</field>
+    	<field name="account_id" ref="pgc_4777_child"/>
+    	<field name="name">IGIC 15% Venta con Inversión del Sujeto Pasivo (2)</field>
+    	<field name="refund_account_id" ref="pgc_4777_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="-15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
+    <record id="account_tax_template_igic_s_ISP15" model="account.tax.template">
+    	<field name="description">S_IGIC_ISP15</field>
+    	<field name="type_tax_use">sale</field>
+    	<field name="name">IGIC 15% Venta con Inversión del Sujeto Pasivo</field>
+        <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="amount_type">group</field>
+        <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_s_ISP15_1'), ref('account_tax_template_igic_s_ISP15_2')])]"/>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_s_ISP200_1" model="account.tax.template">
     	<field name="description">S_IGIC_ISP200_1</field>
     	<field name="type_tax_use">sale</field>
@@ -474,6 +528,17 @@
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
     </record>
+    <record id="account_tax_template_igic_sop_15" model="account.tax.template">
+    	<field name="description">P_IGIC_BC15</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 15% Soportado (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_sop_200" model="account.tax.template">
     	<field name="description">P_IGIC_BC200</field>
     	<field name="type_tax_use">purchase</field>
@@ -552,7 +617,18 @@
         <field eval="13.5" name="amount"/>
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
-    </record>    
+    </record>
+    <record id="account_tax_template_igic_sop_15_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_BI15</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 15% Soportado (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_sop_200_inv" model="account.tax.template">
     	<field name="description">P_IGIC_BI200</field>
     	<field name="type_tax_use">purchase</field>
@@ -632,6 +708,17 @@
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
     </record>
+    <record id="account_tax_template_igic_sop_i_15" model="account.tax.template">
+    	<field name="description">P_IGIC_IBC15</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 15% Importaciones (Operaciones corrientes)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_sop_i_200" model="account.tax.template">
     	<field name="description">P_IGIC_IBC200</field>
     	<field name="type_tax_use">purchase</field>
@@ -710,7 +797,18 @@
         <field eval="13.5" name="amount"/>
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
-    </record>    
+    </record>
+    <record id="account_tax_template_igic_sop_i_15_inv" model="account.tax.template">
+    	<field name="description">P_IGIC_IBI15</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 15% Importaciones (Operaciones de inversión)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_sop_i_200_inv" model="account.tax.template">
     	<field name="description">P_IGIC_IBI200</field>
     	<field name="type_tax_use">purchase</field>
@@ -916,6 +1014,38 @@
         <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP135_1'), ref('account_tax_template_igic_ISP135_2')])]"/>
         <field name="tax_group_id" ref="tax_group_igic_135"/>
     </record>
+    <record id="account_tax_template_igic_ISP15_1" model="account.tax.template">
+    	<field name="description">P_IGIC_ISP15_1</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4727_child"/>
+    	<field name="name">IGIC 15% Compra con Inversión del Sujeto Pasivo (1)</field>
+    	<field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
+    <record id="account_tax_template_igic_ISP15_2" model="account.tax.template">
+    	<field name="description">P_IGIC_ISP15_2</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="account_id" ref="pgc_4777_child"/>
+    	<field name="name">IGIC 15% Compra con Inversión del Sujeto Pasivo (2)</field>
+    	<field name="refund_account_id" ref="pgc_4777_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field eval="-15" name="amount"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
+    <record id="account_tax_template_igic_ISP15" model="account.tax.template">
+    	<field name="description">P_IGIC_ISP15</field>
+    	<field name="type_tax_use">purchase</field>
+    	<field name="name">IGIC 15% Compra con Inversión del Sujeto Pasivo</field>
+        <field eval="100" name="amount"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="amount_type">group</field>
+        <field name="children_tax_ids" eval="[(6, 0, [ref('account_tax_template_igic_ISP15_1'), ref('account_tax_template_igic_ISP15_2')])]"/>
+        <field name="tax_group_id" ref="tax_group_igic_15"/>
+    </record>
     <record id="account_tax_template_igic_ISP200_1" model="account.tax.template">
     	<field name="description">P_IGIC_ISP200_1</field>
     	<field name="type_tax_use">purchase</field>
@@ -1004,6 +1134,17 @@
         <field name="amount" eval="0.135"/>
         <field name="amount_type">percent</field>
         <field name="tax_group_id" ref="tax_group_igic_re_135"/>
+    </record>
+    <record id="account_tax_template_igic_p_re15" model="account.tax.template">
+    	<field name="description">P_IGIC_RE15</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="account_id" ref="pgc_4727_child"/>
+        <field name="name">IGIC 0,15% Compras (Recargo equivalencia)</field>
+        <field name="refund_account_id" ref="pgc_4727_child"/>
+        <field name="chart_template_id" ref="l10n_es.account_chart_template_common"/>
+        <field name="amount" eval="0.15"/>
+        <field name="amount_type">percent</field>
+        <field name="tax_group_id" ref="tax_group_igic_re_15"/>
     </record>
     <record id="account_tax_template_igic_p_re20" model="account.tax.template">
     	<field name="description">P_IGIC_RE20</field>
