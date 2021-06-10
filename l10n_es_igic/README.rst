@@ -11,7 +11,7 @@ En caso de no estar instalado el módulo l10n_es, se debe instalar directamente 
 En caso contrario:
 
 * Instalar este módulo.
-* Instalar el moulo account_chart_update (del repositorio OCA account-financial-tools)
+* Instalar el módulo account_chart_update (del repositorio OCA account-financial-tools)
 * Ejecutar el asistente de actualización del plan contable español
 
 Módulo disponible en https://github.com/sistemasdedatos/odoo-addons.
