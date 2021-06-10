@@ -12,7 +12,7 @@
 
 {
     'name': 'IGIC (Impuesto General Indirecto Canario',
-    'version': '12.0.1.0.1',
+    'version': '12.0.1.0.0',
     'author': "David Diz Martínez <daviddiz@gmail.com>,"
               "Atlantux Consultores - Enrique Zanardi,"
               "Sistemas de Datos,"
@@ -22,7 +22,8 @@
     "website": "https://github.com/OCA/l10n-spain",
     "depends": ['l10n_es'],
     "license": "AGPL-3",
-    'data': ['data/account_group.xml',
+    'data': ['data/account_chart_template_igic.xml',
+             'data/account_group.xml',
              'data/account_account_common_igic.xml',
              'data/account_tax_group_data.xml',
              'data/taxes_common_igic.xml',
