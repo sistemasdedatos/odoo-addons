@@ -17,6 +17,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: distribution_price_margin
+#: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line__calculated_margin
+#: model_terms:ir.ui.view,arch_db:distribution_price_margin.inherit_purchase_cost_distribution_form
+#: model_terms:ir.ui.view,arch_db:distribution_price_margin.inherit_view_purchase_cost_distribution_line_form
+msgid "Calculated margin %"
+msgstr "Margen calculado %"
+
+#. module: distribution_price_margin
 #: model_terms:ir.ui.view,arch_db:distribution_price_margin.view_purchases_config_purchase_repercute_cost
 msgid "Choose the method to calculate sale price in cost distribution"
 msgstr "Seleccione el método para calcular el precio de venta en la distribución de costes"
@@ -46,6 +53,11 @@ msgstr "Si el valor es 0 o negativo, el precio de venta no será modificado"
 #: model:ir.model.fields,field_description:distribution_price_margin.field_purchase_cost_distribution_line__benefit_margin
 msgid "Margin %"
 msgstr "Margen %"
+
+#. module: distribution_price_margin
+#: model:ir.model.fields,help:distribution_price_margin.field_purchase_cost_distribution_line__calculated_margin
+msgid "Margin between previous PVP and new cost: (Old sale price - Standard price new)/Standard price new * 100"
+msgstr "Margen entre el PVP previo y Nuevo coste: (PVP previo - Nuevo coste)/Nuevo coste * 100"
 
 #. module: distribution_price_margin
 #: selection:res.config.settings,group_margin_calculation_method:0

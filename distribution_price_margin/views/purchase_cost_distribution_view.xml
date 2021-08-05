@@ -25,6 +25,7 @@
 			</field>
 			<field name="standard_price_new" position="after">
 				<field name="benefit_margin"/>
+				<field name="calculated_margin" string="Calculated margin %"/>
    				<field name="old_sale_price" string="Old sale price"/>
    				<field name="benefit_price"/>
 			</field>
@@ -54,6 +55,7 @@
 		<field name="arch" type="xml">
 			<field name="product_price_unit" position="after">
    	        	<field name="benefit_margin" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
+				<field name="calculated_margin" string="Calculated margin %"/>
    	        	<field name="old_sale_price" string="Old sale price"/>
                 <field name="benefit_price" attrs="{'readonly': [('state', 'in', ['done', 'error'])]}"/>
                 <field name="state" invisible="1"/>

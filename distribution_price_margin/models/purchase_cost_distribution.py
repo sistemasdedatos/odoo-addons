@@ -2,6 +2,7 @@ from odoo import models, fields, exceptions, api, _
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
+
 class PurchaseCostDistribution(models.Model):
     _name = "purchase.cost.distribution"
     _inherit = ["purchase.cost.distribution", "mail.thread"]
@@ -9,7 +10,7 @@ class PurchaseCostDistribution(models.Model):
     state = fields.Selection(track_visibility='onchange')
     cost_lines = fields.One2many(readonly=True, states={'draft': [('readonly', False)], 'calculated': [('readonly', False)]})
     benefit_margin = fields.Float(string='Margin %', readonly=True, states={'draft': [('readonly', False)], 'calculated': [('readonly', False)]}, default=-1, help="If the margin is less than 0, it won't be applied")
-    expense_percent = fields.Float(string='Expenses %', compute = '_compute_expenses_percent')
+    expense_percent = fields.Float(string='Expenses %', compute='_compute_expenses_percent')
 
     @api.multi
     @api.depends('amount_total', 'total_expense')
@@ -57,6 +58,16 @@ class PurchaseCostDistributionLine(models.Model):
     benefit_price = fields.Float(string='Sale Price', help=("If the value is 0 or negative, the sale price won't be changed"))
     old_sale_price = fields.Float(related="product_id.lst_price", readonly=True)
     last_cost_distribution = fields.Float(string="Last Cost", readonly=True, help=_("Cost price of the last product entry"))
+    calculated_margin = fields.Float(string='Calculated margin %', compute='_compute_calculated_margin', readonly=True, help="Margin between previous PVP and new cost: (Old sale price - Standard price new)/Standard price new * 100")
+
+    @api.multi
+    @api.depends('old_sale_price', 'standard_price_new')
+    def _compute_calculated_margin(self):
+        for record in self:
+            try:
+                record.calculated_margin = (record.old_sale_price - record.standard_price_new) / record.standard_price_new * 100
+            except:
+                record.standard_price_new = 0
 
     def compute_last_cost(self):
         years_before = self.company_id.last_distribution_years
