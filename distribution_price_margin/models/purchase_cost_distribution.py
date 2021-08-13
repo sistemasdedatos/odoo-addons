@@ -67,7 +67,7 @@ class PurchaseCostDistributionLine(models.Model):
             try:
                 record.calculated_margin = (record.old_sale_price - record.standard_price_new) / record.standard_price_new * 100
             except:
-                record.standard_price_new = 0
+                record.calculated_margin = 0
 
     def compute_last_cost(self):
         years_before = self.company_id.last_distribution_years
